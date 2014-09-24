@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		038E6B2E18A240080001FF8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E6B2D18A240080001FF8B /* Foundation.framework */; };
+		038E6B3018A240080001FF8B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E6B2F18A240080001FF8B /* CoreGraphics.framework */; };
+		038E6B3218A240080001FF8B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E6B3118A240080001FF8B /* UIKit.framework */; };
+		038E6B3818A240080001FF8B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 038E6B3618A240080001FF8B /* InfoPlist.strings */; };
+		038E6B3A18A240080001FF8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B3918A240080001FF8B /* main.m */; };
+		038E6B3E18A240080001FF8B /* WUNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B3D18A240080001FF8B /* WUNAppDelegate.m */; };
+		038E6B4118A240080001FF8B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038E6B3F18A240080001FF8B /* Main_iPhone.storyboard */; };
+		038E6B4418A240080001FF8B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038E6B4218A240080001FF8B /* Main_iPad.storyboard */; };
+		038E6B4718A240080001FF8B /* WUNMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B4618A240080001FF8B /* WUNMainViewController.m */; };
+		038E6B4A18A240080001FF8B /* WUNFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B4918A240080001FF8B /* WUNFlipsideViewController.m */; };
+		038E6B4C18A240080001FF8B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 038E6B4B18A240080001FF8B /* Images.xcassets */; };
+		038E6B5318A240080001FF8B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E6B5218A240080001FF8B /* XCTest.framework */; };
+		038E6B5418A240080001FF8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E6B2D18A240080001FF8B /* Foundation.framework */; };
+		038E6B5518A240080001FF8B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E6B3118A240080001FF8B /* UIKit.framework */; };
+		038E6B5D18A240080001FF8B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 038E6B5B18A240080001FF8B /* InfoPlist.strings */; };
+		038E6B5F18A240080001FF8B /* WakeUpNowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B5E18A240080001FF8B /* WakeUpNowTests.m */; };
+		038E6B7718A265C10001FF8B /* WUNGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B7418A265C10001FF8B /* WUNGridView.m */; };
+		038E6B7818A265C10001FF8B /* WUNPuck.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B7618A265C10001FF8B /* WUNPuck.m */; };
+		038E6B7C18A397A30001FF8B /* WUNBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B7B18A397A30001FF8B /* WUNBlock.m */; };
+		038E6B7F18A39C0D0001FF8B /* WUNHole.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B7E18A39C0D0001FF8B /* WUNHole.m */; };
+		038E6B8518A4DDCB0001FF8B /* WUNGameConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B8418A4DDCB0001FF8B /* WUNGameConfigManager.m */; };
+		038E6B8718A4DDD60001FF8B /* WUNGameConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 038E6B8618A4DDD60001FF8B /* WUNGameConfig.plist */; };
+		038E6B8B18A8AF5B0001FF8B /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B8A18A8AF5B0001FF8B /* Colours.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		038E6B5618A240080001FF8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E6B2218A240070001FF8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 038E6B2918A240080001FF8B;
+			remoteInfo = WakeUpNow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		038E6B2A18A240080001FF8B /* WakeUpNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeUpNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		038E6B2D18A240080001FF8B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		038E6B2F18A240080001FF8B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		038E6B3118A240080001FF8B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		038E6B3518A240080001FF8B /* WakeUpNow-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WakeUpNow-Info.plist"; sourceTree = "<group>"; };
+		038E6B3718A240080001FF8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		038E6B3918A240080001FF8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		038E6B3B18A240080001FF8B /* WakeUpNow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WakeUpNow-Prefix.pch"; sourceTree = "<group>"; };
+		038E6B3C18A240080001FF8B /* WUNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WUNAppDelegate.h; sourceTree = "<group>"; };
+		038E6B3D18A240080001FF8B /* WUNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WUNAppDelegate.m; sourceTree = "<group>"; };
+		038E6B4018A240080001FF8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		038E6B4318A240080001FF8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		038E6B4518A240080001FF8B /* WUNMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WUNMainViewController.h; sourceTree = "<group>"; };
+		038E6B4618A240080001FF8B /* WUNMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WUNMainViewController.m; sourceTree = "<group>"; };
+		038E6B4818A240080001FF8B /* WUNFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WUNFlipsideViewController.h; sourceTree = "<group>"; };
+		038E6B4918A240080001FF8B /* WUNFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WUNFlipsideViewController.m; sourceTree = "<group>"; };
+		038E6B4B18A240080001FF8B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		038E6B5118A240080001FF8B /* WakeUpNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WakeUpNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		038E6B5218A240080001FF8B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		038E6B5A18A240080001FF8B /* WakeUpNowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WakeUpNowTests-Info.plist"; sourceTree = "<group>"; };
+		038E6B5C18A240080001FF8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		038E6B5E18A240080001FF8B /* WakeUpNowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WakeUpNowTests.m; sourceTree = "<group>"; };
+		038E6B7318A265C10001FF8B /* WUNGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNGridView.h; path = Elements/WUNGridView.h; sourceTree = "<group>"; };
+		038E6B7418A265C10001FF8B /* WUNGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNGridView.m; path = Elements/WUNGridView.m; sourceTree = "<group>"; };
+		038E6B7518A265C10001FF8B /* WUNPuck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNPuck.h; path = Elements/WUNPuck.h; sourceTree = "<group>"; };
+		038E6B7618A265C10001FF8B /* WUNPuck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNPuck.m; path = Elements/WUNPuck.m; sourceTree = "<group>"; };
+		038E6B7A18A397A30001FF8B /* WUNBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNBlock.h; path = Elements/WUNBlock.h; sourceTree = "<group>"; };
+		038E6B7B18A397A30001FF8B /* WUNBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNBlock.m; path = Elements/WUNBlock.m; sourceTree = "<group>"; };
+		038E6B7D18A39C0D0001FF8B /* WUNHole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNHole.h; path = Elements/WUNHole.h; sourceTree = "<group>"; };
+		038E6B7E18A39C0D0001FF8B /* WUNHole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNHole.m; path = Elements/WUNHole.m; sourceTree = "<group>"; };
+		038E6B8318A4DDCB0001FF8B /* WUNGameConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNGameConfigManager.h; path = Configuration/WUNGameConfigManager.h; sourceTree = "<group>"; };
+		038E6B8418A4DDCB0001FF8B /* WUNGameConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNGameConfigManager.m; path = Configuration/WUNGameConfigManager.m; sourceTree = "<group>"; };
+		038E6B8618A4DDD60001FF8B /* WUNGameConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = WUNGameConfig.plist; path = Configuration/WUNGameConfig.plist; sourceTree = "<group>"; };
+		038E6B8918A8AF5B0001FF8B /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
+		038E6B8A18A8AF5B0001FF8B /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		038E6B2718A240080001FF8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				038E6B3018A240080001FF8B /* CoreGraphics.framework in Frameworks */,
+				038E6B3218A240080001FF8B /* UIKit.framework in Frameworks */,
+				038E6B2E18A240080001FF8B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		038E6B4E18A240080001FF8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				038E6B5318A240080001FF8B /* XCTest.framework in Frameworks */,
+				038E6B5518A240080001FF8B /* UIKit.framework in Frameworks */,
+				038E6B5418A240080001FF8B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		038E6B2118A240070001FF8B = {
+			isa = PBXGroup;
+			children = (
+				038E6B3318A240080001FF8B /* WakeUpNow */,
+				038E6B5818A240080001FF8B /* WakeUpNowTests */,
+				038E6B2C18A240080001FF8B /* Frameworks */,
+				038E6B2B18A240080001FF8B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		038E6B2B18A240080001FF8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				038E6B2A18A240080001FF8B /* WakeUpNow.app */,
+				038E6B5118A240080001FF8B /* WakeUpNowTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		038E6B2C18A240080001FF8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				038E6B2D18A240080001FF8B /* Foundation.framework */,
+				038E6B2F18A240080001FF8B /* CoreGraphics.framework */,
+				038E6B3118A240080001FF8B /* UIKit.framework */,
+				038E6B5218A240080001FF8B /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		038E6B3318A240080001FF8B /* WakeUpNow */ = {
+			isa = PBXGroup;
+			children = (
+				038E6B8818A8AF500001FF8B /* Categories */,
+				038E6B8018A4DD790001FF8B /* Configuration */,
+				038E6B7918A265D60001FF8B /* Elements */,
+				038E6B3C18A240080001FF8B /* WUNAppDelegate.h */,
+				038E6B3D18A240080001FF8B /* WUNAppDelegate.m */,
+				038E6B3F18A240080001FF8B /* Main_iPhone.storyboard */,
+				038E6B4218A240080001FF8B /* Main_iPad.storyboard */,
+				038E6B4518A240080001FF8B /* WUNMainViewController.h */,
+				038E6B4618A240080001FF8B /* WUNMainViewController.m */,
+				038E6B4818A240080001FF8B /* WUNFlipsideViewController.h */,
+				038E6B4918A240080001FF8B /* WUNFlipsideViewController.m */,
+				038E6B4B18A240080001FF8B /* Images.xcassets */,
+				038E6B3418A240080001FF8B /* Supporting Files */,
+			);
+			path = WakeUpNow;
+			sourceTree = "<group>";
+		};
+		038E6B3418A240080001FF8B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				038E6B3518A240080001FF8B /* WakeUpNow-Info.plist */,
+				038E6B3618A240080001FF8B /* InfoPlist.strings */,
+				038E6B3918A240080001FF8B /* main.m */,
+				038E6B3B18A240080001FF8B /* WakeUpNow-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		038E6B5818A240080001FF8B /* WakeUpNowTests */ = {
+			isa = PBXGroup;
+			children = (
+				038E6B5E18A240080001FF8B /* WakeUpNowTests.m */,
+				038E6B5918A240080001FF8B /* Supporting Files */,
+			);
+			path = WakeUpNowTests;
+			sourceTree = "<group>";
+		};
+		038E6B5918A240080001FF8B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				038E6B5A18A240080001FF8B /* WakeUpNowTests-Info.plist */,
+				038E6B5B18A240080001FF8B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		038E6B7918A265D60001FF8B /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				038E6B7318A265C10001FF8B /* WUNGridView.h */,
+				038E6B7418A265C10001FF8B /* WUNGridView.m */,
+				038E6B7518A265C10001FF8B /* WUNPuck.h */,
+				038E6B7618A265C10001FF8B /* WUNPuck.m */,
+				038E6B7A18A397A30001FF8B /* WUNBlock.h */,
+				038E6B7B18A397A30001FF8B /* WUNBlock.m */,
+				038E6B7D18A39C0D0001FF8B /* WUNHole.h */,
+				038E6B7E18A39C0D0001FF8B /* WUNHole.m */,
+			);
+			name = Elements;
+			sourceTree = "<group>";
+		};
+		038E6B8018A4DD790001FF8B /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				038E6B8618A4DDD60001FF8B /* WUNGameConfig.plist */,
+				038E6B8318A4DDCB0001FF8B /* WUNGameConfigManager.h */,
+				038E6B8418A4DDCB0001FF8B /* WUNGameConfigManager.m */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		038E6B8818A8AF500001FF8B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				038E6B8918A8AF5B0001FF8B /* Colours.h */,
+				038E6B8A18A8AF5B0001FF8B /* Colours.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		038E6B2918A240080001FF8B /* WakeUpNow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 038E6B6218A240080001FF8B /* Build configuration list for PBXNativeTarget "WakeUpNow" */;
+			buildPhases = (
+				038E6B2618A240080001FF8B /* Sources */,
+				038E6B2718A240080001FF8B /* Frameworks */,
+				038E6B2818A240080001FF8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WakeUpNow;
+			productName = WakeUpNow;
+			productReference = 038E6B2A18A240080001FF8B /* WakeUpNow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		038E6B5018A240080001FF8B /* WakeUpNowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 038E6B6518A240080001FF8B /* Build configuration list for PBXNativeTarget "WakeUpNowTests" */;
+			buildPhases = (
+				038E6B4D18A240080001FF8B /* Sources */,
+				038E6B4E18A240080001FF8B /* Frameworks */,
+				038E6B4F18A240080001FF8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				038E6B5718A240080001FF8B /* PBXTargetDependency */,
+			);
+			name = WakeUpNowTests;
+			productName = WakeUpNowTests;
+			productReference = 038E6B5118A240080001FF8B /* WakeUpNowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		038E6B2218A240070001FF8B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WUN;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "S P, Chandan Shetty (external - Project)";
+				TargetAttributes = {
+					038E6B5018A240080001FF8B = {
+						TestTargetID = 038E6B2918A240080001FF8B;
+					};
+				};
+			};
+			buildConfigurationList = 038E6B2518A240070001FF8B /* Build configuration list for PBXProject "WakeUpNow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 038E6B2118A240070001FF8B;
+			productRefGroup = 038E6B2B18A240080001FF8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				038E6B2918A240080001FF8B /* WakeUpNow */,
+				038E6B5018A240080001FF8B /* WakeUpNowTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		038E6B2818A240080001FF8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				038E6B4418A240080001FF8B /* Main_iPad.storyboard in Resources */,
+				038E6B4C18A240080001FF8B /* Images.xcassets in Resources */,
+				038E6B4118A240080001FF8B /* Main_iPhone.storyboard in Resources */,
+				038E6B3818A240080001FF8B /* InfoPlist.strings in Resources */,
+				038E6B8718A4DDD60001FF8B /* WUNGameConfig.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		038E6B4F18A240080001FF8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				038E6B5D18A240080001FF8B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		038E6B2618A240080001FF8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				038E6B7C18A397A30001FF8B /* WUNBlock.m in Sources */,
+				038E6B8518A4DDCB0001FF8B /* WUNGameConfigManager.m in Sources */,
+				038E6B4718A240080001FF8B /* WUNMainViewController.m in Sources */,
+				038E6B3A18A240080001FF8B /* main.m in Sources */,
+				038E6B7718A265C10001FF8B /* WUNGridView.m in Sources */,
+				038E6B8B18A8AF5B0001FF8B /* Colours.m in Sources */,
+				038E6B7818A265C10001FF8B /* WUNPuck.m in Sources */,
+				038E6B3E18A240080001FF8B /* WUNAppDelegate.m in Sources */,
+				038E6B7F18A39C0D0001FF8B /* WUNHole.m in Sources */,
+				038E6B4A18A240080001FF8B /* WUNFlipsideViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		038E6B4D18A240080001FF8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				038E6B5F18A240080001FF8B /* WakeUpNowTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		038E6B5718A240080001FF8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 038E6B2918A240080001FF8B /* WakeUpNow */;
+			targetProxy = 038E6B5618A240080001FF8B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		038E6B3618A240080001FF8B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				038E6B3718A240080001FF8B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		038E6B3F18A240080001FF8B /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				038E6B4018A240080001FF8B /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		038E6B4218A240080001FF8B /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				038E6B4318A240080001FF8B /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		038E6B5B18A240080001FF8B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				038E6B5C18A240080001FF8B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		038E6B6018A240080001FF8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		038E6B6118A240080001FF8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		038E6B6318A240080001FF8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WakeUpNow/WakeUpNow-Prefix.pch";
+				INFOPLIST_FILE = "WakeUpNow/WakeUpNow-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		038E6B6418A240080001FF8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WakeUpNow/WakeUpNow-Prefix.pch";
+				INFOPLIST_FILE = "WakeUpNow/WakeUpNow-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		038E6B6618A240080001FF8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WakeUpNow.app/WakeUpNow";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WakeUpNow/WakeUpNow-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WakeUpNowTests/WakeUpNowTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		038E6B6718A240080001FF8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WakeUpNow.app/WakeUpNow";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WakeUpNow/WakeUpNow-Prefix.pch";
+				INFOPLIST_FILE = "WakeUpNowTests/WakeUpNowTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		038E6B2518A240070001FF8B /* Build configuration list for PBXProject "WakeUpNow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				038E6B6018A240080001FF8B /* Debug */,
+				038E6B6118A240080001FF8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		038E6B6218A240080001FF8B /* Build configuration list for PBXNativeTarget "WakeUpNow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				038E6B6318A240080001FF8B /* Debug */,
+				038E6B6418A240080001FF8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		038E6B6518A240080001FF8B /* Build configuration list for PBXNativeTarget "WakeUpNowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				038E6B6618A240080001FF8B /* Debug */,
+				038E6B6718A240080001FF8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 038E6B2218A240070001FF8B /* Project object */;
+}
