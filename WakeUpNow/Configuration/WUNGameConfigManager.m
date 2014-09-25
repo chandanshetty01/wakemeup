@@ -38,7 +38,7 @@ const NSString *kTutorial = @"tutorial";
         _configuration = (NSDictionary *)[NSPropertyListSerialization propertyListFromData:plistXML mutabilityOption:NSPropertyListMutableContainersAndLeaves format:&plistFormat errorDescription:&strerrorDesc];
         if (!_configuration)
         {
-            NSLog(@"Error reading plist: %@, format: %d", strerrorDesc, plistFormat);
+            NSLog(@"Error reading plist: %@, format: %lu", strerrorDesc, plistFormat);
         }
         
         _gridSize = CGSizeFromString([_configuration objectForKey:kGrid_size]);
@@ -53,7 +53,7 @@ const NSString *kTutorial = @"tutorial";
     NSDictionary *levelData = nil;
     NSDictionary *levels = [_configuration objectForKey:kLevels];
     if(levels)
-        levelData = [levels objectForKey:[NSString stringWithFormat:@"level%d",inLevelNo]];
+        levelData = [levels objectForKey:[NSString stringWithFormat:@"level%ld",(long)inLevelNo]];
     return levelData;
 }
 

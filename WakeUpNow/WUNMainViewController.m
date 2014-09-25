@@ -122,7 +122,7 @@ const int kScreenOffset = 250;
 
 -(void)updateMoves
 {
-    _movesLabel.text = [NSString stringWithFormat:@"Moves: %d",_noOfMoves];
+    _movesLabel.text = [NSString stringWithFormat:@"Moves: %ld",(long)_noOfMoves];
 }
 
 -(void)removeAllElements : (completionBlock)block
@@ -149,7 +149,7 @@ const int kScreenOffset = 250;
 -(void)updateLevelNo : (NSInteger)levelNo
 {
     WUNAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    _levelNoLabel.text = [NSString stringWithFormat:@"%d/%d",levelNo,appDelegate.configuration.noOfLevels];
+    _levelNoLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)levelNo,(long)appDelegate.configuration.noOfLevels];
 }
 
 -(void)resetElementPositions
