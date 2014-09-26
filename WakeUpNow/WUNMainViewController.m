@@ -38,9 +38,9 @@ const int kScreenOffset = 250;
 
     WUNAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 
-     _gridView = [[WUNGridView alloc] initGridWithSize:appDelegate.configuration.gridSize andEachCellSize:appDelegate.configuration.cellSize];
-    [self.view addSubview:_gridView];
-    _gridView.frame = CGRectMake(self.view.frame.origin.x+(self.view.frame.size.height-_gridView.frame.size.width)/2.0,15+ self.view.frame.origin.y+(self.view.frame.size.width-_gridView.frame.size.height)/2.0, _gridView.frame.size.width, _gridView.frame.size.height);
+     self.gridView = [[WUNGridView alloc] initGridWithSize:appDelegate.configuration.gridSize andEachCellSize:appDelegate.configuration.cellSize];
+    [self.view addSubview:self.gridView];
+    self.gridView.center = self.view.center;
     
     _levelNo = 1;
     _noOfMoves = 0;
