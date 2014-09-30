@@ -9,8 +9,8 @@
 #import "GameScene.h"
 #import "WUNGameConfigManager.h"
 
-static const CGFloat TileWidth = 40.0f;
-static const CGFloat TileHeight = 40.0f;
+static const CGFloat TileWidth = 60.0f;
+static const CGFloat TileHeight = 60.0f;
 
 @interface GameScene ()
 @property (strong, nonatomic) SKNode *gameLayer;

@@ -10,8 +10,8 @@
 #import "RWTTile.h"
 #import "RWTSwap.h"
 
-static const NSInteger NumColumns = 9;
-static const NSInteger NumRows = 9;
+static const NSInteger NumColumns = 8;
+static const NSInteger NumRows = 4;
 
 @interface RWTLevel : NSObject
 
