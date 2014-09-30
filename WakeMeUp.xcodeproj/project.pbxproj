@@ -18,8 +18,6 @@
 		038E6B4718A240080001FF8B /* WUNMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B4618A240080001FF8B /* WUNMainViewController.m */; };
 		038E6B4A18A240080001FF8B /* WUNFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B4918A240080001FF8B /* WUNFlipsideViewController.m */; };
 		038E6B4C18A240080001FF8B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 038E6B4B18A240080001FF8B /* Images.xcassets */; };
-		038E6B5418A240080001FF8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E6B2D18A240080001FF8B /* Foundation.framework */; };
-		038E6B5518A240080001FF8B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E6B3118A240080001FF8B /* UIKit.framework */; };
 		038E6B7718A265C10001FF8B /* WUNGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B7418A265C10001FF8B /* WUNGridView.m */; };
 		038E6B7818A265C10001FF8B /* WUNPuck.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B7618A265C10001FF8B /* WUNPuck.m */; };
 		038E6B7C18A397A30001FF8B /* WUNBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B7B18A397A30001FF8B /* WUNBlock.m */; };
@@ -28,16 +26,6 @@
 		038E6B8718A4DDD60001FF8B /* WUNGameConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 038E6B8618A4DDD60001FF8B /* WUNGameConfig.plist */; };
 		038E6B8B18A8AF5B0001FF8B /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B8A18A8AF5B0001FF8B /* Colours.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		038E6B5618A240080001FF8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 038E6B2218A240070001FF8B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 038E6B2918A240080001FF8B;
-			remoteInfo = WakeUpNow;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		038E6B2A18A240080001FF8B /* WakeMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,7 +45,6 @@
 		038E6B4818A240080001FF8B /* WUNFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WUNFlipsideViewController.h; sourceTree = "<group>"; };
 		038E6B4918A240080001FF8B /* WUNFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WUNFlipsideViewController.m; sourceTree = "<group>"; };
 		038E6B4B18A240080001FF8B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		038E6B5118A240080001FF8B /* WakeMeUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WakeMeUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		038E6B7318A265C10001FF8B /* WUNGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNGridView.h; path = Elements/WUNGridView.h; sourceTree = "<group>"; };
 		038E6B7418A265C10001FF8B /* WUNGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNGridView.m; path = Elements/WUNGridView.m; sourceTree = "<group>"; };
 		038E6B7518A265C10001FF8B /* WUNPuck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNPuck.h; path = Elements/WUNPuck.h; sourceTree = "<group>"; };
@@ -84,15 +71,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		038E6B4E18A240080001FF8B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				038E6B5518A240080001FF8B /* UIKit.framework in Frameworks */,
-				038E6B5418A240080001FF8B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -109,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				038E6B2A18A240080001FF8B /* WakeMeUp.app */,
-				038E6B5118A240080001FF8B /* WakeMeUpTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,24 +186,6 @@
 			productReference = 038E6B2A18A240080001FF8B /* WakeMeUp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		038E6B5018A240080001FF8B /* WakeMeUpTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 038E6B6518A240080001FF8B /* Build configuration list for PBXNativeTarget "WakeMeUpTests" */;
-			buildPhases = (
-				038E6B4D18A240080001FF8B /* Sources */,
-				038E6B4E18A240080001FF8B /* Frameworks */,
-				038E6B4F18A240080001FF8B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				038E6B5718A240080001FF8B /* PBXTargetDependency */,
-			);
-			name = WakeMeUpTests;
-			productName = WakeUpNowTests;
-			productReference = 038E6B5118A240080001FF8B /* WakeMeUpTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -236,11 +195,6 @@
 				CLASSPREFIX = WUN;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "S P, Chandan Shetty (external - Project)";
-				TargetAttributes = {
-					038E6B5018A240080001FF8B = {
-						TestTargetID = 038E6B2918A240080001FF8B;
-					};
-				};
 			};
 			buildConfigurationList = 038E6B2518A240070001FF8B /* Build configuration list for PBXProject "WakeMeUp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -256,7 +210,6 @@
 			projectRoot = "";
 			targets = (
 				038E6B2918A240080001FF8B /* WakeMeUp */,
-				038E6B5018A240080001FF8B /* WakeMeUpTests */,
 			);
 		};
 /* End PBXProject section */
@@ -271,13 +224,6 @@
 				038E6B4118A240080001FF8B /* Main_iPhone.storyboard in Resources */,
 				038E6B3818A240080001FF8B /* InfoPlist.strings in Resources */,
 				038E6B8718A4DDD60001FF8B /* WUNGameConfig.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		038E6B4F18A240080001FF8B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,22 +247,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		038E6B4D18A240080001FF8B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		038E6B5718A240080001FF8B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 038E6B2918A240080001FF8B /* WakeMeUp */;
-			targetProxy = 038E6B5618A240080001FF8B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		038E6B3618A240080001FF8B /* InfoPlist.strings */ = {
@@ -449,46 +380,6 @@
 			};
 			name = Release;
 		};
-		038E6B6618A240080001FF8B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WakeUpNow.app/WakeUpNow";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WakeUpNow/WakeUpNow-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "WakeUpNowTests/WakeMeUpTests-Info.plist";
-				PRODUCT_NAME = WakeMeUpTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		038E6B6718A240080001FF8B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WakeUpNow.app/WakeUpNow";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WakeUpNow/WakeUpNow-Prefix.pch";
-				INFOPLIST_FILE = "WakeUpNowTests/WakeMeUpTests-Info.plist";
-				PRODUCT_NAME = WakeMeUpTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -506,15 +397,6 @@
 			buildConfigurations = (
 				038E6B6318A240080001FF8B /* Debug */,
 				038E6B6418A240080001FF8B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		038E6B6518A240080001FF8B /* Build configuration list for PBXNativeTarget "WakeMeUpTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				038E6B6618A240080001FF8B /* Debug */,
-				038E6B6718A240080001FF8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
