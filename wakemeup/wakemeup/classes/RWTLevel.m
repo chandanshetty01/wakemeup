@@ -20,28 +20,26 @@
 }
 
 - (instancetype)initWithFile:(NSString *)filename {
-  self = [super init];
-  if (self != nil) {
-    NSDictionary *dictionary = [self loadJSON:filename];
-
-    // Loop through the rows
-    [dictionary[@"tiles"] enumerateObjectsUsingBlock:^(NSArray *array, NSUInteger row, BOOL *stop) {
-
-      // Loop through the columns in the current row
-      [array enumerateObjectsUsingBlock:^(NSNumber *value, NSUInteger column, BOOL *stop) {
-
-        // Note: In Sprite Kit (0,0) is at the bottom of the screen,
-        // so we need to read this file upside down.
-        NSInteger tileRow = NumRows - row - 1;
-
-        // If the value is 1, create a tile object.
-        if ([value integerValue] == 1) {
-          _tiles[column][tileRow] = [[RWTTile alloc] init];
-        }
-      }];
-    }];
-  }
-  return self;
+    self = [super init];
+    if (self != nil) {
+        NSDictionary *dictionary = [self loadJSON:filename];
+        
+        // Loop through the rows
+        [dictionary[@"tiles"] enumerateObjectsUsingBlock:^(NSArray *array, NSUInteger row, BOOL *stop) {
+            
+            // Loop through the columns in the current row
+            [array enumerateObjectsUsingBlock:^(NSNumber *value, NSUInteger column, BOOL *stop) {
+                
+                // Note: In Sprite Kit (0,0) is at the bottom of the screen,
+                // so we need to read this file upside down.
+                NSInteger tileRow = NumRows - row - 1;
+                RWTTile *tile = [[RWTTile alloc] init];
+                tile.cookieType = value.integerValue;
+                _tiles[column][tileRow] = tile;
+            }];
+        }];
+    }
+    return self;
 }
 
 - (NSDictionary *)loadJSON:(NSString *)filename {
@@ -173,20 +171,9 @@
     for (NSInteger column = 0; column < NumColumns; column++) {
 
       if (_tiles[column][row] != nil) {
-        NSUInteger cookieType;
-        do {
-          cookieType = arc4random_uniform(NumCookieTypes) + 1;
-        }
-        while ((column >= 2 &&
-                _cookies[column - 1][row].cookieType == cookieType &&
-                _cookies[column - 2][row].cookieType == cookieType)
-            ||
-               (row >= 2 &&
-                _cookies[column][row - 1].cookieType == cookieType &&
-                _cookies[column][row - 2].cookieType == cookieType));
-
-        RWTCookie *cookie = [self createCookieAtColumn:column row:row withType:cookieType];
-        [set addObject:cookie];
+          NSUInteger cookieType = _tiles[column][row].cookieType;
+          RWTCookie *cookie = [self createCookieAtColumn:column row:row withType:cookieType];
+          [set addObject:cookie];
       }
     }
   }

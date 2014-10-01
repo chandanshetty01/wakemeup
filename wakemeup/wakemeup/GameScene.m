@@ -64,7 +64,14 @@ static const CGFloat TileHeight = 60.0f;
 
 - (void)addSpritesForCookies:(NSSet *)cookies {
     for (RWTCookie *cookie in cookies) {
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:[cookie spriteName]];
+        NSString *spriteName = [cookie spriteName];
+        SKSpriteNode *sprite = nil;
+        if(spriteName.length != 0){
+             sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteName];
+        }
+        else{
+            sprite = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeZero];
+        }
         sprite.size = CGSizeMake(TileWidth, TileHeight);
         sprite.position = [self pointForColumn:cookie.column row:cookie.row];
         [self.smileysLayer addChild:sprite];
@@ -141,7 +148,31 @@ static const CGFloat TileHeight = 60.0f;
     }
 }
 
-- (void)trySwapHorizontal:(NSInteger)horzDelta vertical:(NSInteger)vertDelta {
+-(NSMutableArray*)adjacentPoints:(NSInteger)horzDelta vertical:(NSInteger)vertDelta
+{
+    NSMutableArray *array = [NSMutableArray array];
+    
+    if(horzDelta != 0){
+        for(NSInteger i=self.swipeFromColumn ; (i>=0 && i<NumColumns) ; i = i+horzDelta){
+            NSString *point = NSStringFromCGPoint(CGPointMake(i, self.swipeFromRow));
+            [array addObject:point];
+        }
+    }
+
+    if(vertDelta !=0){
+        for(NSInteger i=self.swipeFromRow ; (i>=0 && i<NumRows) ; i = i+vertDelta){
+            NSString *point = NSStringFromCGPoint(CGPointMake(i, self.swipeFromColumn));
+            [array addObject:point];
+        }
+    }
+
+    return array;
+}
+
+- (void)trySwapHorizontal:(NSInteger)horzDelta vertical:(NSInteger)vertDelta
+{
+    NSMutableArray *adjacentPoints = [self adjacentPoints:horzDelta vertical:vertDelta];
+    
     NSInteger toColumn = self.swipeFromColumn + horzDelta;
     NSInteger toRow = self.swipeFromRow + vertDelta;
     

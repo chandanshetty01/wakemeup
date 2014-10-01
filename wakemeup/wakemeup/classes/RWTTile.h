@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface RWTTile : NSObject
-
+@property (assign, nonatomic) NSUInteger cookieType;
 @end

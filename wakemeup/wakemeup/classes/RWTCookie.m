@@ -12,6 +12,7 @@
 
 - (NSString *)spriteName {
   static NSString * const spriteNames[] = {
+    @"",
     @"Croissant",
     @"Cupcake",
     @"Danish",
@@ -20,11 +21,12 @@
     @"SugarCookie",
   };
 
-  return spriteNames[self.cookieType - 1];
+  return spriteNames[self.cookieType];
 }
 
 - (NSString *)highlightedSpriteName {
   static NSString * const highlightedSpriteNames[] = {
+    @"",
     @"Croissant-Highlighted",
     @"Cupcake-Highlighted",
     @"Danish-Highlighted",
@@ -33,7 +35,7 @@
     @"SugarCookie-Highlighted",
   };
 
-  return highlightedSpriteNames[self.cookieType - 1];
+  return highlightedSpriteNames[self.cookieType];
 }
 
 - (NSString *)description {
