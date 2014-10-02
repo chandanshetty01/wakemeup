@@ -46,11 +46,11 @@
 		A3CC20B619D6C9520067A847 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A3CC20B819D6C9520067A847 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A3CC20B919D6C9520067A847 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A3CC20BB19D6C9520067A847 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		A3CC20BC19D6C9520067A847 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		A3CC20BB19D6C9520067A847 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = GameScene.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		A3CC20BC19D6C9520067A847 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GameScene.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A3CC20BE19D6C9520067A847 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		A3CC20C019D6C9520067A847 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		A3CC20C119D6C9520067A847 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		A3CC20C119D6C9520067A847 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GameViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A3CC20C419D6C9520067A847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3CC20C619D6C9520067A847 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A3CC20C919D6C9520067A847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -62,8 +62,8 @@
 		A3CC20F019D6E3890067A847 /* WUNGameConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WUNGameConfig.plist; sourceTree = "<group>"; };
 		A3CC20F219DAF3B20067A847 /* WUNObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNObject.h; path = wakemeup/classes/WUNObject.h; sourceTree = SOURCE_ROOT; };
 		A3CC20F319DAF3B20067A847 /* WUNObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNObject.m; path = wakemeup/classes/WUNObject.m; sourceTree = SOURCE_ROOT; };
-		A3CC20F419DAF3B20067A847 /* WUNLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNLevel.h; path = wakemeup/classes/WUNLevel.h; sourceTree = SOURCE_ROOT; };
-		A3CC20F519DAF3B20067A847 /* WUNLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNLevel.m; path = wakemeup/classes/WUNLevel.m; sourceTree = SOURCE_ROOT; };
+		A3CC20F419DAF3B20067A847 /* WUNLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = WUNLevel.h; path = wakemeup/classes/WUNLevel.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		A3CC20F519DAF3B20067A847 /* WUNLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = WUNLevel.m; path = wakemeup/classes/WUNLevel.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A3CC20F619DAF3B20067A847 /* WUNTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNTile.h; path = wakemeup/classes/WUNTile.h; sourceTree = SOURCE_ROOT; };
 		A3CC20F719DAF3B20067A847 /* WUNTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNTile.m; path = wakemeup/classes/WUNTile.m; sourceTree = SOURCE_ROOT; };
 		A3CC20FB19DAF5B90067A847 /* WUNSwap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNSwap.h; path = wakemeup/classes/WUNSwap.h; sourceTree = SOURCE_ROOT; };

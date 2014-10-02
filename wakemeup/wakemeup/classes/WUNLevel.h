@@ -1,6 +1,6 @@
 //
 //  RWTLevel.h
-//  CookieCrunch
+//  ObjectCrunch
 //
 //  Created by S P, Chandan Shetty (external - Project) on 2/7/14.
 //  Copyright (c) 2014 S P, Chandan Shetty (external - Project). All rights reserved.
@@ -19,7 +19,7 @@ static const NSInteger NumRows = 4;
 
 - (NSSet *)shuffle;
 
-- (WUNObject *)cookieAtColumn:(NSInteger)column row:(NSInteger)row;
+- (WUNObject *)objectAtColumn:(NSInteger)column row:(NSInteger)row;
 - (WUNTile *)tileAtColumn:(NSInteger)column row:(NSInteger)row;
 
 - (void)performSwap:(WUNSwap *)swap;

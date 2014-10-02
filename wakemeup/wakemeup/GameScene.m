@@ -62,9 +62,9 @@ static const CGFloat TileHeight = 60.0f;
     }
 }
 
-- (void)addSpritesForCookies:(NSSet *)cookies {
-    for (WUNObject *cookie in cookies) {
-        NSString *spriteName = [cookie spriteName];
+- (void)addSpritesForObjects:(NSSet *)Objects {
+    for (WUNObject *Object in Objects) {
+        NSString *spriteName = [Object spriteName];
         SKSpriteNode *sprite = nil;
         if(spriteName.length != 0){
              sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteName];
@@ -73,9 +73,9 @@ static const CGFloat TileHeight = 60.0f;
             sprite = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeZero];
         }
         sprite.size = CGSizeMake(TileWidth, TileHeight);
-        sprite.position = [self pointForColumn:cookie.column row:cookie.row];
+        sprite.position = [self pointForColumn:Object.column row:Object.row];
         [self.smileysLayer addChild:sprite];
-        cookie.sprite = sprite;
+        Object.sprite = sprite;
     }
 }
 
@@ -87,7 +87,7 @@ static const CGFloat TileHeight = 60.0f;
     NSParameterAssert(column);
     NSParameterAssert(row);
     
-    // Is this a valid location within the cookies layer? If yes,
+    // Is this a valid location within the Objects layer? If yes,
     // calculate the corresponding row and column numbers.
     if (point.x >= 0 && point.x < NumColumns*TileWidth &&
         point.y >= 0 && point.y < NumRows*TileHeight) {
@@ -110,12 +110,12 @@ static const CGFloat TileHeight = 60.0f;
     NSInteger column, row;
     if ([self convertPoint:location toColumn:&column row:&row]) {
         
-        WUNObject *cookie = [self.level cookieAtColumn:column row:row];
-        if (cookie != nil) {
+        WUNObject *Object = [self.level objectAtColumn:column row:row];
+        if (Object != nil) {
             self.swipeFromColumn = column;
             self.swipeFromRow = row;
             
-            [self showSelectionIndicatorForCookie:cookie];
+            [self showSelectionIndicatorForObject:Object];
         }
     }
 }
@@ -173,21 +173,21 @@ static const CGFloat TileHeight = 60.0f;
 {
     NSMutableArray *adjacentPoints = [self adjacentPoints:horzDelta vertical:vertDelta];
     
-    NSInteger toColumn = self.swipeFromColumn + horzDelta;
-    NSInteger toRow = self.swipeFromRow + vertDelta;
+    NSInteger toColumn = self.swipeFromColumn;
+    NSInteger toRow = self.swipeFromRow;
     
     if (toColumn < 0 || toColumn >= NumColumns) return;
     if (toRow < 0 || toRow >= NumRows) return;
     
-    WUNObject *toCookie = [self.level cookieAtColumn:toColumn row:toRow];
-    if (toCookie == nil) return;
+    WUNObject *currentObject = [self.level objectAtColumn:toColumn row:toRow];
+    if (currentObject == nil) return;
     
-    WUNObject *fromCookie = [self.level cookieAtColumn:self.swipeFromColumn row:self.swipeFromRow];
+    WUNObject *fromObject = [self.level objectAtColumn:self.swipeFromColumn row:self.swipeFromRow];
     
     if (self.swipeHandler != nil) {
         WUNSwap *swap = [[WUNSwap alloc] init];
-        swap.cookieA = fromCookie;
-        swap.cookieB = toCookie;
+        swap.ObjectA = fromObject;
+        swap.ObjectB = currentObject;
         self.swipeHandler(swap);
     }
 }
@@ -205,18 +205,18 @@ static const CGFloat TileHeight = 60.0f;
     [self touchesEnded:touches withEvent:event];
 }
 
-- (void)showSelectionIndicatorForCookie:(WUNObject *)cookie {
+- (void)showSelectionIndicatorForObject:(WUNObject *)Object {
     
     // If the selection indicator is still visible, then first remove it.
     if (self.selectionSprite.parent != nil) {
         [self.selectionSprite removeFromParent];
     }
     
-    SKTexture *texture = [SKTexture textureWithImageNamed:[cookie highlightedSpriteName]];
+    SKTexture *texture = [SKTexture textureWithImageNamed:[Object highlightedSpriteName]];
     self.selectionSprite.size = texture.size;
     [self.selectionSprite runAction:[SKAction setTexture:texture]];
     
-    [cookie.sprite addChild:self.selectionSprite];
+    [Object.sprite addChild:self.selectionSprite];
     self.selectionSprite.alpha = 1.0;
 }
 

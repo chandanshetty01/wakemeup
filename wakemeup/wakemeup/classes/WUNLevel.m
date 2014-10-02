@@ -1,6 +1,6 @@
 //
 //  RWTLevel.m
-//  CookieCrunch
+//  ObjectCrunch
 //
 //  Created by S P, Chandan Shetty (external - Project) on 2/7/14.
 //  Copyright (c) 2014 S P, Chandan Shetty (external - Project). All rights reserved.
@@ -15,7 +15,7 @@
 @end
 
 @implementation WUNLevel {
-  WUNObject *_cookies[NumColumns][NumRows];
+  WUNObject *_Objects[NumColumns][NumRows];
   WUNTile *_tiles[NumColumns][NumRows];
 }
 
@@ -34,7 +34,7 @@
                 // so we need to read this file upside down.
                 NSInteger tileRow = NumRows - row - 1;
                 WUNTile *tile = [[WUNTile alloc] init];
-                tile.cookieType = value.integerValue;
+                tile.ObjectType = value.integerValue;
                 _tiles[column][tileRow] = tile;
             }];
         }];
@@ -66,11 +66,11 @@
   return dictionary;
 }
 
-- (WUNObject *)cookieAtColumn:(NSInteger)column row:(NSInteger)row {
+- (WUNObject *)objectAtColumn:(NSInteger)column row:(NSInteger)row {
   NSAssert1(column >= 0 && column < NumColumns, @"Invalid column: %ld", (long)column);
   NSAssert1(row >= 0 && row < NumRows, @"Invalid row: %ld", (long)row);
 
-  return _cookies[column][row];
+  return _Objects[column][row];
 }
 
 - (WUNTile *)tileAtColumn:(NSInteger)column row:(NSInteger)row {
@@ -83,21 +83,21 @@
 - (NSSet *)shuffle
 {
   NSSet *set;
-  set = [self createInitialCookies];
+  set = [self createInitialObjects];
   return set;
 }
 
 - (BOOL)hasChainAtColumn:(NSInteger)column row:(NSInteger)row {
-  NSUInteger cookieType = _cookies[column][row].cookieType;
+  NSUInteger ObjectType = _Objects[column][row].ObjectType;
 
   NSUInteger horzLength = 1;
-  for (NSInteger i = column - 1; i >= 0 && _cookies[i][row].cookieType == cookieType; i--, horzLength++) ;
-  for (NSInteger i = column + 1; i < NumColumns && _cookies[i][row].cookieType == cookieType; i++, horzLength++) ;
+  for (NSInteger i = column - 1; i >= 0 && _Objects[i][row].ObjectType == ObjectType; i--, horzLength++) ;
+  for (NSInteger i = column + 1; i < NumColumns && _Objects[i][row].ObjectType == ObjectType; i++, horzLength++) ;
   if (horzLength >= 3) return YES;
 
   NSUInteger vertLength = 1;
-  for (NSInteger i = row - 1; i >= 0 && _cookies[column][i].cookieType == cookieType; i--, vertLength++) ;
-  for (NSInteger i = row + 1; i < NumRows && _cookies[column][i].cookieType == cookieType; i++, vertLength++) ;
+  for (NSInteger i = row - 1; i >= 0 && _Objects[column][i].ObjectType == ObjectType; i--, vertLength++) ;
+  for (NSInteger i = row + 1; i < NumRows && _Objects[column][i].ObjectType == ObjectType; i++, vertLength++) ;
   return (vertLength >= 3);
 }
 
@@ -108,52 +108,52 @@
   for (NSInteger row = 0; row < NumRows; row++) {
     for (NSInteger column = 0; column < NumColumns; column++) {
 
-      WUNObject *cookie = _cookies[column][row];
-      if (cookie != nil) {
+      WUNObject *Object = _Objects[column][row];
+      if (Object != nil) {
 
-        // Is it possible to swap this cookie with the one on the right?
+        // Is it possible to swap this Object with the one on the right?
         if (column < NumColumns - 1) {
-          // Have a cookie in this spot? If there is no tile, there is no cookie.
-          WUNObject *other = _cookies[column + 1][row];
+          // Have a Object in this spot? If there is no tile, there is no Object.
+          WUNObject *other = _Objects[column + 1][row];
           if (other != nil) {
             // Swap them
-            _cookies[column][row] = other;
-            _cookies[column + 1][row] = cookie;
+            _Objects[column][row] = other;
+            _Objects[column + 1][row] = Object;
             
-            // Is either cookie now part of a chain?
+            // Is either Object now part of a chain?
             if ([self hasChainAtColumn:column + 1 row:row] ||
                 [self hasChainAtColumn:column row:row]) {
 
               WUNSwap *swap = [[WUNSwap alloc] init];
-              swap.cookieA = cookie;
-              swap.cookieB = other;
+              swap.ObjectA = Object;
+              swap.ObjectB = other;
               [set addObject:swap];
             }
 
             // Swap them back
-            _cookies[column][row] = cookie;
-            _cookies[column + 1][row] = other;
+            _Objects[column][row] = Object;
+            _Objects[column + 1][row] = other;
           }
         }
 
         if (row < NumRows - 1) {
 
-          WUNObject *other = _cookies[column][row + 1];
+          WUNObject *other = _Objects[column][row + 1];
           if (other != nil) {
-            _cookies[column][row] = other;
-            _cookies[column][row + 1] = cookie;
+            _Objects[column][row] = other;
+            _Objects[column][row + 1] = Object;
 
             if ([self hasChainAtColumn:column row:row + 1] ||
                 [self hasChainAtColumn:column row:row]) {
 
               WUNSwap *swap = [[WUNSwap alloc] init];
-              swap.cookieA = cookie;
-              swap.cookieB = other;
+              swap.ObjectA = Object;
+              swap.ObjectB = other;
               [set addObject:swap];
             }
 
-            _cookies[column][row] = cookie;
-            _cookies[column][row + 1] = other;
+            _Objects[column][row] = Object;
+            _Objects[column][row + 1] = other;
           }
         }
       }
@@ -163,7 +163,7 @@
   self.possibleSwaps = set;
 }
 
-- (NSSet *)createInitialCookies {
+- (NSSet *)createInitialObjects {
 
   NSMutableSet *set = [NSMutableSet set];
 
@@ -171,37 +171,37 @@
     for (NSInteger column = 0; column < NumColumns; column++) {
 
       if (_tiles[column][row] != nil) {
-          NSUInteger cookieType = _tiles[column][row].cookieType;
-          WUNObject *cookie = [self createCookieAtColumn:column row:row withType:cookieType];
-          [set addObject:cookie];
+          NSUInteger ObjectType = _tiles[column][row].ObjectType;
+          WUNObject *Object = [self createObjectAtColumn:column row:row withType:ObjectType];
+          [set addObject:Object];
       }
     }
   }
   return set;
 }
 
-- (WUNObject *)createCookieAtColumn:(NSInteger)column row:(NSInteger)row withType:(NSUInteger)cookieType {
-  WUNObject *cookie = [[WUNObject alloc] init];
-  cookie.cookieType = cookieType;
-  cookie.column = column;
-  cookie.row = row;
-  _cookies[column][row] = cookie;
-  return cookie;
+- (WUNObject *)createObjectAtColumn:(NSInteger)column row:(NSInteger)row withType:(NSUInteger)ObjectType {
+  WUNObject *Object = [[WUNObject alloc] init];
+  Object.ObjectType = ObjectType;
+  Object.column = column;
+  Object.row = row;
+  _Objects[column][row] = Object;
+  return Object;
 }
 
 - (void)performSwap:(WUNSwap *)swap {
-  NSInteger columnA = swap.cookieA.column;
-  NSInteger rowA = swap.cookieA.row;
-  NSInteger columnB = swap.cookieB.column;
-  NSInteger rowB = swap.cookieB.row;
+  NSInteger columnA = swap.ObjectA.column;
+  NSInteger rowA = swap.ObjectA.row;
+  NSInteger columnB = swap.ObjectB.column;
+  NSInteger rowB = swap.ObjectB.row;
 
-  _cookies[columnA][rowA] = swap.cookieB;
-  swap.cookieB.column = columnA;
-  swap.cookieB.row = rowA;
+  _Objects[columnA][rowA] = swap.ObjectB;
+  swap.ObjectB.column = columnA;
+  swap.ObjectB.row = rowA;
 
-  _cookies[columnB][rowB] = swap.cookieA;
-  swap.cookieA.column = columnB;
-  swap.cookieA.row = rowB;
+  _Objects[columnB][rowB] = swap.ObjectA;
+  swap.ObjectA.column = columnB;
+  swap.ObjectA.row = rowB;
 }
 
 - (BOOL)isPossibleSwap:(WUNSwap *)swap {

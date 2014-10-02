@@ -1,6 +1,6 @@
 //
 //  WUNObject.m
-//  CookieCrunch
+//  ObjectCrunch
 //
 //  Created by S P, Chandan Shetty (external - Project) on 2/7/14.
 //  Copyright (c) 2014 S P, Chandan Shetty (external - Project). All rights reserved.
@@ -18,10 +18,10 @@
     @"Danish",
     @"Donut",
     @"Macaroon",
-    @"SugarCookie",
+    @"SugarObject",
   };
 
-  return spriteNames[self.cookieType];
+  return spriteNames[self.ObjectType];
 }
 
 - (NSString *)highlightedSpriteName {
@@ -32,14 +32,14 @@
     @"Danish-Highlighted",
     @"Donut-Highlighted",
     @"Macaroon-Highlighted",
-    @"SugarCookie-Highlighted",
+    @"SugarObject-Highlighted",
   };
 
-  return highlightedSpriteNames[self.cookieType];
+  return highlightedSpriteNames[self.ObjectType];
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"type:%ld square:(%ld,%ld)", (long)self.cookieType, (long)self.column, (long)self.row];
+  return [NSString stringWithFormat:@"type:%ld square:(%ld,%ld)", (long)self.ObjectType, (long)self.column, (long)self.row];
 }
 
 @end

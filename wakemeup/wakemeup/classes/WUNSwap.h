@@ -5,7 +5,7 @@
 
 @interface WUNSwap : NSObject
 
-@property (strong, nonatomic) WUNObject *cookieA;
-@property (strong, nonatomic) WUNObject *cookieB;
+@property (strong, nonatomic) WUNObject *ObjectA;
+@property (strong, nonatomic) WUNObject *ObjectB;
 
 @end

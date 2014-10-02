@@ -1,6 +1,6 @@
 //
 //  WUNObject.h
-//  CookieCrunch
+//  ObjectCrunch
 //
 //  Created by S P, Chandan Shetty (external - Project) on 2/7/14.
 //  Copyright (c) 2014 S P, Chandan Shetty (external - Project). All rights reserved.
@@ -8,14 +8,21 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-static const NSUInteger NumCookieTypes = 6;
+static const NSUInteger NumObjectTypes = 6;
+
+typedef enum : NSUInteger {
+    eObjectAlive,
+    eObjectDead,
+    eObjectGone,
+} eObjectStatus;
 
 @interface WUNObject : NSObject
 
 @property (assign, nonatomic) NSInteger column;
 @property (assign, nonatomic) NSInteger row;
-@property (assign, nonatomic) NSUInteger cookieType;
+@property (assign, nonatomic) NSUInteger ObjectType;
 @property (strong, nonatomic) SKSpriteNode *sprite;
+@property (assign, nonatomic) eObjectStatus status;
 
 - (NSString *)spriteName;
 - (NSString *)highlightedSpriteName;

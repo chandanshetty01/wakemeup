@@ -15,6 +15,6 @@
 @property (copy, nonatomic) void (^swipeHandler)(WUNSwap *swap);
 
 - (void)addTiles;
-- (void)addSpritesForCookies:(NSSet *)cookies;
+- (void)addSpritesForObjects:(NSSet *)Objects;
 
 @end

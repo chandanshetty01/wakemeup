@@ -72,8 +72,8 @@
 }
 
 - (void)shuffle {
-    NSSet *newCookies = [self.level shuffle];
-    [self.scene addSpritesForCookies:newCookies];
+    NSSet *newObjects = [self.level shuffle];
+    [self.scene addSpritesForObjects:newObjects];
 }
 
 - (BOOL)shouldAutorotate
