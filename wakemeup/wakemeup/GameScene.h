@@ -7,12 +7,12 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "RWTLevel.h"
+#import "WUNLevel.h"
 
 @interface GameScene : SKScene
 
-@property (strong, nonatomic) RWTLevel *level;
-@property (copy, nonatomic) void (^swipeHandler)(RWTSwap *swap);
+@property (strong, nonatomic) WUNLevel *level;
+@property (copy, nonatomic) void (^swipeHandler)(WUNSwap *swap);
 
 - (void)addTiles;
 - (void)addSpritesForCookies:(NSSet *)cookies;

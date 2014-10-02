@@ -1,14 +1,14 @@
 //
-//  RWTCookie.m
+//  WUNObject.m
 //  CookieCrunch
 //
-//  Created by Matthijs on 25-02-14.
-//  Copyright (c) 2014 Razeware LLC. All rights reserved.
+//  Created by S P, Chandan Shetty (external - Project) on 2/7/14.
+//  Copyright (c) 2014 S P, Chandan Shetty (external - Project). All rights reserved.
 //
 
-#import "RWTCookie.h"
+#import "WUNObject.h"
 
-@implementation RWTCookie
+@implementation WUNObject
 
 - (NSString *)spriteName {
   static NSString * const spriteNames[] = {

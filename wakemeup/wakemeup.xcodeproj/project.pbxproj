@@ -18,10 +18,10 @@
 		A3CC20D619D6C9530067A847 /* wakemeupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20D519D6C9530067A847 /* wakemeupTests.m */; };
 		A3CC20EE19D6E0FB0067A847 /* WUNGameConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20E819D6E0FB0067A847 /* WUNGameConfigManager.m */; };
 		A3CC20F119D6E3890067A847 /* WUNGameConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3CC20F019D6E3890067A847 /* WUNGameConfig.plist */; };
-		A3CC20F819DAF3B20067A847 /* RWTCookie.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20F319DAF3B20067A847 /* RWTCookie.m */; };
-		A3CC20F919DAF3B20067A847 /* RWTLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20F519DAF3B20067A847 /* RWTLevel.m */; };
-		A3CC20FA19DAF3B20067A847 /* RWTTile.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20F719DAF3B20067A847 /* RWTTile.m */; };
-		A3CC20FD19DAF5B90067A847 /* RWTSwap.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20FC19DAF5B90067A847 /* RWTSwap.m */; };
+		A3CC20F819DAF3B20067A847 /* WUNObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20F319DAF3B20067A847 /* WUNObject.m */; };
+		A3CC20F919DAF3B20067A847 /* WUNLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20F519DAF3B20067A847 /* WUNLevel.m */; };
+		A3CC20FA19DAF3B20067A847 /* WUNTile.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20F719DAF3B20067A847 /* WUNTile.m */; };
+		A3CC20FD19DAF5B90067A847 /* WUNSwap.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20FC19DAF5B90067A847 /* WUNSwap.m */; };
 		A3CC210419DAF6F90067A847 /* Level_0.json in Resources */ = {isa = PBXBuildFile; fileRef = A3CC20FF19DAF6F90067A847 /* Level_0.json */; };
 		A3CC210519DAF6F90067A847 /* Level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A3CC210019DAF6F90067A847 /* Level_1.json */; };
 		A3CC210619DAF6F90067A847 /* Level_2.json in Resources */ = {isa = PBXBuildFile; fileRef = A3CC210119DAF6F90067A847 /* Level_2.json */; };
@@ -60,14 +60,14 @@
 		A3CC20E719D6E0FB0067A847 /* WUNGameConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUNGameConfigManager.h; sourceTree = "<group>"; };
 		A3CC20E819D6E0FB0067A847 /* WUNGameConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUNGameConfigManager.m; sourceTree = "<group>"; };
 		A3CC20F019D6E3890067A847 /* WUNGameConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WUNGameConfig.plist; sourceTree = "<group>"; };
-		A3CC20F219DAF3B20067A847 /* RWTCookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWTCookie.h; path = wakemeup/classes/RWTCookie.h; sourceTree = SOURCE_ROOT; };
-		A3CC20F319DAF3B20067A847 /* RWTCookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWTCookie.m; path = wakemeup/classes/RWTCookie.m; sourceTree = SOURCE_ROOT; };
-		A3CC20F419DAF3B20067A847 /* RWTLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWTLevel.h; path = wakemeup/classes/RWTLevel.h; sourceTree = SOURCE_ROOT; };
-		A3CC20F519DAF3B20067A847 /* RWTLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWTLevel.m; path = wakemeup/classes/RWTLevel.m; sourceTree = SOURCE_ROOT; };
-		A3CC20F619DAF3B20067A847 /* RWTTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWTTile.h; path = wakemeup/classes/RWTTile.h; sourceTree = SOURCE_ROOT; };
-		A3CC20F719DAF3B20067A847 /* RWTTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWTTile.m; path = wakemeup/classes/RWTTile.m; sourceTree = SOURCE_ROOT; };
-		A3CC20FB19DAF5B90067A847 /* RWTSwap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWTSwap.h; path = wakemeup/classes/RWTSwap.h; sourceTree = SOURCE_ROOT; };
-		A3CC20FC19DAF5B90067A847 /* RWTSwap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWTSwap.m; path = wakemeup/classes/RWTSwap.m; sourceTree = SOURCE_ROOT; };
+		A3CC20F219DAF3B20067A847 /* WUNObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNObject.h; path = wakemeup/classes/WUNObject.h; sourceTree = SOURCE_ROOT; };
+		A3CC20F319DAF3B20067A847 /* WUNObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNObject.m; path = wakemeup/classes/WUNObject.m; sourceTree = SOURCE_ROOT; };
+		A3CC20F419DAF3B20067A847 /* WUNLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNLevel.h; path = wakemeup/classes/WUNLevel.h; sourceTree = SOURCE_ROOT; };
+		A3CC20F519DAF3B20067A847 /* WUNLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNLevel.m; path = wakemeup/classes/WUNLevel.m; sourceTree = SOURCE_ROOT; };
+		A3CC20F619DAF3B20067A847 /* WUNTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNTile.h; path = wakemeup/classes/WUNTile.h; sourceTree = SOURCE_ROOT; };
+		A3CC20F719DAF3B20067A847 /* WUNTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNTile.m; path = wakemeup/classes/WUNTile.m; sourceTree = SOURCE_ROOT; };
+		A3CC20FB19DAF5B90067A847 /* WUNSwap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNSwap.h; path = wakemeup/classes/WUNSwap.h; sourceTree = SOURCE_ROOT; };
+		A3CC20FC19DAF5B90067A847 /* WUNSwap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNSwap.m; path = wakemeup/classes/WUNSwap.m; sourceTree = SOURCE_ROOT; };
 		A3CC20FF19DAF6F90067A847 /* Level_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_0.json; sourceTree = "<group>"; };
 		A3CC210019DAF6F90067A847 /* Level_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_1.json; sourceTree = "<group>"; };
 		A3CC210119DAF6F90067A847 /* Level_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_2.json; sourceTree = "<group>"; };
@@ -197,14 +197,14 @@
 		A3CC20EA19D6E0FB0067A847 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A3CC20F219DAF3B20067A847 /* RWTCookie.h */,
-				A3CC20F319DAF3B20067A847 /* RWTCookie.m */,
-				A3CC20F419DAF3B20067A847 /* RWTLevel.h */,
-				A3CC20F519DAF3B20067A847 /* RWTLevel.m */,
-				A3CC20F619DAF3B20067A847 /* RWTTile.h */,
-				A3CC20F719DAF3B20067A847 /* RWTTile.m */,
-				A3CC20FB19DAF5B90067A847 /* RWTSwap.h */,
-				A3CC20FC19DAF5B90067A847 /* RWTSwap.m */,
+				A3CC20F219DAF3B20067A847 /* WUNObject.h */,
+				A3CC20F319DAF3B20067A847 /* WUNObject.m */,
+				A3CC20F419DAF3B20067A847 /* WUNLevel.h */,
+				A3CC20F519DAF3B20067A847 /* WUNLevel.m */,
+				A3CC20F619DAF3B20067A847 /* WUNTile.h */,
+				A3CC20F719DAF3B20067A847 /* WUNTile.m */,
+				A3CC20FB19DAF5B90067A847 /* WUNSwap.h */,
+				A3CC20FC19DAF5B90067A847 /* WUNSwap.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -330,14 +330,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3CC20C219D6C9520067A847 /* GameViewController.m in Sources */,
-				A3CC20F919DAF3B20067A847 /* RWTLevel.m in Sources */,
-				A3CC20F819DAF3B20067A847 /* RWTCookie.m in Sources */,
+				A3CC20F919DAF3B20067A847 /* WUNLevel.m in Sources */,
+				A3CC20F819DAF3B20067A847 /* WUNObject.m in Sources */,
 				A3CC20BA19D6C9520067A847 /* AppDelegate.m in Sources */,
 				A3CC20BD19D6C9520067A847 /* GameScene.m in Sources */,
 				A3CC20EE19D6E0FB0067A847 /* WUNGameConfigManager.m in Sources */,
 				A3CC20B719D6C9520067A847 /* main.m in Sources */,
-				A3CC20FA19DAF3B20067A847 /* RWTTile.m in Sources */,
-				A3CC20FD19DAF5B90067A847 /* RWTSwap.m in Sources */,
+				A3CC20FA19DAF3B20067A847 /* WUNTile.m in Sources */,
+				A3CC20FD19DAF5B90067A847 /* WUNSwap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +532,7 @@
 				A3CC20DB19D6C9530067A847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A3CC20DC19D6C9530067A847 /* Build configuration list for PBXNativeTarget "wakemeupTests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +541,7 @@
 				A3CC20DE19D6C9530067A847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

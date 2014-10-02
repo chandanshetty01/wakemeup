@@ -8,10 +8,10 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
-#import "RWTLevel.h"
+#import "WUNLevel.h"
 
 @interface GameViewController()
-@property (strong, nonatomic) RWTLevel *level;
+@property (strong, nonatomic) WUNLevel *level;
 @property (strong, nonatomic) GameScene *scene;
 @end
 
@@ -52,10 +52,10 @@
     self.scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Load the level.
-    self.level = [[RWTLevel alloc] initWithFile:@"Level_1"];
+    self.level = [[WUNLevel alloc] initWithFile:@"Level_1"];
     self.scene.level = self.level;
     
-    id block = ^(RWTSwap *swap) {
+    id block = ^(WUNSwap *swap) {
     };
     self.scene.swipeHandler = block;
     

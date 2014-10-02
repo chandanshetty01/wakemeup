@@ -1,23 +1,23 @@
 //
-//  RWTSwap.m
+//  WUNSwap.m
 //  CookieCrunch
 //
-//  Created by Matthijs on 26-02-14.
-//  Copyright (c) 2014 Razeware LLC. All rights reserved.
+//  Created by S P, Chandan Shetty (external - Project) on 2/7/14.
+//  Copyright (c) 2014 S P, Chandan Shetty (external - Project). All rights reserved.
 //
 
-#import "RWTSwap.h"
-#import "RWTCookie.h"
+#import "WUNSwap.h"
+#import "WUNObject.h"
 
-@implementation RWTSwap
+@implementation WUNSwap
 
 - (BOOL)isEqual:(id)object {
-  // You can only compare this object against other RWTSwap objects.
-  if (![object isKindOfClass:[RWTSwap class]]) return NO;
+  // You can only compare this object against other WUNSwap objects.
+  if (![object isKindOfClass:[WUNSwap class]]) return NO;
 
   // Two swaps are equal if they contain the same cookie, but it doesn't
   // matter whether they're called A in one and B in the other.
-  RWTSwap *other = (RWTSwap *)object;
+  WUNSwap *other = (WUNSwap *)object;
   return (other.cookieA == self.cookieA && other.cookieB == self.cookieB) ||
          (other.cookieB == self.cookieA && other.cookieA == self.cookieB);
 }

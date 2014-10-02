@@ -1,16 +1,16 @@
 //
-//  RWTCookie.h
+//  WUNObject.h
 //  CookieCrunch
 //
-//  Created by Matthijs on 25-02-14.
-//  Copyright (c) 2014 Razeware LLC. All rights reserved.
+//  Created by S P, Chandan Shetty (external - Project) on 2/7/14.
+//  Copyright (c) 2014 S P, Chandan Shetty (external - Project). All rights reserved.
 //
 
 #import <SpriteKit/SpriteKit.h>
 
 static const NSUInteger NumCookieTypes = 6;
 
-@interface RWTCookie : NSObject
+@interface WUNObject : NSObject
 
 @property (assign, nonatomic) NSInteger column;
 @property (assign, nonatomic) NSInteger row;

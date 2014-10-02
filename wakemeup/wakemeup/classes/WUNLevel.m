@@ -2,21 +2,21 @@
 //  RWTLevel.m
 //  CookieCrunch
 //
-//  Created by Matthijs on 26-02-14.
-//  Copyright (c) 2014 Razeware LLC. All rights reserved.
+//  Created by S P, Chandan Shetty (external - Project) on 2/7/14.
+//  Copyright (c) 2014 S P, Chandan Shetty (external - Project). All rights reserved.
 //
 
-#import "RWTLevel.h"
+#import "WUNLevel.h"
 
-@interface RWTLevel ()
+@interface WUNLevel ()
 
 @property (strong, nonatomic) NSSet *possibleSwaps;
 
 @end
 
-@implementation RWTLevel {
-  RWTCookie *_cookies[NumColumns][NumRows];
-  RWTTile *_tiles[NumColumns][NumRows];
+@implementation WUNLevel {
+  WUNObject *_cookies[NumColumns][NumRows];
+  WUNTile *_tiles[NumColumns][NumRows];
 }
 
 - (instancetype)initWithFile:(NSString *)filename {
@@ -33,7 +33,7 @@
                 // Note: In Sprite Kit (0,0) is at the bottom of the screen,
                 // so we need to read this file upside down.
                 NSInteger tileRow = NumRows - row - 1;
-                RWTTile *tile = [[RWTTile alloc] init];
+                WUNTile *tile = [[WUNTile alloc] init];
                 tile.cookieType = value.integerValue;
                 _tiles[column][tileRow] = tile;
             }];
@@ -66,14 +66,14 @@
   return dictionary;
 }
 
-- (RWTCookie *)cookieAtColumn:(NSInteger)column row:(NSInteger)row {
+- (WUNObject *)cookieAtColumn:(NSInteger)column row:(NSInteger)row {
   NSAssert1(column >= 0 && column < NumColumns, @"Invalid column: %ld", (long)column);
   NSAssert1(row >= 0 && row < NumRows, @"Invalid row: %ld", (long)row);
 
   return _cookies[column][row];
 }
 
-- (RWTTile *)tileAtColumn:(NSInteger)column row:(NSInteger)row {
+- (WUNTile *)tileAtColumn:(NSInteger)column row:(NSInteger)row {
   NSAssert1(column >= 0 && column < NumColumns, @"Invalid column: %ld", (long)column);
   NSAssert1(row >= 0 && row < NumRows, @"Invalid row: %ld", (long)row);
 
@@ -108,13 +108,13 @@
   for (NSInteger row = 0; row < NumRows; row++) {
     for (NSInteger column = 0; column < NumColumns; column++) {
 
-      RWTCookie *cookie = _cookies[column][row];
+      WUNObject *cookie = _cookies[column][row];
       if (cookie != nil) {
 
         // Is it possible to swap this cookie with the one on the right?
         if (column < NumColumns - 1) {
           // Have a cookie in this spot? If there is no tile, there is no cookie.
-          RWTCookie *other = _cookies[column + 1][row];
+          WUNObject *other = _cookies[column + 1][row];
           if (other != nil) {
             // Swap them
             _cookies[column][row] = other;
@@ -124,7 +124,7 @@
             if ([self hasChainAtColumn:column + 1 row:row] ||
                 [self hasChainAtColumn:column row:row]) {
 
-              RWTSwap *swap = [[RWTSwap alloc] init];
+              WUNSwap *swap = [[WUNSwap alloc] init];
               swap.cookieA = cookie;
               swap.cookieB = other;
               [set addObject:swap];
@@ -138,7 +138,7 @@
 
         if (row < NumRows - 1) {
 
-          RWTCookie *other = _cookies[column][row + 1];
+          WUNObject *other = _cookies[column][row + 1];
           if (other != nil) {
             _cookies[column][row] = other;
             _cookies[column][row + 1] = cookie;
@@ -146,7 +146,7 @@
             if ([self hasChainAtColumn:column row:row + 1] ||
                 [self hasChainAtColumn:column row:row]) {
 
-              RWTSwap *swap = [[RWTSwap alloc] init];
+              WUNSwap *swap = [[WUNSwap alloc] init];
               swap.cookieA = cookie;
               swap.cookieB = other;
               [set addObject:swap];
@@ -172,7 +172,7 @@
 
       if (_tiles[column][row] != nil) {
           NSUInteger cookieType = _tiles[column][row].cookieType;
-          RWTCookie *cookie = [self createCookieAtColumn:column row:row withType:cookieType];
+          WUNObject *cookie = [self createCookieAtColumn:column row:row withType:cookieType];
           [set addObject:cookie];
       }
     }
@@ -180,8 +180,8 @@
   return set;
 }
 
-- (RWTCookie *)createCookieAtColumn:(NSInteger)column row:(NSInteger)row withType:(NSUInteger)cookieType {
-  RWTCookie *cookie = [[RWTCookie alloc] init];
+- (WUNObject *)createCookieAtColumn:(NSInteger)column row:(NSInteger)row withType:(NSUInteger)cookieType {
+  WUNObject *cookie = [[WUNObject alloc] init];
   cookie.cookieType = cookieType;
   cookie.column = column;
   cookie.row = row;
@@ -189,7 +189,7 @@
   return cookie;
 }
 
-- (void)performSwap:(RWTSwap *)swap {
+- (void)performSwap:(WUNSwap *)swap {
   NSInteger columnA = swap.cookieA.column;
   NSInteger rowA = swap.cookieA.row;
   NSInteger columnB = swap.cookieB.column;
@@ -204,7 +204,7 @@
   swap.cookieA.row = rowB;
 }
 
-- (BOOL)isPossibleSwap:(RWTSwap *)swap {
+- (BOOL)isPossibleSwap:(WUNSwap *)swap {
   return [self.possibleSwaps containsObject:swap];
 }
 

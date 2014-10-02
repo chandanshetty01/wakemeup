@@ -63,7 +63,7 @@ static const CGFloat TileHeight = 60.0f;
 }
 
 - (void)addSpritesForCookies:(NSSet *)cookies {
-    for (RWTCookie *cookie in cookies) {
+    for (WUNObject *cookie in cookies) {
         NSString *spriteName = [cookie spriteName];
         SKSpriteNode *sprite = nil;
         if(spriteName.length != 0){
@@ -110,7 +110,7 @@ static const CGFloat TileHeight = 60.0f;
     NSInteger column, row;
     if ([self convertPoint:location toColumn:&column row:&row]) {
         
-        RWTCookie *cookie = [self.level cookieAtColumn:column row:row];
+        WUNObject *cookie = [self.level cookieAtColumn:column row:row];
         if (cookie != nil) {
             self.swipeFromColumn = column;
             self.swipeFromRow = row;
@@ -179,13 +179,13 @@ static const CGFloat TileHeight = 60.0f;
     if (toColumn < 0 || toColumn >= NumColumns) return;
     if (toRow < 0 || toRow >= NumRows) return;
     
-    RWTCookie *toCookie = [self.level cookieAtColumn:toColumn row:toRow];
+    WUNObject *toCookie = [self.level cookieAtColumn:toColumn row:toRow];
     if (toCookie == nil) return;
     
-    RWTCookie *fromCookie = [self.level cookieAtColumn:self.swipeFromColumn row:self.swipeFromRow];
+    WUNObject *fromCookie = [self.level cookieAtColumn:self.swipeFromColumn row:self.swipeFromRow];
     
     if (self.swipeHandler != nil) {
-        RWTSwap *swap = [[RWTSwap alloc] init];
+        WUNSwap *swap = [[WUNSwap alloc] init];
         swap.cookieA = fromCookie;
         swap.cookieB = toCookie;
         self.swipeHandler(swap);
@@ -205,7 +205,7 @@ static const CGFloat TileHeight = 60.0f;
     [self touchesEnded:touches withEvent:event];
 }
 
-- (void)showSelectionIndicatorForCookie:(RWTCookie *)cookie {
+- (void)showSelectionIndicatorForCookie:(WUNObject *)cookie {
     
     // If the selection indicator is still visible, then first remove it.
     if (self.selectionSprite.parent != nil) {
