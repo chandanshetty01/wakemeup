@@ -45,4 +45,9 @@
   return [NSString stringWithFormat:@"type:%ld square:(%ld,%ld)", (long)self.ObjectType, (long)self.column, (long)self.row];
 }
 
+- (void)dealloc
+{
+    [_sprite removeFromParent];
+}
+
 @end

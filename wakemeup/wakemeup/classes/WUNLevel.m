@@ -149,21 +149,27 @@
 
 - (void)performSwap:(WUNSwap *)swap
 {
-    NSInteger columnB = swap.point.x;
-    NSInteger rowB = swap.point.y;
-    
-    NSMutableArray *objects = _Objects[columnB][rowB];
-    if(![objects containsObject:swap.ObjectA] && objects.count > 0){
-        [objects addObject:swap.ObjectA];
+    WUNObject *object = swap.ObjectA;
+    if(object.status != eObjectGone){
+        NSInteger columnB = swap.point.x;
+        NSInteger rowB = swap.point.y;
+        
+        NSMutableArray *objects = _Objects[columnB][rowB];
+        if(![objects containsObject:swap.ObjectA] && objects.count > 0){
+            [objects addObject:swap.ObjectA];
+        }
+        else{
+            _Objects[columnB][rowB] = [[NSMutableArray alloc] initWithObjects:swap.ObjectA, nil];
+        }
+        
+        [self removeObjectFromList:swap.ObjectA];
+        
+        swap.ObjectA.column = columnB;
+        swap.ObjectA.row = rowB;
     }
     else{
-        _Objects[columnB][rowB] = [[NSMutableArray alloc] initWithObjects:swap.ObjectA, nil];
+        [self removeObjectFromList:swap.ObjectA];
     }
-    
-    [self removeObjectFromList:swap.ObjectA];
-
-    swap.ObjectA.column = columnB;
-    swap.ObjectA.row = rowB;
 }
 
 - (BOOL)isPossibleSwap:(WUNSwap *)swap {

@@ -25,11 +25,7 @@
 		A3CC20F919DAF3B20067A847 /* WUNLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20F519DAF3B20067A847 /* WUNLevel.m */; };
 		A3CC20FA19DAF3B20067A847 /* WUNTile.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20F719DAF3B20067A847 /* WUNTile.m */; };
 		A3CC20FD19DAF5B90067A847 /* WUNSwap.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20FC19DAF5B90067A847 /* WUNSwap.m */; };
-		A3CC210419DAF6F90067A847 /* Level_0.json in Resources */ = {isa = PBXBuildFile; fileRef = A3CC20FF19DAF6F90067A847 /* Level_0.json */; };
 		A3CC210519DAF6F90067A847 /* Level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A3CC210019DAF6F90067A847 /* Level_1.json */; };
-		A3CC210619DAF6F90067A847 /* Level_2.json in Resources */ = {isa = PBXBuildFile; fileRef = A3CC210119DAF6F90067A847 /* Level_2.json */; };
-		A3CC210719DAF6F90067A847 /* Level_3.json in Resources */ = {isa = PBXBuildFile; fileRef = A3CC210219DAF6F90067A847 /* Level_3.json */; };
-		A3CC210819DAF6F90067A847 /* Level_4.json in Resources */ = {isa = PBXBuildFile; fileRef = A3CC210319DAF6F90067A847 /* Level_4.json */; };
 		A3CC210A19DAF7410067A847 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A3CC210919DAF7410067A847 /* Sprites.atlas */; };
 /* End PBXBuildFile section */
 
@@ -77,11 +73,7 @@
 		A3CC20F719DAF3B20067A847 /* WUNTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNTile.m; path = wakemeup/classes/WUNTile.m; sourceTree = SOURCE_ROOT; };
 		A3CC20FB19DAF5B90067A847 /* WUNSwap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNSwap.h; path = wakemeup/classes/WUNSwap.h; sourceTree = SOURCE_ROOT; };
 		A3CC20FC19DAF5B90067A847 /* WUNSwap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNSwap.m; path = wakemeup/classes/WUNSwap.m; sourceTree = SOURCE_ROOT; };
-		A3CC20FF19DAF6F90067A847 /* Level_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_0.json; sourceTree = "<group>"; };
 		A3CC210019DAF6F90067A847 /* Level_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_1.json; sourceTree = "<group>"; };
-		A3CC210119DAF6F90067A847 /* Level_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_2.json; sourceTree = "<group>"; };
-		A3CC210219DAF6F90067A847 /* Level_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_3.json; sourceTree = "<group>"; };
-		A3CC210319DAF6F90067A847 /* Level_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_4.json; sourceTree = "<group>"; };
 		A3CC210919DAF7410067A847 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,11 +219,7 @@
 		A3CC20FE19DAF6F90067A847 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				A3CC20FF19DAF6F90067A847 /* Level_0.json */,
 				A3CC210019DAF6F90067A847 /* Level_1.json */,
-				A3CC210119DAF6F90067A847 /* Level_2.json */,
-				A3CC210219DAF6F90067A847 /* Level_3.json */,
-				A3CC210319DAF6F90067A847 /* Level_4.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -317,14 +305,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3CC210519DAF6F90067A847 /* Level_1.json in Resources */,
-				A3CC210819DAF6F90067A847 /* Level_4.json in Resources */,
-				A3CC210719DAF6F90067A847 /* Level_3.json in Resources */,
 				A3CC20CA19D6C9520067A847 /* LaunchScreen.xib in Resources */,
-				A3CC210419DAF6F90067A847 /* Level_0.json in Resources */,
 				A3CC210A19DAF7410067A847 /* Sprites.atlas in Resources */,
 				A3CC20F119D6E3890067A847 /* WUNGameConfig.plist in Resources */,
 				A3CC20C719D6C9520067A847 /* Images.xcassets in Resources */,
-				A3CC210619DAF6F90067A847 /* Level_2.json in Resources */,
 				A3CC20BF19D6C9520067A847 /* GameScene.sks in Resources */,
 				A3CC20C519D6C9520067A847 /* Main.storyboard in Resources */,
 			);

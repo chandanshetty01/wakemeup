@@ -131,7 +131,6 @@ static const CGFloat TileHeight = 60.0f;
     
     NSInteger column, row;
     if ([self convertPoint:location toColumn:&column row:&row]) {
-        
         NSInteger horzDelta = 0, vertDelta = 0;
         if (column < self.swipeFromColumn) {          // swipe left
             horzDelta = -1;
@@ -156,14 +155,14 @@ static const CGFloat TileHeight = 60.0f;
     NSMutableArray *array = [NSMutableArray array];
     
     if(horzDelta != 0){
-        for(NSInteger i=self.swipeFromColumn ; (i>=0 && i<NumColumns) ; i = i+horzDelta){
+        for(NSInteger i=self.swipeFromColumn+horzDelta ; (i>=0 && i<NumColumns) ; i = i+horzDelta){
             NSString *point = NSStringFromCGPoint(CGPointMake(i, self.swipeFromRow));
             [array addObject:point];
         }
     }
 
     if(vertDelta !=0){
-        for(NSInteger i=self.swipeFromRow ; (i>=0 && i<NumRows) ; i = i+vertDelta){
+        for(NSInteger i=self.swipeFromRow+vertDelta ; (i>=0 && i<NumRows) ; i = i+vertDelta){
             NSString *point = NSStringFromCGPoint(CGPointMake(self.swipeFromColumn,i));
             [array addObject:point];
         }
@@ -184,9 +183,14 @@ static const CGFloat TileHeight = 60.0f;
     
     NSMutableArray *objects = [self.level objectAtColumn:toColumn row:toRow];
     WUNObject *currentObject = [objects lastObject];
-    if (currentObject == nil) return;
-    
+    if (currentObject == nil){
+        return;
+    }
     __block CGPoint toPoint = CGPointFromString([adjacentPoints lastObject]);
+    if(adjacentPoints.count == 0){
+        toPoint = CGPointMake(currentObject.column, currentObject.row);
+    }
+    __block EObjectStatus status = eObjectGone;
 
     [adjacentPoints enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL *stop) {
         CGPoint point = CGPointFromString(obj);
@@ -211,18 +215,19 @@ static const CGFloat TileHeight = 60.0f;
             objectType = nextObject.ObjectType;
         }
         
+        
         switch (objectType) {
             case eObjectObstacle:{
                 toPoint = CGPointMake(point.x-horzDelta, point.y-vertDelta);
                 *stop = YES;
+                status = eObjectAlive;
             }
                 break;
             case eObjectSmily:{
-                
             }
                 break;
             case eObjectHole:{
-                currentObject.status = eObjectDead;
+                status = eObjectDead;
                 toPoint = CGPointMake(point.x, point.y);
                 *stop = YES;
             }
@@ -233,20 +238,26 @@ static const CGFloat TileHeight = 60.0f;
         }
     }];
     
+    currentObject.status = status;
+    if(currentObject.status == eObjectGone){
+        toPoint = CGPointMake(toPoint.x+horzDelta*4, toPoint.y+vertDelta*4);
+    }
     [self moveObjectToPoint:currentObject point:toPoint];
 }
 
--(void)moveObjectToPoint:(WUNObject*)object point:(CGPoint)point
+-(void)moveObjectToPoint:(WUNObject*)object point:(CGPoint)inPoint
 {
-    SKAction *action = [SKAction moveTo:[self pointForColumn:point.x row:point.y] duration:1.0f];
-    [object.sprite runAction:action];
-    
-    if (self.swipeHandler != nil) {
-        WUNSwap *swap = [[WUNSwap alloc] init];
-        swap.ObjectA = object;
-        swap.point = point;
-        self.swipeHandler(swap);
-    }
+    NSInteger diff = abs((object.row-inPoint.x)+(object.column-inPoint.y));
+    CGPoint point = [self pointForColumn:inPoint.x row:inPoint.y];
+    SKAction *action = [SKAction moveTo:point duration:MAX(0.4, 0.1*diff)];
+    [object.sprite runAction:action completion:^{
+        if (self.swipeHandler != nil) {
+            WUNSwap *swap = [[WUNSwap alloc] init];
+            swap.ObjectA = object;
+            swap.point = inPoint;
+            self.swipeHandler(swap);
+        }
+    }];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
