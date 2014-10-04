@@ -22,7 +22,7 @@ static const NSInteger NumRows = 4;
 
 - (NSSet *)shuffle;
 
-- (WUNObject *)objectAtColumn:(NSInteger)column row:(NSInteger)row;
+- (NSMutableArray *)objectAtColumn:(NSInteger)column row:(NSInteger)row;
 - (WUNTile *)tileAtColumn:(NSInteger)column row:(NSInteger)row;
 
 - (void)performSwap:(WUNSwap *)swap;

@@ -15,7 +15,7 @@
 @end
 
 @implementation WUNLevel {
-  WUNObject *_Objects[NumColumns][NumRows];
+  NSMutableArray *_Objects[NumColumns][NumRows];
   WUNTile *_tiles[NumColumns][NumRows];
   NSInteger ObjectsList[NumColumns][NumRows];
 }
@@ -38,7 +38,6 @@
                 _tiles[column][tileRow] = tile;
                 
                 ObjectsList[column][tileRow] = value.integerValue;
-                NSLog(@"%d:%d->%d",column,row, value.integerValue);
             }];
         }];
     }
@@ -69,14 +68,16 @@
   return dictionary;
 }
 
-- (WUNObject *)objectAtColumn:(NSInteger)column row:(NSInteger)row {
+- (NSMutableArray *)objectAtColumn:(NSInteger)column row:(NSInteger)row;
+{
   NSAssert1(column >= 0 && column < NumColumns, @"Invalid column: %ld", (long)column);
   NSAssert1(row >= 0 && row < NumRows, @"Invalid row: %ld", (long)row);
 
   return _Objects[column][row];
 }
 
-- (WUNTile *)tileAtColumn:(NSInteger)column row:(NSInteger)row {
+- (WUNTile *)tileAtColumn:(NSInteger)column row:(NSInteger)row
+{
   NSAssert1(column >= 0 && column < NumColumns, @"Invalid column: %ld", (long)column);
   NSAssert1(row >= 0 && row < NumRows, @"Invalid row: %ld", (long)row);
 
@@ -90,20 +91,6 @@
   return set;
 }
 
-- (BOOL)hasChainAtColumn:(NSInteger)column row:(NSInteger)row {
-  NSUInteger ObjectType = _Objects[column][row].ObjectType;
-
-  NSUInteger horzLength = 1;
-  for (NSInteger i = column - 1; i >= 0 && _Objects[i][row].ObjectType == ObjectType; i--, horzLength++) ;
-  for (NSInteger i = column + 1; i < NumColumns && _Objects[i][row].ObjectType == ObjectType; i++, horzLength++) ;
-  if (horzLength >= 3) return YES;
-
-  NSUInteger vertLength = 1;
-  for (NSInteger i = row - 1; i >= 0 && _Objects[column][i].ObjectType == ObjectType; i--, vertLength++) ;
-  for (NSInteger i = row + 1; i < NumRows && _Objects[column][i].ObjectType == ObjectType; i++, vertLength++) ;
-  return (vertLength >= 3);
-}
-
 - (NSSet *)createInitialObjects
 {
   NSMutableSet *set = [NSMutableSet set];
@@ -113,7 +100,7 @@
       if (_tiles[column][row] != nil) {
           NSUInteger ObjectType = ObjectsList[column][row];
           if(ObjectType >= 1){
-              WUNObject *Object = [self createObjectAtColumn:column row:row withType:ObjectType];
+              NSMutableArray *Object = [self createObjectAtColumn:column row:row withType:ObjectType];
               [set addObject:Object];
           }
       }
@@ -122,7 +109,7 @@
   return set;
 }
 
-- (WUNObject *)createObjectAtColumn:(NSInteger)column row:(NSInteger)row withType:(NSUInteger)ObjectType
+- (NSMutableArray *)createObjectAtColumn:(NSInteger)column row:(NSInteger)row withType:(NSUInteger)ObjectType
 {
     WUNObject *Object = nil;
     switch (ObjectType) {
@@ -142,22 +129,41 @@
         default:
             break;
     }
-   
-  Object.ObjectType = ObjectType;
-  Object.column = column;
-  Object.row = row;
-  _Objects[column][row] = Object;
-  return Object;
+    
+    Object.ObjectType = ObjectType;
+    Object.column = column;
+    Object.row = row;
+    
+    NSMutableArray *array = [[NSMutableArray alloc] initWithObjects:Object, nil];
+    _Objects[column][row] = array;
+    return array;
+}
+
+-(void)removeObjectFromList:(WUNObject*)object
+{
+    NSMutableArray *objects = _Objects[object.column][object.row];
+    if([objects containsObject:object]){
+        [objects removeObject:object];
+    }
 }
 
 - (void)performSwap:(WUNSwap *)swap
-{    
-  NSInteger columnB = swap.point.x;
-  NSInteger rowB = swap.point.y;
+{
+    NSInteger columnB = swap.point.x;
+    NSInteger rowB = swap.point.y;
     
-  _Objects[columnB][rowB] = swap.ObjectA;
-  swap.ObjectA.column = columnB;
-  swap.ObjectA.row = rowB;
+    NSMutableArray *objects = _Objects[columnB][rowB];
+    if(![objects containsObject:swap.ObjectA] && objects.count > 0){
+        [objects addObject:swap.ObjectA];
+    }
+    else{
+        _Objects[columnB][rowB] = [[NSMutableArray alloc] initWithObjects:swap.ObjectA, nil];
+    }
+    
+    [self removeObjectFromList:swap.ObjectA];
+
+    swap.ObjectA.column = columnB;
+    swap.ObjectA.row = rowB;
 }
 
 - (BOOL)isPossibleSwap:(WUNSwap *)swap {

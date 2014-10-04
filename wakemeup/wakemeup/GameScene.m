@@ -62,9 +62,12 @@ static const CGFloat TileHeight = 60.0f;
     }
 }
 
-- (void)addSpritesForObjects:(NSSet *)Objects {
-    for (WUNObject *Object in Objects) {
-        NSString *spriteName = [Object spriteName];
+- (void)addSpritesForObjects:(NSSet *)Objects
+{
+    for (NSMutableArray *objectsArray in Objects)
+    {
+        WUNObject *object = [objectsArray firstObject];
+        NSString *spriteName = [object spriteName];
         SKSpriteNode *sprite = nil;
         if(spriteName.length != 0){
              sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteName];
@@ -73,9 +76,9 @@ static const CGFloat TileHeight = 60.0f;
             sprite = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeZero];
         }
         sprite.size = CGSizeMake(TileWidth, TileHeight);
-        sprite.position = [self pointForColumn:Object.column row:Object.row];
+        sprite.position = [self pointForColumn:object.column row:object.row];
         [self.smileysLayer addChild:sprite];
-        Object.sprite = sprite;
+        object.sprite = sprite;
     }
 }
 
@@ -110,7 +113,8 @@ static const CGFloat TileHeight = 60.0f;
     NSInteger column, row;
     if ([self convertPoint:location toColumn:&column row:&row]) {
         
-        WUNObject *object = [self.level objectAtColumn:column row:row];
+        NSMutableArray *objects = [self.level objectAtColumn:column row:row];
+        WUNObject *object = [objects lastObject];
         if (object != nil && (object.ObjectType == eObjectSmily && object.status == eObjectAlive)) {
             self.swipeFromColumn = column;
             self.swipeFromRow = row;
@@ -178,7 +182,8 @@ static const CGFloat TileHeight = 60.0f;
     if (toColumn < 0 || toColumn >= NumColumns) return;
     if (toRow < 0 || toRow >= NumRows) return;
     
-    WUNObject *currentObject = [self.level objectAtColumn:toColumn row:toRow];
+    NSMutableArray *objects = [self.level objectAtColumn:toColumn row:toRow];
+    WUNObject *currentObject = [objects lastObject];
     if (currentObject == nil) return;
     
     __block CGPoint toPoint = CGPointFromString([adjacentPoints lastObject]);
@@ -187,7 +192,21 @@ static const CGFloat TileHeight = 60.0f;
         CGPoint point = CGPointFromString(obj);
         EObjectType objectType = eObjectNone;
         
-        WUNObject *nextObject = [self.level objectAtColumn:point.x row:point.y];
+        NSMutableArray *objects = [self.level objectAtColumn:point.x row:point.y];
+        __block WUNObject *nextObject = nil;
+        if(objects.count == 1){
+            nextObject = [objects objectAtIndex:0];
+        }
+        else{
+            nextObject = [objects lastObject];
+            [objects enumerateObjectsUsingBlock:^(WUNObject *obj, NSUInteger idx, BOOL *stop) {
+                if(obj.ObjectType == eObjectObstacle){
+                    nextObject = obj;
+                    *stop = YES;
+                }
+            }];
+        }
+
         if(nextObject && [nextObject isKindOfClass:[WUNObject class]]){
             objectType = nextObject.ObjectType;
         }
