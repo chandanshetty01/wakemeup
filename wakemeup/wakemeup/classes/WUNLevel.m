@@ -112,7 +112,7 @@
     for (NSInteger column = 0; column < NumColumns; column++) {
       if (_tiles[column][row] != nil) {
           NSUInteger ObjectType = ObjectsList[column][row];
-          if(ObjectType == 1){
+          if(ObjectType >= 1){
               WUNObject *Object = [self createObjectAtColumn:column row:row withType:ObjectType];
               [set addObject:Object];
           }

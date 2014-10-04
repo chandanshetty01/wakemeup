@@ -110,12 +110,11 @@ static const CGFloat TileHeight = 60.0f;
     NSInteger column, row;
     if ([self convertPoint:location toColumn:&column row:&row]) {
         
-        WUNObject *Object = [self.level objectAtColumn:column row:row];
-        if (Object != nil) {
+        WUNObject *object = [self.level objectAtColumn:column row:row];
+        if (object != nil && (object.ObjectType == eObjectSmily && object.status == eObjectAlive)) {
             self.swipeFromColumn = column;
             self.swipeFromRow = row;
-            
-            [self showSelectionIndicatorForObject:Object];
+            [self showSelectionIndicatorForObject:object];
         }
     }
 }
@@ -183,26 +182,30 @@ static const CGFloat TileHeight = 60.0f;
     if (currentObject == nil) return;
     
     __block CGPoint toPoint = CGPointFromString([adjacentPoints lastObject]);
-    currentObject.status = eObjectGone;
 
     [adjacentPoints enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL *stop) {
         CGPoint point = CGPointFromString(obj);
-        EObjectStatus nextCellStatus = eObjectGone;
+        EObjectType objectType = eObjectNone;
+        
         WUNObject *nextObject = [self.level objectAtColumn:point.x row:point.y];
         if(nextObject && [nextObject isKindOfClass:[WUNObject class]]){
-            nextCellStatus = nextObject.status;
+            objectType = nextObject.ObjectType;
         }
-        switch (nextCellStatus) {
-            case eObjectAlive:{
+        
+        switch (objectType) {
+            case eObjectObstacle:{
+                toPoint = CGPointMake(point.x-horzDelta, point.y-vertDelta);
+                *stop = YES;
+            }
+                break;
+            case eObjectSmily:{
                 
             }
                 break;
-            case eObjectDead:{
-                
-            }
-                break;
-            case eObjectGone:{
-                
+            case eObjectHole:{
+                currentObject.status = eObjectDead;
+                toPoint = CGPointMake(point.x, point.y);
+                *stop = YES;
             }
                 break;
                 
@@ -211,7 +214,6 @@ static const CGFloat TileHeight = 60.0f;
         }
     }];
     
-
     [self moveObjectToPoint:currentObject point:toPoint];
 }
 
