@@ -9,6 +9,9 @@
 #import "WUNObject.h"
 #import "WUNTile.h"
 #import "WUNSwap.h"
+#import "WUNSmily.h"
+#import "WUNObstacle.h"
+#import "WUNHole.h"
 
 static const NSInteger NumColumns = 8;
 static const NSInteger NumRows = 4;

@@ -1,11 +1,11 @@
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h> 
 
 @class WUNObject;
 
 @interface WUNSwap : NSObject
 
 @property (strong, nonatomic) WUNObject *ObjectA;
-@property (strong, nonatomic) WUNObject *ObjectB;
+@property (assign, nonatomic) CGPoint point;
 
 @end

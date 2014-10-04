@@ -28,7 +28,7 @@ static const CGFloat TileHeight = 60.0f;
     /* Setup your scene here */
     
     self.anchorPoint = CGPointMake(0.5, 0.5);
-    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"Background"];
+    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background"];
     [self addChild:background];
     
     self.gameLayer = [SKNode node];
@@ -161,7 +161,7 @@ static const CGFloat TileHeight = 60.0f;
 
     if(vertDelta !=0){
         for(NSInteger i=self.swipeFromRow ; (i>=0 && i<NumRows) ; i = i+vertDelta){
-            NSString *point = NSStringFromCGPoint(CGPointMake(i, self.swipeFromColumn));
+            NSString *point = NSStringFromCGPoint(CGPointMake(self.swipeFromColumn,i));
             [array addObject:point];
         }
     }
@@ -182,12 +182,48 @@ static const CGFloat TileHeight = 60.0f;
     WUNObject *currentObject = [self.level objectAtColumn:toColumn row:toRow];
     if (currentObject == nil) return;
     
-    WUNObject *fromObject = [self.level objectAtColumn:self.swipeFromColumn row:self.swipeFromRow];
+    __block CGPoint toPoint = CGPointFromString([adjacentPoints lastObject]);
+    currentObject.status = eObjectGone;
+
+    [adjacentPoints enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL *stop) {
+        CGPoint point = CGPointFromString(obj);
+        EObjectStatus nextCellStatus = eObjectGone;
+        WUNObject *nextObject = [self.level objectAtColumn:point.x row:point.y];
+        if(nextObject && [nextObject isKindOfClass:[WUNObject class]]){
+            nextCellStatus = nextObject.status;
+        }
+        switch (nextCellStatus) {
+            case eObjectAlive:{
+                
+            }
+                break;
+            case eObjectDead:{
+                
+            }
+                break;
+            case eObjectGone:{
+                
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }];
+    
+
+    [self moveObjectToPoint:currentObject point:toPoint];
+}
+
+-(void)moveObjectToPoint:(WUNObject*)object point:(CGPoint)point
+{
+    SKAction *action = [SKAction moveTo:[self pointForColumn:point.x row:point.y] duration:1.0f];
+    [object.sprite runAction:action];
     
     if (self.swipeHandler != nil) {
         WUNSwap *swap = [[WUNSwap alloc] init];
-        swap.ObjectA = fromObject;
-        swap.ObjectB = currentObject;
+        swap.ObjectA = object;
+        swap.point = point;
         self.swipeHandler(swap);
     }
 }

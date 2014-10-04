@@ -17,6 +17,7 @@
 @implementation WUNLevel {
   WUNObject *_Objects[NumColumns][NumRows];
   WUNTile *_tiles[NumColumns][NumRows];
+  NSInteger ObjectsList[NumColumns][NumRows];
 }
 
 - (instancetype)initWithFile:(NSString *)filename {
@@ -34,8 +35,9 @@
                 // so we need to read this file upside down.
                 NSInteger tileRow = NumRows - row - 1;
                 WUNTile *tile = [[WUNTile alloc] init];
-                tile.ObjectType = value.integerValue;
                 _tiles[column][tileRow] = tile;
+                ObjectsList[column][tileRow] = value.integerValue;
+                NSLog(@"%d:%d->%d",column,row, value.integerValue);
             }];
         }];
     }
@@ -101,87 +103,45 @@
   return (vertLength >= 3);
 }
 
-- (void)detectPossibleSwaps {
-
+- (NSSet *)createInitialObjects
+{
   NSMutableSet *set = [NSMutableSet set];
-
+  NSLog(@"Started creating objects");
   for (NSInteger row = 0; row < NumRows; row++) {
     for (NSInteger column = 0; column < NumColumns; column++) {
-
-      WUNObject *Object = _Objects[column][row];
-      if (Object != nil) {
-
-        // Is it possible to swap this Object with the one on the right?
-        if (column < NumColumns - 1) {
-          // Have a Object in this spot? If there is no tile, there is no Object.
-          WUNObject *other = _Objects[column + 1][row];
-          if (other != nil) {
-            // Swap them
-            _Objects[column][row] = other;
-            _Objects[column + 1][row] = Object;
-            
-            // Is either Object now part of a chain?
-            if ([self hasChainAtColumn:column + 1 row:row] ||
-                [self hasChainAtColumn:column row:row]) {
-
-              WUNSwap *swap = [[WUNSwap alloc] init];
-              swap.ObjectA = Object;
-              swap.ObjectB = other;
-              [set addObject:swap];
-            }
-
-            // Swap them back
-            _Objects[column][row] = Object;
-            _Objects[column + 1][row] = other;
-          }
-        }
-
-        if (row < NumRows - 1) {
-
-          WUNObject *other = _Objects[column][row + 1];
-          if (other != nil) {
-            _Objects[column][row] = other;
-            _Objects[column][row + 1] = Object;
-
-            if ([self hasChainAtColumn:column row:row + 1] ||
-                [self hasChainAtColumn:column row:row]) {
-
-              WUNSwap *swap = [[WUNSwap alloc] init];
-              swap.ObjectA = Object;
-              swap.ObjectB = other;
-              [set addObject:swap];
-            }
-
-            _Objects[column][row] = Object;
-            _Objects[column][row + 1] = other;
-          }
-        }
-      }
-    }
-  }
-
-  self.possibleSwaps = set;
-}
-
-- (NSSet *)createInitialObjects {
-
-  NSMutableSet *set = [NSMutableSet set];
-
-  for (NSInteger row = 0; row < NumRows; row++) {
-    for (NSInteger column = 0; column < NumColumns; column++) {
-
       if (_tiles[column][row] != nil) {
-          NSUInteger ObjectType = _tiles[column][row].ObjectType;
-          WUNObject *Object = [self createObjectAtColumn:column row:row withType:ObjectType];
-          [set addObject:Object];
+          NSUInteger ObjectType = ObjectsList[column][row];
+          if(ObjectType == 1){
+              WUNObject *Object = [self createObjectAtColumn:column row:row withType:ObjectType];
+              [set addObject:Object];
+          }
       }
     }
   }
   return set;
 }
 
-- (WUNObject *)createObjectAtColumn:(NSInteger)column row:(NSInteger)row withType:(NSUInteger)ObjectType {
-  WUNObject *Object = [[WUNObject alloc] init];
+- (WUNObject *)createObjectAtColumn:(NSInteger)column row:(NSInteger)row withType:(NSUInteger)ObjectType
+{
+    WUNObject *Object = nil;
+    switch (ObjectType) {
+        case eObjectSmily:{
+            Object = [[WUNSmily alloc] init];
+        }
+            break;
+        case eObjectObstacle:{
+            Object = [[WUNObstacle alloc] init];
+        }
+            break;
+        case eObjectHole:{
+            Object = [[WUNHole alloc] init];
+        }
+            break;
+            
+        default:
+            break;
+    }
+   
   Object.ObjectType = ObjectType;
   Object.column = column;
   Object.row = row;
@@ -189,16 +149,11 @@
   return Object;
 }
 
-- (void)performSwap:(WUNSwap *)swap {
-  NSInteger columnA = swap.ObjectA.column;
-  NSInteger rowA = swap.ObjectA.row;
-  NSInteger columnB = swap.ObjectB.column;
-  NSInteger rowB = swap.ObjectB.row;
-
-  _Objects[columnA][rowA] = swap.ObjectB;
-  swap.ObjectB.column = columnA;
-  swap.ObjectB.row = rowA;
-
+- (void)performSwap:(WUNSwap *)swap
+{    
+  NSInteger columnB = swap.point.x;
+  NSInteger rowB = swap.point.y;
+    
   _Objects[columnB][rowB] = swap.ObjectA;
   swap.ObjectA.column = columnB;
   swap.ObjectA.row = rowB;

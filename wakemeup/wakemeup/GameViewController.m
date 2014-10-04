@@ -56,6 +56,7 @@
     self.scene.level = self.level;
     
     id block = ^(WUNSwap *swap) {
+        [self.level performSwap:swap];
     };
     self.scene.swipeHandler = block;
     

@@ -9,5 +9,4 @@
 #import <Foundation/Foundation.h>
 
 @interface WUNTile : NSObject
-@property (assign, nonatomic) NSUInteger ObjectType;
 @end

@@ -10,15 +10,21 @@
 
 @implementation WUNObject
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
 - (NSString *)spriteName {
   static NSString * const spriteNames[] = {
     @"",
-    @"Croissant",
-    @"Cupcake",
-    @"Danish",
-    @"Donut",
-    @"Macaroon",
-    @"SugarObject",
+    @"sleep_smily",
+    @"obstacle",
+    @"circle"
   };
 
   return spriteNames[self.ObjectType];
@@ -26,13 +32,10 @@
 
 - (NSString *)highlightedSpriteName {
   static NSString * const highlightedSpriteNames[] = {
-    @"",
-    @"Croissant-Highlighted",
-    @"Cupcake-Highlighted",
-    @"Danish-Highlighted",
-    @"Donut-Highlighted",
-    @"Macaroon-Highlighted",
-    @"SugarObject-Highlighted",
+      @"",
+      @"sleep_smily",
+      @"obstacle",
+      @"circle"
   };
 
   return highlightedSpriteNames[self.ObjectType];

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A36F9A3B19DD9E4100419500 /* WUNSmily.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A3A19DD9E4100419500 /* WUNSmily.m */; };
+		A36F9A3E19DD9E5800419500 /* WUNObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A3D19DD9E5800419500 /* WUNObstacle.m */; };
+		A36F9A4119DD9E6C00419500 /* WUNHole.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A4019DD9E6C00419500 /* WUNHole.m */; };
 		A3CC20B719D6C9520067A847 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20B619D6C9520067A847 /* main.m */; };
 		A3CC20BA19D6C9520067A847 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20B919D6C9520067A847 /* AppDelegate.m */; };
 		A3CC20BD19D6C9520067A847 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20BC19D6C9520067A847 /* GameScene.m */; };
@@ -41,6 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A36F9A3919DD9E4100419500 /* WUNSmily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNSmily.h; path = wakemeup/classes/WUNSmily.h; sourceTree = SOURCE_ROOT; };
+		A36F9A3A19DD9E4100419500 /* WUNSmily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNSmily.m; path = wakemeup/classes/WUNSmily.m; sourceTree = SOURCE_ROOT; };
+		A36F9A3C19DD9E5800419500 /* WUNObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNObstacle.h; path = wakemeup/classes/WUNObstacle.h; sourceTree = SOURCE_ROOT; };
+		A36F9A3D19DD9E5800419500 /* WUNObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNObstacle.m; path = wakemeup/classes/WUNObstacle.m; sourceTree = SOURCE_ROOT; };
+		A36F9A3F19DD9E6C00419500 /* WUNHole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNHole.h; path = wakemeup/classes/WUNHole.h; sourceTree = SOURCE_ROOT; };
+		A36F9A4019DD9E6C00419500 /* WUNHole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNHole.m; path = wakemeup/classes/WUNHole.m; sourceTree = SOURCE_ROOT; };
 		A3CC20B119D6C9520067A847 /* wakemeup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wakemeup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3CC20B519D6C9520067A847 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3CC20B619D6C9520067A847 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -205,6 +214,12 @@
 				A3CC20F719DAF3B20067A847 /* WUNTile.m */,
 				A3CC20FB19DAF5B90067A847 /* WUNSwap.h */,
 				A3CC20FC19DAF5B90067A847 /* WUNSwap.m */,
+				A36F9A3919DD9E4100419500 /* WUNSmily.h */,
+				A36F9A3A19DD9E4100419500 /* WUNSmily.m */,
+				A36F9A3C19DD9E5800419500 /* WUNObstacle.h */,
+				A36F9A3D19DD9E5800419500 /* WUNObstacle.m */,
+				A36F9A3F19DD9E6C00419500 /* WUNHole.h */,
+				A36F9A4019DD9E6C00419500 /* WUNHole.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -333,7 +348,10 @@
 				A3CC20F919DAF3B20067A847 /* WUNLevel.m in Sources */,
 				A3CC20F819DAF3B20067A847 /* WUNObject.m in Sources */,
 				A3CC20BA19D6C9520067A847 /* AppDelegate.m in Sources */,
+				A36F9A3E19DD9E5800419500 /* WUNObstacle.m in Sources */,
 				A3CC20BD19D6C9520067A847 /* GameScene.m in Sources */,
+				A36F9A4119DD9E6C00419500 /* WUNHole.m in Sources */,
+				A36F9A3B19DD9E4100419500 /* WUNSmily.m in Sources */,
 				A3CC20EE19D6E0FB0067A847 /* WUNGameConfigManager.m in Sources */,
 				A3CC20B719D6C9520067A847 /* main.m in Sources */,
 				A3CC20FA19DAF3B20067A847 /* WUNTile.m in Sources */,

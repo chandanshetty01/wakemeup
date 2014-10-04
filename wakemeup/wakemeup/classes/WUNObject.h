@@ -14,15 +14,22 @@ typedef enum : NSUInteger {
     eObjectAlive,
     eObjectDead,
     eObjectGone,
-} eObjectStatus;
+} EObjectStatus;
+
+typedef enum : NSUInteger {
+    eObjectNone,
+    eObjectSmily,
+    eObjectObstacle,
+    eObjectHole
+} EObjectType;
 
 @interface WUNObject : NSObject
 
 @property (assign, nonatomic) NSInteger column;
 @property (assign, nonatomic) NSInteger row;
-@property (assign, nonatomic) NSUInteger ObjectType;
+@property (assign, nonatomic) EObjectType ObjectType;
 @property (strong, nonatomic) SKSpriteNode *sprite;
-@property (assign, nonatomic) eObjectStatus status;
+@property (assign, nonatomic) EObjectStatus status;
 
 - (NSString *)spriteName;
 - (NSString *)highlightedSpriteName;
