@@ -36,6 +36,7 @@
                 NSInteger tileRow = NumRows - row - 1;
                 WUNTile *tile = [[WUNTile alloc] init];
                 _tiles[column][tileRow] = tile;
+                
                 ObjectsList[column][tileRow] = value.integerValue;
                 NSLog(@"%d:%d->%d",column,row, value.integerValue);
             }];
