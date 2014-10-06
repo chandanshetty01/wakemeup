@@ -86,11 +86,11 @@
 
 -(void)handleGameCompletion
 {
-    id block = ^(BOOL status) {
-        if(status){
+    id block = ^(EGAMESTATUS status) {
+        if(status == eGameWon){
             //Game Won
         }
-        else{
+        else if(status == eGameOver){
             //Game lost
             NSLog(@"game over");
             self.scene.level = nil;
@@ -101,7 +101,8 @@
     self.scene.gameCompletion = block;
 }
 
-- (void)beginGame {
+- (void)beginGame
+{
     [self shuffle];
 }
 

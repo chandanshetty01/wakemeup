@@ -171,19 +171,21 @@ static const CGFloat TileHeight = 60.0f;
     return array;
 }
 
--(BOOL)isGameOver
+-(EGAMESTATUS)isGameOver
 {
-    __block BOOL status = false;
+    __block EGAMESTATUS status = eGameRunning;
+    
     for (NSInteger row = 0; row < NumRows; row++) {
         for (NSInteger column = 0; column < NumColumns; column++) {
              NSMutableArray *objects = [_level objectAtColumn:column row:row];
             [objects enumerateObjectsUsingBlock:^(WUNObject *obj, NSUInteger idx, BOOL *stop) {
                 if(obj.status == eObjectGone){
-                    status = true;
+                    status = eGameOver;
                     *stop = YES;
                 }
             }];
-            if(status){
+            
+            if(status == eGameOver || status == eGameWon){
                 break;
             }
         }
@@ -191,17 +193,13 @@ static const CGFloat TileHeight = 60.0f;
     return status;
 }
 
--(void)handleGameOver
-{
-    if (self.gameCompletion != nil) {
-        self.gameCompletion(NO);
-    }
-}
-
 -(void)checkGameOver
 {
-    if([self isGameOver]){
-        [self handleGameOver];
+    EGAMESTATUS status = [self isGameOver];
+    if(status != eGameRunning){
+        if (self.gameCompletion != nil) {
+            self.gameCompletion(status);
+        }
     }
 }
 
