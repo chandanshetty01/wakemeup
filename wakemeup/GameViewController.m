@@ -11,6 +11,7 @@
 #import "WUNLevel.h"
 
 @interface GameViewController()
+@property (nonatomic,assign) NSUInteger currentLevel;
 @property (strong, nonatomic) WUNLevel *level;
 @property (strong, nonatomic) GameScene *scene;
 @end
@@ -36,6 +37,21 @@
 
 @implementation GameViewController
 
+-(void)loadLevel
+{
+    // Load the level.
+    NSString *level = [NSString stringWithFormat:@"Level_%lu",(unsigned long)self.currentLevel];
+    self.level = [[WUNLevel alloc] initWithFile:level];
+    self.scene.level = self.level;
+    
+    id block = ^(WUNSwap *swap) {
+        [self.level performSwap:swap];
+    };
+    self.scene.swipeHandler = block;
+    
+    [self beginGame];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -47,25 +63,42 @@
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     skView.ignoresSiblingOrder = YES;
     
+    self.currentLevel = 1;
+    
     // Create and configure the scene.
     self.scene = [GameScene unarchiveFromFile:@"GameScene"];
     self.scene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    // Load the level.
-    self.level = [[WUNLevel alloc] initWithFile:@"Level_1"];
-    self.scene.level = self.level;
-    
-    id block = ^(WUNSwap *swap) {
-        [self.level performSwap:swap];
-    };
-    self.scene.swipeHandler = block;
-    
     // Present the scene.
     [skView presentScene:self.scene];
     
+    [self loadLevel];
+    
     // Let's start the game!
     [self.scene addTiles];
-    [self beginGame];
+    [self handleGameCompletion];
+}
+
+-(void)loadNextLevel
+{
+    self.currentLevel++;
+    [self loadLevel];
+}
+
+-(void)handleGameCompletion
+{
+    id block = ^(BOOL status) {
+        if(status){
+            //Game Won
+        }
+        else{
+            //Game lost
+            NSLog(@"game over");
+            self.scene.level = nil;
+            self.level = nil;
+            [self performSelector:@selector(loadNextLevel) withObject:nil afterDelay:1];
+        }
+    };
+    self.scene.gameCompletion = block;
 }
 
 - (void)beginGame {

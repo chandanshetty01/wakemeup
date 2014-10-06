@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) WUNLevel *level;
 @property (copy, nonatomic) void (^swipeHandler)(WUNSwap *swap);
+@property (copy, nonatomic) void (^gameCompletion)(BOOL status);
 
 - (void)addTiles;
 - (void)addSpritesForObjects:(NSSet *)Objects;

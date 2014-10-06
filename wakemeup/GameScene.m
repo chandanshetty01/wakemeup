@@ -171,6 +171,40 @@ static const CGFloat TileHeight = 60.0f;
     return array;
 }
 
+-(BOOL)isGameOver
+{
+    __block BOOL status = false;
+    for (NSInteger row = 0; row < NumRows; row++) {
+        for (NSInteger column = 0; column < NumColumns; column++) {
+             NSMutableArray *objects = [_level objectAtColumn:column row:row];
+            [objects enumerateObjectsUsingBlock:^(WUNObject *obj, NSUInteger idx, BOOL *stop) {
+                if(obj.status == eObjectGone){
+                    status = true;
+                    *stop = YES;
+                }
+            }];
+            if(status){
+                break;
+            }
+        }
+    }
+    return status;
+}
+
+-(void)handleGameOver
+{
+    if (self.gameCompletion != nil) {
+        self.gameCompletion(NO);
+    }
+}
+
+-(void)checkGameOver
+{
+    if([self isGameOver]){
+        [self handleGameOver];
+    }
+}
+
 - (void)trySwapHorizontal:(NSInteger)horzDelta vertical:(NSInteger)vertDelta
 {
     NSMutableArray *adjacentPoints = [self adjacentPoints:horzDelta vertical:vertDelta];
@@ -252,6 +286,7 @@ static const CGFloat TileHeight = 60.0f;
     SKAction *action = [SKAction moveTo:point duration:MAX(0.4, 0.1*diff)];
     [object.sprite runAction:action completion:^{
         if (self.swipeHandler != nil) {
+            [self checkGameOver];
             WUNSwap *swap = [[WUNSwap alloc] init];
             swap.ObjectA = object;
             swap.point = inPoint;

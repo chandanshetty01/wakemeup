@@ -172,8 +172,14 @@
     }
 }
 
-- (BOOL)isPossibleSwap:(WUNSwap *)swap {
+- (BOOL)isPossibleSwap:(WUNSwap *)swap
+{
   return [self.possibleSwaps containsObject:swap];
+}
+
+- (void)dealloc
+{
+    NSLog(@"");
 }
 
 @end

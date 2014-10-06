@@ -7,196 +7,277 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		038E6B2E18A240080001FF8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E6B2D18A240080001FF8B /* Foundation.framework */; };
-		038E6B3018A240080001FF8B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E6B2F18A240080001FF8B /* CoreGraphics.framework */; };
-		038E6B3218A240080001FF8B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E6B3118A240080001FF8B /* UIKit.framework */; };
-		038E6B3818A240080001FF8B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 038E6B3618A240080001FF8B /* InfoPlist.strings */; };
-		038E6B3A18A240080001FF8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B3918A240080001FF8B /* main.m */; };
-		038E6B3E18A240080001FF8B /* WUNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B3D18A240080001FF8B /* WUNAppDelegate.m */; };
-		038E6B4118A240080001FF8B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038E6B3F18A240080001FF8B /* Main_iPhone.storyboard */; };
-		038E6B4418A240080001FF8B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038E6B4218A240080001FF8B /* Main_iPad.storyboard */; };
-		038E6B4718A240080001FF8B /* WUNMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B4618A240080001FF8B /* WUNMainViewController.m */; };
-		038E6B4A18A240080001FF8B /* WUNFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B4918A240080001FF8B /* WUNFlipsideViewController.m */; };
-		038E6B4C18A240080001FF8B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 038E6B4B18A240080001FF8B /* Images.xcassets */; };
-		038E6B7718A265C10001FF8B /* WUNGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B7418A265C10001FF8B /* WUNGridView.m */; };
-		038E6B7818A265C10001FF8B /* WUNPuck.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B7618A265C10001FF8B /* WUNPuck.m */; };
-		038E6B7C18A397A30001FF8B /* WUNBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B7B18A397A30001FF8B /* WUNBlock.m */; };
-		038E6B7F18A39C0D0001FF8B /* WUNHole.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B7E18A39C0D0001FF8B /* WUNHole.m */; };
-		038E6B8518A4DDCB0001FF8B /* WUNGameConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B8418A4DDCB0001FF8B /* WUNGameConfigManager.m */; };
-		038E6B8718A4DDD60001FF8B /* WUNGameConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 038E6B8618A4DDD60001FF8B /* WUNGameConfig.plist */; };
-		038E6B8B18A8AF5B0001FF8B /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E6B8A18A8AF5B0001FF8B /* Colours.m */; };
+		A36F9A3B19DD9E4100419500 /* WUNSmily.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A3A19DD9E4100419500 /* WUNSmily.m */; };
+		A36F9A3E19DD9E5800419500 /* WUNObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A3D19DD9E5800419500 /* WUNObstacle.m */; };
+		A36F9A4119DD9E6C00419500 /* WUNHole.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A4019DD9E6C00419500 /* WUNHole.m */; };
+		A3C8919619E2ECB100A12D36 /* Level_2.json in Resources */ = {isa = PBXBuildFile; fileRef = A3C8919519E2ECB100A12D36 /* Level_2.json */; };
+		A3C891A019E2F23100A12D36 /* Level_3.json in Resources */ = {isa = PBXBuildFile; fileRef = A3C8919919E2F23100A12D36 /* Level_3.json */; };
+		A3C891A119E2F23100A12D36 /* Level_4.json in Resources */ = {isa = PBXBuildFile; fileRef = A3C8919A19E2F23100A12D36 /* Level_4.json */; };
+		A3C891A219E2F23100A12D36 /* Level_5.json in Resources */ = {isa = PBXBuildFile; fileRef = A3C8919B19E2F23100A12D36 /* Level_5.json */; };
+		A3C891A319E2F23100A12D36 /* Level_6.json in Resources */ = {isa = PBXBuildFile; fileRef = A3C8919C19E2F23100A12D36 /* Level_6.json */; };
+		A3C891A419E2F23100A12D36 /* Level_7.json in Resources */ = {isa = PBXBuildFile; fileRef = A3C8919D19E2F23100A12D36 /* Level_7.json */; };
+		A3CC20B719D6C9520067A847 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20B619D6C9520067A847 /* main.m */; };
+		A3CC20BA19D6C9520067A847 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20B919D6C9520067A847 /* AppDelegate.m */; };
+		A3CC20BD19D6C9520067A847 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20BC19D6C9520067A847 /* GameScene.m */; };
+		A3CC20BF19D6C9520067A847 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A3CC20BE19D6C9520067A847 /* GameScene.sks */; };
+		A3CC20C219D6C9520067A847 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20C119D6C9520067A847 /* GameViewController.m */; };
+		A3CC20C519D6C9520067A847 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3CC20C319D6C9520067A847 /* Main.storyboard */; };
+		A3CC20C719D6C9520067A847 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3CC20C619D6C9520067A847 /* Images.xcassets */; };
+		A3CC20CA19D6C9520067A847 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3CC20C819D6C9520067A847 /* LaunchScreen.xib */; };
+		A3CC20EE19D6E0FB0067A847 /* WUNGameConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20E819D6E0FB0067A847 /* WUNGameConfigManager.m */; };
+		A3CC20F119D6E3890067A847 /* WUNGameConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3CC20F019D6E3890067A847 /* WUNGameConfig.plist */; };
+		A3CC20F819DAF3B20067A847 /* WUNObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20F319DAF3B20067A847 /* WUNObject.m */; };
+		A3CC20F919DAF3B20067A847 /* WUNLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20F519DAF3B20067A847 /* WUNLevel.m */; };
+		A3CC20FA19DAF3B20067A847 /* WUNTile.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20F719DAF3B20067A847 /* WUNTile.m */; };
+		A3CC20FD19DAF5B90067A847 /* WUNSwap.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20FC19DAF5B90067A847 /* WUNSwap.m */; };
+		A3CC210519DAF6F90067A847 /* Level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A3CC210019DAF6F90067A847 /* Level_1.json */; };
+		A3CC210A19DAF7410067A847 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A3CC210919DAF7410067A847 /* Sprites.atlas */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A3CC20D019D6C9520067A847 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3CC20A919D6C9520067A847 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3CC20B019D6C9520067A847;
+			remoteInfo = wakemeup;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		038E6B2A18A240080001FF8B /* WakeMeUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeMeUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		038E6B2D18A240080001FF8B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		038E6B2F18A240080001FF8B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		038E6B3118A240080001FF8B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		038E6B3518A240080001FF8B /* WakeMeUp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WakeMeUp-Info.plist"; sourceTree = "<group>"; };
-		038E6B3718A240080001FF8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		038E6B3918A240080001FF8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		038E6B3B18A240080001FF8B /* WakeMeUp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WakeMeUp-Prefix.pch"; sourceTree = "<group>"; };
-		038E6B3C18A240080001FF8B /* WUNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WUNAppDelegate.h; sourceTree = "<group>"; };
-		038E6B3D18A240080001FF8B /* WUNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WUNAppDelegate.m; sourceTree = "<group>"; };
-		038E6B4018A240080001FF8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		038E6B4318A240080001FF8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		038E6B4518A240080001FF8B /* WUNMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WUNMainViewController.h; sourceTree = "<group>"; };
-		038E6B4618A240080001FF8B /* WUNMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WUNMainViewController.m; sourceTree = "<group>"; };
-		038E6B4818A240080001FF8B /* WUNFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WUNFlipsideViewController.h; sourceTree = "<group>"; };
-		038E6B4918A240080001FF8B /* WUNFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WUNFlipsideViewController.m; sourceTree = "<group>"; };
-		038E6B4B18A240080001FF8B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		038E6B7318A265C10001FF8B /* WUNGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNGridView.h; path = Elements/WUNGridView.h; sourceTree = "<group>"; };
-		038E6B7418A265C10001FF8B /* WUNGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNGridView.m; path = Elements/WUNGridView.m; sourceTree = "<group>"; };
-		038E6B7518A265C10001FF8B /* WUNPuck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNPuck.h; path = Elements/WUNPuck.h; sourceTree = "<group>"; };
-		038E6B7618A265C10001FF8B /* WUNPuck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNPuck.m; path = Elements/WUNPuck.m; sourceTree = "<group>"; };
-		038E6B7A18A397A30001FF8B /* WUNBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNBlock.h; path = Elements/WUNBlock.h; sourceTree = "<group>"; };
-		038E6B7B18A397A30001FF8B /* WUNBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNBlock.m; path = Elements/WUNBlock.m; sourceTree = "<group>"; };
-		038E6B7D18A39C0D0001FF8B /* WUNHole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNHole.h; path = Elements/WUNHole.h; sourceTree = "<group>"; };
-		038E6B7E18A39C0D0001FF8B /* WUNHole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNHole.m; path = Elements/WUNHole.m; sourceTree = "<group>"; };
-		038E6B8318A4DDCB0001FF8B /* WUNGameConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNGameConfigManager.h; path = Configuration/WUNGameConfigManager.h; sourceTree = "<group>"; };
-		038E6B8418A4DDCB0001FF8B /* WUNGameConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNGameConfigManager.m; path = Configuration/WUNGameConfigManager.m; sourceTree = "<group>"; };
-		038E6B8618A4DDD60001FF8B /* WUNGameConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = WUNGameConfig.plist; path = Configuration/WUNGameConfig.plist; sourceTree = "<group>"; };
-		038E6B8918A8AF5B0001FF8B /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
-		038E6B8A18A8AF5B0001FF8B /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
+		A36F9A3919DD9E4100419500 /* WUNSmily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNSmily.h; path = wakemeup/classes/WUNSmily.h; sourceTree = SOURCE_ROOT; };
+		A36F9A3A19DD9E4100419500 /* WUNSmily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNSmily.m; path = wakemeup/classes/WUNSmily.m; sourceTree = SOURCE_ROOT; };
+		A36F9A3C19DD9E5800419500 /* WUNObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNObstacle.h; path = wakemeup/classes/WUNObstacle.h; sourceTree = SOURCE_ROOT; };
+		A36F9A3D19DD9E5800419500 /* WUNObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNObstacle.m; path = wakemeup/classes/WUNObstacle.m; sourceTree = SOURCE_ROOT; };
+		A36F9A3F19DD9E6C00419500 /* WUNHole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNHole.h; path = wakemeup/classes/WUNHole.h; sourceTree = SOURCE_ROOT; };
+		A36F9A4019DD9E6C00419500 /* WUNHole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNHole.m; path = wakemeup/classes/WUNHole.m; sourceTree = SOURCE_ROOT; };
+		A3C8919519E2ECB100A12D36 /* Level_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_2.json; sourceTree = "<group>"; };
+		A3C8919919E2F23100A12D36 /* Level_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_3.json; sourceTree = "<group>"; };
+		A3C8919A19E2F23100A12D36 /* Level_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_4.json; sourceTree = "<group>"; };
+		A3C8919B19E2F23100A12D36 /* Level_5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_5.json; sourceTree = "<group>"; };
+		A3C8919C19E2F23100A12D36 /* Level_6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_6.json; sourceTree = "<group>"; };
+		A3C8919D19E2F23100A12D36 /* Level_7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_7.json; sourceTree = "<group>"; };
+		A3CC20B119D6C9520067A847 /* wakemeup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wakemeup.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3CC20B519D6C9520067A847 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3CC20B619D6C9520067A847 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A3CC20B819D6C9520067A847 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A3CC20B919D6C9520067A847 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A3CC20BB19D6C9520067A847 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = GameScene.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		A3CC20BC19D6C9520067A847 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GameScene.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A3CC20BE19D6C9520067A847 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		A3CC20C019D6C9520067A847 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		A3CC20C119D6C9520067A847 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GameViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A3CC20C419D6C9520067A847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A3CC20C619D6C9520067A847 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A3CC20C919D6C9520067A847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A3CC20CF19D6C9520067A847 /* wakemeupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wakemeupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3CC20E719D6E0FB0067A847 /* WUNGameConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUNGameConfigManager.h; sourceTree = "<group>"; };
+		A3CC20E819D6E0FB0067A847 /* WUNGameConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUNGameConfigManager.m; sourceTree = "<group>"; };
+		A3CC20F019D6E3890067A847 /* WUNGameConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WUNGameConfig.plist; sourceTree = "<group>"; };
+		A3CC20F219DAF3B20067A847 /* WUNObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNObject.h; path = wakemeup/classes/WUNObject.h; sourceTree = SOURCE_ROOT; };
+		A3CC20F319DAF3B20067A847 /* WUNObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNObject.m; path = wakemeup/classes/WUNObject.m; sourceTree = SOURCE_ROOT; };
+		A3CC20F419DAF3B20067A847 /* WUNLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = WUNLevel.h; path = wakemeup/classes/WUNLevel.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		A3CC20F519DAF3B20067A847 /* WUNLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = WUNLevel.m; path = wakemeup/classes/WUNLevel.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A3CC20F619DAF3B20067A847 /* WUNTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNTile.h; path = wakemeup/classes/WUNTile.h; sourceTree = SOURCE_ROOT; };
+		A3CC20F719DAF3B20067A847 /* WUNTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNTile.m; path = wakemeup/classes/WUNTile.m; sourceTree = SOURCE_ROOT; };
+		A3CC20FB19DAF5B90067A847 /* WUNSwap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNSwap.h; path = wakemeup/classes/WUNSwap.h; sourceTree = SOURCE_ROOT; };
+		A3CC20FC19DAF5B90067A847 /* WUNSwap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNSwap.m; path = wakemeup/classes/WUNSwap.m; sourceTree = SOURCE_ROOT; };
+		A3CC210019DAF6F90067A847 /* Level_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_1.json; sourceTree = "<group>"; };
+		A3CC210919DAF7410067A847 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		038E6B2718A240080001FF8B /* Frameworks */ = {
+		A3CC20AE19D6C9520067A847 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				038E6B3018A240080001FF8B /* CoreGraphics.framework in Frameworks */,
-				038E6B3218A240080001FF8B /* UIKit.framework in Frameworks */,
-				038E6B2E18A240080001FF8B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3CC20CC19D6C9520067A847 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		038E6B2118A240070001FF8B = {
+		A3CC20A819D6C9520067A847 = {
 			isa = PBXGroup;
 			children = (
-				038E6B3318A240080001FF8B /* WakeUpNow */,
-				038E6B2C18A240080001FF8B /* Frameworks */,
-				038E6B2B18A240080001FF8B /* Products */,
+				A3CC20B319D6C9520067A847 /* wakemeup */,
+				A3CC20B219D6C9520067A847 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		038E6B2B18A240080001FF8B /* Products */ = {
+		A3CC20B219D6C9520067A847 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				038E6B2A18A240080001FF8B /* WakeMeUp.app */,
+				A3CC20B119D6C9520067A847 /* wakemeup.app */,
+				A3CC20CF19D6C9520067A847 /* wakemeupTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		038E6B2C18A240080001FF8B /* Frameworks */ = {
+		A3CC20B319D6C9520067A847 /* wakemeup */ = {
 			isa = PBXGroup;
 			children = (
-				038E6B2D18A240080001FF8B /* Foundation.framework */,
-				038E6B2F18A240080001FF8B /* CoreGraphics.framework */,
-				038E6B3118A240080001FF8B /* UIKit.framework */,
+				A3CC20E319D6E0FB0067A847 /* classes */,
+				A3CC20B819D6C9520067A847 /* AppDelegate.h */,
+				A3CC20B919D6C9520067A847 /* AppDelegate.m */,
+				A3CC20BB19D6C9520067A847 /* GameScene.h */,
+				A3CC20BC19D6C9520067A847 /* GameScene.m */,
+				A3CC20BE19D6C9520067A847 /* GameScene.sks */,
+				A3CC20C019D6C9520067A847 /* GameViewController.h */,
+				A3CC20C119D6C9520067A847 /* GameViewController.m */,
+				A3CC20C319D6C9520067A847 /* Main.storyboard */,
+				A3CC20C619D6C9520067A847 /* Images.xcassets */,
+				A3CC20C819D6C9520067A847 /* LaunchScreen.xib */,
+				A3CC20B419D6C9520067A847 /* Supporting Files */,
 			);
-			name = Frameworks;
+			path = wakemeup;
 			sourceTree = "<group>";
 		};
-		038E6B3318A240080001FF8B /* WakeUpNow */ = {
+		A3CC20B419D6C9520067A847 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				038E6B8818A8AF500001FF8B /* Categories */,
-				038E6B8018A4DD790001FF8B /* Configuration */,
-				038E6B7918A265D60001FF8B /* Elements */,
-				038E6B3C18A240080001FF8B /* WUNAppDelegate.h */,
-				038E6B3D18A240080001FF8B /* WUNAppDelegate.m */,
-				038E6B3F18A240080001FF8B /* Main_iPhone.storyboard */,
-				038E6B4218A240080001FF8B /* Main_iPad.storyboard */,
-				038E6B4518A240080001FF8B /* WUNMainViewController.h */,
-				038E6B4618A240080001FF8B /* WUNMainViewController.m */,
-				038E6B4818A240080001FF8B /* WUNFlipsideViewController.h */,
-				038E6B4918A240080001FF8B /* WUNFlipsideViewController.m */,
-				038E6B4B18A240080001FF8B /* Images.xcassets */,
-				038E6B3418A240080001FF8B /* Supporting Files */,
-			);
-			path = WakeUpNow;
-			sourceTree = "<group>";
-		};
-		038E6B3418A240080001FF8B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				038E6B3518A240080001FF8B /* WakeMeUp-Info.plist */,
-				038E6B3618A240080001FF8B /* InfoPlist.strings */,
-				038E6B3918A240080001FF8B /* main.m */,
-				038E6B3B18A240080001FF8B /* WakeMeUp-Prefix.pch */,
+				A3CC210919DAF7410067A847 /* Sprites.atlas */,
+				A3CC20FE19DAF6F90067A847 /* Levels */,
+				A3CC20F019D6E3890067A847 /* WUNGameConfig.plist */,
+				A3CC20B519D6C9520067A847 /* Info.plist */,
+				A3CC20B619D6C9520067A847 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		038E6B7918A265D60001FF8B /* Elements */ = {
+		A3CC20E319D6E0FB0067A847 /* classes */ = {
 			isa = PBXGroup;
 			children = (
-				038E6B7318A265C10001FF8B /* WUNGridView.h */,
-				038E6B7418A265C10001FF8B /* WUNGridView.m */,
-				038E6B7518A265C10001FF8B /* WUNPuck.h */,
-				038E6B7618A265C10001FF8B /* WUNPuck.m */,
-				038E6B7A18A397A30001FF8B /* WUNBlock.h */,
-				038E6B7B18A397A30001FF8B /* WUNBlock.m */,
-				038E6B7D18A39C0D0001FF8B /* WUNHole.h */,
-				038E6B7E18A39C0D0001FF8B /* WUNHole.m */,
+				A3CC20E419D6E0FB0067A847 /* Controllers */,
+				A3CC20E519D6E0FB0067A847 /* Datasource */,
+				A3CC20E919D6E0FB0067A847 /* Utility */,
+				A3CC20EA19D6E0FB0067A847 /* Views */,
 			);
-			name = Elements;
+			path = classes;
 			sourceTree = "<group>";
 		};
-		038E6B8018A4DD790001FF8B /* Configuration */ = {
+		A3CC20E419D6E0FB0067A847 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				038E6B8618A4DDD60001FF8B /* WUNGameConfig.plist */,
-				038E6B8318A4DDCB0001FF8B /* WUNGameConfigManager.h */,
-				038E6B8418A4DDCB0001FF8B /* WUNGameConfigManager.m */,
 			);
-			name = Configuration;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		038E6B8818A8AF500001FF8B /* Categories */ = {
+		A3CC20E519D6E0FB0067A847 /* Datasource */ = {
 			isa = PBXGroup;
 			children = (
-				038E6B8918A8AF5B0001FF8B /* Colours.h */,
-				038E6B8A18A8AF5B0001FF8B /* Colours.m */,
+				A3CC20E719D6E0FB0067A847 /* WUNGameConfigManager.h */,
+				A3CC20E819D6E0FB0067A847 /* WUNGameConfigManager.m */,
 			);
-			name = Categories;
+			path = Datasource;
+			sourceTree = "<group>";
+		};
+		A3CC20E919D6E0FB0067A847 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		A3CC20EA19D6E0FB0067A847 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A3CC20F219DAF3B20067A847 /* WUNObject.h */,
+				A3CC20F319DAF3B20067A847 /* WUNObject.m */,
+				A3CC20F419DAF3B20067A847 /* WUNLevel.h */,
+				A3CC20F519DAF3B20067A847 /* WUNLevel.m */,
+				A3CC20F619DAF3B20067A847 /* WUNTile.h */,
+				A3CC20F719DAF3B20067A847 /* WUNTile.m */,
+				A3CC20FB19DAF5B90067A847 /* WUNSwap.h */,
+				A3CC20FC19DAF5B90067A847 /* WUNSwap.m */,
+				A36F9A3919DD9E4100419500 /* WUNSmily.h */,
+				A36F9A3A19DD9E4100419500 /* WUNSmily.m */,
+				A36F9A3C19DD9E5800419500 /* WUNObstacle.h */,
+				A36F9A3D19DD9E5800419500 /* WUNObstacle.m */,
+				A36F9A3F19DD9E6C00419500 /* WUNHole.h */,
+				A36F9A4019DD9E6C00419500 /* WUNHole.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A3CC20FE19DAF6F90067A847 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				A3CC210019DAF6F90067A847 /* Level_1.json */,
+				A3C8919519E2ECB100A12D36 /* Level_2.json */,
+				A3C8919919E2F23100A12D36 /* Level_3.json */,
+				A3C8919A19E2F23100A12D36 /* Level_4.json */,
+				A3C8919B19E2F23100A12D36 /* Level_5.json */,
+				A3C8919C19E2F23100A12D36 /* Level_6.json */,
+				A3C8919D19E2F23100A12D36 /* Level_7.json */,
+			);
+			path = Levels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		038E6B2918A240080001FF8B /* WakeMeUp */ = {
+		A3CC20B019D6C9520067A847 /* wakemeup */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 038E6B6218A240080001FF8B /* Build configuration list for PBXNativeTarget "WakeMeUp" */;
+			buildConfigurationList = A3CC20D919D6C9530067A847 /* Build configuration list for PBXNativeTarget "wakemeup" */;
 			buildPhases = (
-				038E6B2618A240080001FF8B /* Sources */,
-				038E6B2718A240080001FF8B /* Frameworks */,
-				038E6B2818A240080001FF8B /* Resources */,
+				A3CC20AD19D6C9520067A847 /* Sources */,
+				A3CC20AE19D6C9520067A847 /* Frameworks */,
+				A3CC20AF19D6C9520067A847 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = WakeMeUp;
-			productName = WakeUpNow;
-			productReference = 038E6B2A18A240080001FF8B /* WakeMeUp.app */;
+			name = wakemeup;
+			productName = wakemeup;
+			productReference = A3CC20B119D6C9520067A847 /* wakemeup.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A3CC20CE19D6C9520067A847 /* wakemeupTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3CC20DC19D6C9530067A847 /* Build configuration list for PBXNativeTarget "wakemeupTests" */;
+			buildPhases = (
+				A3CC20CB19D6C9520067A847 /* Sources */,
+				A3CC20CC19D6C9520067A847 /* Frameworks */,
+				A3CC20CD19D6C9520067A847 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A3CC20D119D6C9520067A847 /* PBXTargetDependency */,
+			);
+			name = wakemeupTests;
+			productName = wakemeupTests;
+			productReference = A3CC20CF19D6C9520067A847 /* wakemeupTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		038E6B2218A240070001FF8B /* Project object */ = {
+		A3CC20A919D6C9520067A847 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = WUN;
 				LastUpgradeCheck = 0600;
-				ORGANIZATIONNAME = "S P, Chandan Shetty (external - Project)";
+				ORGANIZATIONNAME = Chandan;
+				TargetAttributes = {
+					A3CC20B019D6C9520067A847 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					A3CC20CE19D6C9520067A847 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = A3CC20B019D6C9520067A847;
+					};
+				};
 			};
-			buildConfigurationList = 038E6B2518A240070001FF8B /* Build configuration list for PBXProject "WakeMeUp" */;
+			buildConfigurationList = A3CC20AC19D6C9520067A847 /* Build configuration list for PBXProject "wakemeup" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -204,80 +285,105 @@
 				en,
 				Base,
 			);
-			mainGroup = 038E6B2118A240070001FF8B;
-			productRefGroup = 038E6B2B18A240080001FF8B /* Products */;
+			mainGroup = A3CC20A819D6C9520067A847;
+			productRefGroup = A3CC20B219D6C9520067A847 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				038E6B2918A240080001FF8B /* WakeMeUp */,
+				A3CC20B019D6C9520067A847 /* wakemeup */,
+				A3CC20CE19D6C9520067A847 /* wakemeupTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		038E6B2818A240080001FF8B /* Resources */ = {
+		A3CC20AF19D6C9520067A847 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				038E6B4418A240080001FF8B /* Main_iPad.storyboard in Resources */,
-				038E6B4C18A240080001FF8B /* Images.xcassets in Resources */,
-				038E6B4118A240080001FF8B /* Main_iPhone.storyboard in Resources */,
-				038E6B3818A240080001FF8B /* InfoPlist.strings in Resources */,
-				038E6B8718A4DDD60001FF8B /* WUNGameConfig.plist in Resources */,
+				A3CC210519DAF6F90067A847 /* Level_1.json in Resources */,
+				A3C891A419E2F23100A12D36 /* Level_7.json in Resources */,
+				A3C891A019E2F23100A12D36 /* Level_3.json in Resources */,
+				A3C891A219E2F23100A12D36 /* Level_5.json in Resources */,
+				A3C891A319E2F23100A12D36 /* Level_6.json in Resources */,
+				A3CC20CA19D6C9520067A847 /* LaunchScreen.xib in Resources */,
+				A3CC210A19DAF7410067A847 /* Sprites.atlas in Resources */,
+				A3CC20F119D6E3890067A847 /* WUNGameConfig.plist in Resources */,
+				A3C891A119E2F23100A12D36 /* Level_4.json in Resources */,
+				A3CC20C719D6C9520067A847 /* Images.xcassets in Resources */,
+				A3C8919619E2ECB100A12D36 /* Level_2.json in Resources */,
+				A3CC20BF19D6C9520067A847 /* GameScene.sks in Resources */,
+				A3CC20C519D6C9520067A847 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3CC20CD19D6C9520067A847 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		038E6B2618A240080001FF8B /* Sources */ = {
+		A3CC20AD19D6C9520067A847 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				038E6B7C18A397A30001FF8B /* WUNBlock.m in Sources */,
-				038E6B8518A4DDCB0001FF8B /* WUNGameConfigManager.m in Sources */,
-				038E6B4718A240080001FF8B /* WUNMainViewController.m in Sources */,
-				038E6B3A18A240080001FF8B /* main.m in Sources */,
-				038E6B7718A265C10001FF8B /* WUNGridView.m in Sources */,
-				038E6B8B18A8AF5B0001FF8B /* Colours.m in Sources */,
-				038E6B7818A265C10001FF8B /* WUNPuck.m in Sources */,
-				038E6B3E18A240080001FF8B /* WUNAppDelegate.m in Sources */,
-				038E6B7F18A39C0D0001FF8B /* WUNHole.m in Sources */,
-				038E6B4A18A240080001FF8B /* WUNFlipsideViewController.m in Sources */,
+				A3CC20C219D6C9520067A847 /* GameViewController.m in Sources */,
+				A3CC20F919DAF3B20067A847 /* WUNLevel.m in Sources */,
+				A3CC20F819DAF3B20067A847 /* WUNObject.m in Sources */,
+				A3CC20BA19D6C9520067A847 /* AppDelegate.m in Sources */,
+				A36F9A3E19DD9E5800419500 /* WUNObstacle.m in Sources */,
+				A3CC20BD19D6C9520067A847 /* GameScene.m in Sources */,
+				A36F9A4119DD9E6C00419500 /* WUNHole.m in Sources */,
+				A36F9A3B19DD9E4100419500 /* WUNSmily.m in Sources */,
+				A3CC20EE19D6E0FB0067A847 /* WUNGameConfigManager.m in Sources */,
+				A3CC20B719D6C9520067A847 /* main.m in Sources */,
+				A3CC20FA19DAF3B20067A847 /* WUNTile.m in Sources */,
+				A3CC20FD19DAF5B90067A847 /* WUNSwap.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3CC20CB19D6C9520067A847 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A3CC20D119D6C9520067A847 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A3CC20B019D6C9520067A847 /* wakemeup */;
+			targetProxy = A3CC20D019D6C9520067A847 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		038E6B3618A240080001FF8B /* InfoPlist.strings */ = {
+		A3CC20C319D6C9520067A847 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				038E6B3718A240080001FF8B /* en */,
+				A3CC20C419D6C9520067A847 /* Base */,
 			);
-			name = InfoPlist.strings;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		038E6B3F18A240080001FF8B /* Main_iPhone.storyboard */ = {
+		A3CC20C819D6C9520067A847 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				038E6B4018A240080001FF8B /* Base */,
+				A3CC20C919D6C9520067A847 /* Base */,
 			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		038E6B4218A240080001FF8B /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				038E6B4318A240080001FF8B /* Base */,
-			);
-			name = Main_iPad.storyboard;
+			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		038E6B6018A240080001FF8B /* Debug */ = {
+		A3CC20D719D6C9530067A847 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -292,9 +398,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -306,17 +414,18 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		038E6B6118A240080001FF8B /* Release */ = {
+		A3CC20D819D6C9530067A847 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -331,77 +440,114 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		038E6B6318A240080001FF8B /* Debug */ = {
+		A3CC20DA19D6C9530067A847 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WakeUpNow/WakeMeUp-Prefix.pch";
-				INFOPLIST_FILE = "WakeUpNow/WakeMeUp-Info.plist";
-				PRODUCT_NAME = WakeMeUp;
-				PROVISIONING_PROFILE = "186877c0-4e2a-4067-9857-06e00aac00dd";
-				WRAPPER_EXTENSION = app;
+				INFOPLIST_FILE = wakemeup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		038E6B6418A240080001FF8B /* Release */ = {
+		A3CC20DB19D6C9530067A847 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WakeUpNow/WakeMeUp-Prefix.pch";
-				INFOPLIST_FILE = "WakeUpNow/WakeMeUp-Info.plist";
-				PRODUCT_NAME = WakeMeUp;
-				PROVISIONING_PROFILE = "9531152d-3c24-4c1c-898a-7da54719cee1";
-				WRAPPER_EXTENSION = app;
+				INFOPLIST_FILE = wakemeup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A3CC20DD19D6C9530067A847 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wakemeup.app/wakemeup";
+			};
+			name = Debug;
+		};
+		A3CC20DE19D6C9530067A847 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wakemeup.app/wakemeup";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		038E6B2518A240070001FF8B /* Build configuration list for PBXProject "WakeMeUp" */ = {
+		A3CC20AC19D6C9520067A847 /* Build configuration list for PBXProject "wakemeup" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				038E6B6018A240080001FF8B /* Debug */,
-				038E6B6118A240080001FF8B /* Release */,
+				A3CC20D719D6C9530067A847 /* Debug */,
+				A3CC20D819D6C9530067A847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		038E6B6218A240080001FF8B /* Build configuration list for PBXNativeTarget "WakeMeUp" */ = {
+		A3CC20D919D6C9530067A847 /* Build configuration list for PBXNativeTarget "wakemeup" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				038E6B6318A240080001FF8B /* Debug */,
-				038E6B6418A240080001FF8B /* Release */,
+				A3CC20DA19D6C9530067A847 /* Debug */,
+				A3CC20DB19D6C9530067A847 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3CC20DC19D6C9530067A847 /* Build configuration list for PBXNativeTarget "wakemeupTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3CC20DD19D6C9530067A847 /* Debug */,
+				A3CC20DE19D6C9530067A847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 038E6B2218A240070001FF8B /* Project object */;
+	rootObject = A3CC20A919D6C9520067A847 /* Project object */;
 }

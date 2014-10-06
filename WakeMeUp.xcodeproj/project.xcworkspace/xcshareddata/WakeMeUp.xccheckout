@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F2B7C8F4-5C44-455E-832A-EB3F889BDCC7</string>
+	<string>1808BD72-6FBD-4FA9-B320-2EE37046AC29</string>
 	<key>IDESourceControlProjectName</key>
-	<string>WakeMeUp</string>
+	<string>wakemeup</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>C58F7377BA1EDF995BDAC41037C6B1726F8BA197</key>
 		<string>https://github.com/chandanshetty01/wakemeup</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>WakeMeUp.xcodeproj</string>
+	<string>wakemeup/wakemeup.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C58F7377BA1EDF995BDAC41037C6B1726F8BA197</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/chandanshetty01/wakemeup</string>
