@@ -89,13 +89,13 @@
     id block = ^(EGAMESTATUS status) {
         if(status == eGameWon){
             //Game Won
+            self.scene.level = nil;
+            self.level = nil;
+            [self performSelector:@selector(loadNextLevel) withObject:nil afterDelay:1];
         }
         else if(status == eGameOver){
             //Game lost
             NSLog(@"game over");
-            self.scene.level = nil;
-            self.level = nil;
-            [self performSelector:@selector(loadNextLevel) withObject:nil afterDelay:1];
         }
     };
     self.scene.gameCompletion = block;

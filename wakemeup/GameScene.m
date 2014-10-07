@@ -173,19 +173,24 @@ static const CGFloat TileHeight = 60.0f;
 
 -(EGAMESTATUS)isGameOver
 {
-    __block EGAMESTATUS status = eGameRunning;
+    __block EGAMESTATUS status = eGameWon;
     
     for (NSInteger row = 0; row < NumRows; row++) {
         for (NSInteger column = 0; column < NumColumns; column++) {
-             NSMutableArray *objects = [_level objectAtColumn:column row:row];
-            [objects enumerateObjectsUsingBlock:^(WUNObject *obj, NSUInteger idx, BOOL *stop) {
-                if(obj.status == eObjectGone){
-                    status = eGameOver;
-                    *stop = YES;
-                }
-            }];
+            NSMutableArray *objects = [_level objectAtColumn:column row:row];
+            if(objects){
+                [objects enumerateObjectsUsingBlock:^(WUNObject *obj, NSUInteger idx, BOOL *stop) {
+                    if(obj.status == eObjectGone){
+                        status = eGameOver;
+                        *stop = YES;
+                    }
+                    else if(obj.status == eObjectAlive && obj.ObjectType == eObjectSmily){
+                        status = eGameRunning;
+                    }
+                }];
+            }
             
-            if(status == eGameOver || status == eGameWon){
+            if(status == eGameOver){
                 break;
             }
         }
