@@ -11,7 +11,6 @@
 #import "WUNLevel.h"
 
 @interface GameViewController()
-@property (nonatomic,assign) NSUInteger currentLevel;
 @property (strong, nonatomic) WUNLevel *level;
 @property (strong, nonatomic) GameScene *scene;
 @end
@@ -40,7 +39,8 @@
 -(void)loadLevel
 {
     // Load the level.
-    NSString *level = [NSString stringWithFormat:@"Level_%lu",(unsigned long)self.currentLevel];
+    NSInteger levelID = self.levelModel.levelID;
+    NSString *level = [NSString stringWithFormat:@"Level_%lu",(unsigned long)levelID];
     self.level = [[WUNLevel alloc] initWithFile:level];
     self.scene.level = self.level;
     
@@ -78,24 +78,19 @@
     [self handleGameCompletion];
 }
 
--(void)loadNextLevel
-{
-    self.currentLevel++;
-    [self loadLevel];
-}
-
 -(void)handleGameCompletion
 {
     id block = ^(EGAMESTATUS status) {
+        self.scene.level = nil;
+        self.level = nil;
         if(status == eGameWon){
             //Game Won
-            self.scene.level = nil;
-            self.level = nil;
-            [self performSelector:@selector(loadNextLevel) withObject:nil afterDelay:1];
+            self.currentLevel++;
+            [self performSelector:@selector(loadLevel) withObject:nil afterDelay:1];
         }
         else if(status == eGameOver){
             //Game lost
-            NSLog(@"game over");
+            [self performSelector:@selector(loadLevel) withObject:nil afterDelay:1];
         }
     };
     self.scene.gameCompletion = block;
@@ -111,6 +106,13 @@
     [self.scene addSpritesForObjects:newObjects];
 }
 
+- (IBAction)handleBackButton:(id)sender
+{
+    self.scene.swipeHandler = nil;
+    self.scene.gameCompletion = nil;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (BOOL)shouldAutorotate
 {
     return YES;
@@ -123,6 +125,11 @@
     } else {
         return UIInterfaceOrientationMaskAll;
     }
+}
+
+- (void)dealloc
+{
+    NSLog(@"Game view controller released");
 }
 
 - (void)didReceiveMemoryWarning
