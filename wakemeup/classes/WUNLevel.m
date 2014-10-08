@@ -7,6 +7,7 @@
 //
 
 #import "WUNLevel.h"
+#import "Utility.h"
 
 @interface WUNLevel ()
 
@@ -23,7 +24,7 @@
 - (instancetype)initWithFile:(NSString *)filename {
     self = [super init];
     if (self != nil) {
-        NSDictionary *dictionary = [self loadJSON:filename];
+        NSDictionary *dictionary = [Utility loadJSON:filename];
         
         // Loop through the rows
         [dictionary[@"tiles"] enumerateObjectsUsingBlock:^(NSArray *array, NSUInteger row, BOOL *stop) {
@@ -42,30 +43,6 @@
         }];
     }
     return self;
-}
-
-- (NSDictionary *)loadJSON:(NSString *)filename {
-
-  NSString *path = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
-  if (path == nil) {
-    NSLog(@"Could not find level file: %@", filename);
-    return nil;
-  }
-
-  NSError *error;
-  NSData *data = [NSData dataWithContentsOfFile:path options:0 error:&error];
-  if (data == nil) {
-    NSLog(@"Could not load level file: %@, error: %@", filename, error);
-    return nil;
-  }
-
-  NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-  if (dictionary == nil || ![dictionary isKindOfClass:[NSDictionary class]]) {
-    NSLog(@"Level file '%@' is not valid JSON: %@", filename, error);
-    return nil;
-  }
-
-  return dictionary;
 }
 
 - (NSMutableArray *)objectAtColumn:(NSInteger)column row:(NSInteger)row;

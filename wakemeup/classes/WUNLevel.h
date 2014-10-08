@@ -24,6 +24,7 @@ static const NSInteger NumRows = 4;
 
 - (NSMutableArray *)objectAtColumn:(NSInteger)column row:(NSInteger)row;
 - (WUNTile *)tileAtColumn:(NSInteger)column row:(NSInteger)row;
+- (NSMutableArray *)createObjectAtColumn:(NSInteger)column row:(NSInteger)row withType:(NSUInteger)ObjectType;
 
 - (void)performSwap:(WUNSwap *)swap;
 - (BOOL)isPossibleSwap:(WUNSwap *)swap;

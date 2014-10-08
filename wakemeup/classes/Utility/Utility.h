@@ -10,6 +10,8 @@
 
 @interface Utility : NSObject
 
-+ (NSDictionary *)loadJSON:(NSString *)filename;
++(NSDictionary *)loadJSON:(NSString *)filename;
++(NSInteger)saveJSON:(NSDictionary*)dictionary fileName:(NSString*)fileName;
++(NSData*)JSONdataForFileName:(NSString*)filename;
 
 @end

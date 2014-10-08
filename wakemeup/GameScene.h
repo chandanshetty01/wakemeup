@@ -18,10 +18,12 @@ typedef enum : NSUInteger {
 @interface GameScene : SKScene
 
 @property (strong, nonatomic) WUNLevel *level;
-@property (copy, nonatomic) void (^swipeHandler)(WUNSwap *swap);
-@property (copy, nonatomic) void (^gameCompletion)(EGAMESTATUS status);
+@property (copy, nonatomic)void (^swipeHandler)(WUNSwap *swap);
+@property (copy, nonatomic)void (^gameCompletion)(EGAMESTATUS status);
+@property (nonatomic,assign)BOOL isDevelopmentMode;
 
 - (void)addTiles;
 - (void)addSpritesForObjects:(NSSet *)Objects;
+- (NSDictionary*)getLevelData;
 
 @end

@@ -46,6 +46,7 @@ static const CGFloat TileHeight = 60.0f;
     
     self.swipeFromColumn = self.swipeFromRow = NSNotFound;
     self.selectionSprite = [SKSpriteNode node];
+    self.isDevelopmentMode = NO;
 }
 
 - (void)addTiles
@@ -82,11 +83,13 @@ static const CGFloat TileHeight = 60.0f;
     }
 }
 
-- (CGPoint)pointForColumn:(NSInteger)column row:(NSInteger)row {
+- (CGPoint)pointForColumn:(NSInteger)column row:(NSInteger)row
+{
     return CGPointMake(column*TileWidth + TileWidth/2, row*TileHeight + TileHeight/2);
 }
 
-- (BOOL)convertPoint:(CGPoint)point toColumn:(NSInteger *)column row:(NSInteger *)row {
+- (BOOL)convertPoint:(CGPoint)point toColumn:(NSInteger *)column row:(NSInteger *)row
+{
     NSParameterAssert(column);
     NSParameterAssert(row);
     
@@ -106,16 +109,17 @@ static const CGFloat TileHeight = 60.0f;
     }
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self.smileysLayer];
     
     NSInteger column, row;
     if ([self convertPoint:location toColumn:&column row:&row]) {
-        
         NSMutableArray *objects = [self.level objectAtColumn:column row:row];
         WUNObject *object = [objects lastObject];
-        if (object != nil && (object.ObjectType == eObjectSmily && object.status == eObjectAlive)) {
+        
+        if (object != nil && ((object.ObjectType == eObjectSmily && object.status == eObjectAlive) || self.isDevelopmentMode)) {
             self.swipeFromColumn = column;
             self.swipeFromRow = row;
             [self showSelectionIndicatorForObject:object];
@@ -123,7 +127,8 @@ static const CGFloat TileHeight = 60.0f;
     }
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
     if (self.swipeFromColumn == NSNotFound) return;
     
     UITouch *touch = [touches anyObject];
@@ -169,6 +174,30 @@ static const CGFloat TileHeight = 60.0f;
     }
 
     return array;
+}
+
+-(NSDictionary*)getLevelData
+{
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    
+    NSMutableArray *rowArray = [NSMutableArray array];
+    for (NSInteger row = NumRows-1; row >= 0; row--) {
+        NSMutableArray *columnArray = [NSMutableArray array];
+        for (NSInteger column = 0; column < NumColumns; column++) {
+            NSMutableArray *objects = [_level objectAtColumn:column row:row];
+            if(objects.count > 0){
+                WUNObject *obj = [objects firstObject];
+                [columnArray addObject:[NSNumber numberWithInt:obj.ObjectType]];
+            }
+            else{
+                [columnArray addObject:@0];
+            }
+        }
+        [rowArray addObject:columnArray];
+    }
+    
+    [dictionary setObject:rowArray forKey:@"tiles"];
+    return dictionary;
 }
 
 -(EGAMESTATUS)isGameOver
@@ -229,56 +258,61 @@ static const CGFloat TileHeight = 60.0f;
     }
     __block EObjectStatus status = eObjectGone;
 
-    [adjacentPoints enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL *stop) {
-        CGPoint point = CGPointFromString(obj);
-        EObjectType objectType = eObjectNone;
-        
-        NSMutableArray *objects = [self.level objectAtColumn:point.x row:point.y];
-        __block WUNObject *nextObject = nil;
-        if(objects.count == 1){
-            nextObject = [objects objectAtIndex:0];
-        }
-        else{
-            nextObject = [objects lastObject];
-            [objects enumerateObjectsUsingBlock:^(WUNObject *obj, NSUInteger idx, BOOL *stop) {
-                if(obj.ObjectType == eObjectObstacle){
-                    nextObject = obj;
+    if(self.isDevelopmentMode){
+        toPoint = CGPointMake(toColumn+horzDelta, toRow+vertDelta);
+    }
+    else{
+        [adjacentPoints enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL *stop) {
+            CGPoint point = CGPointFromString(obj);
+            EObjectType objectType = eObjectNone;
+            
+            NSMutableArray *objects = [self.level objectAtColumn:point.x row:point.y];
+            __block WUNObject *nextObject = nil;
+            if(objects.count == 1){
+                nextObject = [objects objectAtIndex:0];
+            }
+            else{
+                nextObject = [objects lastObject];
+                [objects enumerateObjectsUsingBlock:^(WUNObject *obj, NSUInteger idx, BOOL *stop) {
+                    if(obj.ObjectType == eObjectObstacle){
+                        nextObject = obj;
+                        *stop = YES;
+                    }
+                }];
+            }
+            
+            if(nextObject && [nextObject isKindOfClass:[WUNObject class]]){
+                objectType = nextObject.ObjectType;
+            }
+            
+            switch (objectType) {
+                case eObjectObstacle:{
+                    toPoint = CGPointMake(point.x-horzDelta, point.y-vertDelta);
+                    *stop = YES;
+                    status = eObjectAlive;
+                }
+                    break;
+                case eObjectSmily:{
+                }
+                    break;
+                case eObjectHole:{
+                    status = eObjectDead;
+                    toPoint = CGPointMake(point.x, point.y);
                     *stop = YES;
                 }
-            }];
-        }
-
-        if(nextObject && [nextObject isKindOfClass:[WUNObject class]]){
-            objectType = nextObject.ObjectType;
-        }
+                    break;
+                    
+                default:
+                    break;
+            }
+        }];
         
-        
-        switch (objectType) {
-            case eObjectObstacle:{
-                toPoint = CGPointMake(point.x-horzDelta, point.y-vertDelta);
-                *stop = YES;
-                status = eObjectAlive;
-            }
-                break;
-            case eObjectSmily:{
-            }
-                break;
-            case eObjectHole:{
-                status = eObjectDead;
-                toPoint = CGPointMake(point.x, point.y);
-                *stop = YES;
-            }
-                break;
-                
-            default:
-                break;
+        currentObject.status = status;
+        if(currentObject.status == eObjectGone){
+            toPoint = CGPointMake(toPoint.x+horzDelta*4, toPoint.y+vertDelta*4);
         }
-    }];
-    
-    currentObject.status = status;
-    if(currentObject.status == eObjectGone){
-        toPoint = CGPointMake(toPoint.x+horzDelta*4, toPoint.y+vertDelta*4);
     }
+
     [self moveObjectToPoint:currentObject point:toPoint];
 }
 
