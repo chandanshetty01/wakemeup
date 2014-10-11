@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yjo-Yu-rtL">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
@@ -13,11 +15,14 @@
                         <viewControllerLayoutGuide type="bottom" id="khH-OB-KpY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-qb-Gpu">
-                                <rect key="frame" x="0.0" y="0.0" width="60" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-qb-Gpu">
+                                <rect key="frame" x="10" y="5" width="49" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="tmw-8G-fLL"/>
+                                </constraints>
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -25,8 +30,11 @@
                                     <action selector="handleBackButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="JaA-kC-HXO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3P-fd-IZt">
-                                <rect key="frame" x="80" y="0.0" width="60" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3P-fd-IZt">
+                                <rect key="frame" x="77" y="5" width="49" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="B5h-G9-xm6"/>
+                                </constraints>
                                 <state key="normal" title="Smily">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -34,41 +42,23 @@
                                     <action selector="HandleSmilyButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="hb5-gs-rTj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THO-1q-BZ6">
-                                <rect key="frame" x="160" y="0.0" width="62" height="40"/>
-                                <state key="normal" title="Obstacle">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THO-1q-BZ6">
+                                <rect key="frame" x="144" y="5" width="49" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="1Sh-CC-cXA"/>
+                                </constraints>
+                                <state key="normal" title="Wall">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="handleObstacleButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="vmc-DT-HVe"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q5g-Hc-Tah">
-                                <rect key="frame" x="322" y="4" width="51" height="31"/>
-                                <connections>
-                                    <action selector="handleTestModeButton:" destination="BV1-FR-VrT" eventType="valueChanged" id="MBa-zy-JQg"/>
-                                </connections>
-                            </switch>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-Eh-jyb">
-                                <rect key="frame" x="508" y="0.0" width="60" height="40"/>
-                                <state key="normal" title="Mail">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleTestMail:" destination="BV1-FR-VrT" eventType="touchUpInside" id="wBX-fi-EtN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ua5-78-hd6">
-                                <rect key="frame" x="428" y="0.0" width="60" height="40"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleTestSave:" destination="BV1-FR-VrT" eventType="touchUpInside" id="hnp-uB-AEP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJ5-9q-7uB">
-                                <rect key="frame" x="242" y="0.0" width="60" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJ5-9q-7uB">
+                                <rect key="frame" x="211" y="5" width="49" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="KdD-bM-q3L"/>
+                                </constraints>
                                 <state key="normal" title="Hole">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -76,14 +66,51 @@
                                     <action selector="handleTestHoleBtn:" destination="BV1-FR-VrT" eventType="touchUpInside" id="gKE-L9-BWG"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q5g-Hc-Tah">
+                                <rect key="frame" x="278" y="9" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="35h-w8-zvJ"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="handleTestModeButton:" destination="BV1-FR-VrT" eventType="valueChanged" id="MBa-zy-JQg"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ua5-78-hd6">
+                                <rect key="frame" x="474" y="5" width="49" height="40"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTestSave:" destination="BV1-FR-VrT" eventType="touchUpInside" id="hnp-uB-AEP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-Eh-jyb">
+                                <rect key="frame" x="541" y="5" width="49" height="40"/>
+                                <state key="normal" title="Mail">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTestMail:" destination="BV1-FR-VrT" eventType="touchUpInside" id="wBX-fi-EtN"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="WX2-1G-bCq">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ua5-78-hd6" secondAttribute="trailing" constant="71" id="1fj-37-Vuc"/>
+                            <constraint firstItem="t6e-qb-Gpu" firstAttribute="top" secondItem="maK-i9-Uhn" secondAttribute="bottom" constant="5" id="aKW-TY-JY6"/>
+                            <constraint firstItem="Ua5-78-hd6" firstAttribute="width" secondItem="0xO-Eh-jyb" secondAttribute="width" id="jo4-cw-ydC"/>
+                            <constraint firstItem="Ua5-78-hd6" firstAttribute="top" secondItem="0xO-Eh-jyb" secondAttribute="bottom" constant="-40" id="phF-5B-Txp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0xO-Eh-jyb" secondAttribute="trailing" constant="-6" id="rkd-8X-amh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0xO-Eh-jyb" secondAttribute="trailing" constant="-6" id="srs-Xx-rsq"/>
+                        </constraints>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="568" height="320"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="testHoleBtn" destination="oJ5-9q-7uB" id="ADj-L8-X95"/>
                         <outlet property="testMail" destination="0xO-Eh-jyb" id="efV-1A-JUe"/>
@@ -95,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="207" y="294"/>
+            <point key="canvasLocation" x="147" y="251"/>
         </scene>
         <!--Level Selection View Controller-->
         <scene sceneID="ciB-hA-7aR">
@@ -106,14 +133,14 @@
                         <viewControllerLayoutGuide type="bottom" id="QxE-U6-QFK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="93f-0b-ajV">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="collectionViewCell" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yRL-Lf-IB8">
-                                <rect key="frame" x="0.0" y="60" width="568" height="260"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xpc-er-5Q5">
-                                    <size key="itemSize" width="100" height="100"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="collectionViewCell" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yRL-Lf-IB8">
+                                <rect key="frame" x="10" y="60" width="580" height="530"/>
+                                <color key="backgroundColor" red="0.86274516580000005" green="0.60000002379999995" blue="0.13725490870000001" alpha="1" colorSpace="deviceRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xpc-er-5Q5">
+                                    <size key="itemSize" width="80" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -123,11 +150,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4X-u9-7ZO">
-                                                    <rect key="frame" x="15" y="8" width="70" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -149,13 +176,17 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QxE-U6-QFK" firstAttribute="top" secondItem="yRL-Lf-IB8" secondAttribute="bottom" constant="10" id="8xJ-Br-YEo"/>
+                            <constraint firstItem="yRL-Lf-IB8" firstAttribute="leading" secondItem="93f-0b-ajV" secondAttribute="leadingMargin" constant="-6" id="FJz-rG-k1z"/>
+                            <constraint firstItem="yRL-Lf-IB8" firstAttribute="top" secondItem="98s-Ok-mpf" secondAttribute="bottom" constant="40" id="cDg-ei-llW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yRL-Lf-IB8" secondAttribute="trailing" constant="-6" id="rrw-Mu-kv6"/>
+                        </constraints>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="568" height="320"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOG-2p-P9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="196" y="-83"/>
+            <point key="canvasLocation" x="120" y="-395"/>
         </scene>
     </scenes>
     <resources>
