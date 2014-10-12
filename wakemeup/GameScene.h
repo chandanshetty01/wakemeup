@@ -15,7 +15,7 @@ typedef enum : NSUInteger {
     eGameRunning
 } EGAMESTATUS;
 
-@interface GameScene : SKScene
+@interface GameScene : SKScene <SKPhysicsContactDelegate>
 
 @property (strong, nonatomic) WUNLevel *level;
 @property (copy, nonatomic)void (^swipeHandler)(WUNSwap *swap);

@@ -96,12 +96,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="WX2-1G-bCq">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D79-Ad-Xhv">
+                                <rect key="frame" x="262" y="571" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Ua5-78-hd6" secondAttribute="trailing" constant="71" id="1fj-37-Vuc"/>
                             <constraint firstItem="t6e-qb-Gpu" firstAttribute="top" secondItem="maK-i9-Uhn" secondAttribute="bottom" constant="5" id="aKW-TY-JY6"/>
+                            <constraint firstItem="khH-OB-KpY" firstAttribute="top" secondItem="D79-Ad-Xhv" secondAttribute="bottom" constant="8" id="bXa-XG-Dfl"/>
                             <constraint firstItem="Ua5-78-hd6" firstAttribute="width" secondItem="0xO-Eh-jyb" secondAttribute="width" id="jo4-cw-ydC"/>
+                            <constraint firstAttribute="centerX" secondItem="D79-Ad-Xhv" secondAttribute="centerX" constant="-0.5" id="npZ-Qh-ISw"/>
                             <constraint firstItem="Ua5-78-hd6" firstAttribute="top" secondItem="0xO-Eh-jyb" secondAttribute="bottom" constant="-40" id="phF-5B-Txp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0xO-Eh-jyb" secondAttribute="trailing" constant="-6" id="rkd-8X-amh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0xO-Eh-jyb" secondAttribute="trailing" constant="-6" id="srs-Xx-rsq"/>
@@ -112,6 +120,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="levelNumberLabel" destination="D79-Ad-Xhv" id="nHV-eV-skG"/>
                         <outlet property="testHoleBtn" destination="oJ5-9q-7uB" id="ADj-L8-X95"/>
                         <outlet property="testMail" destination="0xO-Eh-jyb" id="efV-1A-JUe"/>
                         <outlet property="testMode" destination="Q5g-Hc-Tah" id="cGK-9J-HDP"/>

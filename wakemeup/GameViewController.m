@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *testSave;
 @property (weak, nonatomic) IBOutlet UIButton *testMail;
 @property (weak, nonatomic) IBOutlet UIButton *testHoleBtn;
+@property (weak, nonatomic) IBOutlet UILabel *levelNumberLabel;
 @property (nonatomic,assign) BOOL isDevelopmentMode;
 @end
 
@@ -52,6 +53,7 @@
     NSString *level = [NSString stringWithFormat:@"Level_%lu",(unsigned long)levelID];
     self.level = [[WUNLevel alloc] initWithFile:level];
     self.scene.level = self.level;
+    self.levelNumberLabel.text = level;
     
     id block = ^(WUNSwap *swap) {
         [self.level performSwap:swap];
@@ -77,6 +79,7 @@
     // Create and configure the scene.
     self.scene = [GameScene unarchiveFromFile:@"GameScene"];
     self.scene.scaleMode = SKSceneScaleModeAspectFill;
+    self.scene.size = self.view.bounds.size;
     // Present the scene.
     [skView presentScene:self.scene];
     

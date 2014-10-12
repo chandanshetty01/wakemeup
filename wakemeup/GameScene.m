@@ -12,6 +12,11 @@
 static const CGFloat TileWidth = 60.0f;
 static const CGFloat TileHeight = 60.0f;
 
+static const uint32_t smilyCategory            =  0x1 << 0;
+static const uint32_t wallCategory             =  0x1 << 1;
+static const uint32_t obstacleCategory         =  0x1 << 2;
+static const uint32_t holeCategory             =  0x1 << 3;
+
 @interface GameScene ()
 @property (strong, nonatomic) SKNode *gameLayer;
 @property (strong, nonatomic) SKNode *smileysLayer;
@@ -47,7 +52,45 @@ static const CGFloat TileHeight = 60.0f;
     self.swipeFromColumn = self.swipeFromRow = NSNotFound;
     self.selectionSprite = [SKSpriteNode node];
     self.isDevelopmentMode = NO;
+    
+    //To detect collision detection
+    self.physicsWorld.contactDelegate = self;
 }
+
+#pragma mark - Collision Detection
+
+- (void)didBeginContact:(SKPhysicsContact *)contact
+{
+    NSLog(@"colided with object");
+    
+    SKPhysicsBody *firstBody, *secondBody;
+    
+    if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
+    {
+        firstBody = contact.bodyA;
+        secondBody = contact.bodyB;
+    }
+    else
+    {
+        firstBody = contact.bodyB;
+        secondBody = contact.bodyA;
+    }
+    
+    /*
+
+    if ((firstBody.categoryBitMask & pillerCategory) != 0 &&
+        (secondBody.categoryBitMask & flappyBirdCategory) != 0)
+    {
+        [self pillar:(SKSpriteNode *) firstBody.node didCollideWithBird:(SKSpriteNode *) secondBody.node];
+    }
+    else if ((firstBody.categoryBitMask & flappyBirdCategory) != 0 &&
+             (secondBody.categoryBitMask & bottomBackgroundCategory) != 0)
+    {
+        [self flappyBird:(SKSpriteNode *)firstBody.node didCollideWithBottomScoller:(SKSpriteNode *)secondBody.node];
+    }
+     */
+}
+
 
 - (void)addTiles
 {
@@ -78,6 +121,24 @@ static const CGFloat TileHeight = 60.0f;
         }
         sprite.size = CGSizeMake(TileWidth, TileHeight);
         sprite.position = [self pointForColumn:object.column row:object.row];
+        sprite.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:sprite.size];
+        
+        if(object.ObjectType == eObjectSmily){
+            sprite.physicsBody.categoryBitMask = smilyCategory;
+            sprite.physicsBody.contactTestBitMask = obstacleCategory;
+        }
+        else if(object.ObjectType == eObjectHole){
+            sprite.physicsBody.categoryBitMask = holeCategory;
+            sprite.physicsBody.contactTestBitMask = smilyCategory;
+        }
+        else if(object.ObjectType == eObjectObstacle){
+            sprite.physicsBody.categoryBitMask = obstacleCategory;
+            sprite.physicsBody.contactTestBitMask = smilyCategory;
+        }
+
+        sprite.physicsBody.collisionBitMask = 0;
+        sprite.physicsBody.affectedByGravity = NO;
+        
         [self.smileysLayer addChild:sprite];
         object.sprite = sprite;
     }
