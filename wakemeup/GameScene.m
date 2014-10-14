@@ -9,13 +9,12 @@
 #import "GameScene.h"
 #import "WUNGameConfigManager.h"
 
-static const CGFloat TileWidth = 60.0f;
-static const CGFloat TileHeight = 60.0f;
+static const CGFloat TileWidth = 40.0f;
+static const CGFloat TileHeight = 40.0f;
 
 static const uint32_t smilyCategory            =  0x1 << 0;
-static const uint32_t wallCategory             =  0x1 << 1;
-static const uint32_t obstacleCategory         =  0x1 << 2;
-static const uint32_t holeCategory             =  0x1 << 3;
+static const uint32_t obstacleCategory         =  0x1 << 1;
+static const uint32_t holeCategory             =  0x1 << 2;
 
 @interface GameScene ()
 @property (strong, nonatomic) SKNode *gameLayer;
@@ -121,7 +120,7 @@ static const uint32_t holeCategory             =  0x1 << 3;
         }
         sprite.size = CGSizeMake(TileWidth, TileHeight);
         sprite.position = [self pointForColumn:object.column row:object.row];
-        sprite.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:sprite.size];
+        sprite.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:sprite.size.height/2.0];
         
         if(object.ObjectType == eObjectSmily){
             sprite.physicsBody.categoryBitMask = smilyCategory;

@@ -13,8 +13,8 @@
 #import "WUNObstacle.h"
 #import "WUNHole.h"
 
-static const NSInteger NumColumns = 10;
-static const NSInteger NumRows = 4;
+static const NSInteger NumColumns = 12;
+static const NSInteger NumRows = 6;
 
 @interface WUNLevel : NSObject
 

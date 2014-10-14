@@ -71,6 +71,8 @@
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
+    //skView.showsPhysics = YES;
+    
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     skView.ignoresSiblingOrder = YES;
     
@@ -121,7 +123,7 @@
 
 - (IBAction)handleTestMail:(id)sender
 {
-    NSString *fileName = [NSString stringWithFormat:@"Level_%lu",(unsigned long)self.levelModel.levelID];
+    NSString *fileName = [NSString stringWithFormat:@"Level_%lu.json",(unsigned long)self.levelModel.levelID];
     
     // Attach an image to the email
     NSData *myData = [Utility JSONdataForFileName:fileName];
@@ -159,7 +161,7 @@
 - (IBAction)HandleSmilyButton:(id)sender
 {
     NSMutableSet *set = [NSMutableSet set];
-    NSMutableArray *Object = [self.level createObjectAtColumn:1 row:0 withType:1];
+    NSMutableArray *Object = [self.level createObjectAtColumn:0 row:0 withType:1];
     [set addObject:Object];
     
     [self.scene addSpritesForObjects:set];
@@ -168,7 +170,7 @@
 - (IBAction)handleTestHoleBtn:(id)sender
 {
     NSMutableSet *set = [NSMutableSet set];
-    NSMutableArray *Object = [self.level createObjectAtColumn:1 row:0 withType:3];
+    NSMutableArray *Object = [self.level createObjectAtColumn:0 row:0 withType:3];
     [set addObject:Object];
     
     [self.scene addSpritesForObjects:set];
@@ -177,7 +179,7 @@
 - (IBAction)handleObstacleButton:(id)sender
 {
     NSMutableSet *set = [NSMutableSet set];
-    NSMutableArray *Object = [self.level createObjectAtColumn:1 row:0 withType:2];
+    NSMutableArray *Object = [self.level createObjectAtColumn:0 row:0 withType:2];
     [set addObject:Object];
     
     [self.scene addSpritesForObjects:set];
