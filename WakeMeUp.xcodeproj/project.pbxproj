@@ -24,6 +24,7 @@
 		A336646019EC3924006EB470 /* Level_7.json in Resources */ = {isa = PBXBuildFile; fileRef = A336644F19EC3923006EB470 /* Level_7.json */; };
 		A336646119EC3924006EB470 /* Level_8.json in Resources */ = {isa = PBXBuildFile; fileRef = A336645019EC3924006EB470 /* Level_8.json */; };
 		A336646219EC3924006EB470 /* Level_9.json in Resources */ = {isa = PBXBuildFile; fileRef = A336645119EC3924006EB470 /* Level_9.json */; };
+		A364EF5319EFFF30005EF1D6 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A364EF5219EFFF30005EF1D6 /* Crashlytics.framework */; };
 		A36F9A3B19DD9E4100419500 /* WUNSmily.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A3A19DD9E4100419500 /* WUNSmily.m */; };
 		A36F9A3E19DD9E5800419500 /* WUNObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A3D19DD9E5800419500 /* WUNObstacle.m */; };
 		A36F9A4119DD9E6C00419500 /* WUNHole.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A4019DD9E6C00419500 /* WUNHole.m */; };
@@ -69,6 +70,7 @@
 		A336644F19EC3923006EB470 /* Level_7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_7.json; sourceTree = "<group>"; };
 		A336645019EC3924006EB470 /* Level_8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_8.json; sourceTree = "<group>"; };
 		A336645119EC3924006EB470 /* Level_9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_9.json; sourceTree = "<group>"; };
+		A364EF5219EFFF30005EF1D6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		A36F9A3919DD9E4100419500 /* WUNSmily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNSmily.h; path = wakemeup/classes/WUNSmily.h; sourceTree = SOURCE_ROOT; };
 		A36F9A3A19DD9E4100419500 /* WUNSmily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNSmily.m; path = wakemeup/classes/WUNSmily.m; sourceTree = SOURCE_ROOT; };
 		A36F9A3C19DD9E5800419500 /* WUNObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNObstacle.h; path = wakemeup/classes/WUNObstacle.h; sourceTree = SOURCE_ROOT; };
@@ -121,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A364EF5319EFFF30005EF1D6 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +154,14 @@
 			path = Levels;
 			sourceTree = "<group>";
 		};
+		A364EF5119EFFF18005EF1D6 /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				A364EF5219EFFF30005EF1D6 /* Crashlytics.framework */,
+			);
+			path = 3rdParty;
+			sourceTree = "<group>";
+		};
 		A3C891A519E428D500A12D36 /* stage */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +189,7 @@
 		A3CC20B319D6C9520067A847 /* wakemeup */ = {
 			isa = PBXGroup;
 			children = (
+				A364EF5119EFFF18005EF1D6 /* 3rdParty */,
 				A3CC20E319D6E0FB0067A847 /* classes */,
 				A3CC20B819D6C9520067A847 /* AppDelegate.h */,
 				A3CC20B919D6C9520067A847 /* AppDelegate.m */,
@@ -285,6 +297,7 @@
 				A3CC20AD19D6C9520067A847 /* Sources */,
 				A3CC20AE19D6C9520067A847 /* Frameworks */,
 				A3CC20AF19D6C9520067A847 /* Resources */,
+				A364EF5019EFFEC7005EF1D6 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -360,6 +373,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A364EF5019EFFEC7005EF1D6 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run ef1df6810a8ae85dc6971ad31a2311a71214d012 c6faaa2cc18e8a76c8c012d105a704a016c7f22a38ce681934ab9d777a54e1d0";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A3CC20AD19D6C9520067A847 /* Sources */ = {
@@ -491,6 +521,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = wakemeup/WakeMeUp.pch;
 				INFOPLIST_FILE = wakemeup/Info.plist;
@@ -506,6 +540,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = wakemeup/WakeMeUp.pch;
 				INFOPLIST_FILE = wakemeup/Info.plist;

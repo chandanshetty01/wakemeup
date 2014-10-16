@@ -123,13 +123,13 @@
 
 - (IBAction)handleTestMail:(id)sender
 {
-    NSString *fileName = [NSString stringWithFormat:@"Level_%lu.json",(unsigned long)self.levelModel.levelID];
+    NSString *fileName = [NSString stringWithFormat:@"Level_%lu",(unsigned long)self.levelModel.levelID];
     
     // Attach an image to the email
     NSData *myData = [Utility JSONdataForFileName:fileName];
     
     NSString *attachmentMime = @"text/json";
-    NSString *attachmentName = fileName;
+    NSString *attachmentName = [NSString stringWithFormat:@"Level_%lu.json",(unsigned long)self.levelModel.levelID];
     
     // Fill out the email body text
     NSString *emailBody = @"Hi, \n\n Check out new level data! \n\n\nRegards, \nSwipe and Smile";
