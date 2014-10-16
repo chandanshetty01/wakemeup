@@ -147,7 +147,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="collectionViewCell" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yRL-Lf-IB8">
                                 <rect key="frame" x="10" y="60" width="580" height="530"/>
-                                <color key="backgroundColor" red="0.86274516580000005" green="0.60000002379999995" blue="0.13725490870000001" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xpc-er-5Q5">
                                     <size key="itemSize" width="80" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>

@@ -12,6 +12,7 @@
 @interface WUNLevel ()
 
 @property (strong, nonatomic) NSSet *possibleSwaps;
+@property (strong, nonatomic) NSDictionary *levelData;
 
 @end
 
@@ -21,13 +22,15 @@
   NSInteger ObjectsList[NumColumns][NumRows];
 }
 
-- (instancetype)initWithFile:(NSString *)filename {
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
     self = [super init];
     if (self != nil) {
-        NSDictionary *dictionary = [Utility loadJSON:filename];
+        
+        self.levelData = dictionary;
         
         // Loop through the rows
-        [dictionary[@"tiles"] enumerateObjectsUsingBlock:^(NSArray *array, NSUInteger row, BOOL *stop) {
+        [self.levelData[@"tiles"] enumerateObjectsUsingBlock:^(NSArray *array, NSUInteger row, BOOL *stop) {
             
             // Loop through the columns in the current row
             [array enumerateObjectsUsingBlock:^(NSNumber *value, NSUInteger column, BOOL *stop) {
@@ -37,7 +40,6 @@
                 NSInteger tileRow = NumRows - row - 1;
                 WUNTile *tile = [[WUNTile alloc] init];
                 _tiles[column][tileRow] = tile;
-                
                 ObjectsList[column][tileRow] = value.integerValue;
             }];
         }];

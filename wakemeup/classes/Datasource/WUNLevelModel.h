@@ -13,5 +13,6 @@
     
 }
 @property(nonatomic,assign) NSInteger levelID;
+@property(nonatomic,assign) NSInteger stageID;
 @property(nonatomic,assign) BOOL locked;
 @end

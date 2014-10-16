@@ -17,7 +17,7 @@
     return data;
 }
 
-+ (NSDictionary *)loadJSON:(NSString *)filename
++(NSDictionary *)loadJSON:(NSString *)filename
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];

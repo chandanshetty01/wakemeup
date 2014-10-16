@@ -18,8 +18,7 @@ static const NSInteger NumRows = 6;
 
 @interface WUNLevel : NSObject
 
-- (instancetype)initWithFile:(NSString *)filename;
-
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 - (NSSet *)shuffle;
 
 - (NSMutableArray *)objectAtColumn:(NSInteger)column row:(NSInteger)row;

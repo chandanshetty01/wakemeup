@@ -11,6 +11,7 @@
 #import "WUNLevel.h"
 #import "Utility.h"
 #import "MailComposerManager.h"
+#import "GameConfigManager.h"
 
 @interface GameViewController()
 @property (strong, nonatomic) WUNLevel *level;
@@ -49,11 +50,11 @@
 -(void)loadLevel
 {
     // Load the level.
-    NSInteger levelID = self.levelModel.levelID;
-    NSString *level = [NSString stringWithFormat:@"Level_%lu",(unsigned long)levelID];
-    self.level = [[WUNLevel alloc] initWithFile:level];
+    NSDictionary *dictionary = [[GameConfigManager sharedManager] dictionaryForLevel:self.levelModel.levelID andStage:self.levelModel.stageID];
+    self.level = [[WUNLevel alloc] initWithDictionary:dictionary];
     self.scene.level = self.level;
-    self.levelNumberLabel.text = level;
+    
+    self.levelNumberLabel.text = [NSString stringWithFormat:@"%d",self.levelModel.levelID];
     
     id block = ^(WUNSwap *swap) {
         [self.level performSwap:swap];
@@ -123,17 +124,17 @@
 
 - (IBAction)handleTestMail:(id)sender
 {
-    NSString *fileName = [NSString stringWithFormat:@"Level_%lu",(unsigned long)self.levelModel.levelID];
+    NSString *fileName = [NSString stringWithFormat:@"Level_%lu_%d",(unsigned long)self.levelModel.levelID,self.levelModel.stageID];
     
     // Attach an image to the email
     NSData *myData = [Utility JSONdataForFileName:fileName];
     
     NSString *attachmentMime = @"text/json";
-    NSString *attachmentName = [NSString stringWithFormat:@"Level_%lu.json",(unsigned long)self.levelModel.levelID];
+    NSString *attachmentName = [NSString stringWithFormat:@"Level_%lu_%d.json",(unsigned long)self.levelModel.levelID,self.levelModel.stageID];
     
     // Fill out the email body text
-    NSString *emailBody = @"Hi, \n\n Check out new level data! \n\n\nRegards, \nSwipe and Smile";
-    NSString *emailSub = [NSString stringWithFormat:@"Swipe and Smile: Level %ld",(long)self.levelModel.levelID];
+    NSString *emailBody = @"Hi, \n\n Check out new level data! \n\n\nRegards, \nSwipe It Baby!";
+    NSString *emailSub = [NSString stringWithFormat:@"Swipe It Baby: Level %ld stage %ld",(long)self.levelModel.levelID,(long)self.levelModel.stageID];
     
     NSArray *toRecipients = [NSArray arrayWithObject:@"chandanshetty01@gmail.com"];
     NSArray *ccRecipients = [NSArray arrayWithObjects:@"26anil.kushwaha@gmail.com", @"ashishpra.pra@gmail.com", nil];

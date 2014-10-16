@@ -7,7 +7,7 @@
 //
 
 #import "GameScene.h"
-#import "WUNGameConfigManager.h"
+#import "GameConfigManager.h"
 
 static const CGFloat TileWidth = 40.0f;
 static const CGFloat TileHeight = 40.0f;
@@ -93,6 +93,7 @@ static const uint32_t holeCategory             =  0x1 << 2;
 
 - (void)addTiles
 {
+#ifdef DELVELOPMENT
     for (NSInteger row = 0; row < NumRows; row++) {
         for (NSInteger column = 0; column < NumColumns; column++) {
             if ([self.level tileAtColumn:column row:row] != nil) {
@@ -103,6 +104,7 @@ static const uint32_t holeCategory             =  0x1 << 2;
             }
         }
     }
+#endif
 }
 
 - (void)addSpritesForObjects:(NSSet *)Objects
