@@ -282,6 +282,9 @@ static const uint32_t holeCategory             =  0x1 << 2;
             }
             
             if(status == eGameOver){
+                if(self.level.levelModel.levelID == 1){
+                    status = eGameWon;
+                }
                 break;
             }
         }

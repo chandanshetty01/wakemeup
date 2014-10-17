@@ -25,6 +25,7 @@
 -(void)setSoundEnabled:(BOOL)value;
 -(void)saveGameData;
 -(void)loadGameData;
+-(NSMutableDictionary*)getLevelData:(NSInteger)levelID;
 -(NSDictionary*)getTilesForLevel:(NSInteger)levelID;
 -(void)saveTilesForLevel:(NSDictionary*)levelData andLevelID:(NSInteger)levelID;
 -(NSMutableArray*)getAllLevelsInStage;

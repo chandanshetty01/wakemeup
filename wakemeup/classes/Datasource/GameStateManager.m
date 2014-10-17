@@ -17,7 +17,6 @@
 @interface GameStateManager ()
 
 @property(nonatomic,strong) NSMutableDictionary *gameData;
-@property(nonatomic,assign) NSInteger currentLevel;
 @property(nonatomic,assign) NSInteger currentStage;
 
 @end
@@ -63,7 +62,7 @@
 
 -(void)setCurrentLevel:(NSInteger)currentLevel
 {
-    _currentLevel = currentLevel;
+    [self.gameData setObject:[NSNumber numberWithInt:currentLevel] forKey:kCurrentLevel];
 }
 
 -(void)setData:(NSDictionary*)data level:(NSInteger)levelID
@@ -118,6 +117,13 @@
     NSNumber *isOn = [NSNumber numberWithBool:value];
     [[NSUserDefaults standardUserDefaults] setObject:isOn forKey:@"isMusicEnabled"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+-(NSMutableDictionary*)getLevelData:(NSInteger)levelID
+{
+    NSAssert(levelID > 0, @"Invalid LevelID, level should be greater than 0");
+    NSMutableArray *levels = [[GameStateManager sharedManager] getAllLevelsInStage];
+    return [levels objectAtIndex:levelID-1];
 }
 
 -(NSMutableArray*)getAllLevelsInStage

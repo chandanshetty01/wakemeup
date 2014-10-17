@@ -77,8 +77,6 @@
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     skView.ignoresSiblingOrder = YES;
     
-    self.currentLevel = 1;
-    
     // Create and configure the scene.
     self.scene = [GameScene unarchiveFromFile:@"GameScene"];
     self.scene.scaleMode = SKSceneScaleModeAspectFill;
@@ -202,7 +200,11 @@
         self.level = nil;
         if(status == eGameWon){
             //Game Won
-            self.currentLevel++;
+            self.currentLevel = self.levelModel.levelID+1;
+            [[GameStateManager sharedManager] setCurrentLevel:self.currentLevel];
+            
+            NSDictionary *levelData = [[GameStateManager sharedManager] getLevelData:self.currentLevel];
+            self.levelModel = [[WUNLevelModel alloc] initWithDictionary:levelData];
             [self performSelector:@selector(loadLevel) withObject:nil afterDelay:1];
         }
         else if(status == eGameOver){
