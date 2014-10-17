@@ -71,7 +71,7 @@
     NSArray *levels = [self getAllLevelsInStage];
     NSMutableArray *levelsArray = [levels mutableCopy];
     
-    NSAssert((levelID> 0 && levelID <levels.count), @"Invalid levelID");
+    NSAssert((levelID>0 && levelID<=levels.count), @"Invalid levelID");
     [levelsArray replaceObjectAtIndex:levelID-1 withObject:data];
     [self.gameData setObject:levelsArray forKey:@"levels"];
 }
