@@ -24,6 +24,6 @@ typedef enum : NSUInteger {
 
 - (void)addTiles;
 - (void)addSpritesForObjects:(NSSet *)Objects;
-- (NSDictionary*)getLevelData;
+- (NSDictionary*)getTilesDictionary;
 
 @end

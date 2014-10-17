@@ -12,7 +12,13 @@
 {
     
 }
+
+-(id)initWithDictionary:(NSDictionary*)data;
+-(NSDictionary*)levelData;
+
 @property(nonatomic,assign) NSInteger levelID;
-@property(nonatomic,assign) NSInteger stageID;
-@property(nonatomic,assign) BOOL locked;
+@property(nonatomic,assign) BOOL isCompleted;
+@property(nonatomic,assign) BOOL isUnlocked;
+@property(nonatomic,strong) NSDictionary *tiles;
+
 @end

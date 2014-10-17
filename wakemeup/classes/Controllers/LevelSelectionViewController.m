@@ -12,6 +12,7 @@
 #import "Utility.h"
 #import "WUNLevelModel.h"
 #import "GameViewController.h"
+#import "GameStateManager.h"
 
 @interface LevelSelectionViewController ()
 @property(nonatomic,retain)NSMutableArray *levelsArray;
@@ -24,19 +25,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.levelsArray = [NSMutableArray array];
+    
+    [[GameStateManager sharedManager] loadGameData];
     [self loadLevels];
 }
 
 -(void)loadLevels
 {
-    NSDictionary *dictionary = [Utility loadJSON:@"stage_1"];
-    NSString *levelCount = dictionary[@"levelsCount"];
-    NSInteger noOfLevels = levelCount.intValue;
-    for(int i = 1; i <= noOfLevels ; i++){
-        WUNLevelModel *level = [[WUNLevelModel alloc] init];
-        level.levelID = i;
+    NSMutableArray *levels = [[GameStateManager sharedManager] getAllLevelsInStage];
+    [levels enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
+        WUNLevelModel *level = [[WUNLevelModel alloc] initWithDictionary:obj];
         [self.levelsArray addObject:level];
-    }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

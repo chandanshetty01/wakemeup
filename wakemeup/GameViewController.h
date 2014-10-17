@@ -12,5 +12,6 @@
 
 @interface GameViewController : UIViewController
 @property (nonatomic,assign) NSUInteger currentLevel;
+@property (nonatomic,assign) NSUInteger currentStage;
 @property (nonatomic,strong) WUNLevelModel *levelModel;
 @end

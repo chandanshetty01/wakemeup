@@ -238,7 +238,7 @@ static const uint32_t holeCategory             =  0x1 << 2;
     return array;
 }
 
--(NSDictionary*)getLevelData
+-(NSDictionary*)getTilesDictionary
 {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
     

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GameStageManager : NSObject
+@interface GameStateManager : NSObject
 
 +(id)sharedManager;
 
@@ -16,15 +16,17 @@
 -(NSInteger)currentStageNumber;
 -(BOOL)isStageLocked:(NSInteger)stage;
 -(void)setCurrentLevel:(NSInteger)currentLevel;
--(void)setData:(NSMutableDictionary*)data level:(NSInteger)level;
+-(void)setData:(NSDictionary*)data level:(NSInteger)level;
 -(BOOL)isLevelUnlocked:(NSInteger)level;
 -(BOOL)isLevelCompleted:(NSInteger)level;
--(NSDictionary*)gameData:(NSInteger)level;
 -(BOOL)isMusicEnabled;
 -(void)setMusicEnabled:(BOOL)value;
 -(BOOL)isSoundEnabled;
 -(void)setSoundEnabled:(BOOL)value;
 -(void)saveGameData;
 -(void)loadGameData;
+-(NSDictionary*)getTilesForLevel:(NSInteger)levelID;
+-(void)saveTilesForLevel:(NSDictionary*)levelData andLevelID:(NSInteger)levelID;
+-(NSMutableArray*)getAllLevelsInStage;
 
 @end

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A364EF5319EFFF30005EF1D6 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A364EF5219EFFF30005EF1D6 /* Crashlytics.framework */; };
-		A364EF7919F01D75005EF1D6 /* GameStageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A364EF7819F01D75005EF1D6 /* GameStageManager.m */; };
+		A364EF7919F01D75005EF1D6 /* GameStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A364EF7819F01D75005EF1D6 /* GameStateManager.m */; };
 		A364EF8D19F02B1B005EF1D6 /* Level_10_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A364EF7B19F02B1B005EF1D6 /* Level_10_1.json */; };
 		A364EF8E19F02B1B005EF1D6 /* Level_11_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A364EF7C19F02B1B005EF1D6 /* Level_11_1.json */; };
 		A364EF8F19F02B1B005EF1D6 /* Level_12_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A364EF7D19F02B1B005EF1D6 /* Level_12_1.json */; };
@@ -56,8 +56,8 @@
 
 /* Begin PBXFileReference section */
 		A364EF5219EFFF30005EF1D6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
-		A364EF7719F01D75005EF1D6 /* GameStageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStageManager.h; sourceTree = "<group>"; };
-		A364EF7819F01D75005EF1D6 /* GameStageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStageManager.m; sourceTree = "<group>"; };
+		A364EF7719F01D75005EF1D6 /* GameStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStateManager.h; sourceTree = "<group>"; };
+		A364EF7819F01D75005EF1D6 /* GameStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStateManager.m; sourceTree = "<group>"; };
 		A364EF7B19F02B1B005EF1D6 /* Level_10_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_10_1.json; sourceTree = "<group>"; };
 		A364EF7C19F02B1B005EF1D6 /* Level_11_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_11_1.json; sourceTree = "<group>"; };
 		A364EF7D19F02B1B005EF1D6 /* Level_12_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_12_1.json; sourceTree = "<group>"; };
@@ -253,14 +253,14 @@
 			children = (
 				A3CC20E719D6E0FB0067A847 /* GameConfigManager.h */,
 				A3CC20E819D6E0FB0067A847 /* GameConfigManager.m */,
+				A364EF7719F01D75005EF1D6 /* GameStateManager.h */,
+				A364EF7819F01D75005EF1D6 /* GameStateManager.m */,
 				A3C891B119E42F1800A12D36 /* Utility.h */,
 				A3C891B219E42F1800A12D36 /* Utility.m */,
 				A3C891A819E4298B00A12D36 /* WUNStageModel.h */,
 				A3C891A919E4298B00A12D36 /* WUNStageModel.m */,
 				A3C891B419E42FDD00A12D36 /* WUNLevelModel.h */,
 				A3C891B519E42FDD00A12D36 /* WUNLevelModel.m */,
-				A364EF7719F01D75005EF1D6 /* GameStageManager.h */,
-				A364EF7819F01D75005EF1D6 /* GameStageManager.m */,
 			);
 			path = Datasource;
 			sourceTree = "<group>";
@@ -411,7 +411,7 @@
 				A3CC20F819DAF3B20067A847 /* WUNObject.m in Sources */,
 				A3CC20BA19D6C9520067A847 /* AppDelegate.m in Sources */,
 				A36F9A3E19DD9E5800419500 /* WUNObstacle.m in Sources */,
-				A364EF7919F01D75005EF1D6 /* GameStageManager.m in Sources */,
+				A364EF7919F01D75005EF1D6 /* GameStateManager.m in Sources */,
 				A3CC20BD19D6C9520067A847 /* GameScene.m in Sources */,
 				A36F9A4119DD9E6C00419500 /* WUNHole.m in Sources */,
 				A36F9A3B19DD9E4100419500 /* WUNSmily.m in Sources */,

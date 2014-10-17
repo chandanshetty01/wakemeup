@@ -12,19 +12,22 @@
 #import "WUNSmily.h"
 #import "WUNObstacle.h"
 #import "WUNHole.h"
+#import "WUNLevelModel.h"
 
 static const NSInteger NumColumns = 12;
 static const NSInteger NumRows = 6;
 
 @interface WUNLevel : NSObject
+{
+    
+}
+@property(nonatomic,strong) WUNLevelModel *levelModel;
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithModel:(WUNLevelModel*)levelModel;
 - (NSSet *)shuffle;
-
 - (NSMutableArray *)objectAtColumn:(NSInteger)column row:(NSInteger)row;
 - (WUNTile *)tileAtColumn:(NSInteger)column row:(NSInteger)row;
 - (NSMutableArray *)createObjectAtColumn:(NSInteger)column row:(NSInteger)row withType:(NSUInteger)ObjectType;
-
 - (void)performSwap:(WUNSwap *)swap;
 - (BOOL)isPossibleSwap:(WUNSwap *)swap;
 

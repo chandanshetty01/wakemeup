@@ -22,19 +22,17 @@
   NSInteger ObjectsList[NumColumns][NumRows];
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+- (instancetype)initWithModel:(WUNLevelModel*)levelModel
 {
     self = [super init];
     if (self != nil) {
         
-        self.levelData = dictionary;
+        self.levelModel = levelModel;
         
         // Loop through the rows
-        [self.levelData[@"tiles"] enumerateObjectsUsingBlock:^(NSArray *array, NSUInteger row, BOOL *stop) {
-            
+        [self.levelModel.tiles[@"tiles"] enumerateObjectsUsingBlock:^(NSArray *array, NSUInteger row, BOOL *stop) {
             // Loop through the columns in the current row
             [array enumerateObjectsUsingBlock:^(NSNumber *value, NSUInteger column, BOOL *stop) {
-                
                 // Note: In Sprite Kit (0,0) is at the bottom of the screen,
                 // so we need to read this file upside down.
                 NSInteger tileRow = NumRows - row - 1;

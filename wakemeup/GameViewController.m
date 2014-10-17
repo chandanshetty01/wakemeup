@@ -12,6 +12,7 @@
 #import "Utility.h"
 #import "MailComposerManager.h"
 #import "GameConfigManager.h"
+#import "GameStateManager.h"
 
 @interface GameViewController()
 @property (strong, nonatomic) WUNLevel *level;
@@ -50,10 +51,9 @@
 -(void)loadLevel
 {
     // Load the level.
-    NSDictionary *dictionary = [[GameConfigManager sharedManager] dictionaryForLevel:self.levelModel.levelID andStage:self.levelModel.stageID];
-    self.level = [[WUNLevel alloc] initWithDictionary:dictionary];
+    self.levelModel.tiles = [[GameStateManager sharedManager] getTilesForLevel:self.levelModel.levelID];
+    self.level = [[WUNLevel alloc] initWithModel:self.levelModel];
     self.scene.level = self.level;
-    
     self.levelNumberLabel.text = [NSString stringWithFormat:@"%d",self.levelModel.levelID];
     
     id block = ^(WUNSwap *swap) {
@@ -124,17 +124,17 @@
 
 - (IBAction)handleTestMail:(id)sender
 {
-    NSString *fileName = [NSString stringWithFormat:@"Level_%lu_%d",(unsigned long)self.levelModel.levelID,self.levelModel.stageID];
+    NSString *fileName = [NSString stringWithFormat:@"Level_%lu_%d",(unsigned long)self.levelModel.levelID,self.currentStage];
     
     // Attach an image to the email
     NSData *myData = [Utility JSONdataForFileName:fileName];
     
     NSString *attachmentMime = @"text/json";
-    NSString *attachmentName = [NSString stringWithFormat:@"Level_%lu_%d.json",(unsigned long)self.levelModel.levelID,self.levelModel.stageID];
+    NSString *attachmentName = [NSString stringWithFormat:@"Level_%lu_%d.json",(unsigned long)self.levelModel.levelID,self.currentStage];
     
     // Fill out the email body text
     NSString *emailBody = @"Hi, \n\n Check out new level data! \n\n\nRegards, \nSwipe It Baby!";
-    NSString *emailSub = [NSString stringWithFormat:@"Swipe It Baby: Level %ld stage %ld",(long)self.levelModel.levelID,(long)self.levelModel.stageID];
+    NSString *emailSub = [NSString stringWithFormat:@"Swipe It Baby: Level %ld stage %ld",(long)self.levelModel.levelID,(long)self.currentStage];
     
     NSArray *toRecipients = [NSArray arrayWithObject:@"chandanshetty01@gmail.com"];
     NSArray *ccRecipients = [NSArray arrayWithObjects:@"26anil.kushwaha@gmail.com", @"ashishpra.pra@gmail.com", nil];
@@ -149,14 +149,18 @@
                                                          completion:nil];
 }
 
+-(void)saveLevelData
+{
+    self.levelModel.tiles = [self.scene getTilesDictionary];
+    [[GameStateManager sharedManager] saveTilesForLevel:self.levelModel.tiles andLevelID:self.levelModel.levelID];
+    NSDictionary *levelData = [self.levelModel levelData];
+    [[GameStateManager sharedManager] setData:levelData level:self.levelModel.levelID];
+    [[GameStateManager sharedManager] saveGameData];
+}
+
 - (IBAction)handleTestSave:(id)sender
 {
-    NSDictionary *dict = [self.scene getLevelData];
-    NSString *fileName = [NSString stringWithFormat:@"Level_%lu",(unsigned long)self.levelModel.levelID];
-    NSInteger values = [Utility saveJSON:dict fileName:fileName];
-    if(values == 0){
-        NSLog(@"saveJSON failed to write");  
-    }
+    [self saveLevelData];
 }
 
 - (IBAction)HandleSmilyButton:(id)sender
@@ -222,6 +226,8 @@
 
 - (IBAction)handleBackButton:(id)sender
 {
+    [self saveLevelData];
+    
     [self dismissViewControllerAnimated:YES completion:^{
 //        self.scene.swipeHandler = nil;
 //        self.scene.gameCompletion = nil;

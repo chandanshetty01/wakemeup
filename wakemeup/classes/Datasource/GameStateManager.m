@@ -6,14 +6,15 @@
 //  Copyright (c) 2014 Chandan. All rights reserved.
 //
 
-#import "GameStageManager.h"
+#import "GameStateManager.h"
+#import "GameConfigManager.h"
 #import "Utility.h"
 
 #define kRootDictionary @"savedData"
 #define kCurrentLevel @"currentLevel"
 #define kCurrentStage @"currentStage"
 
-@interface GameStageManager ()
+@interface GameStateManager ()
 
 @property(nonatomic,strong) NSMutableDictionary *gameData;
 @property(nonatomic,assign) NSInteger currentLevel;
@@ -21,7 +22,7 @@
 
 @end
 
-@implementation GameStageManager
+@implementation GameStateManager
 
 + (id) sharedManager
 {
@@ -38,7 +39,7 @@
     self = [super init];
     if (self) {
         self.currentLevel = 1;
-        self.currentStage = -1;
+        self.currentStage = 1;
         self.gameData = [NSMutableDictionary dictionary];
     }
     return self;
@@ -62,12 +63,17 @@
 
 -(void)setCurrentLevel:(NSInteger)currentLevel
 {
-    self.currentLevel = currentLevel;
+    _currentLevel = currentLevel;
 }
 
--(void)setData:(NSMutableDictionary*)data level:(NSInteger)level
+-(void)setData:(NSDictionary*)data level:(NSInteger)levelID
 {
+    NSArray *levels = [self getAllLevelsInStage];
+    NSMutableArray *levelsArray = [levels mutableCopy];
     
+    NSAssert((levelID> 0 && levelID <levels.count), @"Invalid levelID");
+    [levelsArray replaceObjectAtIndex:levelID-1 withObject:data];
+    [self.gameData setObject:levelsArray forKey:@"levels"];
 }
 
 -(BOOL)isLevelUnlocked:(NSInteger)level
@@ -80,12 +86,6 @@
 {
     BOOL status = true;
     return status;
-}
-
--(NSDictionary*)gameData:(NSInteger)level
-{
-    NSDictionary *dictionary = nil;
-    return dictionary;
 }
 
 -(BOOL)isMusicEnabled
@@ -120,9 +120,38 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+-(NSMutableArray*)getAllLevelsInStage
+{
+    NSAssert(self.currentStage > 0, @"stage must be greater than 0");
+
+    NSMutableArray *levels = nil;
+    levels = [self.gameData objectForKey:@"levels"];
+    return levels;
+}
+
+-(void)saveTilesForLevel:(NSDictionary*)levelData andLevelID:(NSInteger)levelID
+{
+    NSString *fileName = [NSString stringWithFormat:@"Level_%lu_%lu",(unsigned long)levelID,(unsigned long)self.currentStage];
+    NSInteger bytesRead = [Utility saveJSON:levelData fileName:fileName];
+    if(bytesRead <= 0){
+        assert(@"Error saving file");
+    }
+}
+
+-(NSDictionary*)getTilesForLevel:(NSInteger)levelID
+{
+    NSDictionary *dictionary = nil;
+    NSString *level = [NSString stringWithFormat:@"Level_%lu_%lu",(unsigned long)levelID,(unsigned long)self.currentStage];
+    dictionary = [Utility loadJSON:level];
+    if(dictionary == nil){
+        dictionary = [[GameConfigManager sharedManager] dictionaryForLevel:levelID andStage:self.currentStage];
+    }
+    return dictionary;
+}
+
 -(void)saveGameData
 {
-    assert(self.currentStage > 0);
+    NSAssert(self.currentStage > 0, @"stage must be greater than 0");
     
     if(self.gameData){
         NSString *fileName = [NSString stringWithFormat:@"%@_%d",kRootDictionary,self.currentStage];
@@ -138,7 +167,7 @@
 
 -(void)loadGameData
 {
-    assert(self.currentStage > 0);
+    NSAssert(self.currentStage > 0, @"stage must be greater than 0");
     
     NSString *fileName = [NSString stringWithFormat:@"%@_%d",kRootDictionary,self.currentStage];
     NSDictionary *dictionary = [Utility loadJSON:fileName];
@@ -146,7 +175,10 @@
         self.gameData = [[NSMutableDictionary alloc] initWithDictionary:dictionary];
     }
     else{
-        assert(@"Game data doesn't exist");
+        //Load the default stage data
+        NSString *fileName = [NSString stringWithFormat:@"stage_%d",self.currentStage];
+        NSDictionary *dictionary = [Utility loadJSON:fileName];
+        self.gameData = [[NSMutableDictionary alloc] initWithDictionary:dictionary];
     }
 }
 
