@@ -242,6 +242,8 @@ static const uint32_t holeCategory             =  0x1 << 2;
 {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
     
+    //old method
+    /*
     NSMutableArray *rowArray = [NSMutableArray array];
     for (NSInteger row = NumRows-1; row >= 0; row--) {
         NSMutableArray *columnArray = [NSMutableArray array];
@@ -255,7 +257,22 @@ static const uint32_t holeCategory             =  0x1 << 2;
                 [columnArray addObject:@0];
             }
         }
-        [rowArray addObject:columnArray];
+        if(columnArray.count > 0){
+            [rowArray addObject:columnArray];
+        }
+    }
+     */
+    
+    //New method
+    NSMutableArray *rowArray = [NSMutableArray array];
+    for (NSInteger row = NumRows-1; row >= 0; row--) {
+        for (NSInteger column = 0; column < NumColumns; column++) {
+            NSMutableArray *objects = [_level objectAtColumn:column row:row];
+            [objects enumerateObjectsUsingBlock:^(WUNObject *obj, NSUInteger idx, BOOL *stop) {
+                NSDictionary *data = [obj saveData];
+                [rowArray addObject:data];
+            }];
+        }
     }
     
     [dictionary setObject:rowArray forKey:@"tiles"];

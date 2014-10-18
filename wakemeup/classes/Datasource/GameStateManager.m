@@ -144,15 +144,19 @@
     }
 }
 
--(NSDictionary*)getTilesForLevel:(NSInteger)levelID
+-(NSMutableArray*)getTilesForLevel:(NSInteger)levelID
 {
-    NSDictionary *dictionary = nil;
+    NSMutableArray *tiles = nil;
     NSString *level = [NSString stringWithFormat:@"Level_%lu_%lu",(unsigned long)levelID,(unsigned long)self.currentStage];
-    dictionary = [Utility loadJSON:level];
-    if(dictionary == nil){
+    NSDictionary *dictionary = [Utility loadJSON:level];
+    tiles = [dictionary objectForKey:@"tiles"];
+
+    if(tiles == nil){
         dictionary = [[GameConfigManager sharedManager] dictionaryForLevel:levelID andStage:self.currentStage];
+        tiles = [dictionary objectForKey:@"tiles"];
     }
-    return dictionary;
+    
+    return tiles;
 }
 
 -(void)saveGameData

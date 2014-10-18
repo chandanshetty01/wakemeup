@@ -13,13 +13,12 @@
 
 @property (strong, nonatomic) NSSet *possibleSwaps;
 @property (strong, nonatomic) NSDictionary *levelData;
+@property (strong,nonatomic) NSMutableArray *objects;
 
 @end
 
 @implementation WUNLevel {
-  NSMutableArray *_Objects[NumColumns][NumRows];
   WUNTile *_tiles[NumColumns][NumRows];
-  NSInteger ObjectsList[NumColumns][NumRows];
 }
 
 - (instancetype)initWithModel:(WUNLevelModel*)levelModel
@@ -27,30 +26,33 @@
     self = [super init];
     if (self != nil) {
         
+        self.objects = [NSMutableArray array];
         self.levelModel = levelModel;
         
-        // Loop through the rows
-        [self.levelModel.tiles[@"tiles"] enumerateObjectsUsingBlock:^(NSArray *array, NSUInteger row, BOOL *stop) {
-            // Loop through the columns in the current row
-            [array enumerateObjectsUsingBlock:^(NSNumber *value, NSUInteger column, BOOL *stop) {
-                // Note: In Sprite Kit (0,0) is at the bottom of the screen,
-                // so we need to read this file upside down.
-                NSInteger tileRow = NumRows - row - 1;
-                WUNTile *tile = [[WUNTile alloc] init];
-                _tiles[column][tileRow] = tile;
-                ObjectsList[column][tileRow] = value.integerValue;
-            }];
-        }];
+        for(int column = 0; column < NumColumns ; column++){
+            for (int row = 0; row < NumRows; row++) {
+                    NSInteger tileRow = NumRows - row - 1;
+                    WUNTile *tile = [[WUNTile alloc] init];
+                    _tiles[column][tileRow] = tile;
+            }
+        }
     }
     return self;
 }
 
-- (NSMutableArray *)objectAtColumn:(NSInteger)column row:(NSInteger)row;
+- (NSMutableArray *)objectAtColumn:(NSInteger)column row:(NSInteger)row
 {
   NSAssert1(column >= 0 && column < NumColumns, @"Invalid column: %ld", (long)column);
   NSAssert1(row >= 0 && row < NumRows, @"Invalid row: %ld", (long)row);
 
-  return _Objects[column][row];
+  NSMutableArray *array = [NSMutableArray array];
+    [self.objects enumerateObjectsUsingBlock:^(WUNObject *obj, NSUInteger idx, BOOL *stop) {
+        if(obj.row == row && obj.column == column){
+            [array addObject:obj];
+        }
+    }];
+    
+  return array;
 }
 
 - (WUNTile *)tileAtColumn:(NSInteger)column row:(NSInteger)row
@@ -70,36 +72,32 @@
 
 - (NSSet *)createInitialObjects
 {
-  NSMutableSet *set = [NSMutableSet set];
-  NSLog(@"Started creating objects");
-  for (NSInteger row = 0; row < NumRows; row++) {
-    for (NSInteger column = 0; column < NumColumns; column++) {
-      if (_tiles[column][row] != nil) {
-          NSUInteger ObjectType = ObjectsList[column][row];
-          if(ObjectType >= 1){
-              NSMutableArray *Object = [self createObjectAtColumn:column row:row withType:ObjectType];
-              [set addObject:Object];
-          }
-      }
-    }
-  }
-  return set;
+    NSMutableSet *set = [NSMutableSet set];
+    
+    [self.levelModel.tiles enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
+        NSMutableArray *Object = [self createObject:obj];
+        [set addObject:Object];
+    }];
+    
+    return set;
 }
 
-- (NSMutableArray *)createObjectAtColumn:(NSInteger)column row:(NSInteger)row withType:(NSUInteger)ObjectType
+- (NSMutableArray*)createObject:(NSDictionary*)data
 {
+    NSInteger objectType = [[data objectForKey:@"objectType"] intValue];
+    
     WUNObject *Object = nil;
-    switch (ObjectType) {
+    switch (objectType) {
         case eObjectSmily:{
-            Object = [[WUNSmily alloc] init];
+            Object = [[WUNSmily alloc] initWithDictionary:data];
         }
             break;
         case eObjectObstacle:{
-            Object = [[WUNObstacle alloc] init];
+            Object = [[WUNObstacle alloc] initWithDictionary:data];
         }
             break;
         case eObjectHole:{
-            Object = [[WUNHole alloc] init];
+            Object = [[WUNHole alloc] initWithDictionary:data];
         }
             break;
             
@@ -107,20 +105,15 @@
             break;
     }
     
-    Object.ObjectType = ObjectType;
-    Object.column = column;
-    Object.row = row;
-    
+    [self.objects addObject:Object];
     NSMutableArray *array = [[NSMutableArray alloc] initWithObjects:Object, nil];
-    _Objects[column][row] = array;
     return array;
 }
 
 -(void)removeObjectFromList:(WUNObject*)object
 {
-    NSMutableArray *objects = _Objects[object.column][object.row];
-    if([objects containsObject:object]){
-        [objects removeObject:object];
+    if([self.objects containsObject:object]){
+        [self.objects removeObject:object];
     }
 }
 
@@ -128,30 +121,12 @@
 {
     WUNObject *object = swap.ObjectA;
     if(object.status != eObjectGone){
-        NSInteger columnB = swap.point.x;
-        NSInteger rowB = swap.point.y;
-        
-        NSMutableArray *objects = _Objects[columnB][rowB];
-        if(![objects containsObject:swap.ObjectA] && objects.count > 0){
-            [objects addObject:swap.ObjectA];
-        }
-        else{
-            _Objects[columnB][rowB] = [[NSMutableArray alloc] initWithObjects:swap.ObjectA, nil];
-        }
-        
-        [self removeObjectFromList:swap.ObjectA];
-        
-        swap.ObjectA.column = columnB;
-        swap.ObjectA.row = rowB;
+        object.row = swap.point.x;
+        object.column = swap.point.y;
     }
     else{
         [self removeObjectFromList:swap.ObjectA];
     }
-}
-
-- (BOOL)isPossibleSwap:(WUNSwap *)swap
-{
-  return [self.possibleSwaps containsObject:swap];
 }
 
 - (void)dealloc

@@ -31,6 +31,8 @@ typedef enum : NSUInteger {
 @property (strong, nonatomic) SKSpriteNode *sprite;
 @property (assign, nonatomic) EObjectStatus status;
 
+-(id)initWithDictionary:(NSDictionary*)data;
+-(NSDictionary*)saveData;
 - (NSString *)spriteName;
 - (NSString *)highlightedSpriteName;
 

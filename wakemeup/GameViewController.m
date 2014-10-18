@@ -163,29 +163,35 @@
 
 - (IBAction)HandleSmilyButton:(id)sender
 {
+    /*
     NSMutableSet *set = [NSMutableSet set];
     NSMutableArray *Object = [self.level createObjectAtColumn:0 row:0 withType:1];
     [set addObject:Object];
     
     [self.scene addSpritesForObjects:set];
+     */
 }
 
 - (IBAction)handleTestHoleBtn:(id)sender
 {
+    /*
     NSMutableSet *set = [NSMutableSet set];
     NSMutableArray *Object = [self.level createObjectAtColumn:0 row:0 withType:3];
     [set addObject:Object];
     
     [self.scene addSpritesForObjects:set];
+     */
 }
 
 - (IBAction)handleObstacleButton:(id)sender
 {
+    /*
     NSMutableSet *set = [NSMutableSet set];
     NSMutableArray *Object = [self.level createObjectAtColumn:0 row:0 withType:2];
     [set addObject:Object];
     
     [self.scene addSpritesForObjects:set];
+     */
 }
 
 - (IBAction)handleTestModeButton:(UISwitch*)sender

@@ -19,6 +19,6 @@
 @property(nonatomic,assign) NSInteger levelID;
 @property(nonatomic,assign) BOOL isCompleted;
 @property(nonatomic,assign) BOOL isUnlocked;
-@property(nonatomic,strong) NSDictionary *tiles;
+@property(nonatomic,strong) NSMutableArray *tiles;
 
 @end

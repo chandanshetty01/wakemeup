@@ -26,7 +26,7 @@
 -(void)saveGameData;
 -(void)loadGameData;
 -(NSMutableDictionary*)getLevelData:(NSInteger)levelID;
--(NSDictionary*)getTilesForLevel:(NSInteger)levelID;
+-(NSMutableArray*)getTilesForLevel:(NSInteger)levelID;
 -(void)saveTilesForLevel:(NSDictionary*)levelData andLevelID:(NSInteger)levelID;
 -(NSMutableArray*)getAllLevelsInStage;
 
