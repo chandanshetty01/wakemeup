@@ -73,10 +73,8 @@
 
 - (NSMutableArray *)createInitialObjects
 {
-
     [self.levelModel.tiles enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
-        WUNObject *object = [self createObject:obj];
-        [self.objects addObject:object];
+       [self createObject:obj];
     }];
     
     NSMutableArray *set = [NSMutableArray arrayWithArray:self.objects];
@@ -87,18 +85,18 @@
 {
     NSInteger objectType = [[data objectForKey:@"objectType"] intValue];
     
-    WUNObject *Object = nil;
+    WUNObject *object = nil;
     switch (objectType) {
         case eObjectSmily:{
-            Object = [[WUNSmily alloc] initWithDictionary:data];
+            object = [[WUNSmily alloc] initWithDictionary:data];
         }
             break;
         case eObjectObstacle:{
-            Object = [[WUNObstacle alloc] initWithDictionary:data];
+            object = [[WUNObstacle alloc] initWithDictionary:data];
         }
             break;
         case eObjectHole:{
-            Object = [[WUNHole alloc] initWithDictionary:data];
+            object = [[WUNHole alloc] initWithDictionary:data];
         }
             break;
             
@@ -106,7 +104,10 @@
             break;
     }
     
-    return Object;
+    if(object){
+        [self.objects addObject:object];
+    }
+    return object;
 }
 
 -(void)removeObjectFromList:(WUNObject*)object

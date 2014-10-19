@@ -107,9 +107,9 @@ static const uint32_t holeCategory             =  0x1 << 2;
 #endif
 }
 
-- (void)addSpritesForObjects:(NSMutableArray *)Objects
+-(void)addSpriteForObject:(WUNObject*)object
 {
-    [Objects enumerateObjectsUsingBlock:^(WUNObject *object, NSUInteger idx, BOOL *stop) {
+    if(!object.sprite){
         NSString *spriteName = [object spriteName];
         SKSpriteNode *sprite = nil;
         if(spriteName.length != 0){
@@ -140,6 +140,13 @@ static const uint32_t holeCategory             =  0x1 << 2;
         
         [self.smileysLayer addChild:sprite];
         object.sprite = sprite;
+    }
+}
+
+- (void)addSpritesForObjects:(NSMutableArray *)Objects
+{
+    [Objects enumerateObjectsUsingBlock:^(WUNObject *object, NSUInteger idx, BOOL *stop) {
+        [self addSpriteForObject:object];
     }];
 }
 

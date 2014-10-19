@@ -155,37 +155,30 @@
     [self saveLevelData];
 }
 
+-(void)addNewObject:(NSInteger)objectType
+{
+    NSDictionary *dictionary = [NSMutableDictionary dictionary];
+    [dictionary setValue:[NSNumber numberWithInt:0] forKey:@"row"];
+    [dictionary setValue:[NSNumber numberWithInt:0] forKey:@"column"];
+    [dictionary setValue:[NSNumber numberWithInt:0] forKey:@"status"];
+    [dictionary setValue:[NSNumber numberWithInt:objectType] forKey:@"objectType"];
+    WUNObject *object = [self.level createObject:dictionary];
+    [self.scene addSpriteForObject:object];
+}
+
 - (IBAction)HandleSmilyButton:(id)sender
 {
-    /*
-    NSMutableSet *set = [NSMutableSet set];
-    NSMutableArray *Object = [self.level createObjectAtColumn:0 row:0 withType:1];
-    [set addObject:Object];
-    
-    [self.scene addSpritesForObjects:set];
-     */
+    [self addNewObject:1];
 }
 
 - (IBAction)handleTestHoleBtn:(id)sender
 {
-    /*
-    NSMutableSet *set = [NSMutableSet set];
-    NSMutableArray *Object = [self.level createObjectAtColumn:0 row:0 withType:3];
-    [set addObject:Object];
-    
-    [self.scene addSpritesForObjects:set];
-     */
+    [self addNewObject:3];
 }
 
 - (IBAction)handleObstacleButton:(id)sender
 {
-    /*
-    NSMutableSet *set = [NSMutableSet set];
-    NSMutableArray *Object = [self.level createObjectAtColumn:0 row:0 withType:2];
-    [set addObject:Object];
-    
-    [self.scene addSpritesForObjects:set];
-     */
+    [self addNewObject:2];
 }
 
 - (IBAction)handleTestModeButton:(UISwitch*)sender
@@ -229,7 +222,6 @@
 - (IBAction)handleBackButton:(id)sender
 {
     [self saveLevelData];
-    
     [self dismissViewControllerAnimated:YES completion:^{
     }];
 }
