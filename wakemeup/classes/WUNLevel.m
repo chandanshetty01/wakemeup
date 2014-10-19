@@ -8,6 +8,7 @@
 
 #import "WUNLevel.h"
 #import "Utility.h"
+#import "WUNObject.h"
 
 @interface WUNLevel ()
 
@@ -63,26 +64,26 @@
   return _tiles[column][row];
 }
 
-- (NSSet *)shuffle
+- (NSMutableArray *)shuffle
 {
-  NSSet *set;
+  NSMutableArray *set = nil;
   set = [self createInitialObjects];
   return set;
 }
 
-- (NSSet *)createInitialObjects
+- (NSMutableArray *)createInitialObjects
 {
-    NSMutableSet *set = [NSMutableSet set];
-    
+
     [self.levelModel.tiles enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
-        NSMutableArray *Object = [self createObject:obj];
-        [set addObject:Object];
+        WUNObject *object = [self createObject:obj];
+        [self.objects addObject:object];
     }];
     
+    NSMutableArray *set = [NSMutableArray arrayWithArray:self.objects];
     return set;
 }
 
-- (NSMutableArray*)createObject:(NSDictionary*)data
+- (WUNObject*)createObject:(NSDictionary*)data
 {
     NSInteger objectType = [[data objectForKey:@"objectType"] intValue];
     
@@ -105,9 +106,7 @@
             break;
     }
     
-    [self.objects addObject:Object];
-    NSMutableArray *array = [[NSMutableArray alloc] initWithObjects:Object, nil];
-    return array;
+    return Object;
 }
 
 -(void)removeObjectFromList:(WUNObject*)object
@@ -117,16 +116,26 @@
     }
 }
 
-- (void)performSwap:(WUNSwap *)swap
+-(EGAMESTATUS)isGameOver
 {
-    WUNObject *object = swap.ObjectA;
-    if(object.status != eObjectGone){
-        object.row = swap.point.x;
-        object.column = swap.point.y;
-    }
-    else{
-        [self removeObjectFromList:swap.ObjectA];
-    }
+    __block EGAMESTATUS status = eGameWon;
+    
+    [self.objects enumerateObjectsUsingBlock:^(WUNObject *obj, NSUInteger idx, BOOL *stop) {
+        if(obj.status == eObjectGone){
+            status = eGameOver;
+            *stop = YES;
+        }
+        else if(obj.status == eObjectAlive && obj.ObjectType == eObjectSmily){
+            status = eGameRunning;
+        }
+        
+        if(status == eGameOver){
+            if(self.levelModel.levelID == 1){
+                status = eGameWon;
+            }
+        }
+    }];
+    return status;
 }
 
 - (void)dealloc

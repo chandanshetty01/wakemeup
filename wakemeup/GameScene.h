@@ -9,21 +9,14 @@
 #import <SpriteKit/SpriteKit.h>
 #import "WUNLevel.h"
 
-typedef enum : NSUInteger {
-    eGameOver,
-    eGameWon,
-    eGameRunning
-} EGAMESTATUS;
-
 @interface GameScene : SKScene <SKPhysicsContactDelegate>
 
 @property (strong, nonatomic) WUNLevel *level;
-@property (copy, nonatomic)void (^swipeHandler)(WUNSwap *swap);
 @property (copy, nonatomic)void (^gameCompletion)(EGAMESTATUS status);
 @property (nonatomic,assign)BOOL isDevelopmentMode;
 
 - (void)addTiles;
-- (void)addSpritesForObjects:(NSSet *)Objects;
-- (NSDictionary*)getTilesDictionary;
+- (void)addSpritesForObjects:(NSMutableArray *)Objects;
+- (NSMutableDictionary*)getTilesDictionary;
 
 @end

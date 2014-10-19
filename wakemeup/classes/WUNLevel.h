@@ -17,6 +17,12 @@
 static const NSInteger NumColumns = 12;
 static const NSInteger NumRows = 6;
 
+typedef enum : NSUInteger {
+    eGameOver,
+    eGameWon,
+    eGameRunning
+} EGAMESTATUS;
+
 @interface WUNLevel : NSObject
 {
     
@@ -24,11 +30,9 @@ static const NSInteger NumRows = 6;
 @property(nonatomic,strong) WUNLevelModel *levelModel;
 
 - (instancetype)initWithModel:(WUNLevelModel*)levelModel;
-- (NSSet *)shuffle;
+- (NSMutableArray *)shuffle;
 - (NSMutableArray *)objectAtColumn:(NSInteger)column row:(NSInteger)row;
 - (WUNTile *)tileAtColumn:(NSInteger)column row:(NSInteger)row;
-- (NSMutableArray*)createObject:(NSDictionary*)data;
-- (void)performSwap:(WUNSwap *)swap;
-- (BOOL)isPossibleSwap:(WUNSwap *)swap;
-
+- (WUNObject*)createObject:(NSDictionary*)data;
+- (EGAMESTATUS)isGameOver;
 @end

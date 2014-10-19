@@ -107,15 +107,13 @@ static const uint32_t holeCategory             =  0x1 << 2;
 #endif
 }
 
-- (void)addSpritesForObjects:(NSSet *)Objects
+- (void)addSpritesForObjects:(NSMutableArray *)Objects
 {
-    for (NSMutableArray *objectsArray in Objects)
-    {
-        WUNObject *object = [objectsArray firstObject];
+    [Objects enumerateObjectsUsingBlock:^(WUNObject *object, NSUInteger idx, BOOL *stop) {
         NSString *spriteName = [object spriteName];
         SKSpriteNode *sprite = nil;
         if(spriteName.length != 0){
-             sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteName];
+            sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteName];
         }
         else{
             sprite = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeZero];
@@ -136,13 +134,13 @@ static const uint32_t holeCategory             =  0x1 << 2;
             sprite.physicsBody.categoryBitMask = obstacleCategory;
             sprite.physicsBody.contactTestBitMask = smilyCategory;
         }
-
+        
         sprite.physicsBody.collisionBitMask = 0;
         sprite.physicsBody.affectedByGravity = NO;
         
         [self.smileysLayer addChild:sprite];
         object.sprite = sprite;
-    }
+    }];
 }
 
 - (CGPoint)pointForColumn:(NSInteger)column row:(NSInteger)row
@@ -238,30 +236,9 @@ static const uint32_t holeCategory             =  0x1 << 2;
     return array;
 }
 
--(NSDictionary*)getTilesDictionary
+-(NSMutableDictionary*)getTilesDictionary
 {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
-    
-    //old method
-    /*
-    NSMutableArray *rowArray = [NSMutableArray array];
-    for (NSInteger row = NumRows-1; row >= 0; row--) {
-        NSMutableArray *columnArray = [NSMutableArray array];
-        for (NSInteger column = 0; column < NumColumns; column++) {
-            NSMutableArray *objects = [_level objectAtColumn:column row:row];
-            if(objects.count > 0){
-                WUNObject *obj = [objects firstObject];
-                [columnArray addObject:[NSNumber numberWithInt:obj.ObjectType]];
-            }
-            else{
-                [columnArray addObject:@0];
-            }
-        }
-        if(columnArray.count > 0){
-            [rowArray addObject:columnArray];
-        }
-    }
-     */
     
     //New method
     NSMutableArray *rowArray = [NSMutableArray array];
@@ -279,39 +256,9 @@ static const uint32_t holeCategory             =  0x1 << 2;
     return dictionary;
 }
 
--(EGAMESTATUS)isGameOver
-{
-    __block EGAMESTATUS status = eGameWon;
-    
-    for (NSInteger row = 0; row < NumRows; row++) {
-        for (NSInteger column = 0; column < NumColumns; column++) {
-            NSMutableArray *objects = [_level objectAtColumn:column row:row];
-            if(objects){
-                [objects enumerateObjectsUsingBlock:^(WUNObject *obj, NSUInteger idx, BOOL *stop) {
-                    if(obj.status == eObjectGone){
-                        status = eGameOver;
-                        *stop = YES;
-                    }
-                    else if(obj.status == eObjectAlive && obj.ObjectType == eObjectSmily){
-                        status = eGameRunning;
-                    }
-                }];
-            }
-            
-            if(status == eGameOver){
-                if(self.level.levelModel.levelID == 1){
-                    status = eGameWon;
-                }
-                break;
-            }
-        }
-    }
-    return status;
-}
-
 -(void)checkGameOver
 {
-    EGAMESTATUS status = [self isGameOver];
+    EGAMESTATUS status = [self.level isGameOver];
     if(status != eGameRunning){
         if (self.gameCompletion != nil) {
             self.gameCompletion(status);
@@ -404,13 +351,9 @@ static const uint32_t holeCategory             =  0x1 << 2;
     CGPoint point = [self pointForColumn:inPoint.x row:inPoint.y];
     SKAction *action = [SKAction moveTo:point duration:MAX(0.4, 0.1*diff)];
     [object.sprite runAction:action completion:^{
-        if (self.swipeHandler != nil) {
-            [self checkGameOver];
-            WUNSwap *swap = [[WUNSwap alloc] init];
-            swap.ObjectA = object;
-            swap.point = inPoint;
-            self.swipeHandler(swap);
-        }
+        object.column = inPoint.x;
+        object.row = inPoint.y;
+        [self checkGameOver];
     }];
 }
 

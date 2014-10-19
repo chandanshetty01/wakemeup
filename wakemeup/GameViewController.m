@@ -55,12 +55,6 @@
     self.level = [[WUNLevel alloc] initWithModel:self.levelModel];
     self.scene.level = self.level;
     self.levelNumberLabel.text = [NSString stringWithFormat:@"%d",self.levelModel.levelID];
-    
-    id block = ^(WUNSwap *swap) {
-        [self.level performSwap:swap];
-    };
-    self.scene.swipeHandler = block;
-    
     [self beginGame];
 }
 
@@ -149,8 +143,8 @@
 
 -(void)saveLevelData
 {
-    self.levelModel.tiles = [self.scene getTilesDictionary];
-    [[GameStateManager sharedManager] saveTilesForLevel:self.levelModel.tiles andLevelID:self.levelModel.levelID];
+    NSMutableDictionary *dictionary = [self.scene getTilesDictionary];
+    [[GameStateManager sharedManager] saveTilesForLevel:dictionary andLevelID:self.levelModel.levelID];
     NSDictionary *levelData = [self.levelModel levelData];
     [[GameStateManager sharedManager] setData:levelData level:self.levelModel.levelID];
     [[GameStateManager sharedManager] saveGameData];
@@ -228,7 +222,7 @@
 
 - (void)shuffle
 {
-    NSSet *newObjects = [self.level shuffle];
+    NSMutableArray *newObjects = [self.level shuffle];
     [self.scene addSpritesForObjects:newObjects];
 }
 
@@ -237,8 +231,6 @@
     [self saveLevelData];
     
     [self dismissViewControllerAnimated:YES completion:^{
-//        self.scene.swipeHandler = nil;
-//        self.scene.gameCompletion = nil;
     }];
 }
 
