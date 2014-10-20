@@ -47,6 +47,8 @@
 		A364EFE919F17E8C005EF1D6 /* Level_7_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A364EFC319F17E8C005EF1D6 /* Level_7_1.json */; };
 		A364EFEA19F17E8C005EF1D6 /* Level_8_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A364EFC419F17E8C005EF1D6 /* Level_8_1.json */; };
 		A364EFEB19F17E8C005EF1D6 /* Level_9_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A364EFC519F17E8C005EF1D6 /* Level_9_1.json */; };
+		A364EFED19F57ED6005EF1D6 /* Level_40_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A364EFEC19F57ED6005EF1D6 /* Level_40_1.json */; };
+		A364EFEF19F57EDF005EF1D6 /* Level_39_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A364EFEE19F57EDF005EF1D6 /* Level_39_1.json */; };
 		A36F9A3B19DD9E4100419500 /* WUNSmily.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A3A19DD9E4100419500 /* WUNSmily.m */; };
 		A36F9A3E19DD9E5800419500 /* WUNObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A3D19DD9E5800419500 /* WUNObstacle.m */; };
 		A36F9A4119DD9E6C00419500 /* WUNHole.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A4019DD9E6C00419500 /* WUNHole.m */; };
@@ -66,7 +68,6 @@
 		A3CC20C719D6C9520067A847 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3CC20C619D6C9520067A847 /* Images.xcassets */; };
 		A3CC20CA19D6C9520067A847 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3CC20C819D6C9520067A847 /* LaunchScreen.xib */; };
 		A3CC20EE19D6E0FB0067A847 /* GameConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20E819D6E0FB0067A847 /* GameConfigManager.m */; };
-		A3CC20F119D6E3890067A847 /* WUNGameConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3CC20F019D6E3890067A847 /* WUNGameConfig.plist */; };
 		A3CC20F819DAF3B20067A847 /* WUNObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20F319DAF3B20067A847 /* WUNObject.m */; };
 		A3CC20F919DAF3B20067A847 /* WUNLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20F519DAF3B20067A847 /* WUNLevel.m */; };
 		A3CC20FA19DAF3B20067A847 /* WUNTile.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20F719DAF3B20067A847 /* WUNTile.m */; };
@@ -116,6 +117,8 @@
 		A364EFC319F17E8C005EF1D6 /* Level_7_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_7_1.json; sourceTree = "<group>"; };
 		A364EFC419F17E8C005EF1D6 /* Level_8_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_8_1.json; sourceTree = "<group>"; };
 		A364EFC519F17E8C005EF1D6 /* Level_9_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_9_1.json; sourceTree = "<group>"; };
+		A364EFEC19F57ED6005EF1D6 /* Level_40_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_40_1.json; sourceTree = "<group>"; };
+		A364EFEE19F57EDF005EF1D6 /* Level_39_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_39_1.json; sourceTree = "<group>"; };
 		A36F9A3919DD9E4100419500 /* WUNSmily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNSmily.h; path = wakemeup/classes/WUNSmily.h; sourceTree = SOURCE_ROOT; };
 		A36F9A3A19DD9E4100419500 /* WUNSmily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNSmily.m; path = wakemeup/classes/WUNSmily.m; sourceTree = SOURCE_ROOT; };
 		A36F9A3C19DD9E5800419500 /* WUNObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNObstacle.h; path = wakemeup/classes/WUNObstacle.h; sourceTree = SOURCE_ROOT; };
@@ -151,7 +154,6 @@
 		A3CC20C919D6C9520067A847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A3CC20E719D6E0FB0067A847 /* GameConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConfigManager.h; sourceTree = "<group>"; };
 		A3CC20E819D6E0FB0067A847 /* GameConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameConfigManager.m; sourceTree = "<group>"; };
-		A3CC20F019D6E3890067A847 /* WUNGameConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WUNGameConfig.plist; sourceTree = "<group>"; };
 		A3CC20F219DAF3B20067A847 /* WUNObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNObject.h; path = wakemeup/classes/WUNObject.h; sourceTree = SOURCE_ROOT; };
 		A3CC20F319DAF3B20067A847 /* WUNObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNObject.m; path = wakemeup/classes/WUNObject.m; sourceTree = SOURCE_ROOT; };
 		A3CC20F419DAF3B20067A847 /* WUNLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = WUNLevel.h; path = wakemeup/classes/WUNLevel.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -217,6 +219,8 @@
 				A364EFBC19F17E8C005EF1D6 /* Level_36_1.json */,
 				A364EFBD19F17E8C005EF1D6 /* Level_37_1.json */,
 				A364EFBE19F17E8C005EF1D6 /* Level_38_1.json */,
+				A364EFEE19F57EDF005EF1D6 /* Level_39_1.json */,
+				A364EFEC19F57ED6005EF1D6 /* Level_40_1.json */,
 				A364EFBF19F17E8C005EF1D6 /* Level_3_1.json */,
 				A364EFC019F17E8C005EF1D6 /* Level_4_1.json */,
 				A364EFC119F17E8C005EF1D6 /* Level_5_1.json */,
@@ -274,7 +278,6 @@
 				A364EF9F19F17E8C005EF1D6 /* Levels */,
 				A3CC210919DAF7410067A847 /* Sprites.atlas */,
 				A3C891A519E428D500A12D36 /* stage */,
-				A3CC20F019D6E3890067A847 /* WUNGameConfig.plist */,
 				A3CC20B519D6C9520067A847 /* Info.plist */,
 				A3CC20B619D6C9520067A847 /* main.m */,
 				A3C891B719E43B9200A12D36 /* WakeMeUp.pch */,
@@ -418,13 +421,13 @@
 				A3CC210A19DAF7410067A847 /* Sprites.atlas in Resources */,
 				A364EFD319F17E8C005EF1D6 /* Level_22_1.json in Resources */,
 				A364EFDE19F17E8C005EF1D6 /* Level_32_1.json in Resources */,
-				A3CC20F119D6E3890067A847 /* WUNGameConfig.plist in Resources */,
 				A364EFDF19F17E8C005EF1D6 /* Level_33_1.json in Resources */,
 				A3C891A719E428D500A12D36 /* stage_1.json in Resources */,
 				A364EFEB19F17E8C005EF1D6 /* Level_9_1.json in Resources */,
 				A364EFD619F17E8C005EF1D6 /* Level_25_1.json in Resources */,
 				A364EFE619F17E8C005EF1D6 /* Level_4_1.json in Resources */,
 				A364EFD519F17E8C005EF1D6 /* Level_24_1.json in Resources */,
+				A364EFEF19F57EDF005EF1D6 /* Level_39_1.json in Resources */,
 				A3CC20C719D6C9520067A847 /* Images.xcassets in Resources */,
 				A3CC20BF19D6C9520067A847 /* GameScene.sks in Resources */,
 				A364EFE119F17E8C005EF1D6 /* Level_35_1.json in Resources */,
@@ -447,6 +450,7 @@
 				A364EFDD19F17E8C005EF1D6 /* Level_31_1.json in Resources */,
 				A364EFE719F17E8C005EF1D6 /* Level_5_1.json in Resources */,
 				A364EFCF19F17E8C005EF1D6 /* Level_19_1.json in Resources */,
+				A364EFED19F57ED6005EF1D6 /* Level_40_1.json in Resources */,
 				A364EFD419F17E8C005EF1D6 /* Level_23_1.json in Resources */,
 				A364EFE919F17E8C005EF1D6 /* Level_7_1.json in Resources */,
 				A364EFC719F17E8C005EF1D6 /* Level_11_1.json in Resources */,

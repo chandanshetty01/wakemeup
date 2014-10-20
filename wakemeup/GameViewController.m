@@ -51,6 +51,7 @@
 -(void)loadLevel
 {
     // Load the level.
+    self.currentStage = 1;
     self.levelModel.tiles = [[GameStateManager sharedManager] getTilesForLevel:self.levelModel.levelID];
     self.level = [[WUNLevel alloc] initWithModel:self.levelModel];
     self.scene.level = self.level;
