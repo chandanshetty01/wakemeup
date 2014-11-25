@@ -56,6 +56,14 @@
   return array;
 }
 
+- (void)bringToFront:(WUNObject*)object
+{
+    if([self.objects containsObject:object]){
+        [self.objects removeObject:object];
+        [self.objects addObject:object];
+    }
+}
+
 - (WUNTile *)tileAtColumn:(NSInteger)column row:(NSInteger)row
 {
   NSAssert1(column >= 0 && column < NumColumns, @"Invalid column: %ld", (long)column);

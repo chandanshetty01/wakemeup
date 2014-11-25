@@ -35,4 +35,5 @@ typedef enum : NSUInteger {
 - (WUNTile *)tileAtColumn:(NSInteger)column row:(NSInteger)row;
 - (WUNObject*)createObject:(NSDictionary*)data;
 - (EGAMESTATUS)isGameOver;
+- (void)bringToFront:(WUNObject*)object;
 @end

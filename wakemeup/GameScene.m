@@ -332,9 +332,12 @@ static const uint32_t holeCategory             =  0x1 << 2;
                 }
                     break;
                 case eObjectHole:{
-                    status = eObjectDead;
-                    toPoint = CGPointMake(point.x, point.y);
-                    *stop = YES;
+                    if(nextObject.status == eObjectAlive){
+                        nextObject.status = eObjectDead;
+                        status = eObjectDead;
+                        toPoint = CGPointMake(point.x, point.y);
+                        *stop = YES;
+                    }
                 }
                     break;
                     
@@ -360,6 +363,7 @@ static const uint32_t holeCategory             =  0x1 << 2;
     [object.sprite runAction:action completion:^{
         object.column = inPoint.x;
         object.row = inPoint.y;
+        [self.level bringToFront:object];
         [self checkGameOver];
     }];
 }
