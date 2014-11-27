@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Chandan. All rights reserved.
 //
 
-#import "WUNObstacle.h"
+#import "WUNWall.h"
 
-@implementation WUNObstacle
+@implementation WUNWall
 
 @end

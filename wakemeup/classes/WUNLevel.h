@@ -10,7 +10,7 @@
 #import "WUNTile.h"
 #import "WUNSwap.h"
 #import "WUNSmily.h"
-#import "WUNObstacle.h"
+#import "WUNWall.h"
 #import "WUNHole.h"
 #import "WUNLevelModel.h"
 

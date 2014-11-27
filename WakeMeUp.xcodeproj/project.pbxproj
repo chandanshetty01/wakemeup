@@ -50,7 +50,7 @@
 		A364EFED19F57ED6005EF1D6 /* Level_40_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A364EFEC19F57ED6005EF1D6 /* Level_40_1.json */; };
 		A364EFEF19F57EDF005EF1D6 /* Level_39_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A364EFEE19F57EDF005EF1D6 /* Level_39_1.json */; };
 		A36F9A3B19DD9E4100419500 /* WUNSmily.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A3A19DD9E4100419500 /* WUNSmily.m */; };
-		A36F9A3E19DD9E5800419500 /* WUNObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A3D19DD9E5800419500 /* WUNObstacle.m */; };
+		A36F9A3E19DD9E5800419500 /* WUNWall.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A3D19DD9E5800419500 /* WUNWall.m */; };
 		A36F9A4119DD9E6C00419500 /* WUNHole.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A4019DD9E6C00419500 /* WUNHole.m */; };
 		A3C891A719E428D500A12D36 /* stage_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A3C891A619E428D500A12D36 /* stage_1.json */; };
 		A3C891AA19E4298B00A12D36 /* WUNStageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C891A919E4298B00A12D36 /* WUNStageModel.m */; };
@@ -121,8 +121,8 @@
 		A364EFEE19F57EDF005EF1D6 /* Level_39_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_39_1.json; sourceTree = "<group>"; };
 		A36F9A3919DD9E4100419500 /* WUNSmily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNSmily.h; path = wakemeup/classes/WUNSmily.h; sourceTree = SOURCE_ROOT; };
 		A36F9A3A19DD9E4100419500 /* WUNSmily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNSmily.m; path = wakemeup/classes/WUNSmily.m; sourceTree = SOURCE_ROOT; };
-		A36F9A3C19DD9E5800419500 /* WUNObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNObstacle.h; path = wakemeup/classes/WUNObstacle.h; sourceTree = SOURCE_ROOT; };
-		A36F9A3D19DD9E5800419500 /* WUNObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNObstacle.m; path = wakemeup/classes/WUNObstacle.m; sourceTree = SOURCE_ROOT; };
+		A36F9A3C19DD9E5800419500 /* WUNWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNWall.h; path = wakemeup/classes/WUNWall.h; sourceTree = SOURCE_ROOT; };
+		A36F9A3D19DD9E5800419500 /* WUNWall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNWall.m; path = wakemeup/classes/WUNWall.m; sourceTree = SOURCE_ROOT; };
 		A36F9A3F19DD9E6C00419500 /* WUNHole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNHole.h; path = wakemeup/classes/WUNHole.h; sourceTree = SOURCE_ROOT; };
 		A36F9A4019DD9E6C00419500 /* WUNHole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNHole.m; path = wakemeup/classes/WUNHole.m; sourceTree = SOURCE_ROOT; };
 		A3C891A619E428D500A12D36 /* stage_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stage_1.json; sourceTree = "<group>"; };
@@ -346,8 +346,8 @@
 				A3CC20F319DAF3B20067A847 /* WUNObject.m */,
 				A36F9A3919DD9E4100419500 /* WUNSmily.h */,
 				A36F9A3A19DD9E4100419500 /* WUNSmily.m */,
-				A36F9A3C19DD9E5800419500 /* WUNObstacle.h */,
-				A36F9A3D19DD9E5800419500 /* WUNObstacle.m */,
+				A36F9A3C19DD9E5800419500 /* WUNWall.h */,
+				A36F9A3D19DD9E5800419500 /* WUNWall.m */,
 				A36F9A3F19DD9E6C00419500 /* WUNHole.h */,
 				A36F9A4019DD9E6C00419500 /* WUNHole.m */,
 				A3CC20F619DAF3B20067A847 /* WUNTile.h */,
@@ -494,7 +494,7 @@
 				A3C891BA19E5932400A12D36 /* MailComposerManager.m in Sources */,
 				A3CC20F819DAF3B20067A847 /* WUNObject.m in Sources */,
 				A3CC20BA19D6C9520067A847 /* AppDelegate.m in Sources */,
-				A36F9A3E19DD9E5800419500 /* WUNObstacle.m in Sources */,
+				A36F9A3E19DD9E5800419500 /* WUNWall.m in Sources */,
 				A364EF7919F01D75005EF1D6 /* GameStateManager.m in Sources */,
 				A3CC20BD19D6C9520067A847 /* GameScene.m in Sources */,
 				A36F9A4119DD9E6C00419500 /* WUNHole.m in Sources */,

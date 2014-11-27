@@ -96,7 +96,7 @@
 -(void)handleTestMode
 {
 #ifdef DELVELOPMENT
-    self.isDevelopmentMode = YES;
+    self.isDevelopmentMode = NO;
     self.testSmily.hidden = NO;
     self.testObstacle.hidden = NO;
     self.testMode.hidden = NO;

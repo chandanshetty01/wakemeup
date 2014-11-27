@@ -8,6 +8,6 @@
 
 #import "WUNObject.h"
 
-@interface WUNObstacle : WUNObject
+@interface WUNWall : WUNObject
 
 @end

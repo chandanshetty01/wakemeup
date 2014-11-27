@@ -14,11 +14,11 @@
 		<string>https://github.com/chandanshetty01/wakemeup</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>wakemeup/wakemeup.xcodeproj</string>
+	<string>wakemeup.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C58F7377BA1EDF995BDAC41037C6B1726F8BA197</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/chandanshetty01/wakemeup</string>

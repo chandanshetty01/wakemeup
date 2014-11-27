@@ -100,7 +100,7 @@
         }
             break;
         case eObjectObstacle:{
-            object = [[WUNObstacle alloc] initWithDictionary:data];
+            object = [[WUNWall alloc] initWithDictionary:data];
         }
             break;
         case eObjectHole:{
