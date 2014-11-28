@@ -26,7 +26,7 @@
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
     [dictionary setObject:[NSNumber numberWithBool:self.isCompleted] forKey:@"iscompleted"];
     [dictionary setObject:[NSNumber numberWithBool:self.isUnlocked] forKey:@"isUnlocked"];
-    [dictionary setObject:[NSNumber numberWithInt:self.levelID] forKey:@"ID"];
+    [dictionary setObject:[NSNumber numberWithInt:(int)self.levelID] forKey:@"ID"];
     return dictionary;
 }
 

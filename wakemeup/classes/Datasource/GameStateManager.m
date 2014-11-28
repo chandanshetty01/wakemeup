@@ -62,7 +62,7 @@
 
 -(void)setCurrentLevel:(NSInteger)currentLevel
 {
-    [self.gameData setObject:[NSNumber numberWithInt:currentLevel] forKey:kCurrentLevel];
+    [self.gameData setObject:[NSNumber numberWithInt:(int)currentLevel] forKey:kCurrentLevel];
 }
 
 -(void)setData:(NSDictionary*)data level:(NSInteger)levelID
@@ -164,7 +164,7 @@
     NSAssert(self.currentStage > 0, @"stage must be greater than 0");
     
     if(self.gameData){
-        NSString *fileName = [NSString stringWithFormat:@"%@_%d",kRootDictionary,self.currentStage];
+        NSString *fileName = [NSString stringWithFormat:@"%@_%ld",kRootDictionary,(long)self.currentStage];
         NSInteger byteswritten = [Utility saveJSON:self.gameData fileName:fileName];
         if(byteswritten <= 0){
             assert(@"Error in writing to file");
@@ -179,14 +179,14 @@
 {
     NSAssert(self.currentStage > 0, @"stage must be greater than 0");
     
-    NSString *fileName = [NSString stringWithFormat:@"%@_%d",kRootDictionary,self.currentStage];
+    NSString *fileName = [NSString stringWithFormat:@"%@_%ld",kRootDictionary,(long)self.currentStage];
     NSDictionary *dictionary = [Utility loadJSON:fileName];
     if(dictionary){
         self.gameData = [[NSMutableDictionary alloc] initWithDictionary:dictionary];
     }
     else{
         //Load the default stage data
-        NSString *fileName = [NSString stringWithFormat:@"stage_%d",self.currentStage];
+        NSString *fileName = [NSString stringWithFormat:@"stage_%ld",(long)self.currentStage];
         NSDictionary *dictionary = [Utility loadJSON:fileName];
         self.gameData = [[NSMutableDictionary alloc] initWithDictionary:dictionary];
     }

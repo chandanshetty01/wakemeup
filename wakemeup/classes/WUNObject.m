@@ -34,8 +34,8 @@
 -(NSDictionary*)saveData
 {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
-    [dictionary setObject:[NSNumber numberWithInt:self.row] forKey:@"row"];
-    [dictionary setObject:[NSNumber numberWithInt:self.column] forKey:@"column"];
+    [dictionary setObject:[NSNumber numberWithInt:(int)self.row] forKey:@"row"];
+    [dictionary setObject:[NSNumber numberWithInt:(int)self.column] forKey:@"column"];
     [dictionary setObject:[NSNumber numberWithInt:self.ObjectType] forKey:@"objectType"];
     [dictionary setObject:[NSNumber numberWithInt:self.status] forKey:@"status"];
     return dictionary;

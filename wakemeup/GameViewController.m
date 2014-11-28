@@ -55,7 +55,7 @@
     self.levelModel.tiles = [[GameStateManager sharedManager] getTilesForLevel:self.levelModel.levelID];
     self.level = [[WUNLevel alloc] initWithModel:self.levelModel];
     self.scene.level = self.level;
-    self.levelNumberLabel.text = [NSString stringWithFormat:@"%d",self.levelModel.levelID];
+    self.levelNumberLabel.text = [NSString stringWithFormat:@"%ld",(long)self.levelModel.levelID];
     [self beginGame];
 }
 
@@ -117,13 +117,13 @@
 
 - (IBAction)handleTestMail:(id)sender
 {
-    NSString *fileName = [NSString stringWithFormat:@"Level_%lu_%d",(unsigned long)self.levelModel.levelID,self.currentStage];
+    NSString *fileName = [NSString stringWithFormat:@"Level_%lu_%lu",(unsigned long)self.levelModel.levelID,(unsigned long)self.currentStage];
     
     // Attach an image to the email
     NSData *myData = [Utility JSONdataForFileName:fileName];
     
     NSString *attachmentMime = @"text/json";
-    NSString *attachmentName = [NSString stringWithFormat:@"Level_%lu_%d.json",(unsigned long)self.levelModel.levelID,self.currentStage];
+    NSString *attachmentName = [NSString stringWithFormat:@"Level_%lu_%lu.json",(unsigned long)self.levelModel.levelID,(unsigned long)self.currentStage];
     
     // Fill out the email body text
     NSString *emailBody = @"Hi, \n\n Check out new level data! \n\n\nRegards, \nSwipe It Baby!";
@@ -162,7 +162,7 @@
     [dictionary setValue:[NSNumber numberWithInt:0] forKey:@"row"];
     [dictionary setValue:[NSNumber numberWithInt:0] forKey:@"column"];
     [dictionary setValue:[NSNumber numberWithInt:0] forKey:@"status"];
-    [dictionary setValue:[NSNumber numberWithInt:objectType] forKey:@"objectType"];
+    [dictionary setValue:[NSNumber numberWithInt:(int)objectType] forKey:@"objectType"];
     WUNObject *object = [self.level createObject:dictionary];
     [self.scene addSpriteForObject:object];
 }
