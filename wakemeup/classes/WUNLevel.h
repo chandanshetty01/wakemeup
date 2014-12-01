@@ -13,6 +13,8 @@
 #import "WUNWall.h"
 #import "WUNHole.h"
 #import "WUNLevelModel.h"
+#import "WUNObstacle.h"
+#import "WUNObstacle1.h"
 
 static const NSInteger NumColumns = 12;
 static const NSInteger NumRows = 6;
@@ -36,4 +38,5 @@ typedef enum : NSUInteger {
 - (WUNObject*)createObject:(NSDictionary*)data;
 - (EGAMESTATUS)isGameOver;
 - (void)bringToFront:(WUNObject*)object;
+- (WUNObstacle*)createObstacle:(NSDictionary*)data;
 @end

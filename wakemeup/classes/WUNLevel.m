@@ -8,13 +8,14 @@
 
 #import "WUNLevel.h"
 #import "Utility.h"
-#import "WUNObject.h"
+
 
 @interface WUNLevel ()
 
 @property (strong, nonatomic) NSSet *possibleSwaps;
 @property (strong, nonatomic) NSDictionary *levelData;
 @property (strong,nonatomic) NSMutableArray *objects;
+@property (strong,nonatomic) NSMutableArray *obstacles;
 
 @end
 
@@ -28,6 +29,8 @@
     if (self != nil) {
         
         self.objects = [NSMutableArray array];
+        self.obstacles = [NSMutableArray array];
+        
         self.levelModel = levelModel;
         
         for(int column = 0; column < NumColumns ; column++){
@@ -89,6 +92,27 @@
     return set;
 }
 
+-(WUNObstacle*)createObstacle:(NSDictionary*)data
+{
+    NSInteger obstacleType = [[data objectForKey:@"obstacleType"] intValue];
+    
+    WUNObstacle *object = nil;
+    switch (obstacleType) {
+        case eHorizontalObstacle:{
+            object = [[WUNObstacle1 alloc] initWithDictionary:data];
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    if(object){
+        [self.obstacles addObject:object];
+    }
+    return object;
+}
+
 - (WUNObject*)createObject:(NSDictionary*)data
 {
     NSInteger objectType = [[data objectForKey:@"objectType"] intValue];
@@ -99,7 +123,7 @@
             object = [[WUNSmily alloc] initWithDictionary:data];
         }
             break;
-        case eObjectObstacle:{
+        case eObjectWall:{
             object = [[WUNWall alloc] initWithDictionary:data];
         }
             break;

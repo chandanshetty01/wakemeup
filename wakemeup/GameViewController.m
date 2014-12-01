@@ -156,6 +156,13 @@
     [self saveLevelData];
 }
 
+-(void)addNewObstacle:(NSInteger)obstacleType
+{
+    NSDictionary *testData = [WUNObstacle testObjectData];
+    WUNObstacle *obstacle = [self.level createObstacle:testData];
+    [self.scene addSpriteForObstacle:obstacle];
+}
+
 -(void)addNewObject:(NSInteger)objectType
 {
     NSDictionary *dictionary = [NSMutableDictionary dictionary];

@@ -13,8 +13,9 @@ static const CGFloat TileWidth = 40.0f;
 static const CGFloat TileHeight = 40.0f;
 
 static const uint32_t smilyCategory            =  0x1 << 0;
-static const uint32_t obstacleCategory         =  0x1 << 1;
+static const uint32_t wallCategory             =  0x1 << 1;
 static const uint32_t holeCategory             =  0x1 << 2;
+static const uint32_t obstacleCategory         =  0x1 << 3;
 
 @interface GameScene ()
 @property (strong, nonatomic) SKNode *gameLayer;
@@ -107,6 +108,32 @@ static const uint32_t holeCategory             =  0x1 << 2;
 #endif
 }
 
+
+-(void)addSpriteForObstacle:(WUNObstacle*)object
+{
+    if(!object.sprite){
+        NSString *spriteName = [object spriteName];
+        SKSpriteNode *sprite = nil;
+        if(spriteName.length != 0){
+            sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteName];
+        }
+        else{
+            sprite = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeZero];
+        }
+        sprite.size = object.size;
+        sprite.position = object.position;
+        sprite.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:object.size];
+        sprite.physicsBody.categoryBitMask = obstacleCategory;
+        sprite.physicsBody.contactTestBitMask = smilyCategory;
+
+        sprite.physicsBody.collisionBitMask = 0;
+        sprite.physicsBody.affectedByGravity = NO;
+        
+        [self.smileysLayer addChild:sprite];
+        object.sprite = sprite;
+    }
+}
+
 -(void)addSpriteForObject:(WUNObject*)object
 {
     if(!object.sprite){
@@ -124,14 +151,14 @@ static const uint32_t holeCategory             =  0x1 << 2;
         
         if(object.ObjectType == eObjectSmily){
             sprite.physicsBody.categoryBitMask = smilyCategory;
-            sprite.physicsBody.contactTestBitMask = obstacleCategory;
+            sprite.physicsBody.contactTestBitMask = wallCategory;
         }
         else if(object.ObjectType == eObjectHole){
             sprite.physicsBody.categoryBitMask = holeCategory;
             sprite.physicsBody.contactTestBitMask = smilyCategory;
         }
-        else if(object.ObjectType == eObjectObstacle){
-            sprite.physicsBody.categoryBitMask = obstacleCategory;
+        else if(object.ObjectType == eObjectWall){
+            sprite.physicsBody.categoryBitMask = wallCategory;
             sprite.physicsBody.contactTestBitMask = smilyCategory;
         }
         
@@ -310,7 +337,7 @@ static const uint32_t holeCategory             =  0x1 << 2;
             else{
                 nextObject = [objects lastObject];
                 [objects enumerateObjectsUsingBlock:^(WUNObject *obj, NSUInteger idx, BOOL *stop) {
-                    if(obj.ObjectType == eObjectObstacle){
+                    if(obj.ObjectType == eObjectWall){
                         nextObject = obj;
                         *stop = YES;
                     }
@@ -322,7 +349,7 @@ static const uint32_t holeCategory             =  0x1 << 2;
             }
             
             switch (objectType) {
-                case eObjectObstacle:{
+                case eObjectWall:{
                     toPoint = CGPointMake(point.x-horzDelta, point.y-vertDelta);
                     *stop = YES;
                     status = eObjectAlive;

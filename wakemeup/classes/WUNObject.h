@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 S P, Chandan Shetty (external - Project). All rights reserved.
 //
 
-#import <SpriteKit/SpriteKit.h>
+#import "WUNBase.h"
 
 static const NSUInteger NumObjectTypes = 6;
 
@@ -19,21 +19,15 @@ typedef enum : NSUInteger {
 typedef enum : NSUInteger {
     eObjectNone,
     eObjectSmily,
-    eObjectObstacle,
+    eObjectWall,
     eObjectHole
 } EObjectType;
 
-@interface WUNObject : NSObject
+@interface WUNObject : WUNBase
 
 @property (assign, nonatomic) NSInteger column;
 @property (assign, nonatomic) NSInteger row;
 @property (assign, nonatomic) EObjectType ObjectType;
-@property (strong, nonatomic) SKSpriteNode *sprite;
 @property (assign, nonatomic) EObjectStatus status;
-
--(id)initWithDictionary:(NSDictionary*)data;
--(NSDictionary*)saveData;
-- (NSString *)spriteName;
-- (NSString *)highlightedSpriteName;
 
 @end

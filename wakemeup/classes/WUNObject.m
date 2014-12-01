@@ -10,18 +10,9 @@
 
 @implementation WUNObject
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
-
 -(id)initWithDictionary:(NSDictionary*)data
 {
-    self = [super init];
+    self = [super initWithDictionary:data];
     if (self) {
         self.row =[[data objectForKey:@"row"] intValue];
         self.column =[[data objectForKey:@"column"] intValue];
@@ -41,35 +32,33 @@
     return dictionary;
 }
 
-- (NSString *)spriteName {
-  static NSString * const spriteNames[] = {
-    @"",
-    @"sleep_smily",
-    @"obstacle",
-    @"circle"
-  };
-
-  return spriteNames[self.ObjectType];
-}
-
-- (NSString *)highlightedSpriteName {
-  static NSString * const highlightedSpriteNames[] = {
-      @"",
-      @"sleep_smily",
-      @"obstacle",
-      @"circle"
-  };
-
-  return highlightedSpriteNames[self.ObjectType];
-}
-
-- (NSString *)description {
-  return [NSString stringWithFormat:@"type:%ld square:(%ld,%ld)", (long)self.ObjectType, (long)self.column, (long)self.row];
-}
-
-- (void)dealloc
+- (NSString *)spriteName
 {
-    [_sprite removeFromParent];
+    static NSString * const spriteNames[] = {
+        @"",
+        @"sleep_smily",
+        @"obstacle",
+        @"circle"
+    };
+    
+    return spriteNames[self.ObjectType];
+}
+
+- (NSString *)highlightedSpriteName
+{
+    static NSString * const highlightedSpriteNames[] = {
+        @"",
+        @"sleep_smily",
+        @"obstacle",
+        @"circle"
+    };
+    
+    return highlightedSpriteNames[self.ObjectType];
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"type:%ld square:(%ld,%ld)", (long)self.ObjectType, (long)self.column, (long)self.row];
 }
 
 @end

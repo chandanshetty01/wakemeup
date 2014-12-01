@@ -49,6 +49,9 @@
 		A364EFEB19F17E8C005EF1D6 /* Level_9_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A364EFC519F17E8C005EF1D6 /* Level_9_1.json */; };
 		A364EFED19F57ED6005EF1D6 /* Level_40_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A364EFEC19F57ED6005EF1D6 /* Level_40_1.json */; };
 		A364EFEF19F57EDF005EF1D6 /* Level_39_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A364EFEE19F57EDF005EF1D6 /* Level_39_1.json */; };
+		A369340B1A2CB52B001C9BB1 /* WUNObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = A369340A1A2CB52B001C9BB1 /* WUNObstacle.m */; };
+		A369340E1A2CB6DD001C9BB1 /* WUNBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A369340D1A2CB6DD001C9BB1 /* WUNBase.m */; };
+		A36934111A2CB9E5001C9BB1 /* WUNObstacle1.m in Sources */ = {isa = PBXBuildFile; fileRef = A36934101A2CB9E5001C9BB1 /* WUNObstacle1.m */; };
 		A36F9A3B19DD9E4100419500 /* WUNSmily.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A3A19DD9E4100419500 /* WUNSmily.m */; };
 		A36F9A3E19DD9E5800419500 /* WUNWall.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A3D19DD9E5800419500 /* WUNWall.m */; };
 		A36F9A4119DD9E6C00419500 /* WUNHole.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A4019DD9E6C00419500 /* WUNHole.m */; };
@@ -119,6 +122,12 @@
 		A364EFC519F17E8C005EF1D6 /* Level_9_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_9_1.json; sourceTree = "<group>"; };
 		A364EFEC19F57ED6005EF1D6 /* Level_40_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_40_1.json; sourceTree = "<group>"; };
 		A364EFEE19F57EDF005EF1D6 /* Level_39_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_39_1.json; sourceTree = "<group>"; };
+		A36934091A2CB52B001C9BB1 /* WUNObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUNObstacle.h; sourceTree = "<group>"; };
+		A369340A1A2CB52B001C9BB1 /* WUNObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUNObstacle.m; sourceTree = "<group>"; };
+		A369340C1A2CB6DD001C9BB1 /* WUNBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNBase.h; path = wakemeup/classes/WUNBase.h; sourceTree = SOURCE_ROOT; };
+		A369340D1A2CB6DD001C9BB1 /* WUNBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNBase.m; path = wakemeup/classes/WUNBase.m; sourceTree = SOURCE_ROOT; };
+		A369340F1A2CB9E5001C9BB1 /* WUNObstacle1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUNObstacle1.h; sourceTree = "<group>"; };
+		A36934101A2CB9E5001C9BB1 /* WUNObstacle1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUNObstacle1.m; sourceTree = "<group>"; };
 		A36F9A3919DD9E4100419500 /* WUNSmily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNSmily.h; path = wakemeup/classes/WUNSmily.h; sourceTree = SOURCE_ROOT; };
 		A36F9A3A19DD9E4100419500 /* WUNSmily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNSmily.m; path = wakemeup/classes/WUNSmily.m; sourceTree = SOURCE_ROOT; };
 		A36F9A3C19DD9E5800419500 /* WUNWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNWall.h; path = wakemeup/classes/WUNWall.h; sourceTree = SOURCE_ROOT; };
@@ -132,8 +141,8 @@
 		A3C891AC19E42A5D00A12D36 /* LevelSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelectionViewController.m; sourceTree = "<group>"; };
 		A3C891AE19E42DD200A12D36 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
 		A3C891AF19E42DD200A12D36 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
-		A3C891B119E42F1800A12D36 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utility.h; path = ../Utility/Utility.h; sourceTree = "<group>"; };
-		A3C891B219E42F1800A12D36 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utility.m; path = ../Utility/Utility.m; sourceTree = "<group>"; };
+		A3C891B119E42F1800A12D36 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		A3C891B219E42F1800A12D36 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		A3C891B419E42FDD00A12D36 /* WUNLevelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUNLevelModel.h; sourceTree = "<group>"; };
 		A3C891B519E42FDD00A12D36 /* WUNLevelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUNLevelModel.m; sourceTree = "<group>"; };
 		A3C891B719E43B9200A12D36 /* WakeMeUp.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WakeMeUp.pch; sourceTree = "<group>"; };
@@ -232,6 +241,18 @@
 			path = Levels;
 			sourceTree = "<group>";
 		};
+		A36934081A2CB4FD001C9BB1 /* Obstacles */ = {
+			isa = PBXGroup;
+			children = (
+				A36934091A2CB52B001C9BB1 /* WUNObstacle.h */,
+				A369340A1A2CB52B001C9BB1 /* WUNObstacle.m */,
+				A369340F1A2CB9E5001C9BB1 /* WUNObstacle1.h */,
+				A36934101A2CB9E5001C9BB1 /* WUNObstacle1.m */,
+			);
+			name = Obstacles;
+			path = wakemeup/classes/Obstacles;
+			sourceTree = SOURCE_ROOT;
+		};
 		A3C891A519E428D500A12D36 /* stage */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,8 +341,6 @@
 				A3CC20E819D6E0FB0067A847 /* GameConfigManager.m */,
 				A364EF7719F01D75005EF1D6 /* GameStateManager.h */,
 				A364EF7819F01D75005EF1D6 /* GameStateManager.m */,
-				A3C891B119E42F1800A12D36 /* Utility.h */,
-				A3C891B219E42F1800A12D36 /* Utility.m */,
 				A3C891A819E4298B00A12D36 /* WUNStageModel.h */,
 				A3C891A919E4298B00A12D36 /* WUNStageModel.m */,
 				A3C891B419E42FDD00A12D36 /* WUNLevelModel.h */,
@@ -333,6 +352,8 @@
 		A3CC20E919D6E0FB0067A847 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				A3C891B119E42F1800A12D36 /* Utility.h */,
+				A3C891B219E42F1800A12D36 /* Utility.m */,
 				A3C891B819E5932400A12D36 /* MailComposerManager.h */,
 				A3C891B919E5932400A12D36 /* MailComposerManager.m */,
 			);
@@ -342,6 +363,9 @@
 		A3CC20EA19D6E0FB0067A847 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A36934081A2CB4FD001C9BB1 /* Obstacles */,
+				A369340C1A2CB6DD001C9BB1 /* WUNBase.h */,
+				A369340D1A2CB6DD001C9BB1 /* WUNBase.m */,
 				A3CC20F219DAF3B20067A847 /* WUNObject.h */,
 				A3CC20F319DAF3B20067A847 /* WUNObject.m */,
 				A36F9A3919DD9E4100419500 /* WUNSmily.h */,
@@ -496,6 +520,7 @@
 				A3CC20BA19D6C9520067A847 /* AppDelegate.m in Sources */,
 				A36F9A3E19DD9E5800419500 /* WUNWall.m in Sources */,
 				A364EF7919F01D75005EF1D6 /* GameStateManager.m in Sources */,
+				A369340B1A2CB52B001C9BB1 /* WUNObstacle.m in Sources */,
 				A3CC20BD19D6C9520067A847 /* GameScene.m in Sources */,
 				A36F9A4119DD9E6C00419500 /* WUNHole.m in Sources */,
 				A36F9A3B19DD9E4100419500 /* WUNSmily.m in Sources */,
@@ -503,9 +528,11 @@
 				A3C891AD19E42A5D00A12D36 /* LevelSelectionViewController.m in Sources */,
 				A3C891B619E42FDD00A12D36 /* WUNLevelModel.m in Sources */,
 				A3C891B019E42DD200A12D36 /* CustomCollectionViewCell.m in Sources */,
+				A36934111A2CB9E5001C9BB1 /* WUNObstacle1.m in Sources */,
 				A3CC20EE19D6E0FB0067A847 /* GameConfigManager.m in Sources */,
 				A3C891AA19E4298B00A12D36 /* WUNStageModel.m in Sources */,
 				A3CC20B719D6C9520067A847 /* main.m in Sources */,
+				A369340E1A2CB6DD001C9BB1 /* WUNBase.m in Sources */,
 				A3CC20FA19DAF3B20067A847 /* WUNTile.m in Sources */,
 				A3CC20FD19DAF5B90067A847 /* WUNSwap.m in Sources */,
 			);

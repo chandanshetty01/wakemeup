@@ -18,6 +18,7 @@
 - (void)addTiles;
 - (void)addSpritesForObjects:(NSMutableArray *)Objects;
 - (void)addSpriteForObject:(WUNObject*)object;
+- (void)addSpriteForObstacle:(WUNObstacle*)object;
 - (NSMutableDictionary*)getTilesDictionary;
 
 @end
