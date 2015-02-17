@@ -16,6 +16,8 @@
 @property (strong, nonatomic) SKSpriteNode *sprite;
 
 -(NSString *)spriteName;
+-(SKColor*)spriteColor;
+
 -(id)initWithDictionary:(NSDictionary*)data;
 -(NSDictionary*)saveData;
 -(NSString *)highlightedSpriteName;

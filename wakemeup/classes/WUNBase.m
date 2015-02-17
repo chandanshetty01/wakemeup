@@ -38,6 +38,11 @@
     return nil;
 }
 
+-(SKColor*)spriteColor
+{
+    return nil;
+}
+
 - (NSString *)highlightedSpriteName
 {
     return nil;

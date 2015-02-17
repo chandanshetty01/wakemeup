@@ -32,6 +32,15 @@
     return dictionary;
 }
 
+-(void)setStatus:(EObjectStatus)status
+{
+    _status = status;
+    if(status == eObjectDead && self.ObjectType == eObjectSmily){
+        self.sprite.size = CGSizeMake(TileWidth-8, TileHeight-8);
+        self.sprite.texture = [SKTexture textureWithImageNamed:@"circle_fill"];
+    }
+}
+
 - (NSString *)spriteName
 {
     static NSString * const spriteNames[] = {

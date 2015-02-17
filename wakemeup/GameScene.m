@@ -9,9 +9,6 @@
 #import "GameScene.h"
 #import "GameConfigManager.h"
 
-static const CGFloat TileWidth = 40.0f;
-static const CGFloat TileHeight = 40.0f;
-
 static const uint32_t smilyCategory            =  0x1 << 0;
 static const uint32_t wallCategory             =  0x1 << 1;
 static const uint32_t holeCategory             =  0x1 << 2;
@@ -33,7 +30,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
     /* Setup your scene here */
     
     self.anchorPoint = CGPointMake(0.5, 0.5);
-    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background"];
+    SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithRed:52/255.0f green:146/255.0f blue:233/255.0f alpha:1.0f] size:view.bounds.size];
     [self addChild:background];
     
     self.gameLayer = [SKNode node];
@@ -61,8 +58,6 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
 
 - (void)didBeginContact:(SKPhysicsContact *)contact
 {
-    NSLog(@"colided with object");
-    
     SKPhysicsBody *firstBody, *secondBody;
     
     if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
@@ -75,25 +70,19 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         firstBody = contact.bodyB;
         secondBody = contact.bodyA;
     }
-    
-    /*
 
-    if ((firstBody.categoryBitMask & pillerCategory) != 0 &&
-        (secondBody.categoryBitMask & flappyBirdCategory) != 0)
+    if((firstBody.categoryBitMask & smilyCategory) == smilyCategory && (secondBody.categoryBitMask & obstacleCategory)== obstacleCategory)
     {
-        [self pillar:(SKSpriteNode *) firstBody.node didCollideWithBird:(SKSpriteNode *) secondBody.node];
+        if (self.gameCompletion != nil) {
+            self.gameCompletion(eGameOver);
+        }
     }
-    else if ((firstBody.categoryBitMask & flappyBirdCategory) != 0 &&
-             (secondBody.categoryBitMask & bottomBackgroundCategory) != 0)
-    {
-        [self flappyBird:(SKSpriteNode *)firstBody.node didCollideWithBottomScoller:(SKSpriteNode *)secondBody.node];
-    }
-     */
 }
 
 
 - (void)addTiles
 {
+    return;
 #ifdef DELVELOPMENT
     for (NSInteger row = 0; row < NumRows; row++) {
         for (NSInteger column = 0; column < NumColumns; column++) {
@@ -112,13 +101,12 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
 -(void)addSpriteForObstacle:(WUNObstacle*)object
 {
     if(!object.sprite){
-        NSString *spriteName = [object spriteName];
         SKSpriteNode *sprite = nil;
+
+        NSString *spriteName = [object spriteName];
         if(spriteName.length != 0){
             sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteName];
-        }
-        else{
-            sprite = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeZero];
+            sprite.color = [object spriteColor];
         }
         sprite.size = object.size;
         sprite.position = object.position;
@@ -145,6 +133,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         else{
             sprite = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeZero];
         }
+        
         sprite.size = CGSizeMake(TileWidth, TileHeight);
         sprite.position = [self pointForColumn:object.column row:object.row];
         sprite.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:sprite.size.height/2.0];

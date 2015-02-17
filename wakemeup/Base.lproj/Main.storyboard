@@ -93,7 +93,7 @@
                                     <action selector="handleTestMail:" destination="BV1-FR-VrT" eventType="touchUpInside" id="wBX-fi-EtN"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="WX2-1G-bCq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WX2-1G-bCq">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D79-Ad-Xhv">
@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="291"/>
+            <point key="canvasLocation" x="-173" y="285"/>
         </scene>
         <!--Level Selection View Controller-->
         <scene sceneID="ciB-hA-7aR">
@@ -198,7 +198,4 @@
             <point key="canvasLocation" x="120" y="-395"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="background.png" width="569" height="320"/>
-    </resources>
 </document>

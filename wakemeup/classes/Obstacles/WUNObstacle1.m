@@ -20,5 +20,10 @@
     return @"obstacle1";
 }
 
+-(UIColor*)spriteColor
+{
+    return [SKColor redColor];
+}
+
 
 @end
