@@ -152,7 +152,6 @@
 -(EGAMESTATUS)isGameOver
 {
     __block EGAMESTATUS status = eGameWon;
-    
     [self.objects enumerateObjectsUsingBlock:^(WUNObject *obj, NSUInteger idx, BOOL *stop) {
         if(obj.status == eObjectGone){
             status = eGameOver;

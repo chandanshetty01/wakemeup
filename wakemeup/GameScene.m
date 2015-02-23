@@ -82,13 +82,12 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
 
 - (void)addTiles
 {
-    return;
 #ifdef DELVELOPMENT
     for (NSInteger row = 0; row < NumRows; row++) {
         for (NSInteger column = 0; column < NumColumns; column++) {
             if ([self.level tileAtColumn:column row:row] != nil) {
                 SKSpriteNode *tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"Tile"];
-                tileNode.size = CGSizeMake(TileWidth, TileHeight);
+                tileNode.size = CGSizeMake(TileWidth+1, TileHeight+1);
                 tileNode.position = [self pointForColumn:column row:row];
                 [self.tilesLayer addChild:tileNode];
             }
@@ -134,7 +133,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
             sprite = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeZero];
         }
         
-        sprite.size = CGSizeMake(TileWidth, TileHeight);
+        sprite.size = CGSizeMake(TileWidth-1, TileHeight-1);
         sprite.position = [self pointForColumn:object.column row:object.row];
         sprite.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:sprite.size.height/2.0];
         
@@ -156,6 +155,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         
         [self.smileysLayer addChild:sprite];
         object.sprite = sprite;
+        object.status = object.status;
     }
 }
 
@@ -281,6 +281,10 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
 
 -(void)checkGameOver
 {
+    if(self.isDevelopmentMode){
+        return;
+    }
+    
     EGAMESTATUS status = [self.level isGameOver];
     if(status != eGameRunning){
         if (self.gameCompletion != nil) {
@@ -312,6 +316,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
 
     if(self.isDevelopmentMode){
         toPoint = CGPointMake(toColumn+horzDelta, toRow+vertDelta);
+        status = currentObject.status;
     }
     else{
         [adjacentPoints enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL *stop) {
@@ -362,25 +367,25 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
             }
         }];
         
-        currentObject.status = status;
-        if(currentObject.status == eObjectGone){
+        if(status == eObjectGone){
             toPoint = CGPointMake(toPoint.x+horzDelta*4, toPoint.y+vertDelta*4);
         }
     }
 
-    [self moveObjectToPoint:currentObject point:toPoint];
+    [self moveObjectToPoint:currentObject point:toPoint status:status];
 }
 
--(void)moveObjectToPoint:(WUNObject*)object point:(CGPoint)inPoint
+-(void)moveObjectToPoint:(WUNObject*)object point:(CGPoint)inPoint status:(EObjectStatus)status
 {
     NSInteger diff = abs((object.row-inPoint.x)+(object.column-inPoint.y));
     CGPoint point = [self pointForColumn:inPoint.x row:inPoint.y];
     SKAction *action = [SKAction moveTo:point duration:MAX(0.4, 0.1*diff)];
     [object.sprite runAction:action completion:^{
+        object.status = status;
         object.column = inPoint.x;
         object.row = inPoint.y;
         [self.level bringToFront:object];
-        [self checkGameOver];
+        [self performSelector:@selector(checkGameOver) withObject:nil afterDelay:0.5];
     }];
 }
 
