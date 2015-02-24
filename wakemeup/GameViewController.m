@@ -181,8 +181,8 @@
 
 - (IBAction)handleTestHoleBtn:(id)sender
 {
-    [self addNewObstacle:0];;
-    //[self addNewObject:3];
+    //[self addNewObstacle:0];;
+    [self addNewObject:3];
 }
 
 - (IBAction)handleObstacleButton:(id)sender
