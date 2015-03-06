@@ -15,7 +15,14 @@
 #import "GameStateManager.h"
 
 @interface LevelSelectionViewController ()
+
 @property(nonatomic,retain)NSMutableArray *levelsArray;
+@property (weak, nonatomic) IBOutlet UIButton *tellAFriendBtn;
+@property (weak, nonatomic) IBOutlet UIButton *rateUsBtn;
+@property (weak, nonatomic) IBOutlet UIButton *gameCenterBtn;
+@property (weak, nonatomic) IBOutlet UIButton *soundOnOf;
+@property (weak, nonatomic) IBOutlet UIButton *musicOnOff;
+
 @end
 
 @implementation LevelSelectionViewController
@@ -58,6 +65,31 @@
     cell.label.text = [NSString stringWithFormat:@"%ld",(long)level.levelID];
     
     return cell;
+}
+
+- (IBAction)handleTellAFriendAction:(id)sender
+{
+    
+}
+
+- (IBAction)handleRateUsAction:(id)sender
+{
+    
+}
+
+- (IBAction)handleGameCenterAction:(id)sender
+{
+    
+}
+
+- (IBAction)handleSoundChangeAction:(id)sender
+{
+    
+}
+
+- (IBAction)handleMusicChangeAction:(id)sender
+{
+    
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
