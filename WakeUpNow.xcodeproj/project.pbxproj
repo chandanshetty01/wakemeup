@@ -265,6 +265,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "S P, Chandan Shetty (external - Project)";
 				TargetAttributes = {
+					038E6B2918A240080001FF8B = {
+						DevelopmentTeam = J3X836PV78;
+					};
 					038E6B5018A240080001FF8B = {
 						TestTargetID = 038E6B2918A240080001FF8B;
 					};
