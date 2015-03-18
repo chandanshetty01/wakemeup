@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *gameCenterBtn;
 @property (weak, nonatomic) IBOutlet UIButton *soundOnOf;
 @property (weak, nonatomic) IBOutlet UIButton *musicOnOff;
+@property (weak, nonatomic) IBOutlet UILabel *levelsLabel;
 
 @end
 
@@ -32,6 +33,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.levelsArray = [NSMutableArray array];
+    
+    NSString *text = NSLocalizedString(@"Levels", "Select a level to play");
+    self.levelsLabel.text = text;
     
     [[GameStateManager sharedManager] loadGameData];
     [self loadLevels];
@@ -82,14 +86,14 @@
     
 }
 
-- (IBAction)handleSoundChangeAction:(id)sender
+- (IBAction)handleSoundChangeAction:(UIButton*)sender
 {
-    
+    sender.selected = !sender.selected;
 }
 
-- (IBAction)handleMusicChangeAction:(id)sender
+- (IBAction)handleMusicChangeAction:(UIButton*)sender
 {
-    
+    sender.selected = !sender.selected;
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender

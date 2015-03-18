@@ -96,6 +96,18 @@
 		A3CC20FA19DAF3B20067A847 /* WUNTile.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20F719DAF3B20067A847 /* WUNTile.m */; };
 		A3CC20FD19DAF5B90067A847 /* WUNSwap.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CC20FC19DAF5B90067A847 /* WUNSwap.m */; };
 		A3CC210A19DAF7410067A847 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A3CC210919DAF7410067A847 /* Sprites.atlas */; };
+		A3CDD3381AB9A87800AB75B4 /* back_to_home.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD32D1AB9A87800AB75B4 /* back_to_home.png */; };
+		A3CDD3391AB9A87800AB75B4 /* exit.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD32E1AB9A87800AB75B4 /* exit.png */; };
+		A3CDD33A1AB9A87800AB75B4 /* game_center.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD32F1AB9A87800AB75B4 /* game_center.png */; };
+		A3CDD33B1AB9A87800AB75B4 /* how_to_play.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3301AB9A87800AB75B4 /* how_to_play.png */; };
+		A3CDD33C1AB9A87800AB75B4 /* music_off.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3311AB9A87800AB75B4 /* music_off.png */; };
+		A3CDD33D1AB9A87800AB75B4 /* music_on.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3321AB9A87800AB75B4 /* music_on.png */; };
+		A3CDD33E1AB9A87800AB75B4 /* rate_us.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3331AB9A87800AB75B4 /* rate_us.png */; };
+		A3CDD33F1AB9A87800AB75B4 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3341AB9A87800AB75B4 /* refresh.png */; };
+		A3CDD3401AB9A87800AB75B4 /* speakar_on.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3351AB9A87800AB75B4 /* speakar_on.png */; };
+		A3CDD3411AB9A87800AB75B4 /* speaker_off.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3361AB9A87800AB75B4 /* speaker_off.png */; };
+		A3CDD3421AB9A87800AB75B4 /* tell_a_friend.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3371AB9A87800AB75B4 /* tell_a_friend.png */; };
+		A3CDD34F1AB9ABFC00AB75B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3511AB9ABFC00AB75B4 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -212,6 +224,18 @@
 		A3CC20FB19DAF5B90067A847 /* WUNSwap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNSwap.h; path = wakemeup/classes/WUNSwap.h; sourceTree = SOURCE_ROOT; };
 		A3CC20FC19DAF5B90067A847 /* WUNSwap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNSwap.m; path = wakemeup/classes/WUNSwap.m; sourceTree = SOURCE_ROOT; };
 		A3CC210919DAF7410067A847 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
+		A3CDD32D1AB9A87800AB75B4 /* back_to_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_to_home.png; sourceTree = "<group>"; };
+		A3CDD32E1AB9A87800AB75B4 /* exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exit.png; sourceTree = "<group>"; };
+		A3CDD32F1AB9A87800AB75B4 /* game_center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_center.png; sourceTree = "<group>"; };
+		A3CDD3301AB9A87800AB75B4 /* how_to_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = how_to_play.png; sourceTree = "<group>"; };
+		A3CDD3311AB9A87800AB75B4 /* music_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music_off.png; sourceTree = "<group>"; };
+		A3CDD3321AB9A87800AB75B4 /* music_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music_on.png; sourceTree = "<group>"; };
+		A3CDD3331AB9A87800AB75B4 /* rate_us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rate_us.png; sourceTree = "<group>"; };
+		A3CDD3341AB9A87800AB75B4 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		A3CDD3351AB9A87800AB75B4 /* speakar_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speakar_on.png; sourceTree = "<group>"; };
+		A3CDD3361AB9A87800AB75B4 /* speaker_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker_off.png; sourceTree = "<group>"; };
+		A3CDD3371AB9A87800AB75B4 /* tell_a_friend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tell_a_friend.png; sourceTree = "<group>"; };
+		A3CDD3501AB9ABFC00AB75B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,12 +380,14 @@
 		A3CC20B419D6C9520067A847 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A3CDD32B1AB9A87800AB75B4 /* images */,
 				A33074AA1AA368C7006054E3 /* Levels */,
 				A3CC210919DAF7410067A847 /* Sprites.atlas */,
 				A3C891A519E428D500A12D36 /* stage */,
 				A3CC20B519D6C9520067A847 /* Info.plist */,
 				A3CC20B619D6C9520067A847 /* main.m */,
 				A3C891B719E43B9200A12D36 /* WakeMeUp.pch */,
+				A3CDD3511AB9ABFC00AB75B4 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -442,6 +468,32 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A3CDD32B1AB9A87800AB75B4 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				A3CDD32C1AB9A87800AB75B4 /* buttons */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		A3CDD32C1AB9A87800AB75B4 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				A3CDD32D1AB9A87800AB75B4 /* back_to_home.png */,
+				A3CDD32E1AB9A87800AB75B4 /* exit.png */,
+				A3CDD32F1AB9A87800AB75B4 /* game_center.png */,
+				A3CDD3301AB9A87800AB75B4 /* how_to_play.png */,
+				A3CDD3311AB9A87800AB75B4 /* music_off.png */,
+				A3CDD3321AB9A87800AB75B4 /* music_on.png */,
+				A3CDD3331AB9A87800AB75B4 /* rate_us.png */,
+				A3CDD3341AB9A87800AB75B4 /* refresh.png */,
+				A3CDD3351AB9A87800AB75B4 /* speakar_on.png */,
+				A3CDD3361AB9A87800AB75B4 /* speaker_off.png */,
+				A3CDD3371AB9A87800AB75B4 /* tell_a_friend.png */,
+			);
+			path = buttons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -477,13 +529,13 @@
 					};
 				};
 			};
-			buildConfigurationList = A3CC20AC19D6C9520067A847 /* Build configuration list for PBXProject "wakemeup" */;
+			buildConfigurationList = A3CC20AC19D6C9520067A847 /* Build configuration list for PBXProject "WakeMeUp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = A3CC20A819D6C9520067A847;
 			productRefGroup = A3CC20B219D6C9520067A847 /* Products */;
@@ -504,12 +556,14 @@
 				A33075101AA368C8006054E3 /* Level_52_1.json in Resources */,
 				A33075201AA36923006054E3 /* Level_56_1.json in Resources */,
 				A33074F01AA368C8006054E3 /* Level_23_1.json in Resources */,
+				A3CDD33D1AB9A87800AB75B4 /* music_on.png in Resources */,
 				A33074E51AA368C8006054E3 /* Level_13_1.json in Resources */,
 				A3CC210A19DAF7410067A847 /* Sprites.atlas in Resources */,
 				A33075021AA368C8006054E3 /* Level_3_1.json in Resources */,
 				A330750A1AA368C8006054E3 /* Level_47_1.json in Resources */,
 				A33074F31AA368C8006054E3 /* Level_26_1.json in Resources */,
 				A33074FD1AA368C8006054E3 /* Level_35_1.json in Resources */,
+				A3CDD33F1AB9A87800AB75B4 /* refresh.png in Resources */,
 				A33075211AA36923006054E3 /* Level_57_1.json in Resources */,
 				A3C891A719E428D500A12D36 /* stage_1.json in Resources */,
 				A33074E71AA368C8006054E3 /* Level_15_1.json in Resources */,
@@ -517,6 +571,7 @@
 				A33074F41AA368C8006054E3 /* Level_27_1.json in Resources */,
 				A33074F11AA368C8006054E3 /* Level_24_1.json in Resources */,
 				A33074E91AA368C8006054E3 /* Level_17_1.json in Resources */,
+				A3CDD3411AB9A87800AB75B4 /* speaker_off.png in Resources */,
 				A33074FB1AA368C8006054E3 /* Level_33_1.json in Resources */,
 				A33074E21AA368C7006054E3 /* Level_10_1.json in Resources */,
 				A33074F81AA368C8006054E3 /* Level_30_1.json in Resources */,
@@ -542,19 +597,28 @@
 				A330750E1AA368C8006054E3 /* Level_50_1.json in Resources */,
 				A33074ED1AA368C8006054E3 /* Level_20_1.json in Resources */,
 				A33075051AA368C8006054E3 /* Level_42_1.json in Resources */,
+				A3CDD33A1AB9A87800AB75B4 /* game_center.png in Resources */,
 				A33074F91AA368C8006054E3 /* Level_31_1.json in Resources */,
 				A33075041AA368C8006054E3 /* Level_41_1.json in Resources */,
 				A33074F71AA368C8006054E3 /* Level_2_1.json in Resources */,
 				A33074E81AA368C8006054E3 /* Level_16_1.json in Resources */,
+				A3CDD3421AB9A87800AB75B4 /* tell_a_friend.png in Resources */,
+				A3CDD33C1AB9A87800AB75B4 /* music_off.png in Resources */,
 				A330750D1AA368C8006054E3 /* Level_4_1.json in Resources */,
 				A33074E31AA368C8006054E3 /* Level_11_1.json in Resources */,
 				A33074EA1AA368C8006054E3 /* Level_18_1.json in Resources */,
+				A3CDD3391AB9A87800AB75B4 /* exit.png in Resources */,
+				A3CDD3381AB9A87800AB75B4 /* back_to_home.png in Resources */,
 				A33075091AA368C8006054E3 /* Level_46_1.json in Resources */,
 				A330750C1AA368C8006054E3 /* Level_49_1.json in Resources */,
 				A33074F21AA368C8006054E3 /* Level_25_1.json in Resources */,
 				A33074E41AA368C8006054E3 /* Level_12_1.json in Resources */,
+				A3CDD34F1AB9ABFC00AB75B4 /* Localizable.strings in Resources */,
 				A33074E61AA368C8006054E3 /* Level_14_1.json in Resources */,
+				A3CDD3401AB9A87800AB75B4 /* speakar_on.png in Resources */,
+				A3CDD33B1AB9A87800AB75B4 /* how_to_play.png in Resources */,
 				A33074EC1AA368C8006054E3 /* Level_1_1.json in Resources */,
+				A3CDD33E1AB9A87800AB75B4 /* rate_us.png in Resources */,
 				A33075121AA368C8006054E3 /* Level_54_1.json in Resources */,
 				A33075231AA36923006054E3 /* Level_59_1.json in Resources */,
 				A33075161AA368C8006054E3 /* Level_7_1.json in Resources */,
@@ -635,6 +699,14 @@
 				A3CC20C919D6C9520067A847 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		A3CDD3511AB9ABFC00AB75B4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3CDD3501AB9ABFC00AB75B4 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -759,7 +831,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A3CC20AC19D6C9520067A847 /* Build configuration list for PBXProject "wakemeup" */ = {
+		A3CC20AC19D6C9520067A847 /* Build configuration list for PBXProject "WakeMeUp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A3CC20D719D6C9530067A847 /* Debug */,
