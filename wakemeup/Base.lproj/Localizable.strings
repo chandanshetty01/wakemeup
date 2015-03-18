@@ -7,3 +7,8 @@
 */
 
 "Levels" = "Select a level to Play";
+"Back" = "Back";
+"NoAds" = "No Ads";
+"Score" = "Score: %@";
+"LevelNO" = "Level %d";
+"Restart" = "Restart";

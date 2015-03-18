@@ -30,8 +30,8 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
     /* Setup your scene here */
     
     self.anchorPoint = CGPointMake(0.5, 0.5);
-    SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithRed:52/255.0f green:146/255.0f blue:233/255.0f alpha:1.0f] size:view.bounds.size];
-    [self addChild:background];
+//    SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithRed:52/255.0f green:146/255.0f blue:233/255.0f alpha:1.0f] size:view.bounds.size];
+//    [self addChild:background];
     
     self.gameLayer = [SKNode node];
     [self addChild:self.gameLayer];
@@ -82,7 +82,6 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
 
 - (void)addTiles
 {
-#ifdef DELVELOPMENT
     for (NSInteger row = 0; row < NumRows; row++) {
         for (NSInteger column = 0; column < NumColumns; column++) {
             if ([self.level tileAtColumn:column row:row] != nil) {
@@ -93,7 +92,6 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
             }
         }
     }
-#endif
 }
 
 

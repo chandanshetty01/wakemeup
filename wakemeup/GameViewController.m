@@ -25,6 +25,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *testHoleBtn;
 @property (weak, nonatomic) IBOutlet UILabel *levelNumberLabel;
 @property (nonatomic,assign) BOOL isDevelopmentMode;
+
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *restartButton;
+@property (weak, nonatomic) IBOutlet UIButton *removeAds;
+@property (weak, nonatomic) IBOutlet UIButton *noAdsButton;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+
 @end
 
 @implementation SKScene (Unarchive)
@@ -55,7 +62,7 @@
     self.levelModel.tiles = [[GameStateManager sharedManager] getTilesForLevel:self.levelModel.levelID];
     self.level = [[WUNLevel alloc] initWithModel:self.levelModel];
     self.scene.level = self.level;
-    self.levelNumberLabel.text = [NSString stringWithFormat:@"%ld",(long)self.levelModel.levelID];
+    self.levelNumberLabel.text = [NSString stringWithFormat:NSLocalizedString(@"LevelNO", "Level %d"),(long)self.levelModel.levelID];
     [self beginGame];
 }
 
@@ -79,6 +86,10 @@
     // Present the scene.
     [skView presentScene:self.scene];
     
+    [self.backButton setTitle:NSLocalizedString(@"Back", "Back") forState:UIControlStateNormal];
+    [self.noAdsButton setTitle:NSLocalizedString(@"NoAds", "No Ads") forState:UIControlStateNormal];
+    [self.restartButton setTitle:NSLocalizedString(@"Restart", "Restart") forState:UIControlStateNormal];
+
     [self loadLevel];
     
     // Let's start the game!
@@ -233,6 +244,10 @@
     [self saveLevelData];
     [self dismissViewControllerAnimated:YES completion:^{
     }];
+}
+- (IBAction)handleNoAdsBtnAction:(id)sender {
+}
+- (IBAction)handleRestartBtnAction:(id)sender {
 }
 
 - (BOOL)shouldAutorotate
