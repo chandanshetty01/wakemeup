@@ -13,8 +13,10 @@
 #import "MailComposerManager.h"
 #import "GameConfigManager.h"
 #import "GameStateManager.h"
+#import "GameOverViewController.h"
 
 @interface GameViewController()
+
 @property (strong, nonatomic) WUNLevel *level;
 @property (strong, nonatomic) GameScene *scene;
 @property (weak, nonatomic) IBOutlet UIButton *testSmily;
@@ -31,6 +33,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *removeAds;
 @property (weak, nonatomic) IBOutlet UIButton *noAdsButton;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+
+@property(nonatomic,strong)GameOverViewController *gameOverController;
 
 @end
 
@@ -206,6 +210,34 @@
     self.isDevelopmentMode = [sender isOn];
 }
 
+-(void)removeGameOverScreen
+{
+    [UIView animateWithDuration:0.4f
+                     animations:^{
+                         self.gameOverController.view.alpha = 0.0f;
+                     } completion:^(BOOL finished) {
+                         [self.gameOverController removeFromParentViewController];
+                         [self.gameOverController.view removeFromSuperview];
+                         self.gameOverController = nil;
+                     }];
+}
+
+-(void)showGameOverScreen
+{
+    self.gameOverController = [[GameOverViewController alloc] initWithNibName:nil bundle:nil];
+    [self.view addSubview:self.gameOverController.view];
+    self.view.frame = self.view.frame;
+    [self addChildViewController:self.gameOverController];
+    
+    self.gameOverController.view.alpha = 0;
+    [UIView animateWithDuration:0.4f
+                     animations:^{
+                         self.gameOverController.view.alpha = 1.0f;
+                     } completion:^(BOOL finished) {
+                         
+                     }];
+}
+
 -(void)handleGameCompletion
 {
     id block = ^(EGAMESTATUS status) {
@@ -222,6 +254,7 @@
         }
         else if(status == eGameOver){
             //Game lost
+            //[self performSelector:@selector(showGameOverScreen) withObject:nil afterDelay:0.1f];
             [self performSelector:@selector(loadLevel) withObject:nil afterDelay:1];
         }
     };

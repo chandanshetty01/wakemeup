@@ -12,3 +12,9 @@
 "Score" = "Score: %@";
 "LevelNO" = "Level %d";
 "Restart" = "Restart";
+
+"GameCenter" = "Game Center";
+"BestScore" = "Best Score";
+"PlayAgain" = "Play Again";
+"Share" = "Share";
+"CongratsMsg" = "Great! All levels Completed";

@@ -108,6 +108,12 @@
 		A3CDD3411AB9A87800AB75B4 /* speaker_off.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3361AB9A87800AB75B4 /* speaker_off.png */; };
 		A3CDD3421AB9A87800AB75B4 /* tell_a_friend.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3371AB9A87800AB75B4 /* tell_a_friend.png */; };
 		A3CDD34F1AB9ABFC00AB75B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3511AB9ABFC00AB75B4 /* Localizable.strings */; };
+		A3D55A7F1ABB0BB700F2D987 /* GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D55A7D1ABB0BB700F2D987 /* GameOverViewController.m */; };
+		A3D55A801ABB0BB700F2D987 /* GameOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A7E1ABB0BB700F2D987 /* GameOverViewController.xib */; };
+		A3D55A821ABB106B00F2D987 /* btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A811ABB106B00F2D987 /* btn_bg.png */; };
+		A3D55A851ABB18C700F2D987 /* crown.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A831ABB18C700F2D987 /* crown.png */; };
+		A3D55A861ABB18C700F2D987 /* crown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A841ABB18C700F2D987 /* crown@2x.png */; };
+		A3D55A881ABB1ECF00F2D987 /* round_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A871ABB1ECF00F2D987 /* round_bg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -236,6 +242,13 @@
 		A3CDD3361AB9A87800AB75B4 /* speaker_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker_off.png; sourceTree = "<group>"; };
 		A3CDD3371AB9A87800AB75B4 /* tell_a_friend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tell_a_friend.png; sourceTree = "<group>"; };
 		A3CDD3501AB9ABFC00AB75B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A3D55A7C1ABB0BB700F2D987 /* GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewController.h; sourceTree = "<group>"; };
+		A3D55A7D1ABB0BB700F2D987 /* GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverViewController.m; sourceTree = "<group>"; };
+		A3D55A7E1ABB0BB700F2D987 /* GameOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOverViewController.xib; sourceTree = "<group>"; };
+		A3D55A811ABB106B00F2D987 /* btn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_bg.png; sourceTree = "<group>"; };
+		A3D55A831ABB18C700F2D987 /* crown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crown.png; sourceTree = "<group>"; };
+		A3D55A841ABB18C700F2D987 /* crown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crown@2x.png"; sourceTree = "<group>"; };
+		A3D55A871ABB1ECF00F2D987 /* round_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = round_bg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,6 +429,9 @@
 				A3C891AC19E42A5D00A12D36 /* LevelSelectionViewController.m */,
 				A3C891AE19E42DD200A12D36 /* CustomCollectionViewCell.h */,
 				A3C891AF19E42DD200A12D36 /* CustomCollectionViewCell.m */,
+				A3D55A7C1ABB0BB700F2D987 /* GameOverViewController.h */,
+				A3D55A7D1ABB0BB700F2D987 /* GameOverViewController.m */,
+				A3D55A7E1ABB0BB700F2D987 /* GameOverViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -471,6 +487,10 @@
 		A3CDD32B1AB9A87800AB75B4 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A3D55A871ABB1ECF00F2D987 /* round_bg.png */,
+				A3D55A811ABB106B00F2D987 /* btn_bg.png */,
+				A3D55A831ABB18C700F2D987 /* crown.png */,
+				A3D55A841ABB18C700F2D987 /* crown@2x.png */,
 				A3CDD32C1AB9A87800AB75B4 /* buttons */,
 			);
 			path = images;
@@ -576,6 +596,7 @@
 				A33074E21AA368C7006054E3 /* Level_10_1.json in Resources */,
 				A33074F81AA368C8006054E3 /* Level_30_1.json in Resources */,
 				A33074EE1AA368C8006054E3 /* Level_21_1.json in Resources */,
+				A3D55A861ABB18C700F2D987 /* crown@2x.png in Resources */,
 				A3CC20C719D6C9520067A847 /* Images.xcassets in Resources */,
 				A33075171AA368C8006054E3 /* Level_8_1.json in Resources */,
 				A3CC20BF19D6C9520067A847 /* GameScene.sks in Resources */,
@@ -606,8 +627,11 @@
 				A3CDD33C1AB9A87800AB75B4 /* music_off.png in Resources */,
 				A330750D1AA368C8006054E3 /* Level_4_1.json in Resources */,
 				A33074E31AA368C8006054E3 /* Level_11_1.json in Resources */,
+				A3D55A851ABB18C700F2D987 /* crown.png in Resources */,
+				A3D55A881ABB1ECF00F2D987 /* round_bg.png in Resources */,
 				A33074EA1AA368C8006054E3 /* Level_18_1.json in Resources */,
 				A3CDD3391AB9A87800AB75B4 /* exit.png in Resources */,
+				A3D55A801ABB0BB700F2D987 /* GameOverViewController.xib in Resources */,
 				A3CDD3381AB9A87800AB75B4 /* back_to_home.png in Resources */,
 				A33075091AA368C8006054E3 /* Level_46_1.json in Resources */,
 				A330750C1AA368C8006054E3 /* Level_49_1.json in Resources */,
@@ -624,6 +648,7 @@
 				A33075161AA368C8006054E3 /* Level_7_1.json in Resources */,
 				A330750B1AA368C8006054E3 /* Level_48_1.json in Resources */,
 				A33074EB1AA368C8006054E3 /* Level_19_1.json in Resources */,
+				A3D55A821ABB106B00F2D987 /* btn_bg.png in Resources */,
 				A33074FE1AA368C8006054E3 /* Level_36_1.json in Resources */,
 				A33075181AA368C8006054E3 /* Level_9_1.json in Resources */,
 				A33074F51AA368C8006054E3 /* Level_28_1.json in Resources */,
@@ -661,6 +686,7 @@
 				A3CC20F919DAF3B20067A847 /* WUNLevel.m in Sources */,
 				A3C891BA19E5932400A12D36 /* MailComposerManager.m in Sources */,
 				A3CC20F819DAF3B20067A847 /* WUNObject.m in Sources */,
+				A3D55A7F1ABB0BB700F2D987 /* GameOverViewController.m in Sources */,
 				A3CC20BA19D6C9520067A847 /* AppDelegate.m in Sources */,
 				A36F9A3E19DD9E5800419500 /* WUNWall.m in Sources */,
 				A364EF7919F01D75005EF1D6 /* GameStateManager.m in Sources */,
