@@ -50,7 +50,8 @@
     }];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -67,7 +68,6 @@
     cell.tag = [indexPath row];
     WUNLevelModel *level = [self.levelsArray objectAtIndex:[indexPath row]];
     cell.label.text = [NSString stringWithFormat:@"%ld",(long)level.levelID];
-    
     return cell;
 }
 
