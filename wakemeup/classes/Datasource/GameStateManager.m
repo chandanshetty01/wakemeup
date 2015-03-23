@@ -147,7 +147,7 @@
 
 -(void)saveTilesForLevel:(NSDictionary*)levelData andLevelID:(NSInteger)levelID
 {
-    NSString *fileName = [NSString stringWithFormat:@"Level_%lu_%lu",(unsigned long)levelID,(unsigned long)self.currentStage];
+    NSString *fileName = [NSString stringWithFormat:@"Saved_Level_%lu_%lu",(unsigned long)levelID,(unsigned long)self.currentStage];
     NSInteger bytesRead = [Utility saveJSON:levelData fileName:fileName];
     if(bytesRead <= 0){
         assert(@"Error saving file");
@@ -157,7 +157,7 @@
 -(NSMutableArray*)getTilesForLevel:(NSInteger)levelID
 {
     NSMutableArray *tiles = nil;
-    NSString *level = [NSString stringWithFormat:@"Level_%lu_%lu",(unsigned long)levelID,(unsigned long)self.currentStage];
+    NSString *level = [NSString stringWithFormat:@"Saved_Level_%lu_%lu",(unsigned long)levelID,(unsigned long)self.currentStage];
     NSDictionary *dictionary = [Utility loadJSON:level];
     tiles = [dictionary objectForKey:@"tiles"];
 

@@ -134,13 +134,13 @@
 
 - (IBAction)handleTestMail:(id)sender
 {
-    NSString *fileName = [NSString stringWithFormat:@"Level_%lu_%lu",(unsigned long)self.levelModel.levelID,(unsigned long)self.currentStage];
+    NSString *fileName = [NSString stringWithFormat:@"Saved_Level_%lu_%lu",(unsigned long)self.levelModel.levelID,(unsigned long)self.currentStage];
     
     // Attach an image to the email
     NSData *myData = [Utility JSONdataForFileName:fileName];
     
     NSString *attachmentMime = @"text/json";
-    NSString *attachmentName = [NSString stringWithFormat:@"Level_%lu_%lu.json",(unsigned long)self.levelModel.levelID,(unsigned long)self.currentStage];
+    NSString *attachmentName = [NSString stringWithFormat:@"Saved_Level_%lu_%lu.json",(unsigned long)self.levelModel.levelID,(unsigned long)self.currentStage];
     
     // Fill out the email body text
     NSString *emailBody = @"Hi, \n\n Check out new level data! \n\n\nRegards, \nSwipe It Baby!";
@@ -256,18 +256,43 @@
     self.scene.updateUI = block;
 }
 
+-(void)saveOldLevel:(EGAMESTATUS)status
+{
+    if(status == eGameWon){
+        self.levelModel.isCompleted = YES;
+    }
+    
+    if(status == eGameOver){
+    }
+    
+    if(status == eGameWon || status == eGameOver){
+        [self resetLevelData];
+    }
+    
+    NSDictionary *levelData = [self.levelModel levelData];
+    [[GameStateManager sharedManager] setData:levelData level:self.levelModel.levelID];
+    [[GameStateManager sharedManager] saveGameData];
+}
+
+-(void)resetLevelData
+{
+    NSDictionary *levelData = [[GameConfigManager sharedManager] dictionaryForLevel:self.levelModel.levelID andStage:self.currentStage];
+    [[GameStateManager sharedManager] saveTilesForLevel:levelData andLevelID:self.levelModel.levelID];
+}
+
 -(void)handleGameCompletion
 {
     id block = ^(EGAMESTATUS status) {
         self.scene.level = nil;
         self.level = nil;
+        [self saveOldLevel:status];
         if(status == eGameWon){
             //Game Won
             self.currentLevel = self.levelModel.levelID+1;
             [[GameStateManager sharedManager] setCurrentLevel:self.currentLevel];
-            
             NSDictionary *levelData = [[GameStateManager sharedManager] getLevelData:self.currentLevel];
             self.levelModel = [[WUNLevelModel alloc] initWithDictionary:levelData];
+            self.levelModel.isUnlocked = YES;
             [self performSelector:@selector(loadLevel) withObject:nil afterDelay:1];
         }
         else if(status == eGameOver){
@@ -304,7 +329,12 @@
 
 - (IBAction)handleRestartBtnAction:(id)sender
 {
-    
+    self.scene.level = nil;
+    self.level = nil;
+    [self resetLevelData];
+    self.levelModel.noOfMoves = 0;
+    self.levelModel.isUnlocked = YES;
+    [self performSelector:@selector(loadLevel) withObject:nil afterDelay:0.2];
 }
 
 - (BOOL)shouldAutorotate

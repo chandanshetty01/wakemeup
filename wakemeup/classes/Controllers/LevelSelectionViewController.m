@@ -33,18 +33,17 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.levelsArray = [NSMutableArray array];
-    
-    NSString *text = NSLocalizedString(@"Levels", "Select a level to play");
-    self.levelsLabel.text = text;
-    
-    [[GameStateManager sharedManager] loadGameData];
-    [self loadLevels];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    self.levelsArray = [NSMutableArray array];
+    NSString *text = NSLocalizedString(@"Levels", "Select a level to play");
+    self.levelsLabel.text = text;
+    [[GameStateManager sharedManager] loadGameData];
+    [self loadLevels];
     [self.collectionView reloadData];
 }
 
@@ -113,7 +112,7 @@
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(UIView*)sender
 {
-    BOOL status = YES; //test
+    BOOL status = NO; 
     WUNLevelModel *level = [self.levelsArray objectAtIndex:sender.tag];
     if(level.isUnlocked){
         status = YES;
