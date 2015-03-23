@@ -9,7 +9,7 @@
 "Levels" = "Select a level to Play";
 "Back" = "Back";
 "NoAds" = "No Ads";
-"Score" = "Score: %@";
+"Score" = "Total Moves: %d";
 "LevelNO" = "Level %d";
 "Restart" = "Restart";
 

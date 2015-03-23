@@ -2,7 +2,7 @@
     "currentLevel" : 1,
     "isUnlocked" : 1,
     "isCompleted" : 1,
-    "levels":[{"iscompleted":false,"ID" : 1,"isUnlocked" : false},
+    "levels":[{"iscompleted":true,"ID" : 1,"isUnlocked" : true},
               {"iscompleted":false,"ID" : 2,"isUnlocked" : false},
               {"iscompleted":false,"ID" : 3,"isUnlocked" : false},
               {"iscompleted":false,"ID" : 4,"isUnlocked" : false},

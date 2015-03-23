@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *soundOnOf;
 @property (weak, nonatomic) IBOutlet UIButton *musicOnOff;
 @property (weak, nonatomic) IBOutlet UILabel *levelsLabel;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -39,6 +40,12 @@
     
     [[GameStateManager sharedManager] loadGameData];
     [self loadLevels];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.collectionView reloadData];
 }
 
 -(void)loadLevels
@@ -68,6 +75,14 @@
     cell.tag = [indexPath row];
     WUNLevelModel *level = [self.levelsArray objectAtIndex:[indexPath row]];
     cell.label.text = [NSString stringWithFormat:@"%ld",(long)level.levelID];
+    
+    if(level.isUnlocked){
+        cell.label.textColor = [UIColor whiteColor];
+    }
+    else{
+        cell.label.textColor = [UIColor colorWithWhite:1.0 alpha:.4];
+    }
+    
     return cell;
 }
 
@@ -96,9 +111,14 @@
     sender.selected = !sender.selected;
 }
 
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(UIView*)sender
 {
-    return YES;
+    BOOL status = YES; //test
+    WUNLevelModel *level = [self.levelsArray objectAtIndex:sender.tag];
+    if(level.isUnlocked){
+        status = YES;
+    }
+    return status;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIView*)sender

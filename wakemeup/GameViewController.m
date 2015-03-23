@@ -65,6 +65,7 @@
     self.currentStage = 1;
     self.levelModel.tiles = [[GameStateManager sharedManager] getTilesForLevel:self.levelModel.levelID];
     self.level = [[WUNLevel alloc] initWithModel:self.levelModel];
+    self.levelModel.noOfMoves = 0;
     self.scene.level = self.level;
     self.levelNumberLabel.text = [NSString stringWithFormat:NSLocalizedString(@"LevelNO", "Level %d"),(long)self.levelModel.levelID];
     [self beginGame];
@@ -99,6 +100,7 @@
     // Let's start the game!
     [self.scene addTiles];
     [self handleGameCompletion];
+    [self updateUIBlock];
     [self handleTestMode];
 }
 
@@ -238,6 +240,22 @@
                      }];
 }
 
+-(void)updateScore:(NSInteger)moves
+{
+    NSInteger count = [[GameStateManager sharedManager] getTotalMovements];
+    count += moves;
+    self.scoreLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Score", "Total Moves: %d"),count];
+}
+
+-(void)updateUIBlock
+{
+    [self updateScore:0];
+    id block = ^(NSInteger moves){
+        [self updateScore:moves];
+    };
+    self.scene.updateUI = block;
+}
+
 -(void)handleGameCompletion
 {
     id block = ^(EGAMESTATUS status) {
@@ -278,9 +296,15 @@
     [self dismissViewControllerAnimated:YES completion:^{
     }];
 }
-- (IBAction)handleNoAdsBtnAction:(id)sender {
+
+- (IBAction)handleNoAdsBtnAction:(id)sender
+{
+    
 }
-- (IBAction)handleRestartBtnAction:(id)sender {
+
+- (IBAction)handleRestartBtnAction:(id)sender
+{
+    
 }
 
 - (BOOL)shouldAutorotate

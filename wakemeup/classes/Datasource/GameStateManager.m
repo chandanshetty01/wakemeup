@@ -129,10 +129,20 @@
 -(NSMutableArray*)getAllLevelsInStage
 {
     NSAssert(self.currentStage > 0, @"stage must be greater than 0");
-
     NSMutableArray *levels = nil;
     levels = [self.gameData objectForKey:@"levels"];
     return levels;
+}
+
+-(NSInteger)getTotalMovements
+{
+    __block NSInteger totalMoves = 0;
+    NSArray *levels = [self getAllLevelsInStage];
+    [levels enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
+        NSInteger count = [[obj objectForKey:@"noOfMoves"] integerValue];
+        totalMoves += count;
+    }];
+    return totalMoves;
 }
 
 -(void)saveTilesForLevel:(NSDictionary*)levelData andLevelID:(NSInteger)levelID
