@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic) WUNLevel *level;
 @property (copy, nonatomic)void (^gameCompletion)(EGAMESTATUS status);
-@property (copy, nonatomic)void (^updateUI)(NSInteger movesCount);
+@property (copy, nonatomic)void (^updateUI)(void);
 @property (nonatomic,assign)BOOL isDevelopmentMode;
 
 - (void)addTiles;

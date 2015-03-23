@@ -65,10 +65,10 @@
     self.currentStage = 1;
     self.levelModel.tiles = [[GameStateManager sharedManager] getTilesForLevel:self.levelModel.levelID];
     self.level = [[WUNLevel alloc] initWithModel:self.levelModel];
-    self.levelModel.noOfMoves = 0;
     self.scene.level = self.level;
     self.levelNumberLabel.text = [NSString stringWithFormat:NSLocalizedString(@"LevelNO", "Level %d"),(long)self.levelModel.levelID];
     [self beginGame];
+    [self updateScore];
 }
 
 - (void)viewDidLoad
@@ -240,18 +240,18 @@
                      }];
 }
 
--(void)updateScore:(NSInteger)moves
+-(void)updateScore
 {
-    NSInteger count = [[GameStateManager sharedManager] getTotalMovements];
-    count += moves;
+    NSInteger count = [[GameStateManager sharedManager] getTotalMovementsTill:self.scene.level.levelModel.levelID];
+    count += self.levelModel.noOfMoves;
     self.scoreLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Score", "Total Moves: %d"),count];
 }
 
 -(void)updateUIBlock
 {
-    [self updateScore:0];
-    id block = ^(NSInteger moves){
-        [self updateScore:moves];
+    [self updateScore];
+    id block = ^(void){
+        [self updateScore];
     };
     self.scene.updateUI = block;
 }
@@ -289,15 +289,21 @@
         if(status == eGameWon){
             //Game Won
             self.currentLevel = self.levelModel.levelID+1;
-            [[GameStateManager sharedManager] setCurrentLevel:self.currentLevel];
-            NSDictionary *levelData = [[GameStateManager sharedManager] getLevelData:self.currentLevel];
-            self.levelModel = [[WUNLevelModel alloc] initWithDictionary:levelData];
-            self.levelModel.isUnlocked = YES;
-            [self performSelector:@selector(loadLevel) withObject:nil afterDelay:1];
+            NSInteger totalLevels = [[GameStateManager sharedManager] getAllLevelsInStage].count;
+            if(self.currentLevel > totalLevels){
+                [self performSelector:@selector(showGameOverScreen) withObject:nil afterDelay:0.1f];
+            }
+            else{
+                [[GameStateManager sharedManager] setCurrentLevel:self.currentLevel];
+                NSDictionary *levelData = [[GameStateManager sharedManager] getLevelData:self.currentLevel];
+                self.levelModel = [[WUNLevelModel alloc] initWithDictionary:levelData];
+                self.levelModel.isUnlocked = YES;
+                [self performSelector:@selector(loadLevel) withObject:nil afterDelay:1];
+            }
         }
         else if(status == eGameOver){
             //Game lost
-            //[self performSelector:@selector(showGameOverScreen) withObject:nil afterDelay:0.1f];
+            self.levelModel.noOfMoves = 0;
             [self performSelector:@selector(loadLevel) withObject:nil afterDelay:1];
         }
     };

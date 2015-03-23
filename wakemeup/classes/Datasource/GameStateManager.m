@@ -134,13 +134,16 @@
     return levels;
 }
 
--(NSInteger)getTotalMovements
+-(NSInteger)getTotalMovementsTill:(NSInteger)levelNo
 {
     __block NSInteger totalMoves = 0;
     NSArray *levels = [self getAllLevelsInStage];
     [levels enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
-        NSInteger count = [[obj objectForKey:@"noOfMoves"] integerValue];
-        totalMoves += count;
+        NSInteger levelID = [[obj objectForKey:@"ID"] integerValue];
+        if(levelID < levelNo){
+            NSInteger count = [[obj objectForKey:@"noOfMoves"] integerValue];
+            totalMoves += count;
+        }
     }];
     return totalMoves;
 }

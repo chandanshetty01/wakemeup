@@ -283,10 +283,6 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         return;
     }
     
-    if(self.updateUI){
-        self.updateUI(self.level.levelModel.noOfMoves);
-    }
-    
     EGAMESTATUS status = [self.level isGameOver];
     if(status != eGameRunning){
         if (self.gameCompletion != nil) {
@@ -379,6 +375,11 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
 
 -(void)moveObjectToPoint:(WUNObject*)object point:(CGPoint)inPoint status:(EObjectStatus)status
 {
+    self.level.levelModel.noOfMoves += 1;
+    if(self.updateUI){
+        self.updateUI();
+    }
+    
     NSInteger diff = abs((object.row-inPoint.x)+(object.column-inPoint.y));
     CGPoint point = [self pointForColumn:inPoint.x row:inPoint.y];
     SKAction *action = [SKAction moveTo:point duration:MAX(0.4, 0.1*diff)];
@@ -386,7 +387,6 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         object.status = status;
         object.column = inPoint.x;
         object.row = inPoint.y;
-        self.level.levelModel.noOfMoves += 1;
         [self.level bringToFront:object];
         [self performSelector:@selector(checkGameOver) withObject:nil afterDelay:0.5];
     }];
