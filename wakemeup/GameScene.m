@@ -137,7 +137,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
             sprite = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeZero];
         }
         
-        sprite.size = CGSizeMake(TileWidth-1, TileHeight-1);
+        sprite.size = CGSizeMake(TileWidth-4, TileHeight-4);
         sprite.position = [self pointForColumn:object.column row:object.row];
         sprite.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:sprite.size.height/2.0];
         
@@ -267,7 +267,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
 
 -(NSMutableDictionary*)getTilesDictionary
 {
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    NSMutableDictionary *dictionary = nil;
     
     //New method
     NSMutableArray *rowArray = [NSMutableArray array];
@@ -281,7 +281,10 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         }
     }
     
-    [dictionary setObject:rowArray forKey:@"tiles"];
+    if(rowArray.count){
+        dictionary = [NSMutableDictionary dictionary];
+        [dictionary setObject:rowArray forKey:@"tiles"];
+    }
     return dictionary;
 }
 

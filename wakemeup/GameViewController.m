@@ -77,8 +77,8 @@
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    //skView.showsFPS = YES;
+    //skView.showsNodeCount = YES;
     //skView.showsPhysics = YES;
     
     /* Sprite Kit applies additional optimizations to improve rendering performance */
@@ -162,10 +162,15 @@
 -(void)saveLevelData
 {
     NSMutableDictionary *dictionary = [self.scene getTilesDictionary];
-    [[GameStateManager sharedManager] saveTilesForLevel:dictionary andLevelID:self.levelModel.levelID];
-    NSDictionary *levelData = [self.levelModel levelData];
-    [[GameStateManager sharedManager] setData:levelData level:self.levelModel.levelID];
-    [[GameStateManager sharedManager] saveGameData];
+    if(dictionary){
+        [[GameStateManager sharedManager] saveTilesForLevel:dictionary andLevelID:self.levelModel.levelID];
+        NSDictionary *levelData = [self.levelModel levelData];
+        [[GameStateManager sharedManager] setData:levelData level:self.levelModel.levelID];
+        [[GameStateManager sharedManager] saveGameData];
+    }
+    else{
+        assert(@"trying to save empty tiles");
+    }
 }
 
 - (IBAction)handleTestSave:(id)sender
@@ -212,6 +217,8 @@
     self.isDevelopmentMode = [sender isOn];
 }
 
+#pragma mark - game over -
+
 -(void)removeGameOverScreen
 {
     [UIView animateWithDuration:0.4f
@@ -230,6 +237,8 @@
     [self.view addSubview:self.gameOverController.view];
     self.view.frame = self.view.frame;
     [self addChildViewController:self.gameOverController];
+    self.gameOverController.bestScore = [[GameStateManager sharedManager] getTotalMovements];
+    self.gameOverController.delegate = self;
     
     self.gameOverController.view.alpha = 0;
     [UIView animateWithDuration:0.4f
@@ -238,6 +247,18 @@
                      } completion:^(BOOL finished) {
                          
                      }];
+}
+
+-(void)gameOverDidDismissWithBackButton
+{
+    [self removeGameOverScreen];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)gameOverDidDismissWithPlayAgain
+{
+    [self removeGameOverScreen];
+    [self loadLevel:1];
 }
 
 -(void)updateScore
@@ -282,6 +303,16 @@
     [[GameStateManager sharedManager] saveTilesForLevel:levelData andLevelID:self.levelModel.levelID];
 }
 
+-(void)loadLevel:(NSInteger)levelNo
+{
+    self.currentLevel = levelNo;
+    [[GameStateManager sharedManager] setCurrentLevel:levelNo];
+    NSDictionary *levelData = [[GameStateManager sharedManager] getLevelData:levelNo];
+    self.levelModel = [[WUNLevelModel alloc] initWithDictionary:levelData];
+    self.levelModel.isUnlocked = YES;
+    [self performSelector:@selector(loadLevel) withObject:nil afterDelay:1];
+}
+
 -(void)handleGameCompletion
 {
     id block = ^(EGAMESTATUS status) {
@@ -296,11 +327,7 @@
                 [self performSelector:@selector(showGameOverScreen) withObject:nil afterDelay:0.1f];
             }
             else{
-                [[GameStateManager sharedManager] setCurrentLevel:self.currentLevel];
-                NSDictionary *levelData = [[GameStateManager sharedManager] getLevelData:self.currentLevel];
-                self.levelModel = [[WUNLevelModel alloc] initWithDictionary:levelData];
-                self.levelModel.isUnlocked = YES;
-                [self performSelector:@selector(loadLevel) withObject:nil afterDelay:1];
+                [self loadLevel:self.currentLevel];
             }
         }
         else if(status == eGameOver){
@@ -326,8 +353,7 @@
 - (IBAction)handleBackButton:(id)sender
 {
     [self saveLevelData];
-    [self dismissViewControllerAnimated:YES completion:^{
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)handleNoAdsBtnAction:(id)sender

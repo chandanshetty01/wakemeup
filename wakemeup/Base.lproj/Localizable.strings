@@ -7,14 +7,22 @@
 */
 
 "Levels" = "Select a level to Play";
-"Back" = "Back";
+"Back" = "Levels";
 "NoAds" = "No Ads";
-"Score" = "Total Moves: %d";
-"LevelNO" = "Level %d";
+"Score" = "Moves: %d";
+
+"LevelNO" = "Level: %d";
 "Restart" = "Restart";
 
 "GameCenter" = "Game Center";
-"BestScore" = "Best Score";
+"BestScore" = "Total Moves";
 "PlayAgain" = "Play Again";
 "Share" = "Share";
 "CongratsMsg" = "Great! All levels Completed";
+
+"MailSentMsg" = "Mail sent successfully";
+"postSentMsg" = "Successfully posted";
+
+"TwitterMsg" = "Completed all levels, dare to beat my score %d #swipeItBaby";
+"FacebookMsg" = "Completed all levels, dare to beat my score %d #swipeItBaby";
+"MailMsg" = "Completed all levels, dare to beat my score %d #swipeItBaby";

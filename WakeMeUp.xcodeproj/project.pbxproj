@@ -108,6 +108,7 @@
 		A3CDD3411AB9A87800AB75B4 /* speaker_off.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3361AB9A87800AB75B4 /* speaker_off.png */; };
 		A3CDD3421AB9A87800AB75B4 /* tell_a_friend.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3371AB9A87800AB75B4 /* tell_a_friend.png */; };
 		A3CDD34F1AB9ABFC00AB75B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3511AB9ABFC00AB75B4 /* Localizable.strings */; };
+		A3CE64331AC1BFF700A051DD /* CustomActivityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CE64321AC1BFF700A051DD /* CustomActivityProvider.m */; };
 		A3D55A7F1ABB0BB700F2D987 /* GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D55A7D1ABB0BB700F2D987 /* GameOverViewController.m */; };
 		A3D55A801ABB0BB700F2D987 /* GameOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A7E1ABB0BB700F2D987 /* GameOverViewController.xib */; };
 		A3D55A821ABB106B00F2D987 /* btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A811ABB106B00F2D987 /* btn_bg.png */; };
@@ -242,6 +243,8 @@
 		A3CDD3361AB9A87800AB75B4 /* speaker_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker_off.png; sourceTree = "<group>"; };
 		A3CDD3371AB9A87800AB75B4 /* tell_a_friend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tell_a_friend.png; sourceTree = "<group>"; };
 		A3CDD3501AB9ABFC00AB75B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A3CE64311AC1BFF700A051DD /* CustomActivityProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomActivityProvider.h; sourceTree = "<group>"; };
+		A3CE64321AC1BFF700A051DD /* CustomActivityProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomActivityProvider.m; sourceTree = "<group>"; };
 		A3D55A7C1ABB0BB700F2D987 /* GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewController.h; sourceTree = "<group>"; };
 		A3D55A7D1ABB0BB700F2D987 /* GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverViewController.m; sourceTree = "<group>"; };
 		A3D55A7E1ABB0BB700F2D987 /* GameOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOverViewController.xib; sourceTree = "<group>"; };
@@ -419,6 +422,7 @@
 		A3CC20E419D6E0FB0067A847 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A3CE64301AC1BFDF00A051DD /* Activity */,
 				A3CC20C019D6C9520067A847 /* GameViewController.h */,
 				A3CC20C119D6C9520067A847 /* GameViewController.m */,
 				A3CC20BB19D6C9520067A847 /* GameScene.h */,
@@ -512,6 +516,15 @@
 				A3CDD3371AB9A87800AB75B4 /* tell_a_friend.png */,
 			);
 			path = buttons;
+			sourceTree = "<group>";
+		};
+		A3CE64301AC1BFDF00A051DD /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				A3CE64311AC1BFF700A051DD /* CustomActivityProvider.h */,
+				A3CE64321AC1BFF700A051DD /* CustomActivityProvider.m */,
+			);
+			path = Activity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -697,6 +710,7 @@
 				A36F9A3B19DD9E4100419500 /* WUNSmily.m in Sources */,
 				A3C891B319E42F1800A12D36 /* Utility.m in Sources */,
 				A3C891AD19E42A5D00A12D36 /* LevelSelectionViewController.m in Sources */,
+				A3CE64331AC1BFF700A051DD /* CustomActivityProvider.m in Sources */,
 				A3C891B619E42FDD00A12D36 /* WUNLevelModel.m in Sources */,
 				A3C891B019E42DD200A12D36 /* CustomCollectionViewCell.m in Sources */,
 				A36934111A2CB9E5001C9BB1 /* WUNObstacle1.m in Sources */,

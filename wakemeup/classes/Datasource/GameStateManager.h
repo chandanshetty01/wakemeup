@@ -27,5 +27,5 @@
 -(NSMutableArray*)getTilesForLevel:(NSInteger)levelID;
 -(void)saveTilesForLevel:(NSDictionary*)levelData andLevelID:(NSInteger)levelID;
 -(NSMutableArray*)getAllLevelsInStage;
--(NSInteger)getTotalMovementsTill:(NSInteger)levelNo;
+-(NSInteger)getTotalMovements;
 @end

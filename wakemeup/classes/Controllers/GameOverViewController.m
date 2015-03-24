@@ -7,6 +7,7 @@
 //
 
 #import "GameOverViewController.h"
+#import "CustomActivityProvider.h"
 
 @interface GameOverViewController ()
 
@@ -36,6 +37,7 @@
     [self.bestScoreTitleBtn setTitle:NSLocalizedString(@"BestScore", "Best Score") forState:UIControlStateNormal];
     [self.bestScoreTitleBtn setBackgroundImage:[image resizableImageWithCapInsets:edgeInset] forState:UIControlStateNormal];
     self.bestScoreTitleBtn.tintColor = [UIColor whiteColor];
+    self.bestScoreTitleBtn.userInteractionEnabled = NO;
 
     [self.shareBtn setTitle:NSLocalizedString(@"Share", "Share") forState:UIControlStateNormal];
     [self.shareBtn setBackgroundImage:[image resizableImageWithCapInsets:edgeInset] forState:UIControlStateNormal];
@@ -78,7 +80,37 @@
 
 - (IBAction)shareBtnAction:(id)sender
 {
-    
+    CustomActivityProvider *activityProvider = [[CustomActivityProvider alloc] init];
+    activityProvider.totalMoves = self.bestScore;
+    NSArray *items = @[activityProvider];
+    UIActivityViewController *activityView = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
+    activityView.excludedActivityTypes = @[UIActivityTypePostToWeibo,
+                                           UIActivityTypeMessage,
+                                           UIActivityTypePrint,
+                                           UIActivityTypeCopyToPasteboard,
+                                           UIActivityTypeAssignToContact,
+                                           UIActivityTypeSaveToCameraRoll,
+                                           UIActivityTypeAddToReadingList,
+                                           UIActivityTypePostToFlickr,
+                                           UIActivityTypePostToVimeo,
+                                           UIActivityTypePostToTencentWeibo,
+                                           UIActivityTypeAirDrop
+                                           ];
+    [self presentViewController:activityView animated:YES completion:nil];
+    [activityView setCompletionHandler:^(NSString *act, BOOL done)
+     {
+         NSString *ServiceMsg = nil;
+         if ( [act isEqualToString:UIActivityTypeMail] ){
+             ServiceMsg = NSLocalizedString(@"MailSentMsg", "Mail sent successfully");
+         }
+         else{
+              ServiceMsg = NSLocalizedString(@"postSentMsg", "Successfully posted");
+         }
+         if ( done ){
+             UIAlertView *Alert = [[UIAlertView alloc] initWithTitle:ServiceMsg message:@"" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+             [Alert show];
+         }
+     }];
 }
 
 - (IBAction)playAgainBtnAction:(id)sender
