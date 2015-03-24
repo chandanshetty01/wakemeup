@@ -54,6 +54,13 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
     self.physicsWorld.contactDelegate = self;
 }
 
+-(void)newLevelDidStarted
+{
+    if(self.updateUI){
+        self.updateUI();
+    }
+}
+
 #pragma mark - Collision Detection
 
 - (void)didBeginContact:(SKPhysicsContact *)contact
@@ -78,7 +85,6 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         }
     }
 }
-
 
 - (void)addTiles
 {
@@ -159,6 +165,8 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
 
 - (void)addSpritesForObjects:(NSMutableArray *)Objects
 {
+    [self newLevelDidStarted];
+    
     [Objects enumerateObjectsUsingBlock:^(WUNObject *object, NSUInteger idx, BOOL *stop) {
         [self addSpriteForObject:object];
     }];

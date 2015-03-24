@@ -18,6 +18,7 @@
         self.isUnlocked = [[data objectForKey:@"isUnlocked"] boolValue];
         self.levelID = [[data objectForKey:@"ID"] integerValue];
         self.noOfMoves = [[data objectForKey:@"noOfMoves"] integerValue];
+        self.bestNoOfMoves = [[data objectForKey:@"bestNoOfMoves"] integerValue];
     }
     return self;
 }
@@ -29,6 +30,7 @@
     [dictionary setObject:[NSNumber numberWithBool:self.isUnlocked] forKey:@"isUnlocked"];
     [dictionary setObject:[NSNumber numberWithInt:(int)self.levelID] forKey:@"ID"];
     [dictionary setObject:[NSNumber numberWithInt:(int)self.noOfMoves] forKey:@"noOfMoves"];
+    [dictionary setObject:[NSNumber numberWithInt:(int)self.bestNoOfMoves] forKey:@"bestNoOfMoves"];
     return dictionary;
 }
 

@@ -242,9 +242,7 @@
 
 -(void)updateScore
 {
-    NSInteger count = [[GameStateManager sharedManager] getTotalMovementsTill:self.scene.level.levelModel.levelID];
-    count += self.levelModel.noOfMoves;
-    self.scoreLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Score", "Total Moves: %d"),count];
+    self.scoreLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Score", "Total Moves: %d"),self.scene.level.levelModel.noOfMoves];
 }
 
 -(void)updateUIBlock
@@ -266,6 +264,9 @@
     }
     
     if(status == eGameWon || status == eGameOver){
+        if(self.levelModel.noOfMoves < self.levelModel.bestNoOfMoves || self.levelModel.bestNoOfMoves == 0){
+            self.levelModel.bestNoOfMoves = self.levelModel.noOfMoves;
+        }
         [self resetLevelData];
     }
     
@@ -276,6 +277,7 @@
 
 -(void)resetLevelData
 {
+    self.levelModel.noOfMoves = 0;
     NSDictionary *levelData = [[GameConfigManager sharedManager] dictionaryForLevel:self.levelModel.levelID andStage:self.currentStage];
     [[GameStateManager sharedManager] saveTilesForLevel:levelData andLevelID:self.levelModel.levelID];
 }

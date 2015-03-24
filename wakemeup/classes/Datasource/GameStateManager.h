@@ -17,8 +17,6 @@
 -(BOOL)isStageLocked:(NSInteger)stage;
 -(void)setCurrentLevel:(NSInteger)currentLevel;
 -(void)setData:(NSDictionary*)data level:(NSInteger)level;
--(BOOL)isLevelUnlocked:(NSInteger)level;
--(BOOL)isLevelCompleted:(NSInteger)level;
 -(BOOL)isMusicEnabled;
 -(void)setMusicEnabled:(BOOL)value;
 -(BOOL)isSoundEnabled;

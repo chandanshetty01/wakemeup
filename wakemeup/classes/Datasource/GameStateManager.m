@@ -75,18 +75,6 @@
     [self.gameData setObject:levelsArray forKey:@"levels"];
 }
 
--(BOOL)isLevelUnlocked:(NSInteger)level
-{
-    BOOL status = true;
-    return status;
-}
-
--(BOOL)isLevelCompleted:(NSInteger)level
-{
-    BOOL status = true;
-    return status;
-}
-
 -(BOOL)isMusicEnabled
 {
     NSNumber *isOn = [[NSUserDefaults standardUserDefaults] objectForKey:@"isSoundEnabled"];
@@ -141,7 +129,7 @@
     [levels enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
         NSInteger levelID = [[obj objectForKey:@"ID"] integerValue];
         if(levelID < levelNo){
-            NSInteger count = [[obj objectForKey:@"noOfMoves"] integerValue];
+            NSInteger count = [[obj objectForKey:@"bestNoOfMoves"] integerValue];
             totalMoves += count;
         }
     }];
