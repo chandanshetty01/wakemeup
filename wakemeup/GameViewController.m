@@ -116,6 +116,7 @@
     CGRect frame = self.adViewController.view.frame;
     frame.origin.y = CGRectGetHeight(self.view.bounds)-CGRectGetHeight(self.adViewController.view.frame);
     frame.origin.x = (CGRectGetWidth(self.view.bounds)-CGRectGetWidth(self.adViewController.view.frame))/2.0;
+    frame.size.width = self.view.frame.size.width;
     self.adViewController.view.frame = frame;
 }
 

@@ -71,6 +71,8 @@
 		A330AC711AC2E285007C2EE7 /* CustomActivityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A330AC701AC2E285007C2EE7 /* CustomActivityProvider.m */; };
 		A330AC751AC2ED99007C2EE7 /* iAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A330AC741AC2ED99007C2EE7 /* iAdViewController.m */; };
 		A330AC771AC2EDE9007C2EE7 /* iAdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A330AC761AC2EDE9007C2EE7 /* iAdViewController.xib */; };
+		A330AC791AC3131A007C2EE7 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A330AC781AC3131A007C2EE7 /* GameKit.framework */; };
+		A330AC7B1AC3132E007C2EE7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A330AC7A1AC3132E007C2EE7 /* StoreKit.framework */; };
 		A364EF5319EFFF30005EF1D6 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A364EF5219EFFF30005EF1D6 /* Crashlytics.framework */; };
 		A364EF7919F01D75005EF1D6 /* GameStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A364EF7819F01D75005EF1D6 /* GameStateManager.m */; };
 		A369340B1A2CB52B001C9BB1 /* WUNObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = A369340A1A2CB52B001C9BB1 /* WUNObstacle.m */; };
@@ -187,6 +189,8 @@
 		A330AC731AC2ED99007C2EE7 /* iAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iAdViewController.h; sourceTree = "<group>"; };
 		A330AC741AC2ED99007C2EE7 /* iAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iAdViewController.m; sourceTree = "<group>"; };
 		A330AC761AC2EDE9007C2EE7 /* iAdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iAdViewController.xib; sourceTree = "<group>"; };
+		A330AC781AC3131A007C2EE7 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		A330AC7A1AC3132E007C2EE7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A364EF5219EFFF30005EF1D6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		A364EF7719F01D75005EF1D6 /* GameStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStateManager.h; sourceTree = "<group>"; };
 		A364EF7819F01D75005EF1D6 /* GameStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStateManager.m; sourceTree = "<group>"; };
@@ -266,7 +270,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A330AC7B1AC3132E007C2EE7 /* StoreKit.framework in Frameworks */,
 				A364EF5319EFFF30005EF1D6 /* Crashlytics.framework in Frameworks */,
+				A330AC791AC3131A007C2EE7 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +396,8 @@
 		A3CC20A819D6C9520067A847 = {
 			isa = PBXGroup;
 			children = (
+				A330AC7A1AC3132E007C2EE7 /* StoreKit.framework */,
+				A330AC781AC3131A007C2EE7 /* GameKit.framework */,
 				A3CC20B319D6C9520067A847 /* wakemeup */,
 				A3CC20B219D6C9520067A847 /* Products */,
 			);
@@ -578,6 +586,15 @@
 				TargetAttributes = {
 					A3CC20B019D6C9520067A847 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = J3X836PV78;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -864,6 +881,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -874,7 +893,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "186877c0-4e2a-4067-9857-06e00aac00dd";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -883,6 +902,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -893,7 +914,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9531152d-3c24-4c1c-898a-7da54719cee1";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
