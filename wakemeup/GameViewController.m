@@ -14,8 +14,9 @@
 #import "GameConfigManager.h"
 #import "GameStateManager.h"
 #import "GameOverViewController.h"
+#import "iAdViewController.h"
 
-@interface GameViewController()
+@interface GameViewController() <iAdViewControllerDelegates>
 
 @property (strong, nonatomic) WUNLevel *level;
 @property (strong, nonatomic) GameScene *scene;
@@ -35,12 +36,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @property(nonatomic,strong)GameOverViewController *gameOverController;
+@property(nonatomic,strong)iAdViewController *adViewController;
 
 @end
 
 @implementation SKScene (Unarchive)
 
-+ (instancetype)unarchiveFromFile:(NSString *)file {
++ (instancetype)unarchiveFromFile:(NSString *)file
+{
     /* Retrieve scene file path from the application bundle */
     NSString *nodePath = [[NSBundle mainBundle] pathForResource:file ofType:@"sks"];
     /* Unarchive the file to an SKScene object */
@@ -102,6 +105,18 @@
     [self handleGameCompletion];
     [self updateUIBlock];
     [self handleTestMode];
+    [self showAdsViewController];
+}
+
+-(void)showAdsViewController
+{
+    self.adViewController = [[iAdViewController alloc] initWithNibName:nil bundle:nil];
+    [self.view addSubview:self.adViewController.view];
+    self.adViewController.delegate = self;
+    CGRect frame = self.adViewController.view.frame;
+    frame.origin.y = CGRectGetHeight(self.view.bounds)-CGRectGetHeight(self.adViewController.view.frame);
+    frame.origin.x = (CGRectGetWidth(self.view.bounds)-CGRectGetWidth(self.adViewController.view.frame))/2.0;
+    self.adViewController.view.frame = frame;
 }
 
 -(void)setIsDevelopmentMode:(BOOL)isDevelopmentMode
@@ -383,6 +398,29 @@
     } else {
         return UIInterfaceOrientationMaskAll;
     }
+}
+
+-(void)pauseGame
+{
+    
+}
+
+-(void)resumeGame
+{
+    
+}
+
+#pragma mark - iAd delegates -
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+    [self pauseGame];
+    return YES;
+}
+
+- (void)bannerViewActionDidFinish:(ADBannerView *)banner
+{
+    [self resumeGame];
 }
 
 - (void)dealloc
