@@ -34,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *removeAds;
 @property (weak, nonatomic) IBOutlet UIButton *noAdsButton;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tutorialLabel;
 
 @property(nonatomic,strong)GameOverViewController *gameOverController;
 @property(nonatomic,strong)iAdViewController *adViewController;
@@ -72,6 +73,9 @@
     self.levelNumberLabel.text = [NSString stringWithFormat:NSLocalizedString(@"LevelNO", "Level %d"),(long)self.levelModel.levelID];
     [self beginGame];
     [self updateScore];
+    
+    [self showAdsViewController];
+    [self updateTutorial];
 }
 
 - (void)viewDidLoad
@@ -105,19 +109,39 @@
     [self handleGameCompletion];
     [self updateUIBlock];
     [self handleTestMode];
-    [self showAdsViewController];
+}
+
+-(void)updateTutorial
+{
+    if(self.levelModel.levelID <= 6){
+        NSString *text = [NSString stringWithFormat:@"Tutorial_%ld",(long)self.levelModel.levelID];
+        self.tutorialLabel.text = NSLocalizedString(text, nil);
+        self.tutorialLabel.hidden = NO;
+    }
+    else{
+        self.tutorialLabel.hidden = YES;
+    }
 }
 
 -(void)showAdsViewController
 {
-    self.adViewController = [[iAdViewController alloc] initWithNibName:nil bundle:nil];
-    [self.view addSubview:self.adViewController.view];
-    self.adViewController.delegate = self;
-    CGRect frame = self.adViewController.view.frame;
-    frame.origin.y = CGRectGetHeight(self.view.bounds)-CGRectGetHeight(self.adViewController.view.frame);
-    frame.origin.x = (CGRectGetWidth(self.view.bounds)-CGRectGetWidth(self.adViewController.view.frame))/2.0;
-    frame.size.width = self.view.frame.size.width;
-    self.adViewController.view.frame = frame;
+    BOOL canShowAds = NO;
+    if(self.levelModel.levelID > 6){
+        canShowAds = YES;
+    }
+    
+    if(canShowAds){
+        if(!self.adViewController){
+            self.adViewController = [[iAdViewController alloc] initWithNibName:nil bundle:nil];
+            [self.view addSubview:self.adViewController.view];
+            self.adViewController.delegate = self;
+            CGRect frame = self.adViewController.view.frame;
+            frame.origin.y = CGRectGetHeight(self.view.bounds)-CGRectGetHeight(self.adViewController.view.frame);
+            frame.origin.x = (CGRectGetWidth(self.view.bounds)-CGRectGetWidth(self.adViewController.view.frame))/2.0;
+            frame.size.width = self.view.frame.size.width;
+            self.adViewController.view.frame = frame;
+        }
+    }
 }
 
 -(void)setIsDevelopmentMode:(BOOL)isDevelopmentMode
