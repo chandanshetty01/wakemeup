@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48D5B43B1AC05F11008D370E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D5B4391AC05F11008D370E /* Main_iPad.storyboard */; };
 		A33074E21AA368C7006054E3 /* Level_10_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A33074AB1AA368C7006054E3 /* Level_10_1.json */; };
 		A33074E31AA368C8006054E3 /* Level_11_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A33074AC1AA368C7006054E3 /* Level_11_1.json */; };
 		A33074E41AA368C8006054E3 /* Level_12_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A33074AD1AA368C7006054E3 /* Level_12_1.json */; };
@@ -120,6 +121,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48D5B43A1AC05F11008D370E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		A33074AB1AA368C7006054E3 /* Level_10_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_10_1.json; sourceTree = "<group>"; };
 		A33074AC1AA368C7006054E3 /* Level_11_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_11_1.json; sourceTree = "<group>"; };
 		A33074AD1AA368C7006054E3 /* Level_12_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_12_1.json; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 				A3CC20B919D6C9520067A847 /* AppDelegate.m */,
 				A3CC20BE19D6C9520067A847 /* GameScene.sks */,
 				A3CC20C319D6C9520067A847 /* Main.storyboard */,
+				48D5B4391AC05F11008D370E /* Main_iPad.storyboard */,
 				A3CC20C619D6C9520067A847 /* Images.xcassets */,
 				A3CC20C819D6C9520067A847 /* LaunchScreen.xib */,
 				A3CC20B419D6C9520067A847 /* Supporting Files */,
@@ -634,6 +637,7 @@
 				A33075061AA368C8006054E3 /* Level_43_1.json in Resources */,
 				A3CC20C519D6C9520067A847 /* Main.storyboard in Resources */,
 				A33075071AA368C8006054E3 /* Level_44_1.json in Resources */,
+				48D5B43B1AC05F11008D370E /* Main_iPad.storyboard in Resources */,
 				A330750F1AA368C8006054E3 /* Level_51_1.json in Resources */,
 				A33075031AA368C8006054E3 /* Level_40_1.json in Resources */,
 				A33075141AA368C8006054E3 /* Level_5_1.json in Resources */,
@@ -743,6 +747,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		48D5B4391AC05F11008D370E /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48D5B43A1AC05F11008D370E /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
 		A3CC20C319D6C9520067A847 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
