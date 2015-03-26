@@ -72,11 +72,24 @@
 		A330AC841AC3B1F4007C2EE7 /* iAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A330AC811AC3B1F4007C2EE7 /* iAdViewController.m */; };
 		A330AC851AC3B1F4007C2EE7 /* iAdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A330AC821AC3B1F4007C2EE7 /* iAdViewController.xib */; };
 		A330AC891AC3C2FB007C2EE7 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A330AC881AC3C2FB007C2EE7 /* GameCenterManager.m */; };
-		A364EF5319EFFF30005EF1D6 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A364EF5219EFFF30005EF1D6 /* Crashlytics.framework */; };
 		A364EF7919F01D75005EF1D6 /* GameStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A364EF7819F01D75005EF1D6 /* GameStateManager.m */; };
 		A369340B1A2CB52B001C9BB1 /* WUNObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = A369340A1A2CB52B001C9BB1 /* WUNObstacle.m */; };
 		A369340E1A2CB6DD001C9BB1 /* WUNBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A369340D1A2CB6DD001C9BB1 /* WUNBase.m */; };
 		A36934111A2CB9E5001C9BB1 /* WUNObstacle1.m in Sources */ = {isa = PBXBuildFile; fileRef = A36934101A2CB9E5001C9BB1 /* WUNObstacle1.m */; };
+		A36E83FC1AC3CD5500581811 /* libAppsFlyerLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A36E83E11AC3CD5500581811 /* libAppsFlyerLib.a */; };
+		A36E83FD1AC3CD5500581811 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A36E83E31AC3CD5500581811 /* FacebookSDK.framework */; };
+		A36E83FE1AC3CD5500581811 /* libFlurry_5.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A36E83E61AC3CD5500581811 /* libFlurry_5.4.0.a */; };
+		A36E83FF1AC3CD5500581811 /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = A36E83EA1AC3CD5500581811 /* NSData+MKBase64.m */; };
+		A36E84001AC3CD5500581811 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A36E83EC1AC3CD5500581811 /* SFHFKeychainUtils.m */; };
+		A36E84011AC3CD5500581811 /* MKSKProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = A36E83EE1AC3CD5500581811 /* MKSKProduct.m */; };
+		A36E84021AC3CD5500581811 /* MKSKSubscriptionProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = A36E83F01AC3CD5500581811 /* MKSKSubscriptionProduct.m */; };
+		A36E84031AC3CD5500581811 /* MKStoreKitConfigs.plist in Resources */ = {isa = PBXBuildFile; fileRef = A36E83F21AC3CD5500581811 /* MKStoreKitConfigs.plist */; };
+		A36E84041AC3CD5500581811 /* MKStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A36E83F41AC3CD5500581811 /* MKStoreManager.m */; };
+		A36E84071AC3CD5500581811 /* PushApps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A36E83FB1AC3CD5500581811 /* PushApps.framework */; };
+		A36E84091AC3CD6200581811 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A36E84081AC3CD6200581811 /* Crashlytics.framework */; };
+		A36E840E1AC3CDE900581811 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A36E840B1AC3CDE900581811 /* iRate.bundle */; };
+		A36E840F1AC3CDE900581811 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = A36E840D1AC3CDE900581811 /* iRate.m */; };
+		A36E84111AC3CF7100581811 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A36E84101AC3CF7100581811 /* SystemConfiguration.framework */; };
 		A36F9A3B19DD9E4100419500 /* WUNSmily.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A3A19DD9E4100419500 /* WUNSmily.m */; };
 		A36F9A3E19DD9E5800419500 /* WUNWall.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A3D19DD9E5800419500 /* WUNWall.m */; };
 		A36F9A4119DD9E6C00419500 /* WUNHole.m in Sources */ = {isa = PBXBuildFile; fileRef = A36F9A4019DD9E6C00419500 /* WUNHole.m */; };
@@ -190,7 +203,6 @@
 		A330AC821AC3B1F4007C2EE7 /* iAdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iAdViewController.xib; sourceTree = "<group>"; };
 		A330AC871AC3C2FB007C2EE7 /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
 		A330AC881AC3C2FB007C2EE7 /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
-		A364EF5219EFFF30005EF1D6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		A364EF7719F01D75005EF1D6 /* GameStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStateManager.h; sourceTree = "<group>"; };
 		A364EF7819F01D75005EF1D6 /* GameStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStateManager.m; sourceTree = "<group>"; };
 		A36934091A2CB52B001C9BB1 /* WUNObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUNObstacle.h; sourceTree = "<group>"; };
@@ -199,6 +211,29 @@
 		A369340D1A2CB6DD001C9BB1 /* WUNBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNBase.m; path = wakemeup/classes/WUNBase.m; sourceTree = SOURCE_ROOT; };
 		A369340F1A2CB9E5001C9BB1 /* WUNObstacle1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUNObstacle1.h; sourceTree = "<group>"; };
 		A36934101A2CB9E5001C9BB1 /* WUNObstacle1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUNObstacle1.m; sourceTree = "<group>"; };
+		A36E83E01AC3CD5500581811 /* AppsFlyerTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsFlyerTracker.h; sourceTree = "<group>"; };
+		A36E83E11AC3CD5500581811 /* libAppsFlyerLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppsFlyerLib.a; sourceTree = "<group>"; };
+		A36E83E31AC3CD5500581811 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		A36E83E51AC3CD5500581811 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		A36E83E61AC3CD5500581811 /* libFlurry_5.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.4.0.a; sourceTree = "<group>"; };
+		A36E83E91AC3CD5500581811 /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
+		A36E83EA1AC3CD5500581811 /* NSData+MKBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKBase64.m"; sourceTree = "<group>"; };
+		A36E83EB1AC3CD5500581811 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		A36E83EC1AC3CD5500581811 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
+		A36E83ED1AC3CD5500581811 /* MKSKProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSKProduct.h; sourceTree = "<group>"; };
+		A36E83EE1AC3CD5500581811 /* MKSKProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSKProduct.m; sourceTree = "<group>"; };
+		A36E83EF1AC3CD5500581811 /* MKSKSubscriptionProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSKSubscriptionProduct.h; sourceTree = "<group>"; };
+		A36E83F01AC3CD5500581811 /* MKSKSubscriptionProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSKSubscriptionProduct.m; sourceTree = "<group>"; };
+		A36E83F11AC3CD5500581811 /* MKStoreKitConfigs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreKitConfigs.h; sourceTree = "<group>"; };
+		A36E83F21AC3CD5500581811 /* MKStoreKitConfigs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MKStoreKitConfigs.plist; sourceTree = "<group>"; };
+		A36E83F31AC3CD5500581811 /* MKStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreManager.h; sourceTree = "<group>"; };
+		A36E83F41AC3CD5500581811 /* MKStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKStoreManager.m; sourceTree = "<group>"; };
+		A36E83FB1AC3CD5500581811 /* PushApps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushApps.framework; sourceTree = "<group>"; };
+		A36E84081AC3CD6200581811 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		A36E840B1AC3CDE900581811 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
+		A36E840C1AC3CDE900581811 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
+		A36E840D1AC3CDE900581811 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
+		A36E84101AC3CF7100581811 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A36F9A3919DD9E4100419500 /* WUNSmily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNSmily.h; path = wakemeup/classes/WUNSmily.h; sourceTree = SOURCE_ROOT; };
 		A36F9A3A19DD9E4100419500 /* WUNSmily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUNSmily.m; path = wakemeup/classes/WUNSmily.m; sourceTree = SOURCE_ROOT; };
 		A36F9A3C19DD9E5800419500 /* WUNWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUNWall.h; path = wakemeup/classes/WUNWall.h; sourceTree = SOURCE_ROOT; };
@@ -269,7 +304,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A364EF5319EFFF30005EF1D6 /* Crashlytics.framework in Frameworks */,
+				A36E84111AC3CF7100581811 /* SystemConfiguration.framework in Frameworks */,
+				A36E83FC1AC3CD5500581811 /* libAppsFlyerLib.a in Frameworks */,
+				A36E84091AC3CD6200581811 /* Crashlytics.framework in Frameworks */,
+				A36E83FD1AC3CD5500581811 /* FacebookSDK.framework in Frameworks */,
+				A36E84071AC3CD5500581811 /* PushApps.framework in Frameworks */,
+				A36E83FE1AC3CD5500581811 /* libFlurry_5.4.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,14 +411,6 @@
 			path = "Game center";
 			sourceTree = "<group>";
 		};
-		A364EF5119EFFF18005EF1D6 /* 3rdParty */ = {
-			isa = PBXGroup;
-			children = (
-				A364EF5219EFFF30005EF1D6 /* Crashlytics.framework */,
-			);
-			path = 3rdParty;
-			sourceTree = "<group>";
-		};
 		A36934081A2CB4FD001C9BB1 /* Obstacles */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +423,99 @@
 			path = wakemeup/classes/Obstacles;
 			sourceTree = SOURCE_ROOT;
 		};
+		A36E83DE1AC3CD5500581811 /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				A36E840A1AC3CDE900581811 /* iRate */,
+				A36E84081AC3CD6200581811 /* Crashlytics.framework */,
+				A36E83DF1AC3CD5500581811 /* AF-iOS-SDK-v2.5.3.10 */,
+				A36E83E21AC3CD5500581811 /* facebook */,
+				A36E83E41AC3CD5500581811 /* Flurry */,
+				A36E83E71AC3CD5500581811 /* inAppPurchase */,
+				A36E83F91AC3CD5500581811 /* PushApp */,
+			);
+			path = 3rdParty;
+			sourceTree = "<group>";
+		};
+		A36E83DF1AC3CD5500581811 /* AF-iOS-SDK-v2.5.3.10 */ = {
+			isa = PBXGroup;
+			children = (
+				A36E83E01AC3CD5500581811 /* AppsFlyerTracker.h */,
+				A36E83E11AC3CD5500581811 /* libAppsFlyerLib.a */,
+			);
+			path = "AF-iOS-SDK-v2.5.3.10";
+			sourceTree = "<group>";
+		};
+		A36E83E21AC3CD5500581811 /* facebook */ = {
+			isa = PBXGroup;
+			children = (
+				A36E83E31AC3CD5500581811 /* FacebookSDK.framework */,
+			);
+			path = facebook;
+			sourceTree = "<group>";
+		};
+		A36E83E41AC3CD5500581811 /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				A36E83E51AC3CD5500581811 /* Flurry.h */,
+				A36E83E61AC3CD5500581811 /* libFlurry_5.4.0.a */,
+			);
+			path = Flurry;
+			sourceTree = "<group>";
+		};
+		A36E83E71AC3CD5500581811 /* inAppPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				A36E83E81AC3CD5500581811 /* Externals */,
+				A36E83ED1AC3CD5500581811 /* MKSKProduct.h */,
+				A36E83EE1AC3CD5500581811 /* MKSKProduct.m */,
+				A36E83EF1AC3CD5500581811 /* MKSKSubscriptionProduct.h */,
+				A36E83F01AC3CD5500581811 /* MKSKSubscriptionProduct.m */,
+				A36E83F11AC3CD5500581811 /* MKStoreKitConfigs.h */,
+				A36E83F21AC3CD5500581811 /* MKStoreKitConfigs.plist */,
+				A36E83F31AC3CD5500581811 /* MKStoreManager.h */,
+				A36E83F41AC3CD5500581811 /* MKStoreManager.m */,
+			);
+			path = inAppPurchase;
+			sourceTree = "<group>";
+		};
+		A36E83E81AC3CD5500581811 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				A36E83E91AC3CD5500581811 /* NSData+MKBase64.h */,
+				A36E83EA1AC3CD5500581811 /* NSData+MKBase64.m */,
+				A36E83EB1AC3CD5500581811 /* SFHFKeychainUtils.h */,
+				A36E83EC1AC3CD5500581811 /* SFHFKeychainUtils.m */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		A36E83F91AC3CD5500581811 /* PushApp */ = {
+			isa = PBXGroup;
+			children = (
+				A36E83FA1AC3CD5500581811 /* SDK */,
+			);
+			path = PushApp;
+			sourceTree = "<group>";
+		};
+		A36E83FA1AC3CD5500581811 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				A36E83FB1AC3CD5500581811 /* PushApps.framework */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		A36E840A1AC3CDE900581811 /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				A36E840B1AC3CDE900581811 /* iRate.bundle */,
+				A36E840C1AC3CDE900581811 /* iRate.h */,
+				A36E840D1AC3CDE900581811 /* iRate.m */,
+			);
+			path = iRate;
+			sourceTree = "<group>";
+		};
 		A3C891A519E428D500A12D36 /* stage */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +527,7 @@
 		A3CC20A819D6C9520067A847 = {
 			isa = PBXGroup;
 			children = (
+				A36E84101AC3CF7100581811 /* SystemConfiguration.framework */,
 				A3CC20B319D6C9520067A847 /* wakemeup */,
 				A3CC20B219D6C9520067A847 /* Products */,
 			);
@@ -418,7 +544,7 @@
 		A3CC20B319D6C9520067A847 /* wakemeup */ = {
 			isa = PBXGroup;
 			children = (
-				A364EF5119EFFF18005EF1D6 /* 3rdParty */,
+				A36E83DE1AC3CD5500581811 /* 3rdParty */,
 				A3CC20E319D6E0FB0067A847 /* classes */,
 				A3CC20B819D6C9520067A847 /* AppDelegate.h */,
 				A3CC20B919D6C9520067A847 /* AppDelegate.m */,
@@ -650,6 +776,7 @@
 				A33075061AA368C8006054E3 /* Level_43_1.json in Resources */,
 				A3CC20C519D6C9520067A847 /* Main.storyboard in Resources */,
 				A33075071AA368C8006054E3 /* Level_44_1.json in Resources */,
+				A36E84031AC3CD5500581811 /* MKStoreKitConfigs.plist in Resources */,
 				48D5B43B1AC05F11008D370E /* Main_iPad.storyboard in Resources */,
 				A330750F1AA368C8006054E3 /* Level_51_1.json in Resources */,
 				A33075031AA368C8006054E3 /* Level_40_1.json in Resources */,
@@ -693,6 +820,7 @@
 				A33075231AA36923006054E3 /* Level_59_1.json in Resources */,
 				A33075161AA368C8006054E3 /* Level_7_1.json in Resources */,
 				A330750B1AA368C8006054E3 /* Level_48_1.json in Resources */,
+				A36E840E1AC3CDE900581811 /* iRate.bundle in Resources */,
 				A33074EB1AA368C8006054E3 /* Level_19_1.json in Resources */,
 				A3D55A821ABB106B00F2D987 /* btn_bg.png in Resources */,
 				A33074FE1AA368C8006054E3 /* Level_36_1.json in Resources */,
@@ -739,15 +867,21 @@
 				A36F9A3E19DD9E5800419500 /* WUNWall.m in Sources */,
 				A364EF7919F01D75005EF1D6 /* GameStateManager.m in Sources */,
 				A369340B1A2CB52B001C9BB1 /* WUNObstacle.m in Sources */,
+				A36E84011AC3CD5500581811 /* MKSKProduct.m in Sources */,
+				A36E84001AC3CD5500581811 /* SFHFKeychainUtils.m in Sources */,
 				A3CC20BD19D6C9520067A847 /* GameScene.m in Sources */,
+				A36E83FF1AC3CD5500581811 /* NSData+MKBase64.m in Sources */,
 				A36F9A4119DD9E6C00419500 /* WUNHole.m in Sources */,
 				A36F9A3B19DD9E4100419500 /* WUNSmily.m in Sources */,
 				A3C891B319E42F1800A12D36 /* Utility.m in Sources */,
 				A330AC841AC3B1F4007C2EE7 /* iAdViewController.m in Sources */,
 				A3C891AD19E42A5D00A12D36 /* LevelSelectionViewController.m in Sources */,
+				A36E84041AC3CD5500581811 /* MKStoreManager.m in Sources */,
 				A330AC831AC3B1F4007C2EE7 /* CustomActivityProvider.m in Sources */,
 				A3C891B619E42FDD00A12D36 /* WUNLevelModel.m in Sources */,
 				A3C891B019E42DD200A12D36 /* CustomCollectionViewCell.m in Sources */,
+				A36E840F1AC3CDE900581811 /* iRate.m in Sources */,
+				A36E84021AC3CD5500581811 /* MKSKSubscriptionProduct.m in Sources */,
 				A36934111A2CB9E5001C9BB1 /* WUNObstacle1.m in Sources */,
 				A3CC20EE19D6E0FB0067A847 /* GameConfigManager.m in Sources */,
 				A3C891AA19E4298B00A12D36 /* WUNStageModel.m in Sources */,
@@ -881,12 +1015,23 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/wakemeup/3rdParty/facebook",
+					"$(PROJECT_DIR)/wakemeup/3rdParty/PushApp/SDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = wakemeup/WakeMeUp.pch;
 				INFOPLIST_FILE = wakemeup/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/wakemeup/3rd",
+					"Party/AF-iOS-SDK-v2.5.3.10",
+					"$(PROJECT_DIR)/wakemeup/3rd",
+					Party/Flurry,
+					"$(PROJECT_DIR)/wakemeup/3rdParty/AF-iOS-SDK-v2.5.3.10",
+					"$(PROJECT_DIR)/wakemeup/3rdParty/Flurry",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "186877c0-4e2a-4067-9857-06e00aac00dd";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -900,12 +1045,27 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/wakemeup/3rd",
+					Party/facebook,
+					"$(PROJECT_DIR)/wakemeup/3rd",
+					Party/PushApp/SDK,
+					"$(PROJECT_DIR)/wakemeup/3rdParty/facebook",
+					"$(PROJECT_DIR)/wakemeup/3rdParty/PushApp/SDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = wakemeup/WakeMeUp.pch;
 				INFOPLIST_FILE = wakemeup/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/wakemeup/3rd",
+					"Party/AF-iOS-SDK-v2.5.3.10",
+					"$(PROJECT_DIR)/wakemeup/3rd",
+					Party/Flurry,
+					"$(PROJECT_DIR)/wakemeup/3rdParty/AF-iOS-SDK-v2.5.3.10",
+					"$(PROJECT_DIR)/wakemeup/3rdParty/Flurry",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "9531152d-3c24-4c1c-898a-7da54719cee1";
 				TARGETED_DEVICE_FAMILY = "1,2";

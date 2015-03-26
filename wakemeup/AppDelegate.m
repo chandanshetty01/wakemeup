@@ -8,8 +8,9 @@
 
 #import "AppDelegate.h"
 #import <Crashlytics/Crashlytics.h>
+#import "iRate.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <iRateDelegate>
 
 @end
 
@@ -18,7 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Crashlytics startWithAPIKey:@"ef1df6810a8ae85dc6971ad31a2311a71214d012"];    
+    [Crashlytics startWithAPIKey:@"ef1df6810a8ae85dc6971ad31a2311a71214d012"];
+    
+    [iRate sharedInstance].delegate = self;
+    [iRate sharedInstance].appStoreID = APPSTORE_ID;
+    
     // Override point for customization after application launch.
     return YES;
 }
@@ -44,5 +49,38 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark -iRate delegate -
+
+- (void)iRateCouldNotConnectToAppStore:(NSError *)error
+{
+    [Flurry logEvent:@"Rate-ConnectionError"];
+}
+
+- (void)iRateDidPromptForRating
+{
+    [Flurry logEvent:@"Rate-Prompted"];
+}
+
+- (void)iRateUserDidAttemptToRateApp
+{
+    [Flurry logEvent:@"Rate-AttemptToRate"];
+}
+
+- (void)iRateUserDidDeclineToRateApp
+{
+    [Flurry logEvent:@"Rate-Declined"];
+}
+
+- (void)iRateUserDidRequestReminderToRateApp
+{
+    [Flurry logEvent:@"Rate-RemindMeLater"];
+}
+
+- (void)iRateDidOpenAppStore
+{
+    [Flurry logEvent:@"Rate-OpenAppStore"];
+}
+
 
 @end
