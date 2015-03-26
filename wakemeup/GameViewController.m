@@ -278,8 +278,12 @@
     if(score > 20){
         [[GameCenterManager sharedManager] reportScore:score identifier:LEADERBOARD_ID];
     }
-
-    self.gameOverController = [[GameOverViewController alloc] initWithNibName:nil bundle:nil];
+    
+    NSString *nibName = @"GameOverViewController~iPhone";
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+      nibName = @"GameOverViewController~iPad";
+    }
+    self.gameOverController = [[GameOverViewController alloc] initWithNibName:nibName bundle:nil];
     [self.view addSubview:self.gameOverController.view];
     [self.view bringSubviewToFront:self.gameOverController.view];
     self.gameOverController.view.frame = self.view.frame;

@@ -6,13 +6,14 @@
   Copyright (c) 2015 Chandan. All rights reserved.
 */
 
-"Levels" = "Select a level to Play";
+"Levels" = "LEVELS";
 "Back" = "Levels";
 "NoAds" = "No Ads";
 "Score" = "Moves: %d";
 
 "LevelNO" = "Level: %d";
 "Restart" = "Restart";
+"GlobalScores" = "Global Scores";
 
 "GameCenter" = "Game Center";
 "BestScore" = "Total Moves";

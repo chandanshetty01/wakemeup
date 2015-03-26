@@ -31,7 +31,7 @@
     
     UIEdgeInsets edgeInset = UIEdgeInsetsMake(15, 30, 15, 30);
     UIImage *image = [[UIImage imageNamed:@"btn_bg"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [self.gameCenterBtn setTitle:NSLocalizedString(@"GameCenter", "Game Center") forState:UIControlStateNormal];
+    [self.gameCenterBtn setTitle:NSLocalizedString(@"GlobalScores", "Global Scores") forState:UIControlStateNormal];
     [self.gameCenterBtn setBackgroundImage:[image resizableImageWithCapInsets:edgeInset] forState:UIControlStateNormal];
     self.gameCenterBtn.tintColor = [UIColor whiteColor];
     
@@ -84,7 +84,7 @@
     }
 }
 
-- (IBAction)shareBtnAction:(id)sender
+- (IBAction)shareBtnAction:(UIView*)sender
 {
     CustomActivityProvider *activityProvider = [[CustomActivityProvider alloc] init];
     activityProvider.totalMoves = self.bestScore;
@@ -102,6 +102,8 @@
                                            UIActivityTypePostToTencentWeibo,
                                            UIActivityTypeAirDrop
                                            ];
+    activityView.popoverPresentationController.sourceView = sender;
+    activityView.popoverPresentationController.sourceRect = sender.bounds;
     [self presentViewController:activityView animated:YES completion:nil];
     [activityView setCompletionHandler:^(NSString *act, BOOL done)
      {
