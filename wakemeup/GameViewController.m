@@ -15,6 +15,7 @@
 #import "GameStateManager.h"
 #import "GameOverViewController.h"
 #import "iAdViewController.h"
+#import "GameCenterManager.h"
 
 @interface GameViewController() <iAdViewControllerDelegates>
 
@@ -273,11 +274,16 @@
 
 -(void)showGameOverScreen
 {
+    NSInteger score = [[GameStateManager sharedManager] getTotalMovements];
+    if(score > 20){
+        [[GameCenterManager sharedManager] reportScore:score identifier:LEADERBOARD_ID];
+    }
+    
     self.gameOverController = [[GameOverViewController alloc] initWithNibName:nil bundle:nil];
     [self.view addSubview:self.gameOverController.view];
     self.view.frame = self.view.frame;
     [self addChildViewController:self.gameOverController];
-    self.gameOverController.bestScore = [[GameStateManager sharedManager] getTotalMovements];
+    self.gameOverController.bestScore = score;
     self.gameOverController.delegate = self;
     
     self.gameOverController.view.alpha = 0;

@@ -13,6 +13,7 @@
 #import "WUNLevelModel.h"
 #import "GameViewController.h"
 #import "GameStateManager.h"
+#import "GameCenterManager.h"
 
 @interface LevelSelectionViewController ()
 
@@ -33,6 +34,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[GameCenterManager sharedManager] authenticateLocalPlayer:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -97,7 +99,12 @@
 
 - (IBAction)handleGameCenterAction:(id)sender
 {
-    
+    if([GameCenterManager sharedManager].gameCenterEnabled){
+        [[GameCenterManager sharedManager] showLeaderboard:LEADERBOARD_ID inController:self];
+    }
+    else{
+        [[GameCenterManager sharedManager] authenticateLocalPlayer:self];
+    }
 }
 
 - (IBAction)handleSoundChangeAction:(UIButton*)sender

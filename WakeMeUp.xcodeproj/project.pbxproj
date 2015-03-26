@@ -71,6 +71,7 @@
 		A330AC831AC3B1F4007C2EE7 /* CustomActivityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A330AC7E1AC3B1F4007C2EE7 /* CustomActivityProvider.m */; };
 		A330AC841AC3B1F4007C2EE7 /* iAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A330AC811AC3B1F4007C2EE7 /* iAdViewController.m */; };
 		A330AC851AC3B1F4007C2EE7 /* iAdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A330AC821AC3B1F4007C2EE7 /* iAdViewController.xib */; };
+		A330AC891AC3C2FB007C2EE7 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A330AC881AC3C2FB007C2EE7 /* GameCenterManager.m */; };
 		A364EF5319EFFF30005EF1D6 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A364EF5219EFFF30005EF1D6 /* Crashlytics.framework */; };
 		A364EF7919F01D75005EF1D6 /* GameStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A364EF7819F01D75005EF1D6 /* GameStateManager.m */; };
 		A369340B1A2CB52B001C9BB1 /* WUNObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = A369340A1A2CB52B001C9BB1 /* WUNObstacle.m */; };
@@ -187,6 +188,8 @@
 		A330AC801AC3B1F4007C2EE7 /* iAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iAdViewController.h; sourceTree = "<group>"; };
 		A330AC811AC3B1F4007C2EE7 /* iAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iAdViewController.m; sourceTree = "<group>"; };
 		A330AC821AC3B1F4007C2EE7 /* iAdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iAdViewController.xib; sourceTree = "<group>"; };
+		A330AC871AC3C2FB007C2EE7 /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
+		A330AC881AC3C2FB007C2EE7 /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
 		A364EF5219EFFF30005EF1D6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		A364EF7719F01D75005EF1D6 /* GameStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStateManager.h; sourceTree = "<group>"; };
 		A364EF7819F01D75005EF1D6 /* GameStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStateManager.m; sourceTree = "<group>"; };
@@ -359,6 +362,15 @@
 			path = iAds;
 			sourceTree = "<group>";
 		};
+		A330AC861AC3C2FB007C2EE7 /* Game center */ = {
+			isa = PBXGroup;
+			children = (
+				A330AC871AC3C2FB007C2EE7 /* GameCenterManager.h */,
+				A330AC881AC3C2FB007C2EE7 /* GameCenterManager.m */,
+			);
+			path = "Game center";
+			sourceTree = "<group>";
+		};
 		A364EF5119EFFF18005EF1D6 /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +461,7 @@
 		A3CC20E419D6E0FB0067A847 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A330AC861AC3C2FB007C2EE7 /* Game center */,
 				A330AC7C1AC3B1F4007C2EE7 /* Activity */,
 				A330AC7F1AC3B1F4007C2EE7 /* iAds */,
 				A3CC20C019D6C9520067A847 /* GameViewController.h */,
@@ -716,6 +729,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A330AC891AC3C2FB007C2EE7 /* GameCenterManager.m in Sources */,
 				A3CC20C219D6C9520067A847 /* GameViewController.m in Sources */,
 				A3CC20F919DAF3B20067A847 /* WUNLevel.m in Sources */,
 				A3C891BA19E5932400A12D36 /* MailComposerManager.m in Sources */,

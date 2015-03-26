@@ -8,6 +8,7 @@
 
 #import "GameOverViewController.h"
 #import "CustomActivityProvider.h"
+#import "GameCenterManager.h"
 
 @interface GameOverViewController ()
 
@@ -68,7 +69,12 @@
 
 - (IBAction)gameCenterbtnAction:(id)sender
 {
-    
+    if([GameCenterManager sharedManager].gameCenterEnabled){
+        [[GameCenterManager sharedManager] showLeaderboard:LEADERBOARD_ID inController:self];
+    }
+    else{
+        [[GameCenterManager sharedManager] authenticateLocalPlayer:self];
+    }
 }
 
 - (IBAction)allLevelsBtnAction:(id)sender
