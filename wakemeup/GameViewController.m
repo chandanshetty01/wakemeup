@@ -134,7 +134,7 @@
     if(canShowAds){
         if(!self.adViewController){
             CGFloat adHeight = 50;
-            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+            if (IS_IPAD){
                 adHeight = 66;
             }
             self.adViewController = [[iAdViewController alloc] initWithNibName:nil bundle:nil];
@@ -284,7 +284,7 @@
     }
     
     NSString *nibName = @"GameOverViewController~iPhone";
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+    if (IS_IPAD){
       nibName = @"GameOverViewController~iPad";
     }
     self.gameOverController = [[GameOverViewController alloc] initWithNibName:nibName bundle:nil];

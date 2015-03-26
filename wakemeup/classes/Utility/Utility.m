@@ -67,7 +67,7 @@
 +(CGSize)tileSize
 {
     CGSize tileSize = CGSizeMake(36, 36);
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+    if (IS_IPAD){
         tileSize = CGSizeMake(80, 80);
     }
     else{
