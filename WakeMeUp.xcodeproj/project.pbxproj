@@ -128,7 +128,7 @@
 		A3CDD3421AB9A87800AB75B4 /* tell_a_friend.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3371AB9A87800AB75B4 /* tell_a_friend.png */; };
 		A3CDD34F1AB9ABFC00AB75B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3511AB9ABFC00AB75B4 /* Localizable.strings */; };
 		A3D55A7F1ABB0BB700F2D987 /* GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D55A7D1ABB0BB700F2D987 /* GameOverViewController.m */; };
-		A3D55A801ABB0BB700F2D987 /* GameOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A7E1ABB0BB700F2D987 /* GameOverViewController.xib */; };
+		A3D55A801ABB0BB700F2D987 /* GameOverViewController~iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A7E1ABB0BB700F2D987 /* GameOverViewController~iPhone.xib */; };
 		A3D55A821ABB106B00F2D987 /* btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A811ABB106B00F2D987 /* btn_bg.png */; };
 		A3D55A851ABB18C700F2D987 /* crown.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A831ABB18C700F2D987 /* crown.png */; };
 		A3D55A861ABB18C700F2D987 /* crown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A841ABB18C700F2D987 /* crown@2x.png */; };
@@ -294,7 +294,7 @@
 		A3CDD3501AB9ABFC00AB75B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A3D55A7C1ABB0BB700F2D987 /* GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewController.h; sourceTree = "<group>"; };
 		A3D55A7D1ABB0BB700F2D987 /* GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverViewController.m; sourceTree = "<group>"; };
-		A3D55A7E1ABB0BB700F2D987 /* GameOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOverViewController.xib; sourceTree = "<group>"; };
+		A3D55A7E1ABB0BB700F2D987 /* GameOverViewController~iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GameOverViewController~iPhone.xib"; sourceTree = "<group>"; };
 		A3D55A811ABB106B00F2D987 /* btn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_bg.png; sourceTree = "<group>"; };
 		A3D55A831ABB18C700F2D987 /* crown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crown.png; sourceTree = "<group>"; };
 		A3D55A841ABB18C700F2D987 /* crown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crown@2x.png"; sourceTree = "<group>"; };
@@ -604,7 +604,7 @@
 				A3C891AF19E42DD200A12D36 /* CustomCollectionViewCell.m */,
 				A3D55A7C1ABB0BB700F2D987 /* GameOverViewController.h */,
 				A3D55A7D1ABB0BB700F2D987 /* GameOverViewController.m */,
-				A3D55A7E1ABB0BB700F2D987 /* GameOverViewController.xib */,
+				A3D55A7E1ABB0BB700F2D987 /* GameOverViewController~iPhone.xib */,
 				A3410EB31AC3D2E3001A15C2 /* GameOverViewController~iPad.xib */,
 			);
 			path = Controllers;
@@ -808,7 +808,7 @@
 				A3D55A881ABB1ECF00F2D987 /* round_bg.png in Resources */,
 				A33074EA1AA368C8006054E3 /* Level_18_1.json in Resources */,
 				A3CDD3391AB9A87800AB75B4 /* exit.png in Resources */,
-				A3D55A801ABB0BB700F2D987 /* GameOverViewController.xib in Resources */,
+				A3D55A801ABB0BB700F2D987 /* GameOverViewController~iPhone.xib in Resources */,
 				A3CDD3381AB9A87800AB75B4 /* back_to_home.png in Resources */,
 				A33075091AA368C8006054E3 /* Level_46_1.json in Resources */,
 				A330750C1AA368C8006054E3 /* Level_49_1.json in Resources */,

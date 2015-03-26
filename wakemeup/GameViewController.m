@@ -278,10 +278,11 @@
     if(score > 20){
         [[GameCenterManager sharedManager] reportScore:score identifier:LEADERBOARD_ID];
     }
-    
+
     self.gameOverController = [[GameOverViewController alloc] initWithNibName:nil bundle:nil];
     [self.view addSubview:self.gameOverController.view];
-    self.view.frame = self.view.frame;
+    [self.view bringSubviewToFront:self.gameOverController.view];
+    self.gameOverController.view.frame = self.view.frame;
     [self addChildViewController:self.gameOverController];
     self.gameOverController.bestScore = score;
     self.gameOverController.delegate = self;
