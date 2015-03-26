@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C2507" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="9ET-Cc-G4L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="9ET-Cc-G4L">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="Y71-py-BqQ">
             <objects>
                 <viewController id="BBd-vc-ZyM" customClass="GameViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="00T-Kt-Rqh">
+                    <view key="view" contentMode="scaleToFill" id="00T-Kt-Rqh" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -24,6 +24,9 @@
                                 <state key="normal" title="Wall">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleObstacleButton:" destination="BBd-vc-ZyM" eventType="touchUpInside" id="hKG-mZ-hvc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oiO-Zx-fjO">
                                 <rect key="frame" x="750" y="688" width="49" height="40"/>
@@ -32,6 +35,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleTestSave:" destination="BBd-vc-ZyM" eventType="touchUpInside" id="8jj-4U-rst"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xzi-R5-CMS">
                                 <rect key="frame" x="894" y="20" width="30" height="30"/>
@@ -40,6 +46,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleRestartBtnAction:" destination="BBd-vc-ZyM" eventType="touchUpInside" id="aNl-Mj-u5j"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="M7B-wT-9cn">
                                 <rect key="frame" x="817" y="688" width="49" height="40"/>
@@ -48,6 +57,9 @@
                                 <state key="normal" title="Mail">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleTestMail:" destination="BBd-vc-ZyM" eventType="touchUpInside" id="TJa-G6-4K9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9hJ-Hm-KL4">
                                 <rect key="frame" x="650" y="21" width="100" height="30"/>
@@ -57,6 +69,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleNoAdsBtnAction:" destination="BBd-vc-ZyM" eventType="touchUpInside" id="qDf-q0-toH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WNM-0e-9t6">
                                 <rect key="frame" x="100" y="688" width="49" height="40"/>
@@ -65,6 +80,9 @@
                                 <state key="normal" title="Smily">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="HandleSmilyButton:" destination="BBd-vc-ZyM" eventType="touchUpInside" id="w1Q-uP-1My"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jka-4t-qm9">
                                 <rect key="frame" x="417" y="21" width="102" height="30"/>
@@ -79,6 +97,9 @@
                                 <rect key="frame" x="330" y="692" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.86274516580000005" green="0.60000002379999995" blue="0.13725490870000001" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="handleTestModeButton:" destination="BBd-vc-ZyM" eventType="valueChanged" id="jJ5-4d-fz1"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eF8-i0-P76">
                                 <rect key="frame" x="190" y="22" width="150" height="30"/>
@@ -94,6 +115,9 @@
                                 <state key="normal" title="Hole">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleTestHoleBtn:" destination="BBd-vc-ZyM" eventType="touchUpInside" id="ieX-eQ-RmA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nxI-10-e0i">
                                 <rect key="frame" x="100" y="20" width="30" height="30"/>
@@ -103,20 +127,20 @@
                                 <state key="normal" image="back_to_home.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleBackButton:" destination="BBd-vc-ZyM" eventType="touchUpInside" id="MzT-JR-DqD"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jLU-FC-sin">
-                                <rect key="frame" x="16" y="728" width="992" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176470588237" green="0.39215686274509803" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="tutorialLabel" destination="jLU-FC-sin" id="jup-4q-BcQ"/>
+                        <outlet property="levelNumberLabel" destination="Jka-4t-qm9" id="64D-26-GvF"/>
+                        <outlet property="scoreLabel" destination="eF8-i0-P76" id="Ck4-GF-gxa"/>
+                        <outlet property="testMode" destination="aSb-J6-6LW" id="6eo-7V-Da2"/>
+                        <outlet property="testObstacle" destination="jTn-pf-yRF" id="hOG-dH-TMp"/>
+                        <outlet property="testSave" destination="oiO-Zx-fjO" id="dRd-Ly-oKe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkS-F3-vLl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -227,6 +251,7 @@
                                         <color key="backgroundColor" red="0.20392156859999999" green="0.57254901960000004" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="label" destination="vqf-Xt-Oai" id="c3Z-bG-s79"/>
+                                            <segue destination="BBd-vc-ZyM" kind="modal" id="aJO-mp-DQb"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -248,7 +273,6 @@
                         <outlet property="soundOnOf" destination="qcM-sR-8sE" id="vjY-yZ-GQ7"/>
                         <outlet property="tellAFriendBtn" destination="4ax-75-qqi" id="vBG-gL-2FC"/>
                         <outlet property="view" destination="UsK-zz-Iil" id="eN5-Lt-i9b"/>
-                        <segue destination="BBd-vc-ZyM" kind="modal" id="C7x-uB-MxE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WcR-17-qqO" userLabel="First Responder" sceneMemberID="firstResponder"/>
