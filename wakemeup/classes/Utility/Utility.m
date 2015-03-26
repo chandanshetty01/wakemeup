@@ -70,6 +70,11 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
         tileSize = CGSizeMake(80, 80);
     }
+    else{
+        if(IS_IPHONE_6 || IS_IPHONE_6P){
+             tileSize = CGSizeMake(44, 44);
+        }
+    }
     return tileSize;
 }
 
