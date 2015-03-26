@@ -133,13 +133,17 @@
     
     if(canShowAds){
         if(!self.adViewController){
+            CGFloat adHeight = 50;
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+                adHeight = 66;
+            }
             self.adViewController = [[iAdViewController alloc] initWithNibName:nil bundle:nil];
             [self.view addSubview:self.adViewController.view];
             self.adViewController.delegate = self;
             CGRect frame = self.adViewController.view.frame;
-            frame.origin.y = CGRectGetHeight(self.view.bounds)-CGRectGetHeight(self.adViewController.view.frame);
-            frame.origin.x = (CGRectGetWidth(self.view.bounds)-CGRectGetWidth(self.adViewController.view.frame))/2.0;
-            frame.size.width = self.view.frame.size.width;
+            frame.size = CGSizeMake(self.view.frame.size.width, adHeight);
+            frame.origin.x = (CGRectGetWidth(self.view.bounds)-CGRectGetWidth(frame))/2.0;
+            frame.origin.y = CGRectGetHeight(self.view.bounds)-CGRectGetHeight(frame);
             self.adViewController.view.frame = frame;
         }
     }

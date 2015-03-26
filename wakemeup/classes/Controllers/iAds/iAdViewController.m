@@ -47,11 +47,9 @@
 
 -(void)logFlurry:(NSString*)string
 {
-    /*
     NSDictionary *dictionay = [NSMutableDictionary dictionary];
     [dictionay setValue:string forKey:@"status"];
     [Flurry logEvent:@"Ads" withParameters:dictionay];
-     */
 }
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
