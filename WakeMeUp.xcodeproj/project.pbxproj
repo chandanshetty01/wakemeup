@@ -72,6 +72,7 @@
 		A330AC841AC3B1F4007C2EE7 /* iAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A330AC811AC3B1F4007C2EE7 /* iAdViewController.m */; };
 		A330AC851AC3B1F4007C2EE7 /* iAdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A330AC821AC3B1F4007C2EE7 /* iAdViewController.xib */; };
 		A330AC891AC3C2FB007C2EE7 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A330AC881AC3C2FB007C2EE7 /* GameCenterManager.m */; };
+		A3410EB41AC3D2E3001A15C2 /* GameOverViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3410EB31AC3D2E3001A15C2 /* GameOverViewController~iPad.xib */; };
 		A364EF7919F01D75005EF1D6 /* GameStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A364EF7819F01D75005EF1D6 /* GameStateManager.m */; };
 		A369340B1A2CB52B001C9BB1 /* WUNObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = A369340A1A2CB52B001C9BB1 /* WUNObstacle.m */; };
 		A369340E1A2CB6DD001C9BB1 /* WUNBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A369340D1A2CB6DD001C9BB1 /* WUNBase.m */; };
@@ -203,6 +204,7 @@
 		A330AC821AC3B1F4007C2EE7 /* iAdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iAdViewController.xib; sourceTree = "<group>"; };
 		A330AC871AC3C2FB007C2EE7 /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
 		A330AC881AC3C2FB007C2EE7 /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
+		A3410EB31AC3D2E3001A15C2 /* GameOverViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GameOverViewController~iPad.xib"; sourceTree = "<group>"; };
 		A364EF7719F01D75005EF1D6 /* GameStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStateManager.h; sourceTree = "<group>"; };
 		A364EF7819F01D75005EF1D6 /* GameStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStateManager.m; sourceTree = "<group>"; };
 		A36934091A2CB52B001C9BB1 /* WUNObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUNObstacle.h; sourceTree = "<group>"; };
@@ -603,6 +605,7 @@
 				A3D55A7C1ABB0BB700F2D987 /* GameOverViewController.h */,
 				A3D55A7D1ABB0BB700F2D987 /* GameOverViewController.m */,
 				A3D55A7E1ABB0BB700F2D987 /* GameOverViewController.xib */,
+				A3410EB31AC3D2E3001A15C2 /* GameOverViewController~iPad.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -760,6 +763,7 @@
 				A33074E71AA368C8006054E3 /* Level_15_1.json in Resources */,
 				A33074FA1AA368C8006054E3 /* Level_32_1.json in Resources */,
 				A33074F41AA368C8006054E3 /* Level_27_1.json in Resources */,
+				A3410EB41AC3D2E3001A15C2 /* GameOverViewController~iPad.xib in Resources */,
 				A33074F11AA368C8006054E3 /* Level_24_1.json in Resources */,
 				A33074E91AA368C8006054E3 /* Level_17_1.json in Resources */,
 				A3CDD3411AB9A87800AB75B4 /* speaker_off.png in Resources */,

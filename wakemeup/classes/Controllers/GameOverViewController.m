@@ -59,7 +59,7 @@
 -(void)setBestScore:(NSInteger)bestScore
 {
     _bestScore = bestScore;
-    self.bestScoreLabel.text = [NSString stringWithFormat:@"%d",bestScore];
+    self.bestScoreLabel.text = [NSString stringWithFormat:@"%ld",(long)bestScore];
 }
 
 - (void)didReceiveMemoryWarning {
