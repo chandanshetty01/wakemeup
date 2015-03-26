@@ -13,5 +13,6 @@
 +(NSDictionary *)loadJSON:(NSString *)filename;
 +(NSInteger)saveJSON:(NSDictionary*)dictionary fileName:(NSString*)fileName;
 +(NSData*)JSONdataForFileName:(NSString*)filename;
++(CGSize)tileSize;
 
 @end

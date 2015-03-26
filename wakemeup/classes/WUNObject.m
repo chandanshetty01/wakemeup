@@ -7,6 +7,7 @@
 //
 
 #import "WUNObject.h"
+#import "Utility.h"
 
 @implementation WUNObject
 
@@ -36,7 +37,7 @@
 {
     _status = status;
     if(status == eObjectDead && self.ObjectType == eObjectSmily){
-        self.sprite.size = CGSizeMake(TileWidth-8, TileHeight-8);
+        self.sprite.size = CGSizeMake([Utility tileSize].width-8,[Utility tileSize].height-8);
         self.sprite.texture = [SKTexture textureWithImageNamed:@"circle_fill"];
     }
 }

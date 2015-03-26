@@ -10,9 +10,6 @@
 
 static const NSUInteger NumObjectTypes = 6;
 
-static const CGFloat TileWidth = 40.0f;
-static const CGFloat TileHeight = 40.0f;
-
 typedef enum : NSUInteger {
     eObjectAlive,
     eObjectDead,

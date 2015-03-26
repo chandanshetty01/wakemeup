@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 #import "GameConfigManager.h"
+#import "Utility.h"
 
 static const uint32_t smilyCategory            =  0x1 << 0;
 static const uint32_t wallCategory             =  0x1 << 1;
@@ -35,8 +36,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
     
     self.gameLayer = [SKNode node];
     [self addChild:self.gameLayer];
-    
-    CGPoint layerPosition = CGPointMake(-TileWidth*NumColumns/2, -TileHeight*NumRows/2);
+    CGPoint layerPosition = CGPointMake(-[Utility tileSize].width*NumColumns/2, -[Utility tileSize].height*NumRows/2);
     
     self.tilesLayer = [SKNode node];
     self.tilesLayer.position = layerPosition;
@@ -92,7 +92,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         for (NSInteger column = 0; column < NumColumns; column++) {
             if ([self.level tileAtColumn:column row:row] != nil) {
                 SKSpriteNode *tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"Tile"];
-                tileNode.size = CGSizeMake(TileWidth+1, TileHeight+1);
+                tileNode.size = CGSizeMake([Utility tileSize].width+1, [Utility tileSize].height+1);
                 tileNode.position = [self pointForColumn:column row:row];
                 [self.tilesLayer addChild:tileNode];
             }
@@ -137,7 +137,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
             sprite = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeZero];
         }
         
-        sprite.size = CGSizeMake(TileWidth-4, TileHeight-4);
+        sprite.size = CGSizeMake([Utility tileSize].width-4, [Utility tileSize].height-4);
         sprite.position = [self pointForColumn:object.column row:object.row];
         sprite.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:sprite.size.height/2.0];
         
@@ -174,7 +174,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
 
 - (CGPoint)pointForColumn:(NSInteger)column row:(NSInteger)row
 {
-    return CGPointMake(column*TileWidth + TileWidth/2, row*TileHeight + TileHeight/2);
+    return CGPointMake(column*[Utility tileSize].width + [Utility tileSize].width/2, row*[Utility tileSize].height + [Utility tileSize].height/2);
 }
 
 - (BOOL)convertPoint:(CGPoint)point toColumn:(NSInteger *)column row:(NSInteger *)row
@@ -184,11 +184,11 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
     
     // Is this a valid location within the Objects layer? If yes,
     // calculate the corresponding row and column numbers.
-    if (point.x >= 0 && point.x < NumColumns*TileWidth &&
-        point.y >= 0 && point.y < NumRows*TileHeight) {
+    if (point.x >= 0 && point.x < NumColumns*[Utility tileSize].width &&
+        point.y >= 0 && point.y < NumRows*[Utility tileSize].height) {
         
-        *column = point.x / TileWidth;
-        *row = point.y / TileHeight;
+        *column = point.x / [Utility tileSize].width;
+        *row = point.y / [Utility tileSize].height;
         return YES;
         
     } else {

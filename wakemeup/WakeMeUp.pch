@@ -12,7 +12,6 @@
 #import "Flurry.h"
 
 #define BLUE_COLOR [UIColor colorWithRed:33/255.0f green:100/255.0f blue:220/255.0f alpha:255/255.0f]
-
 #define LEADERBOARD_ID @"MovedLeaderboardID"
 #define APPSTORE_ID 923848734
 

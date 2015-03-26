@@ -64,4 +64,13 @@
     return bytesWritten;
 }
 
++(CGSize)tileSize
+{
+    CGSize tileSize = CGSizeMake(40, 40);
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        tileSize = CGSizeMake(80, 80);
+    }
+    return tileSize;
+}
+
 @end
