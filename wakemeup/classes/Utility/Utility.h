@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MKStoreManager.h"
 
 @interface Utility : NSObject
 
@@ -14,5 +15,6 @@
 +(NSInteger)saveJSON:(NSDictionary*)dictionary fileName:(NSString*)fileName;
 +(NSData*)JSONdataForFileName:(NSString*)filename;
 +(CGSize)tileSize;
++(SKProduct*)productWithID:(NSString*)inID;
 
 @end

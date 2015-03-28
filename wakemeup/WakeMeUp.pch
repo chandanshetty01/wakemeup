@@ -29,6 +29,7 @@
 #define LEADERBOARD_ID @"MovedLeaderboardID"
 #define APPSTORE_ID 923848734
 
+#define REMOVEADS_PRODUCTID @"com.swipeitbaby.removeads"
 //#define DELVELOPMENT
 
 #endif

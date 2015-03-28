@@ -127,6 +127,8 @@
 		A3CDD3411AB9A87800AB75B4 /* speaker_off.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3361AB9A87800AB75B4 /* speaker_off.png */; };
 		A3CDD3421AB9A87800AB75B4 /* tell_a_friend.png in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3371AB9A87800AB75B4 /* tell_a_friend.png */; };
 		A3CDD34F1AB9ABFC00AB75B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3CDD3511AB9ABFC00AB75B4 /* Localizable.strings */; };
+		A3D0A0581AC6315900244AF4 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D0A0571AC6315900244AF4 /* GameKit.framework */; };
+		A3D0A05A1AC6315D00244AF4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D0A0591AC6315D00244AF4 /* StoreKit.framework */; };
 		A3D55A7F1ABB0BB700F2D987 /* GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D55A7D1ABB0BB700F2D987 /* GameOverViewController.m */; };
 		A3D55A801ABB0BB700F2D987 /* GameOverViewController~iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A7E1ABB0BB700F2D987 /* GameOverViewController~iPhone.xib */; };
 		A3D55A821ABB106B00F2D987 /* btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A811ABB106B00F2D987 /* btn_bg.png */; };
@@ -292,6 +294,9 @@
 		A3CDD3361AB9A87800AB75B4 /* speaker_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker_off.png; sourceTree = "<group>"; };
 		A3CDD3371AB9A87800AB75B4 /* tell_a_friend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tell_a_friend.png; sourceTree = "<group>"; };
 		A3CDD3501AB9ABFC00AB75B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A3D0A0571AC6315900244AF4 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		A3D0A0591AC6315D00244AF4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A3D0A05B1AC6316500244AF4 /* wakemeup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = wakemeup.entitlements; sourceTree = "<group>"; };
 		A3D55A7C1ABB0BB700F2D987 /* GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewController.h; sourceTree = "<group>"; };
 		A3D55A7D1ABB0BB700F2D987 /* GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverViewController.m; sourceTree = "<group>"; };
 		A3D55A7E1ABB0BB700F2D987 /* GameOverViewController~iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GameOverViewController~iPhone.xib"; sourceTree = "<group>"; };
@@ -309,9 +314,11 @@
 				A36E84111AC3CF7100581811 /* SystemConfiguration.framework in Frameworks */,
 				A36E83FC1AC3CD5500581811 /* libAppsFlyerLib.a in Frameworks */,
 				A36E84091AC3CD6200581811 /* Crashlytics.framework in Frameworks */,
+				A3D0A05A1AC6315D00244AF4 /* StoreKit.framework in Frameworks */,
 				A36E83FD1AC3CD5500581811 /* FacebookSDK.framework in Frameworks */,
 				A36E84071AC3CD5500581811 /* PushApps.framework in Frameworks */,
 				A36E83FE1AC3CD5500581811 /* libFlurry_5.4.0.a in Frameworks */,
+				A3D0A0581AC6315900244AF4 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +536,8 @@
 		A3CC20A819D6C9520067A847 = {
 			isa = PBXGroup;
 			children = (
+				A3D0A0591AC6315D00244AF4 /* StoreKit.framework */,
+				A3D0A0571AC6315900244AF4 /* GameKit.framework */,
 				A36E84101AC3CF7100581811 /* SystemConfiguration.framework */,
 				A3CC20B319D6C9520067A847 /* wakemeup */,
 				A3CC20B219D6C9520067A847 /* Products */,
@@ -546,6 +555,7 @@
 		A3CC20B319D6C9520067A847 /* wakemeup */ = {
 			isa = PBXGroup;
 			children = (
+				A3D0A05B1AC6316500244AF4 /* wakemeup.entitlements */,
 				A36E83DE1AC3CD5500581811 /* 3rdParty */,
 				A3CC20E319D6E0FB0067A847 /* classes */,
 				A3CC20B819D6C9520067A847 /* AppDelegate.h */,
@@ -720,6 +730,18 @@
 				TargetAttributes = {
 					A3CC20B019D6C9520067A847 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = J3X836PV78;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1016,6 +1038,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = wakemeup/wakemeup.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1037,7 +1062,7 @@
 					"$(PROJECT_DIR)/wakemeup/3rdParty/Flurry",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "186877c0-4e2a-4067-9857-06e00aac00dd";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1046,6 +1071,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = wakemeup/wakemeup.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1071,7 +1099,7 @@
 					"$(PROJECT_DIR)/wakemeup/3rdParty/Flurry",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4c701de7-f79d-4bc9-abe6-064a87f2fcf4";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -17,7 +17,7 @@
                BlueprintIdentifier = "A3CC20B019D6C9520067A847"
                BuildableName = "wakemeup.app"
                BlueprintName = "wakemeup"
-               ReferencedContainer = "container:wakemeup.xcodeproj">
+               ReferencedContainer = "container:WakeMeUp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "A3CC20CE19D6C9520067A847"
                BuildableName = "wakemeupTests.xctest"
                BlueprintName = "wakemeupTests"
-               ReferencedContainer = "container:wakemeup.xcodeproj">
+               ReferencedContainer = "container:WakeMeUp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "A3CC20CE19D6C9520067A847"
                BuildableName = "wakemeupTests.xctest"
                BlueprintName = "wakemeupTests"
-               ReferencedContainer = "container:wakemeup.xcodeproj">
+               ReferencedContainer = "container:WakeMeUp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -59,7 +59,7 @@
             BlueprintIdentifier = "A3CC20B019D6C9520067A847"
             BuildableName = "wakemeup.app"
             BlueprintName = "wakemeup"
-            ReferencedContainer = "container:wakemeup.xcodeproj">
+            ReferencedContainer = "container:WakeMeUp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -72,13 +72,14 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A3CC20B019D6C9520067A847"
             BuildableName = "wakemeup.app"
             BlueprintName = "wakemeup"
-            ReferencedContainer = "container:wakemeup.xcodeproj">
+            ReferencedContainer = "container:WakeMeUp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -90,13 +91,14 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A3CC20B019D6C9520067A847"
             BuildableName = "wakemeup.app"
             BlueprintName = "wakemeup"
-            ReferencedContainer = "container:wakemeup.xcodeproj">
+            ReferencedContainer = "container:WakeMeUp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

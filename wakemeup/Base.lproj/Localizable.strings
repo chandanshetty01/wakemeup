@@ -28,9 +28,18 @@
 "FacebookMsg" = "Completed all levels, dare to beat my score %d #swipeItBaby";
 "MailMsg" = "Completed all levels, dare to beat my score %d #swipeItBaby";
 
+"RemoveAds" = "Remove Ads";
+"RemoveAdsDesc" = "Enjoy the distraction free experience by removing 'Ads' for %@";
+
 "Tutorial_1" = "Swipe on the cirle to start";
 "Tutorial_2" = "Swipe on the circles towards hole";
 "Tutorial_3" = "Swipe left on the circles and fill the holes";
 "Tutorial_4" = "Congrats! watch out the order of filling holes while swipe";
 "Tutorial_5" = "Use white box as a support to fill the hole";
 "Tutorial_6" = "Great! Keep on Swipe! Fill all the holes to play next level";
+
+"ERROR" = "Unknown Error";
+"OK" = "Ok";
+"CANCEL" = "Cancel";
+"BUY" = "Buy";
+"RESTORE" = "Restore";

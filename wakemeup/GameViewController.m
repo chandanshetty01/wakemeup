@@ -16,6 +16,7 @@
 #import "GameOverViewController.h"
 #import "iAdViewController.h"
 #import "GameCenterManager.h"
+#import "MKStoreManager.h"
 
 @interface GameViewController() <iAdViewControllerDelegates>
 
@@ -127,7 +128,7 @@
 -(void)showAdsViewController
 {
     BOOL canShowAds = NO;
-    if(self.levelModel.levelID > 6){
+    if(self.levelModel.levelID > 6 && ![MKStoreManager isFeaturePurchased:REMOVEADS_PRODUCTID]){
         canShowAds = YES;
     }
     
@@ -139,6 +140,7 @@
             }
             self.adViewController = [[iAdViewController alloc] initWithNibName:nil bundle:nil];
             [self.view addSubview:self.adViewController.view];
+            [self addChildViewController:self.adViewController];
             self.adViewController.delegate = self;
             CGRect frame = self.adViewController.view.frame;
             frame.size = CGSizeMake(self.view.frame.size.width, adHeight);
@@ -146,6 +148,15 @@
             frame.origin.y = CGRectGetHeight(self.view.bounds)-CGRectGetHeight(frame);
             self.adViewController.view.frame = frame;
         }
+    }
+}
+
+-(void)removeAdViewController
+{
+    if(self.adViewController){
+        [self.adViewController.view removeFromSuperview];
+        [self.adViewController removeFromParentViewController];
+        self.adViewController = nil;
     }
 }
 
@@ -413,7 +424,7 @@
 
 - (IBAction)handleNoAdsBtnAction:(id)sender
 {
-    
+    [self purchaseALert];
 }
 
 - (IBAction)handleRestartBtnAction:(id)sender
@@ -425,6 +436,93 @@
     self.levelModel.isUnlocked = YES;
     [self performSelector:@selector(loadLevel) withObject:nil afterDelay:0.2];
 }
+
+-(void)purchaseALert
+{
+    NSString *money = @"0.99$";
+    
+    SKProduct *product = [Utility productWithID:REMOVEADS_PRODUCTID];
+    if(product){
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+        [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        [numberFormatter setLocale:product.priceLocale];
+        money = [numberFormatter stringFromNumber:product.price];
+    }
+    
+    NSString *title = NSLocalizedString(@"RemoveAds", "Remove Ads");
+    NSString *desc = NSLocalizedString(@"RemoveAdsDesc", "Enjoy the distraction free experience by removing 'Ads' for %@");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:[NSString stringWithFormat:desc,money]
+                                                   delegate:self
+                                          cancelButtonTitle:NSLocalizedString(@"CANCEL", nil)
+                                          otherButtonTitles:nil];
+    [alert addButtonWithTitle:NSLocalizedString(@"BUY", nil)];
+    [alert addButtonWithTitle:NSLocalizedString(@"RESTORE", nil)];
+    alert.tag = 1;
+    [alert show];
+}
+
+-(void)provideInAppContent
+{
+    if([MKStoreManager isFeaturePurchased:REMOVEADS_PRODUCTID]){
+        [self removeAdViewController];
+    }
+}
+
+-(void)showAlertForError:(NSError*)error
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ERROR",nil)
+                                                    message:[error localizedDescription]
+                                                   delegate:nil
+                                          cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
+
+-(void)purchase
+{
+    [[MKStoreManager sharedManager] buyFeature:REMOVEADS_PRODUCTID
+                                    onComplete:^(NSString* purchasedFeature,
+                                                 NSData* purchasedReceipt,
+                                                 NSArray* availableDownloads)
+     {
+         [Flurry logEvent:@"InApp purchase"];
+         [self provideInAppContent];
+     }
+                                   onCancelled:^
+     {
+         [Flurry logEvent:@"InApp cancelled"];
+     }];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(alertView.tag == 1)
+    {
+        if(buttonIndex == 0){
+            [Flurry logEvent:[NSString stringWithFormat:@"InApp-Cancel-Stage%ld",(long)alertView.tag]];
+            //Cancel
+        }
+        else if(buttonIndex == 2){
+            [Flurry logEvent:[NSString stringWithFormat:@"InApp-Restore-Stage%ld",(long)alertView.tag]];
+            
+            //Restore
+            [[MKStoreManager sharedManager] restorePreviousTransactionsOnComplete:^{
+                [self provideInAppContent];
+            } onError:^(NSError *error) {
+                [self showAlertForError:error];
+            }];
+        }
+        else{
+            //Buy
+            [self purchase];
+        }
+    }
+}
+
+
 
 - (BOOL)shouldAutorotate
 {

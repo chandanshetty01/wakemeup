@@ -78,4 +78,17 @@
     return tileSize;
 }
 
++(SKProduct*)productWithID:(NSString*)inID
+{
+    __block SKProduct *product = nil;
+    NSMutableArray *products = [MKStoreManager sharedManager].purchasableObjects;
+    [products enumerateObjectsUsingBlock:^(SKProduct *obj, NSUInteger idx, BOOL *stop) {
+        if([obj.productIdentifier isEqualToString:inID]){
+            product = obj;
+            *stop = YES;
+        }
+    }];
+    return product;
+}
+
 @end
