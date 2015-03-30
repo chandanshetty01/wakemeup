@@ -15,6 +15,7 @@
 #import "GameStateManager.h"
 #import "GameCenterManager.h"
 #import "SoundManager.h"
+#import "MailComposerManager.h"
 
 @interface LevelSelectionViewController ()
 
@@ -100,10 +101,34 @@
 - (IBAction)handleTellAFriendAction:(id)sender
 {
     [[SoundManager sharedManager] playSound:@"tap" looping:NO];
+    
+    // Fill out the email body text
+    NSString *emailBody = [NSString stringWithFormat:NSLocalizedString(@"TELL_A_FRIEND_MSG", nil),APP_URL];
+    NSString *emailSub = NSLocalizedString(@"TELL_A_FRIEND_TITLE", nil);
+    
+    [[MailComposerManager sharedManager] displayMailComposerSheet:self
+                                                       toRecipients:nil
+                                                       ccRecipients:nil
+                                                     attachmentData:nil
+                                                 attachmentMimeType:nil
+                                                 attachmentFileName:nil
+                                                          emailBody:emailBody
+                                                       emailSubject:emailSub
+                                                         completion:^(NSInteger index) {
+                                                             if(index == 1){
+                                                                 //sent
+                                                                 [Flurry logEvent:@"tellafriend_mailsent"];
+                                                             }
+                                                         }];
 }
 
 - (IBAction)handleRateUsAction:(id)sender
 {
+    [Flurry logEvent:@"rate_us_btn_tap"];
+    
+    NSString *url = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%d",APPSTORE_ID];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    
     [[SoundManager sharedManager] playSound:@"tap" looping:NO];
 }
 

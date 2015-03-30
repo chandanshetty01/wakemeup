@@ -28,6 +28,7 @@
 #define BLUE_COLOR [UIColor colorWithRed:33/255.0f green:100/255.0f blue:220/255.0f alpha:255/255.0f]
 #define LEADERBOARD_ID @"MovedLeaderboardID"
 #define APPSTORE_ID 923848734
+#define APP_URL @"https://itunes.apple.com/app/id923848734"
 
 #define REMOVEADS_PRODUCTID @"com.swipeitbaby.removeads"
 //#define DELVELOPMENT

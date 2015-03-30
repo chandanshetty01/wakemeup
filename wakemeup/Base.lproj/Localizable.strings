@@ -38,6 +38,9 @@
 "Tutorial_5" = "Use white box as a support to fill the hole";
 "Tutorial_6" = "Great! Keep on Swipe! Fill all the holes to play next level";
 
+"TELL_A_FRIEND_MSG" = "Check out our new game 'Swipe It Baby' (%@)!";
+"TELL_A_FRIEND_TITLE" = "Try 'Swipe It Baby' its very addictive!";
+
 "ERROR" = "Unknown Error";
 "OK" = "Ok";
 "CANCEL" = "Cancel";
