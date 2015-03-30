@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <Crashlytics/Crashlytics.h>
 #import "iRate.h"
+#import "AppsFlyerTracker.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface AppDelegate () <iRateDelegate>
 
@@ -32,9 +34,17 @@
     
     [iRate sharedInstance].delegate = self;
     [iRate sharedInstance].appStoreID = APPSTORE_ID;
-    
+    [self setUpAppsFlyer:uniqueIdentifier];
+
     // Override point for customization after application launch.
     return YES;
+}
+
+-(void)setUpAppsFlyer:(NSString*)userID
+{
+    [AppsFlyerTracker sharedTracker].appleAppID = [NSString stringWithFormat:@"%d",APPSTORE_ID];
+    [AppsFlyerTracker sharedTracker].appsFlyerDevKey = @"qGjii8LerKTNTiLyprmCo";
+    [AppsFlyerTracker sharedTracker].customerUserID = userID;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -51,8 +61,13 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    // track launch - It's VERY important that this code will be located in the applicationDidBecomeActive of your app delegate!
+    [[AppsFlyerTracker sharedTracker] trackAppLaunch]; //***** THIS LINE IS MANDATORY *****
+    
+//   [FBSettings setDefaultAppID:FACEBOOK_ID];
+//   [FBAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
