@@ -19,6 +19,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSString *versionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey];
+    [Flurry setAppVersion:versionString];
+    [Flurry startSession:FLURRY_ID];
+    
+    CFUUIDRef uuid = CFUUIDCreate(NULL);
+    NSString *uniqueIdentifier = ( NSString*)CFBridgingRelease(CFUUIDCreateString(NULL, uuid));// for ARC
+    CFRelease(uuid);
+    [Flurry setUserID:uniqueIdentifier];
+    
     [Crashlytics startWithAPIKey:@"ef1df6810a8ae85dc6971ad31a2311a71214d012"];
     
     [iRate sharedInstance].delegate = self;

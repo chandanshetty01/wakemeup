@@ -100,6 +100,8 @@
 
 - (IBAction)handleTellAFriendAction:(id)sender
 {
+    [Flurry logEvent:@"tell_a_friend"];
+
     [[SoundManager sharedManager] playSound:@"tap" looping:NO];
     
     // Fill out the email body text

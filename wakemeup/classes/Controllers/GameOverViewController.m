@@ -54,6 +54,8 @@
 
     self.congratsMsgLabel.text = NSLocalizedString(@"CongratsMsg", "Great! All levels Completed");
     self.bestScore = 0;
+    
+    [Flurry logEvent:@"all_levels_completed"];
 }
 
 -(void)setBestScore:(NSInteger)bestScore
@@ -69,6 +71,8 @@
 
 - (IBAction)gameCenterbtnAction:(id)sender
 {
+    [Flurry logEvent:@"gameover_gameCenter"];
+
     if([GameCenterManager sharedManager].gameCenterEnabled){
         [[GameCenterManager sharedManager] showLeaderboard:LEADERBOARD_ID inController:self];
     }
@@ -79,6 +83,8 @@
 
 - (IBAction)allLevelsBtnAction:(id)sender
 {
+    [Flurry logEvent:@"gameover_allLevels"];
+
     if(self.delegate && [self.delegate respondsToSelector:@selector(gameOverDidDismissWithBackButton)]){
         [self.delegate gameOverDidDismissWithBackButton];
     }
@@ -86,6 +92,8 @@
 
 - (IBAction)shareBtnAction:(UIView*)sender
 {
+    [Flurry logEvent:@"gameOver_share"];
+
     CustomActivityProvider *activityProvider = [[CustomActivityProvider alloc] init];
     activityProvider.totalMoves = self.bestScore;
     NSArray *items = @[activityProvider];
@@ -123,6 +131,8 @@
 
 - (IBAction)playAgainBtnAction:(id)sender
 {
+    [Flurry logEvent:@"gameOver_PlayAgain"];
+
     if(self.delegate && [self.delegate respondsToSelector:@selector(gameOverDidDismissWithPlayAgain)]){
         [self.delegate gameOverDidDismissWithPlayAgain];
     }

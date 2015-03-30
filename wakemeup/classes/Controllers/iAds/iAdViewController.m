@@ -49,21 +49,22 @@
 {
     NSDictionary *dictionay = [NSMutableDictionary dictionary];
     [dictionay setValue:string forKey:@"status"];
-    [Flurry logEvent:@"Ads" withParameters:dictionay];
 }
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
-    [self logFlurry:@"adRecieved"];
+    [self logFlurry:@"Ads-Success"];
 }
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
-    [self logFlurry:@"failedToRecieveAd"];
+    [self logFlurry:@"Ads-Failed"];
 }
 
 - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
 {
+    [self logFlurry:@"Ads-Tapped"];
+
     if(self.delegate && [self.delegate respondsToSelector:@selector(bannerViewActionShouldBegin:willLeaveApplication:)])
         return [self.delegate bannerViewActionShouldBegin:banner willLeaveApplication:willLeave];
     return YES;

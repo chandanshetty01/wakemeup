@@ -114,7 +114,6 @@
     [self handleTestMode];
     
     [[SoundManager sharedManager] playMusic:@"1_music"];
-
 }
 
 -(void)updateTutorial
@@ -502,12 +501,12 @@
                                                  NSData* purchasedReceipt,
                                                  NSArray* availableDownloads)
      {
-         [Flurry logEvent:@"InApp purchase"];
+         [Flurry logEvent:@"InApp-Success"];
          [self provideInAppContent];
      }
                                    onCancelled:^
      {
-         [Flurry logEvent:@"InApp cancelled"];
+         [Flurry logEvent:@"InApp-Cancelled"];
      }];
 }
 
@@ -518,11 +517,11 @@
     if(alertView.tag == 1)
     {
         if(buttonIndex == 0){
-            [Flurry logEvent:[NSString stringWithFormat:@"InApp-Cancel-Stage%ld",(long)alertView.tag]];
+            [Flurry logEvent:@"InApp-Cancel"];
             //Cancel
         }
         else if(buttonIndex == 2){
-            [Flurry logEvent:[NSString stringWithFormat:@"InApp-Restore-Stage%ld",(long)alertView.tag]];
+            [Flurry logEvent:@"InApp-Restore"];
             
             //Restore
             [[MKStoreManager sharedManager] restorePreviousTransactionsOnComplete:^{
@@ -537,8 +536,6 @@
         }
     }
 }
-
-
 
 - (BOOL)shouldAutorotate
 {

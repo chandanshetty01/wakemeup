@@ -33,4 +33,10 @@
 #define REMOVEADS_PRODUCTID @"com.swipeitbaby.removeads"
 //#define DELVELOPMENT
 
+#ifdef DEBUG
+#define FLURRY_ID @"FBS5H6CDM7VM7BQD6Y44"
+#else
+#define FLURRY_ID @"452JQM6WR3R8TKFYDTBX"
+#endif
+
 #endif
