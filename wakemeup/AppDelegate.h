@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Crashlytics/Crashlytics.h>
+#import "iRate.h"
+#import "AppsFlyerTracker.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import <PushApps/PushApps.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,iRateDelegate,PushAppsDelegate,AppsFlyerTrackerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

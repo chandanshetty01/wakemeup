@@ -7,10 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <Crashlytics/Crashlytics.h>
-#import "iRate.h"
-#import "AppsFlyerTracker.h"
-#import <FacebookSDK/FacebookSDK.h>
+
 
 @interface AppDelegate () <iRateDelegate>
 
@@ -30,6 +27,7 @@
     CFRelease(uuid);
     [Flurry setUserID:uniqueIdentifier];
     
+    [[PushAppsManager sharedInstance] startPushAppsWithAppToken:@"58895e19-2f7f-4250-8b88-21bdb8a5a258" withLaunchOptions:launchOptions];
     [Crashlytics startWithAPIKey:@"ef1df6810a8ae85dc6971ad31a2311a71214d012"];
     
     [iRate sharedInstance].delegate = self;
@@ -47,17 +45,53 @@
     [AppsFlyerTracker sharedTracker].customerUserID = userID;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {
+#pragma - Push notification -
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // Notify PushApps of a successful registration.
+    [[PushAppsManager sharedInstance] updatePushToken:deviceToken];
+}
+
+// Gets called when a remote notification is received while app is in the foreground.
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [[PushAppsManager sharedInstance] handlePushMessageOnForeground:userInfo];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    // keeps you up to date with any errors during push setup.
+    [[PushAppsManager sharedInstance] updatePushError:error];
+}
+
+#pragma mark - PushAppsDelegate
+
+- (void)pushApps:(PushAppsManager *)manager didReceiveRemoteNotification:(NSDictionary *)pushNotification whileInForeground:(BOOL)inForeground
+{
+    //handle push notification
+}
+
+- (void)pushApps:(PushAppsManager *)manager didUpdateUserToken:(NSString *)pushToken
+{
+    //handle push notification
+}
+
+
+- (void)applicationWillResignActive:(UIApplication *)application
+{
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [[PushAppsManager sharedInstance] clearApplicationBadge];
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
