@@ -135,6 +135,15 @@
 		A3D55A851ABB18C700F2D987 /* crown.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A831ABB18C700F2D987 /* crown.png */; };
 		A3D55A861ABB18C700F2D987 /* crown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A841ABB18C700F2D987 /* crown@2x.png */; };
 		A3D55A881ABB1ECF00F2D987 /* round_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A871ABB1ECF00F2D987 /* round_bg.png */; };
+		A3D628A91AC97E6000A78C01 /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D628A81AC97E6000A78C01 /* SoundManager.m */; };
+		A3D628B11AC97E6700A78C01 /* hole.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628AB1AC97E6700A78C01 /* hole.wav */; };
+		A3D628B21AC97E6700A78C01 /* success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A3D628AC1AC97E6700A78C01 /* success.mp3 */; };
+		A3D628B31AC97E6700A78C01 /* swipe.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628AD1AC97E6700A78C01 /* swipe.wav */; };
+		A3D628B41AC97E6700A78C01 /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628AE1AC97E6700A78C01 /* tap.wav */; };
+		A3D628B51AC97E6700A78C01 /* wall.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628AF1AC97E6700A78C01 /* wall.wav */; };
+		A3D628B61AC97E6700A78C01 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628B01AC97E6700A78C01 /* wrong.wav */; };
+		A3D628B91AC9816A00A78C01 /* 1_music.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628B71AC9816A00A78C01 /* 1_music.wav */; };
+		A3D628BA1AC9816A00A78C01 /* 1_whistle_music.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628B81AC9816A00A78C01 /* 1_whistle_music.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -304,6 +313,16 @@
 		A3D55A831ABB18C700F2D987 /* crown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crown.png; sourceTree = "<group>"; };
 		A3D55A841ABB18C700F2D987 /* crown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crown@2x.png"; sourceTree = "<group>"; };
 		A3D55A871ABB1ECF00F2D987 /* round_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = round_bg.png; sourceTree = "<group>"; };
+		A3D628A71AC97E6000A78C01 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		A3D628A81AC97E6000A78C01 /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
+		A3D628AB1AC97E6700A78C01 /* hole.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hole.wav; sourceTree = "<group>"; };
+		A3D628AC1AC97E6700A78C01 /* success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success.mp3; sourceTree = "<group>"; };
+		A3D628AD1AC97E6700A78C01 /* swipe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = swipe.wav; sourceTree = "<group>"; };
+		A3D628AE1AC97E6700A78C01 /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tap.wav; sourceTree = "<group>"; };
+		A3D628AF1AC97E6700A78C01 /* wall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wall.wav; sourceTree = "<group>"; };
+		A3D628B01AC97E6700A78C01 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
+		A3D628B71AC9816A00A78C01 /* 1_music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1_music.wav; sourceTree = "<group>"; };
+		A3D628B81AC9816A00A78C01 /* 1_whistle_music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1_whistle_music.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -573,6 +592,7 @@
 		A3CC20B419D6C9520067A847 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A3D628AA1AC97E6700A78C01 /* Sounds */,
 				A3CDD32B1AB9A87800AB75B4 /* images */,
 				A33074AA1AA368C7006054E3 /* Levels */,
 				A3CC210919DAF7410067A847 /* Sprites.atlas */,
@@ -588,6 +608,7 @@
 		A3CC20E319D6E0FB0067A847 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				A3D628A61AC97E6000A78C01 /* Sound */,
 				A3CC20E419D6E0FB0067A847 /* Controllers */,
 				A3CC20E519D6E0FB0067A847 /* Datasource */,
 				A3CC20E919D6E0FB0067A847 /* Utility */,
@@ -698,6 +719,30 @@
 			path = buttons;
 			sourceTree = "<group>";
 		};
+		A3D628A61AC97E6000A78C01 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				A3D628A71AC97E6000A78C01 /* SoundManager.h */,
+				A3D628A81AC97E6000A78C01 /* SoundManager.m */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		A3D628AA1AC97E6700A78C01 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A3D628B71AC9816A00A78C01 /* 1_music.wav */,
+				A3D628B81AC9816A00A78C01 /* 1_whistle_music.wav */,
+				A3D628AB1AC97E6700A78C01 /* hole.wav */,
+				A3D628AC1AC97E6700A78C01 /* success.mp3 */,
+				A3D628AD1AC97E6700A78C01 /* swipe.wav */,
+				A3D628AE1AC97E6700A78C01 /* tap.wav */,
+				A3D628AF1AC97E6700A78C01 /* wall.wav */,
+				A3D628B01AC97E6700A78C01 /* wrong.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -781,14 +826,17 @@
 				A33074FD1AA368C8006054E3 /* Level_35_1.json in Resources */,
 				A3CDD33F1AB9A87800AB75B4 /* refresh.png in Resources */,
 				A33075211AA36923006054E3 /* Level_57_1.json in Resources */,
+				A3D628B11AC97E6700A78C01 /* hole.wav in Resources */,
 				A3C891A719E428D500A12D36 /* stage_1.json in Resources */,
 				A33074E71AA368C8006054E3 /* Level_15_1.json in Resources */,
 				A33074FA1AA368C8006054E3 /* Level_32_1.json in Resources */,
 				A33074F41AA368C8006054E3 /* Level_27_1.json in Resources */,
+				A3D628B61AC97E6700A78C01 /* wrong.wav in Resources */,
 				A3410EB41AC3D2E3001A15C2 /* GameOverViewController~iPad.xib in Resources */,
 				A33074F11AA368C8006054E3 /* Level_24_1.json in Resources */,
 				A33074E91AA368C8006054E3 /* Level_17_1.json in Resources */,
 				A3CDD3411AB9A87800AB75B4 /* speaker_off.png in Resources */,
+				A3D628B91AC9816A00A78C01 /* 1_music.wav in Resources */,
 				A33074FB1AA368C8006054E3 /* Level_33_1.json in Resources */,
 				A33074E21AA368C7006054E3 /* Level_10_1.json in Resources */,
 				A33074F81AA368C8006054E3 /* Level_30_1.json in Resources */,
@@ -815,6 +863,7 @@
 				A33075001AA368C8006054E3 /* Level_38_1.json in Resources */,
 				A33075111AA368C8006054E3 /* Level_53_1.json in Resources */,
 				A330750E1AA368C8006054E3 /* Level_50_1.json in Resources */,
+				A3D628B51AC97E6700A78C01 /* wall.wav in Resources */,
 				A33074ED1AA368C8006054E3 /* Level_20_1.json in Resources */,
 				A33075051AA368C8006054E3 /* Level_42_1.json in Resources */,
 				A3CDD33A1AB9A87800AB75B4 /* game_center.png in Resources */,
@@ -835,9 +884,11 @@
 				A33075091AA368C8006054E3 /* Level_46_1.json in Resources */,
 				A330750C1AA368C8006054E3 /* Level_49_1.json in Resources */,
 				A33074F21AA368C8006054E3 /* Level_25_1.json in Resources */,
+				A3D628B41AC97E6700A78C01 /* tap.wav in Resources */,
 				A33074E41AA368C8006054E3 /* Level_12_1.json in Resources */,
 				A3CDD34F1AB9ABFC00AB75B4 /* Localizable.strings in Resources */,
 				A33074E61AA368C8006054E3 /* Level_14_1.json in Resources */,
+				A3D628B31AC97E6700A78C01 /* swipe.wav in Resources */,
 				A3CDD3401AB9A87800AB75B4 /* speakar_on.png in Resources */,
 				A3CDD33B1AB9A87800AB75B4 /* how_to_play.png in Resources */,
 				A33074EC1AA368C8006054E3 /* Level_1_1.json in Resources */,
@@ -849,6 +900,7 @@
 				A36E840E1AC3CDE900581811 /* iRate.bundle in Resources */,
 				A33074EB1AA368C8006054E3 /* Level_19_1.json in Resources */,
 				A3D55A821ABB106B00F2D987 /* btn_bg.png in Resources */,
+				A3D628B21AC97E6700A78C01 /* success.mp3 in Resources */,
 				A33074FE1AA368C8006054E3 /* Level_36_1.json in Resources */,
 				A33075181AA368C8006054E3 /* Level_9_1.json in Resources */,
 				A33074F51AA368C8006054E3 /* Level_28_1.json in Resources */,
@@ -856,6 +908,7 @@
 				A330AC851AC3B1F4007C2EE7 /* iAdViewController.xib in Resources */,
 				A33075011AA368C8006054E3 /* Level_39_1.json in Resources */,
 				A33075081AA368C8006054E3 /* Level_45_1.json in Resources */,
+				A3D628BA1AC9816A00A78C01 /* 1_whistle_music.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -904,6 +957,7 @@
 				A3C891AD19E42A5D00A12D36 /* LevelSelectionViewController.m in Sources */,
 				A36E84041AC3CD5500581811 /* MKStoreManager.m in Sources */,
 				A330AC831AC3B1F4007C2EE7 /* CustomActivityProvider.m in Sources */,
+				A3D628A91AC97E6000A78C01 /* SoundManager.m in Sources */,
 				A3C891B619E42FDD00A12D36 /* WUNLevelModel.m in Sources */,
 				A3C891B019E42DD200A12D36 /* CustomCollectionViewCell.m in Sources */,
 				A36E840F1AC3CDE900581811 /* iRate.m in Sources */,

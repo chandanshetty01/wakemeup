@@ -9,6 +9,7 @@
 #import "GameScene.h"
 #import "GameConfigManager.h"
 #import "Utility.h"
+#import "SoundManager.h"
 
 static const uint32_t smilyCategory            =  0x1 << 0;
 static const uint32_t wallCategory             =  0x1 << 1;
@@ -222,7 +223,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
     
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self.smileysLayer];
-    
+
     NSInteger column, row;
     if ([self convertPoint:location toColumn:&column row:&row]) {
         NSInteger horzDelta = 0, vertDelta = 0;
@@ -237,6 +238,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         }
         
         if (horzDelta != 0 || vertDelta != 0) {
+            [[SoundManager sharedManager] playSound:@"swipe" looping:NO];
             [self trySwapHorizontal:horzDelta vertical:vertDelta];
             [self hideSelectionIndicator];
             self.swipeFromColumn = NSNotFound;
@@ -322,6 +324,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         toPoint = CGPointMake(currentObject.column, currentObject.row);
     }
     __block EObjectStatus status = eObjectGone;
+    __block WUNObject *nextObject = nil;
 
     if(self.isDevelopmentMode){
         toPoint = CGPointMake(toColumn+horzDelta, toRow+vertDelta);
@@ -333,7 +336,6 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
             EObjectType objectType = eObjectNone;
             
             NSMutableArray *objects = [self.level objectAtColumn:point.x row:point.y];
-            __block WUNObject *nextObject = nil;
             if(objects.count == 1){
                 nextObject = [objects objectAtIndex:0];
             }
@@ -353,6 +355,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
             
             switch (objectType) {
                 case eObjectWall:{
+
                     toPoint = CGPointMake(point.x-horzDelta, point.y-vertDelta);
                     *stop = YES;
                     status = eObjectAlive;
@@ -381,10 +384,10 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         }
     }
 
-    [self moveObjectToPoint:currentObject point:toPoint status:status];
+    [self moveObjectToPoint:currentObject point:toPoint status:status nextObject:nextObject];
 }
 
--(void)moveObjectToPoint:(WUNObject*)object point:(CGPoint)inPoint status:(EObjectStatus)status
+-(void)moveObjectToPoint:(WUNObject*)object point:(CGPoint)inPoint status:(EObjectStatus)status nextObject:(WUNObject*)nextObject
 {
     self.level.levelModel.noOfMoves += 1;
     if(self.updateUI){
@@ -395,6 +398,13 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
     CGPoint point = [self pointForColumn:inPoint.x row:inPoint.y];
     SKAction *action = [SKAction moveTo:point duration:MAX(0.4, 0.1*diff)];
     [object.sprite runAction:action completion:^{
+        
+        if(nextObject.ObjectType == eObjectHole){
+            [[SoundManager sharedManager] playSound:@"hole" looping:NO];
+        }
+        else if(nextObject.ObjectType == eObjectWall){
+            [[SoundManager sharedManager] playSound:@"wall" looping:NO];
+        }
         object.status = status;
         object.column = inPoint.x;
         object.row = inPoint.y;

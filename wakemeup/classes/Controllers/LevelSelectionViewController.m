@@ -14,6 +14,7 @@
 #import "GameViewController.h"
 #import "GameStateManager.h"
 #import "GameCenterManager.h"
+#import "SoundManager.h"
 
 @interface LevelSelectionViewController ()
 
@@ -33,6 +34,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    BOOL isOn = [Utility isSoundEnabled];
+    self.soundOnOf.selected = isOn;
+    
+    isOn = [Utility isMusicEnabled];
+    self.musicOnOff.selected = isOn;
+    
     // Do any additional setup after loading the view.
     [[GameCenterManager sharedManager] authenticateLocalPlayer:self];
 }
@@ -47,6 +55,8 @@
     [[GameStateManager sharedManager] loadGameData];
     [self loadLevels];
     [self.collectionView reloadData];
+    
+    [self playMusic];
 }
 
 -(void)loadLevels
@@ -89,16 +99,18 @@
 
 - (IBAction)handleTellAFriendAction:(id)sender
 {
-    
+    [[SoundManager sharedManager] playSound:@"tap" looping:NO];
 }
 
 - (IBAction)handleRateUsAction:(id)sender
 {
-    
+    [[SoundManager sharedManager] playSound:@"tap" looping:NO];
 }
 
 - (IBAction)handleGameCenterAction:(id)sender
 {
+    [[SoundManager sharedManager] playSound:@"tap" looping:NO];
+    
     if([GameCenterManager sharedManager].gameCenterEnabled){
         [[GameCenterManager sharedManager] showLeaderboard:LEADERBOARD_ID inController:self];
     }
@@ -109,12 +121,34 @@
 
 - (IBAction)handleSoundChangeAction:(UIButton*)sender
 {
+    [[SoundManager sharedManager] playSound:@"tap" looping:NO];
     sender.selected = !sender.selected;
+    [Utility setSoundEnabled:sender.selected];
 }
 
 - (IBAction)handleMusicChangeAction:(UIButton*)sender
 {
+    [[SoundManager sharedManager] playSound:@"tap" looping:NO];
+
     sender.selected = !sender.selected;
+    [Utility setMusicEnabled:sender.selected];
+    
+    if(sender.selected)
+        [self playMusic];
+    else
+        [self stopMusic];
+}
+
+-(void)playMusic
+{
+    [SoundManager sharedManager].allowsBackgroundMusic = YES;
+    [[SoundManager sharedManager] prepareToPlay];
+    [[SoundManager sharedManager] playMusic:@"1_whistle_music"];
+}
+
+-(void)stopMusic
+{
+    [[SoundManager sharedManager] stopMusic];
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(UIView*)sender
@@ -122,6 +156,7 @@
     BOOL status = NO; 
     WUNLevelModel *level = [self.levelsArray objectAtIndex:sender.tag];
     if(level.isUnlocked){
+        [[SoundManager sharedManager] playSound:@"tap" looping:NO];
         status = YES;
     }
     return status;

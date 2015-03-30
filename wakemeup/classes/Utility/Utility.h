@@ -17,4 +17,9 @@
 +(CGSize)tileSize;
 +(SKProduct*)productWithID:(NSString*)inID;
 
++(BOOL)isMusicEnabled;
++(void)setMusicEnabled:(BOOL)value;
++(BOOL)isSoundEnabled;
++(void)setSoundEnabled:(BOOL)value;
+
 @end

@@ -17,6 +17,7 @@
 #import "iAdViewController.h"
 #import "GameCenterManager.h"
 #import "MKStoreManager.h"
+#import "SoundManager.h"
 
 @interface GameViewController() <iAdViewControllerDelegates>
 
@@ -111,6 +112,9 @@
     [self handleGameCompletion];
     [self updateUIBlock];
     [self handleTestMode];
+    
+    [[SoundManager sharedManager] playMusic:@"1_music"];
+
 }
 
 -(void)updateTutorial
@@ -386,6 +390,8 @@
         self.level = nil;
         [self saveOldLevel:status];
         if(status == eGameWon){
+            [[SoundManager sharedManager] playSound:@"success" looping:NO];
+
             //Game Won
             self.currentLevel = self.levelModel.levelID+1;
             NSInteger totalLevels = [[GameStateManager sharedManager] getAllLevelsInStage].count;
@@ -397,6 +403,8 @@
             }
         }
         else if(status == eGameOver){
+            [[SoundManager sharedManager] playSound:@"wrong" looping:NO];
+
             //Game lost
             self.levelModel.noOfMoves = 0;
             [self performSelector:@selector(loadLevel) withObject:nil afterDelay:1];
@@ -418,17 +426,23 @@
 
 - (IBAction)handleBackButton:(id)sender
 {
+    [[SoundManager sharedManager] playSound:@"tap" looping:NO];
+
     [self saveLevelData];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)handleNoAdsBtnAction:(id)sender
 {
+    [[SoundManager sharedManager] playSound:@"tap" looping:NO];
+
     [self purchaseALert];
 }
 
 - (IBAction)handleRestartBtnAction:(id)sender
 {
+    [[SoundManager sharedManager] playSound:@"tap" looping:NO];
+
     self.scene.level = nil;
     self.level = nil;
     [self resetLevelData];
@@ -499,6 +513,8 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    [[SoundManager sharedManager] playSound:@"tap" looping:NO];
+
     if(alertView.tag == 1)
     {
         if(buttonIndex == 0){
