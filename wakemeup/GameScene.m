@@ -387,6 +387,36 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
     [self moveObjectToPoint:currentObject point:toPoint status:status nextObject:nextObject];
 }
 
+-(BOOL)isOverlapped:(WUNObject*)object
+{
+    __block BOOL status = FALSE;
+    __block NSInteger count = 0;
+    NSMutableArray *objects = [self.level objectAtColumn:object.column row:object.row];
+    [objects enumerateObjectsUsingBlock:^(WUNObject *obj, NSUInteger idx, BOOL *stop) {
+        if(obj.status == eObjectAlive){
+            count++;
+        }
+        if(count == 2){
+            *stop = YES;
+            status = TRUE;
+        }
+    }];
+
+    return status;
+}
+
+-(void)updateOverlappedObject:(WUNObject*)object
+{
+    if(object.ObjectType == eObjectSmily && object.status == eObjectAlive){
+        if([self isOverlapped:object]){
+            object.sprite.texture = [SKTexture textureWithImageNamed:@"overlap"];
+        }
+        else{
+            object.sprite.texture = [SKTexture textureWithImageNamed:@"sleep_smily"];
+        }
+    }
+}
+
 -(void)moveObjectToPoint:(WUNObject*)object point:(CGPoint)inPoint status:(EObjectStatus)status nextObject:(WUNObject*)nextObject
 {
     self.level.levelModel.noOfMoves += 1;
@@ -398,7 +428,6 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
     CGPoint point = [self pointForColumn:inPoint.x row:inPoint.y];
     SKAction *action = [SKAction moveTo:point duration:MAX(0.4, 0.1*diff)];
     [object.sprite runAction:action completion:^{
-        
         if(nextObject.ObjectType == eObjectHole){
             [[SoundManager sharedManager] playSound:@"hole" looping:NO];
         }
@@ -408,6 +437,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         object.status = status;
         object.column = inPoint.x;
         object.row = inPoint.y;
+        [self updateOverlappedObject:object];
         [self.level bringToFront:object];
         [self performSelector:@selector(checkGameOver) withObject:nil afterDelay:0.5];
     }];

@@ -13,7 +13,7 @@ static const NSUInteger NumObjectTypes = 6;
 typedef enum : NSUInteger {
     eObjectAlive,
     eObjectDead,
-    eObjectGone,
+    eObjectGone
 } EObjectStatus;
 
 typedef enum : NSUInteger {

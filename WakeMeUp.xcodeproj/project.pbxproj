@@ -104,6 +104,9 @@
 		A33649891AC98C09005A498A /* Tile.png in Resources */ = {isa = PBXBuildFile; fileRef = A33649691AC98C09005A498A /* Tile.png */; };
 		A336498A1AC98C09005A498A /* Tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A336496A1AC98C09005A498A /* Tile@2x.png */; };
 		A336498B1AC98C09005A498A /* Tile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A336496B1AC98C09005A498A /* Tile@3x.png */; };
+		A33649901AC98F65005A498A /* overlap@2x copy.png in Resources */ = {isa = PBXBuildFile; fileRef = A336498D1AC98F65005A498A /* overlap@2x copy.png */; };
+		A33649911AC98F65005A498A /* overlap@3x copy.png in Resources */ = {isa = PBXBuildFile; fileRef = A336498E1AC98F65005A498A /* overlap@3x copy.png */; };
+		A33649931AC99177005A498A /* overlap.png in Resources */ = {isa = PBXBuildFile; fileRef = A33649921AC99177005A498A /* overlap.png */; };
 		A3410EB41AC3D2E3001A15C2 /* GameOverViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3410EB31AC3D2E3001A15C2 /* GameOverViewController~iPad.xib */; };
 		A364EF7919F01D75005EF1D6 /* GameStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A364EF7819F01D75005EF1D6 /* GameStateManager.m */; };
 		A369340B1A2CB52B001C9BB1 /* WUNObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = A369340A1A2CB52B001C9BB1 /* WUNObstacle.m */; };
@@ -263,6 +266,9 @@
 		A33649691AC98C09005A498A /* Tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tile.png; sourceTree = "<group>"; };
 		A336496A1AC98C09005A498A /* Tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile@2x.png"; sourceTree = "<group>"; };
 		A336496B1AC98C09005A498A /* Tile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile@3x.png"; sourceTree = "<group>"; };
+		A336498D1AC98F65005A498A /* overlap@2x copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overlap@2x copy.png"; sourceTree = "<group>"; };
+		A336498E1AC98F65005A498A /* overlap@3x copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overlap@3x copy.png"; sourceTree = "<group>"; };
+		A33649921AC99177005A498A /* overlap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlap.png; sourceTree = "<group>"; };
 		A3410EB31AC3D2E3001A15C2 /* GameOverViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GameOverViewController~iPad.xib"; sourceTree = "<group>"; };
 		A364EF7719F01D75005EF1D6 /* GameStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStateManager.h; sourceTree = "<group>"; };
 		A364EF7819F01D75005EF1D6 /* GameStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStateManager.m; sourceTree = "<group>"; };
@@ -474,6 +480,9 @@
 		A336494B1AC98C08005A498A /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A33649921AC99177005A498A /* overlap.png */,
+				A336498D1AC98F65005A498A /* overlap@2x copy.png */,
+				A336498E1AC98F65005A498A /* overlap@3x copy.png */,
 				A336494C1AC98C08005A498A /* back_to_home.png */,
 				A336494D1AC98C08005A498A /* btn_bg.png */,
 				A336494E1AC98C08005A498A /* circle.png */,
@@ -862,6 +871,7 @@
 				A33074E51AA368C8006054E3 /* Level_13_1.json in Resources */,
 				A33075021AA368C8006054E3 /* Level_3_1.json in Resources */,
 				A330750A1AA368C8006054E3 /* Level_47_1.json in Resources */,
+				A33649931AC99177005A498A /* overlap.png in Resources */,
 				A33074F31AA368C8006054E3 /* Level_26_1.json in Resources */,
 				A33074FD1AA368C8006054E3 /* Level_35_1.json in Resources */,
 				A33649711AC98C09005A498A /* circle_fill.png in Resources */,
@@ -888,6 +898,7 @@
 				A33649721AC98C09005A498A /* circle_fill@2x.png in Resources */,
 				A33649791AC98C09005A498A /* game_center@3x.png in Resources */,
 				A3CC20BF19D6C9520067A847 /* GameScene.sks in Resources */,
+				A33649901AC98F65005A498A /* overlap@2x copy.png in Resources */,
 				A33075221AA36923006054E3 /* Level_58_1.json in Resources */,
 				A33074FF1AA368C8006054E3 /* Level_37_1.json in Resources */,
 				A33075061AA368C8006054E3 /* Level_43_1.json in Resources */,
@@ -956,6 +967,7 @@
 				A33074EB1AA368C8006054E3 /* Level_19_1.json in Resources */,
 				A3D628B21AC97E6700A78C01 /* success.mp3 in Resources */,
 				A33074FE1AA368C8006054E3 /* Level_36_1.json in Resources */,
+				A33649911AC98F65005A498A /* overlap@3x copy.png in Resources */,
 				A33075181AA368C8006054E3 /* Level_9_1.json in Resources */,
 				A33649761AC98C09005A498A /* exit.png in Resources */,
 				A33074F51AA368C8006054E3 /* Level_28_1.json in Resources */,
