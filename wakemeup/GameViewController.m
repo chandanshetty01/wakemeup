@@ -131,11 +131,14 @@
 -(void)showAdsViewController
 {
     BOOL canShowAds = NO;
+    //self.noAdsButton.hidden = YES;
+
     if(self.levelModel.levelID > 6 && ![MKStoreManager isFeaturePurchased:REMOVEADS_PRODUCTID]){
         canShowAds = YES;
     }
     
     if(canShowAds){
+        //self.noAdsButton.hidden = NO;
         if(!self.adViewController){
             CGFloat adHeight = 50;
             if (IS_IPAD){
@@ -157,6 +160,7 @@
 -(void)removeAdViewController
 {
     if(self.adViewController){
+        //self.noAdsButton.hidden = YES;
         [self.adViewController.view removeFromSuperview];
         [self.adViewController removeFromParentViewController];
         self.adViewController = nil;
