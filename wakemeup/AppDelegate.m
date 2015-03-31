@@ -45,7 +45,18 @@
     [AppsFlyerTracker sharedTracker].customerUserID = userID;
 }
 
-#pragma - Push notification -
+#ifdef __IPHONE_8_0
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    [[PushAppsManager sharedInstance] didRegisterUserNotificationSettings:notificationSettings];
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void(^)())completionHandler
+{
+    [[PushAppsManager sharedInstance] handleActionWithIdentifier:identifier forRemoteNotification:userInfo
+                                               completionHandler:completionHandler];
+}
+#endif
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     // Notify PushApps of a successful registration.
@@ -63,19 +74,6 @@
     // keeps you up to date with any errors during push setup.
     [[PushAppsManager sharedInstance] updatePushError:error];
 }
-
-#pragma mark - PushAppsDelegate
-
-- (void)pushApps:(PushAppsManager *)manager didReceiveRemoteNotification:(NSDictionary *)pushNotification whileInForeground:(BOOL)inForeground
-{
-    //handle push notification
-}
-
-- (void)pushApps:(PushAppsManager *)manager didUpdateUserToken:(NSString *)pushToken
-{
-    //handle push notification
-}
-
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

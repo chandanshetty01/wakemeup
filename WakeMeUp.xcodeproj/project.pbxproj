@@ -1253,7 +1253,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = wakemeup/wakemeup.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1276,7 +1276,7 @@
 					"$(PROJECT_DIR)/wakemeup/3rdParty/Flurry",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b42c52c5-b761-43b2-950c-c3936f9489a0";
+				PROVISIONING_PROFILE = "aed93cdc-a4b6-4df1-bae6-ebfa8c1321c2";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1286,7 +1286,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = wakemeup/wakemeup.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1313,7 +1313,7 @@
 					"$(PROJECT_DIR)/wakemeup/3rdParty/Flurry",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c97de147-2368-4c6a-8829-bd903a83966c";
+				PROVISIONING_PROFILE = "835ffb4e-78ce-44e9-bbcd-29033e91c7a1";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
