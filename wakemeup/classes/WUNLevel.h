@@ -39,4 +39,6 @@ typedef enum : NSUInteger {
 - (EGAMESTATUS)isGameOver;
 - (void)bringToFront:(WUNObject*)object;
 - (WUNObstacle*)createObstacle:(NSDictionary*)data;
+
+-(void)removeAllObjects;
 @end

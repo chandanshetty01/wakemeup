@@ -32,7 +32,6 @@
         self.obstacles = [NSMutableArray array];
         
         self.levelModel = levelModel;
-        
         for(int column = 0; column < NumColumns ; column++){
             for (int row = 0; row < NumRows; row++) {
                     NSInteger tileRow = NumRows - row - 1;
@@ -140,6 +139,11 @@
         [self.objects addObject:object];
     }
     return object;
+}
+
+-(void)removeAllObjects
+{
+    [self.objects removeAllObjects];
 }
 
 -(void)removeObjectFromList:(WUNObject*)object

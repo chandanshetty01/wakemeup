@@ -55,7 +55,7 @@
 
 - (void)dealloc
 {
-    [_sprite removeFromParent];
+    [self.sprite removeFromParent];
 }
 
 @end

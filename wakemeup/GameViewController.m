@@ -427,13 +427,19 @@
     [self.scene addSpritesForObjects:newObjects];
 }
 
+-(void)removeScene
+{
+    [self.scene.level removeAllObjects];
+    self.scene.updateUI = nil;
+    self.scene.gameCompletion = nil;
+}
+
 - (IBAction)handleBackButton:(id)sender
 {
     [[SoundManager sharedManager] playSound:@"tap" looping:NO];
     
     [self saveLevelData];
-    self.scene.updateUI = nil;
-    self.scene.gameCompletion = nil;
+    [self removeScene];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -588,7 +594,7 @@
 
 - (void)dealloc
 {
-    
+    self.scene = nil;
 }
 
 - (BOOL)prefersStatusBarHidden {

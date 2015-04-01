@@ -471,6 +471,11 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
     self.selectionSprite.alpha = 1.0;
 }
 
+- (void)dealloc
+{
+   
+}
+
 - (void)hideSelectionIndicator {
     [self.selectionSprite runAction:[SKAction sequence:@[
                                                          [SKAction fadeOutWithDuration:0.3],
