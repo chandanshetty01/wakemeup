@@ -430,8 +430,10 @@
 - (IBAction)handleBackButton:(id)sender
 {
     [[SoundManager sharedManager] playSound:@"tap" looping:NO];
-
+    
     [self saveLevelData];
+    self.scene.updateUI = nil;
+    self.scene.gameCompletion = nil;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -578,14 +580,15 @@
     [self resumeGame];
 }
 
-- (void)dealloc
-{
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+}
+
+- (void)dealloc
+{
+    
 }
 
 - (BOOL)prefersStatusBarHidden {
