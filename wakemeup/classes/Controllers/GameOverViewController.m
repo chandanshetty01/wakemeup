@@ -113,20 +113,19 @@
     activityView.popoverPresentationController.sourceView = sender;
     activityView.popoverPresentationController.sourceRect = sender.bounds;
     [self presentViewController:activityView animated:YES completion:nil];
-    [activityView setCompletionHandler:^(NSString *act, BOOL done)
-     {
-         NSString *ServiceMsg = nil;
-         if ( [act isEqualToString:UIActivityTypeMail] ){
-             ServiceMsg = NSLocalizedString(@"MailSentMsg", "Mail sent successfully");
-         }
-         else{
-              ServiceMsg = NSLocalizedString(@"postSentMsg", "Successfully posted");
-         }
-         if ( done ){
-             UIAlertView *Alert = [[UIAlertView alloc] initWithTitle:ServiceMsg message:@"" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-             [Alert show];
-         }
-     }];
+    activityView.completionWithItemsHandler = ^(NSString *act, BOOL done, NSArray *returnedItems, NSError *activityError) {
+        NSString *ServiceMsg = nil;
+        if ( [act isEqualToString:UIActivityTypeMail] ){
+            ServiceMsg = NSLocalizedString(@"MailSentMsg", "Mail sent successfully");
+        }
+        else{
+            ServiceMsg = NSLocalizedString(@"postSentMsg", "Successfully posted");
+        }
+        if ( done && !activityError){
+            UIAlertView *Alert = [[UIAlertView alloc] initWithTitle:ServiceMsg message:@"" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+            [Alert show];
+        }
+    };
 }
 
 - (IBAction)playAgainBtnAction:(id)sender
