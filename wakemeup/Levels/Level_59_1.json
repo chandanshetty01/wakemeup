@@ -1,1 +1,208 @@
-{"tiles":[{"row":2,"status":0,"column":5,"objectType":1}]}
+{
+  "tiles" : [
+    {
+      "row" : 5,
+      "status" : 0,
+      "column" : 0,
+      "objectType" : 1
+    },
+    {
+      "row" : 5,
+      "status" : 0,
+      "column" : 1,
+      "objectType" : 1
+    },
+    {
+      "row" : 5,
+      "status" : 0,
+      "column" : 2,
+      "objectType" : 1
+    },
+    {
+      "row" : 5,
+      "status" : 0,
+      "column" : 5,
+      "objectType" : 1
+    },
+    {
+      "row" : 5,
+      "status" : 0,
+      "column" : 9,
+      "objectType" : 2
+    },
+    {
+      "row" : 5,
+      "status" : 0,
+      "column" : 10,
+      "objectType" : 1
+    },
+    {
+      "row" : 5,
+      "status" : 0,
+      "column" : 11,
+      "objectType" : 1
+    },
+    {
+      "row" : 4,
+      "status" : 0,
+      "column" : 3,
+      "objectType" : 1
+    },
+    {
+      "row" : 4,
+      "status" : 0,
+      "column" : 4,
+      "objectType" : 3
+    },
+    {
+      "row" : 4,
+      "status" : 0,
+      "column" : 5,
+      "objectType" : 1
+    },
+    {
+      "row" : 4,
+      "status" : 0,
+      "column" : 8,
+      "objectType" : 3
+    },
+    {
+      "row" : 4,
+      "status" : 0,
+      "column" : 9,
+      "objectType" : 3
+    },
+    {
+      "row" : 3,
+      "status" : 0,
+      "column" : 3,
+      "objectType" : 3
+    },
+    {
+      "row" : 3,
+      "status" : 0,
+      "column" : 5,
+      "objectType" : 3
+    },
+    {
+      "row" : 3,
+      "status" : 0,
+      "column" : 8,
+      "objectType" : 3
+    },
+    {
+      "row" : 3,
+      "status" : 0,
+      "column" : 9,
+      "objectType" : 3
+    },
+    {
+      "row" : 3,
+      "status" : 0,
+      "column" : 10,
+      "objectType" : 1
+    },
+    {
+      "row" : 2,
+      "status" : 0,
+      "column" : 1,
+      "objectType" : 1
+    },
+    {
+      "row" : 2,
+      "status" : 0,
+      "column" : 2,
+      "objectType" : 3
+    },
+    {
+      "row" : 2,
+      "status" : 0,
+      "column" : 4,
+      "objectType" : 3
+    },
+    {
+      "row" : 2,
+      "status" : 0,
+      "column" : 5,
+      "objectType" : 2
+    },
+    {
+      "row" : 2,
+      "status" : 0,
+      "column" : 6,
+      "objectType" : 3
+    },
+    {
+      "row" : 2,
+      "status" : 0,
+      "column" : 8,
+      "objectType" : 3
+    },
+    {
+      "row" : 1,
+      "status" : 0,
+      "column" : 1,
+      "objectType" : 3
+    },
+    {
+      "row" : 1,
+      "status" : 0,
+      "column" : 4,
+      "objectType" : 1
+    },
+    {
+      "row" : 1,
+      "status" : 0,
+      "column" : 5,
+      "objectType" : 1
+    },
+    {
+      "row" : 1,
+      "status" : 0,
+      "column" : 7,
+      "objectType" : 3
+    },
+    {
+      "row" : 1,
+      "status" : 0,
+      "column" : 8,
+      "objectType" : 3
+    },
+    {
+      "row" : 1,
+      "status" : 0,
+      "column" : 10,
+      "objectType" : 2
+    },
+    {
+      "row" : 0,
+      "status" : 0,
+      "column" : 3,
+      "objectType" : 1
+    },
+    {
+      "row" : 0,
+      "status" : 0,
+      "column" : 5,
+      "objectType" : 1
+    },
+    {
+      "row" : 0,
+      "status" : 0,
+      "column" : 6,
+      "objectType" : 2
+    },
+    {
+      "row" : 0,
+      "status" : 0,
+      "column" : 8,
+      "objectType" : 3
+    },
+    {
+      "row" : 0,
+      "status" : 0,
+      "column" : 11,
+      "objectType" : 1
+    }
+  ]
+}

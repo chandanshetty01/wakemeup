@@ -44,6 +44,24 @@
     
     // Do any additional setup after loading the view.
     [[GameCenterManager sharedManager] authenticateLocalPlayer:self];
+    
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGSize size = CGSizeMake(50, 50);
+    if(IS_IPHONE){
+        if(IS_IPHONE_5 || IS_IPHONE_4_OR_LESS){
+            size = CGSizeMake(40, 40);
+        }
+        else if(IS_IPHONE_6P){
+            size = CGSizeMake(60, 60);
+        }
+    }
+    else{
+        size = CGSizeMake(72, 76);
+    }
+    return size;
 }
 
 -(void)viewDidAppear:(BOOL)animated
