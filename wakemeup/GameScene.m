@@ -32,7 +32,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
     /* Setup your scene here */
     
     self.anchorPoint = CGPointMake(0.5, 0.5);
-//    SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithRed:52/255.0f green:146/255.0f blue:233/255.0f alpha:1.0f] size:view.bounds.size];
+//    SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:BLUE_COLOR size:view.bounds.size];
 //    [self addChild:background];
     
     self.gameLayer = [SKNode node];
@@ -133,26 +133,37 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         SKSpriteNode *sprite = nil;
         if(spriteName.length != 0){
             sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteName];
+            if(object.ObjectType == eObjectWall){
+                sprite.color = THEME_RED_COLOR;
+                sprite.colorBlendFactor = 1;
+            }
+            else if(object.ObjectType == eObjectHole){
+                sprite.color = THEME_GREEN_COLOR;
+                sprite.colorBlendFactor = 1;
+            }
         }
         else{
             sprite = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeZero];
         }
         
-        sprite.size = CGSizeMake([Utility tileSize].width-4, [Utility tileSize].height-4);
+        sprite.size = CGSizeMake([Utility tileSize].width-[Utility shrinkSize].width, [Utility tileSize].height-[Utility shrinkSize].height);
         sprite.position = [self pointForColumn:object.column row:object.row];
         sprite.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:sprite.size.height/2.0];
         
         if(object.ObjectType == eObjectSmily){
             sprite.physicsBody.categoryBitMask = smilyCategory;
             sprite.physicsBody.contactTestBitMask = wallCategory;
+            sprite.zPosition = 1;
         }
         else if(object.ObjectType == eObjectHole){
             sprite.physicsBody.categoryBitMask = holeCategory;
             sprite.physicsBody.contactTestBitMask = smilyCategory;
+            sprite.zPosition = -1;
         }
         else if(object.ObjectType == eObjectWall){
             sprite.physicsBody.categoryBitMask = wallCategory;
             sprite.physicsBody.contactTestBitMask = smilyCategory;
+            sprite.zPosition = 0;
         }
         
         sprite.physicsBody.collisionBitMask = 0;
@@ -215,6 +226,21 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
             [self showSelectionIndicatorForObject:object];
         }
     }
+}
+
+-(void)bringObjectTOFront:(WUNObject*)object
+{
+    [self.level bringToFront:object];
+    
+//    NSArray *sprites = [self.smileysLayer children];
+//    [sprites enumerateObjectsUsingBlock:^(SKSpriteNode *obj, NSUInteger idx, BOOL *stop) {
+//        if(obj == object.sprite){
+//            obj.zPosition = 1;
+//        }
+//        else{
+//            obj.zPosition = 0;
+//        }
+//    }];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -424,6 +450,7 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         self.updateUI();
     }
     
+    [self bringObjectTOFront:object];
     NSInteger diff = abs((object.row-inPoint.x)+(object.column-inPoint.y));
     CGPoint point = [self pointForColumn:inPoint.x row:inPoint.y];
     SKAction *action = [SKAction moveTo:point duration:MAX(0.4, 0.1*diff)];
@@ -438,7 +465,6 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         object.column = inPoint.x;
         object.row = inPoint.y;
         [self updateOverlappedObject:object];
-        [self.level bringToFront:object];
         [self performSelector:@selector(checkGameOver) withObject:nil afterDelay:0.5];
     }];
 }

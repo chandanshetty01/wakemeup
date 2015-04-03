@@ -78,6 +78,20 @@
     return tileSize;
 }
 
++(CGSize)shrinkSize
+{
+    CGSize tileSize = CGSizeMake(4, 4);
+    if (IS_IPAD){
+        tileSize = CGSizeMake(10, 10);
+    }
+    else{
+        if(IS_IPHONE_6 || IS_IPHONE_6P){
+            tileSize = CGSizeMake(4, 4);
+        }
+    }
+    return tileSize;
+}
+
 +(SKProduct*)productWithID:(NSString*)inID
 {
     __block SKProduct *product = nil;

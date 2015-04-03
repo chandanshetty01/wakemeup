@@ -8,6 +8,7 @@
 
 #import "WUNObject.h"
 #import "Utility.h"
+#import "UIColorAdditions.h"
 
 @implementation WUNObject
 
@@ -37,8 +38,12 @@
 {
     _status = status;
     if(status == eObjectDead && self.ObjectType == eObjectSmily){
-        self.sprite.size = CGSizeMake([Utility tileSize].width-8,[Utility tileSize].height-8);
+        self.sprite.size = CGSizeMake([Utility tileSize].width-[Utility shrinkSize].width,[Utility tileSize].height-[Utility shrinkSize].height);
         self.sprite.texture = [SKTexture textureWithImageNamed:@"circle_fill"];
+        
+        self.sprite.color = THEME_GREEN_COLOR;
+        self.sprite.colorBlendFactor = 1;
+        self.sprite.zPosition = 0.5;
     }
 }
 

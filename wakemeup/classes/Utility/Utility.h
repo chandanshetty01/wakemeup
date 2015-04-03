@@ -16,6 +16,7 @@
 +(NSData*)JSONdataForFileName:(NSString*)filename;
 +(CGSize)tileSize;
 +(SKProduct*)productWithID:(NSString*)inID;
++(CGSize)shrinkSize;
 
 +(BOOL)isMusicEnabled;
 +(void)setMusicEnabled:(BOOL)value;

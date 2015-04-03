@@ -186,6 +186,7 @@
 		A3D628B61AC97E6700A78C01 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628B01AC97E6700A78C01 /* wrong.wav */; };
 		A3D628B91AC9816A00A78C01 /* 1_music.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628B71AC9816A00A78C01 /* 1_music.wav */; };
 		A3D628BA1AC9816A00A78C01 /* 1_whistle_music.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628B81AC9816A00A78C01 /* 1_whistle_music.wav */; };
+		A3D91FBD1ACEBEAC00EE96C6 /* UIColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FBC1ACEBEAC00EE96C6 /* UIColorAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -407,6 +408,8 @@
 		A3D628B01AC97E6700A78C01 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
 		A3D628B71AC9816A00A78C01 /* 1_music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1_music.wav; sourceTree = "<group>"; };
 		A3D628B81AC9816A00A78C01 /* 1_whistle_music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1_whistle_music.wav; sourceTree = "<group>"; };
+		A3D91FBB1ACEBEAC00EE96C6 /* UIColorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColorAdditions.h; sourceTree = "<group>"; };
+		A3D91FBC1ACEBEAC00EE96C6 /* UIColorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColorAdditions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -742,6 +745,8 @@
 		A3CC20E919D6E0FB0067A847 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				A3D91FBB1ACEBEAC00EE96C6 /* UIColorAdditions.h */,
+				A3D91FBC1ACEBEAC00EE96C6 /* UIColorAdditions.m */,
 				A3C891B119E42F1800A12D36 /* Utility.h */,
 				A3C891B219E42F1800A12D36 /* Utility.m */,
 				A3C891B819E5932400A12D36 /* MailComposerManager.h */,
@@ -1113,6 +1118,7 @@
 				A36F9A4119DD9E6C00419500 /* WUNHole.m in Sources */,
 				A36F9A3B19DD9E4100419500 /* WUNSmily.m in Sources */,
 				A3C891B319E42F1800A12D36 /* Utility.m in Sources */,
+				A3D91FBD1ACEBEAC00EE96C6 /* UIColorAdditions.m in Sources */,
 				A330AC841AC3B1F4007C2EE7 /* iAdViewController.m in Sources */,
 				A3C891AD19E42A5D00A12D36 /* LevelSelectionViewController.m in Sources */,
 				A36E84041AC3CD5500581811 /* MKStoreManager.m in Sources */,
