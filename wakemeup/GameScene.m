@@ -324,8 +324,20 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
     
     EGAMESTATUS status = [self.level isGameOver];
     if(status != eGameRunning){
-        if (self.gameCompletion != nil) {
-            self.gameCompletion(status);
+        
+        if(status == eGameOver){
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                if (self.gameCompletion != nil) {
+                    self.gameCompletion(status);
+                }
+            });
+        }
+        else{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                if (self.gameCompletion != nil) {
+                    self.gameCompletion(status);
+                }
+            });
         }
     }
 }
@@ -465,7 +477,8 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         object.column = inPoint.x;
         object.row = inPoint.y;
         [self updateOverlappedObject:object];
-        [self performSelector:@selector(checkGameOver) withObject:nil afterDelay:0.5];
+        
+        [self checkGameOver];
     }];
 }
 

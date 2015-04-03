@@ -187,6 +187,8 @@
 		A3D628B91AC9816A00A78C01 /* 1_music.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628B71AC9816A00A78C01 /* 1_music.wav */; };
 		A3D628BA1AC9816A00A78C01 /* 1_whistle_music.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628B81AC9816A00A78C01 /* 1_whistle_music.wav */; };
 		A3D91FBD1ACEBEAC00EE96C6 /* UIColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FBC1ACEBEAC00EE96C6 /* UIColorAdditions.m */; };
+		A3D91FC21ACEE9D500EE96C6 /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FC01ACEE9D500EE96C6 /* StatusViewController.m */; };
+		A3D91FC31ACEE9D500EE96C6 /* StatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D91FC11ACEE9D500EE96C6 /* StatusViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -410,6 +412,9 @@
 		A3D628B81AC9816A00A78C01 /* 1_whistle_music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1_whistle_music.wav; sourceTree = "<group>"; };
 		A3D91FBB1ACEBEAC00EE96C6 /* UIColorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColorAdditions.h; sourceTree = "<group>"; };
 		A3D91FBC1ACEBEAC00EE96C6 /* UIColorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColorAdditions.m; sourceTree = "<group>"; };
+		A3D91FBF1ACEE9D500EE96C6 /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
+		A3D91FC01ACEE9D500EE96C6 /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusViewController.m; sourceTree = "<group>"; };
+		A3D91FC11ACEE9D500EE96C6 /* StatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -706,6 +711,7 @@
 		A3CC20E419D6E0FB0067A847 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A3D91FBE1ACEE9B400EE96C6 /* Status */,
 				A330AC861AC3C2FB007C2EE7 /* Game center */,
 				A330AC7C1AC3B1F4007C2EE7 /* Activity */,
 				A330AC7F1AC3B1F4007C2EE7 /* iAds */,
@@ -866,6 +872,17 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		A3D91FBE1ACEE9B400EE96C6 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				A3D91FBF1ACEE9D500EE96C6 /* StatusViewController.h */,
+				A3D91FC01ACEE9D500EE96C6 /* StatusViewController.m */,
+				A3D91FC11ACEE9D500EE96C6 /* StatusViewController.xib */,
+			);
+			name = Status;
+			path = wakemeup/classes/Status;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1006,6 +1023,7 @@
 				A33075151AA368C8006054E3 /* Level_6_1.json in Resources */,
 				A3D163F91ACACC040012EA0B /* exit@2x.png in Resources */,
 				A33074EF1AA368C8006054E3 /* Level_22_1.json in Resources */,
+				A3D91FC31ACEE9D500EE96C6 /* StatusViewController.xib in Resources */,
 				A33075001AA368C8006054E3 /* Level_38_1.json in Resources */,
 				A33075111AA368C8006054E3 /* Level_53_1.json in Resources */,
 				A3D1641C1ACACC040012EA0B /* speaker_off@2x.png in Resources */,
@@ -1135,6 +1153,7 @@
 				A369340E1A2CB6DD001C9BB1 /* WUNBase.m in Sources */,
 				A3CC20FA19DAF3B20067A847 /* WUNTile.m in Sources */,
 				A3CC20FD19DAF5B90067A847 /* WUNSwap.m in Sources */,
+				A3D91FC21ACEE9D500EE96C6 /* StatusViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

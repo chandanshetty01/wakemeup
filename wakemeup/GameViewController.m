@@ -18,6 +18,7 @@
 #import "GameCenterManager.h"
 #import "MKStoreManager.h"
 #import "SoundManager.h"
+#import "StatusViewController.h"
 
 @interface GameViewController() <iAdViewControllerDelegates>
 
@@ -386,6 +387,12 @@
     [self performSelector:@selector(loadLevel) withObject:nil afterDelay:1];
 }
 
+-(void)showStatus
+{
+    StatusViewController *controller = [[StatusViewController alloc] initWithNibName:nil bundle:nil];
+    [controller show:0.7 controller:self];
+}
+
 -(void)handleGameCompletion
 {
     id block = ^(EGAMESTATUS status) {
@@ -406,6 +413,7 @@
             }
         }
         else if(status == eGameOver){
+            [self showStatus];
             [[SoundManager sharedManager] playSound:@"wrong" looping:NO];
 
             //Game lost
