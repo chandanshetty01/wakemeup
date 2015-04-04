@@ -38,6 +38,7 @@
 "RemoveAdsDesc" = "Enjoy the distraction free experience by removing 'Ads' for %@";
 
 "LevelRestartStatus" = "Game Over! \nTry Again";
+"LevelSuccessSatus" = "Congrats! \nLevel %d Completed";
 
 "Tutorial_1" = "Swipe on the circle to start";
 "Tutorial_2" = "Swipe on the circle towards hole";

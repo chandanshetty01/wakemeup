@@ -392,10 +392,21 @@
     [self performSelector:@selector(loadLevel) withObject:nil afterDelay:1];
 }
 
--(void)showStatus
+-(void)showStatus:(EGAMESTATUS)status
 {
-    StatusViewController *controller = [[StatusViewController alloc] initWithNibName:nil bundle:nil];
-    [controller show:0.7 controller:self];
+    if(status == eGameWon){
+        StatusViewController *controller = [[StatusViewController alloc] initWithNibName:nil bundle:nil];
+        NSInteger leveNo = self.currentLevel;
+        if(leveNo == 0){
+            leveNo = 1;
+        }
+        NSString *text = [NSString stringWithFormat:NSLocalizedString(@"LevelSuccessSatus", "Congrats! Level %d Completed"),leveNo];
+        [controller show:0.5 message:text inController:self];
+    }
+    else if(status == eGameOver){
+        StatusViewController *controller = [[StatusViewController alloc] initWithNibName:nil bundle:nil];
+        [controller show:0.7 message: NSLocalizedString(@"LevelRestartStatus", "Level restarted") inController:self];
+    }
 }
 
 -(void)handleGameCompletion
@@ -406,8 +417,8 @@
         [self saveOldLevel:status];
         if(status == eGameWon){
             [[SoundManager sharedManager] playSound:@"success" looping:NO];
-
-            //Game Won
+            [self showStatus:status];
+            
             self.currentLevel = self.levelModel.levelID+1;
             NSInteger totalLevels = [[GameStateManager sharedManager] getAllLevelsInStage].count;
             if(self.currentLevel > totalLevels){
@@ -418,7 +429,7 @@
             }
         }
         else if(status == eGameOver){
-            [self showStatus];
+            [self showStatus:status];
             [[SoundManager sharedManager] playSound:@"wrong" looping:NO];
 
             //Game lost

@@ -20,7 +20,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.statusLabel.text = NSLocalizedString(@"LevelRestartStatus", "Level restarted");
     if (IS_IPAD) {
         self.statusLabel.font = [UIFont boldSystemFontOfSize:40];
     }
@@ -51,11 +50,12 @@
 }
 
 
--(void)show:(CGFloat)duration controller:(UIViewController*)inController
+-(void)show:(CGFloat)duration message:(NSString*)text inController:(UIViewController*)inController
 {
     [inController addChildViewController:self];
     [inController.view addSubview:self.view];
     self.view.frame = inController.view.frame;
+    self.statusLabel.text = text;
 
     self.view.alpha = 0;
     [UIView animateWithDuration:0.3f

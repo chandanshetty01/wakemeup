@@ -13,6 +13,6 @@
     
 }
 
--(void)show:(CGFloat)duration controller:(UIViewController*)inController;
+-(void)show:(CGFloat)duration message:(NSString*)text inController:(UIViewController*)inController;
 
 @end
