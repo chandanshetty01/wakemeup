@@ -7,9 +7,15 @@
 */
 
 "Levels" = "LEVELS";
-"Back" = "Levels";
+"LevelsKey" = "Levels";
 "NoAds" = "No Ads";
 "Score" = "Moves: %d";
+
+"TellAFriend" = "Tell A Friend";
+"Sound" = "Sound";
+"Music" = "Music";
+"RateApp" = "Rate Me";
+"GameCenter" = "Game Center";
 
 "LevelNO" = "Level: %d";
 "Restart" = "Restart";

@@ -73,7 +73,6 @@
 		A330AC851AC3B1F4007C2EE7 /* iAdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A330AC821AC3B1F4007C2EE7 /* iAdViewController.xib */; };
 		A330AC891AC3C2FB007C2EE7 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A330AC881AC3C2FB007C2EE7 /* GameCenterManager.m */; };
 		A33649951AC99AE0005A498A /* libFlurry_6.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A33649941AC99AE0005A498A /* libFlurry_6.2.0.a */; };
-		A3410EB41AC3D2E3001A15C2 /* GameOverViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3410EB31AC3D2E3001A15C2 /* GameOverViewController~iPad.xib */; };
 		A364EF7919F01D75005EF1D6 /* GameStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A364EF7819F01D75005EF1D6 /* GameStateManager.m */; };
 		A369340B1A2CB52B001C9BB1 /* WUNObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = A369340A1A2CB52B001C9BB1 /* WUNObstacle.m */; };
 		A369340E1A2CB6DD001C9BB1 /* WUNBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A369340D1A2CB6DD001C9BB1 /* WUNBase.m */; };
@@ -175,8 +174,6 @@
 		A3D164211ACACC040012EA0B /* Tile.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D163E71ACACC040012EA0B /* Tile.png */; };
 		A3D164221ACACC040012EA0B /* Tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D163E81ACACC040012EA0B /* Tile@2x.png */; };
 		A3D164231ACACC040012EA0B /* Tile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A3D163E91ACACC040012EA0B /* Tile@3x.png */; };
-		A3D55A7F1ABB0BB700F2D987 /* GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D55A7D1ABB0BB700F2D987 /* GameOverViewController.m */; };
-		A3D55A801ABB0BB700F2D987 /* GameOverViewController~iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D55A7E1ABB0BB700F2D987 /* GameOverViewController~iPhone.xib */; };
 		A3D628A91AC97E6000A78C01 /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D628A81AC97E6000A78C01 /* SoundManager.m */; };
 		A3D628B11AC97E6700A78C01 /* hole.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628AB1AC97E6700A78C01 /* hole.wav */; };
 		A3D628B21AC97E6700A78C01 /* success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A3D628AC1AC97E6700A78C01 /* success.mp3 */; };
@@ -189,6 +186,10 @@
 		A3D91FBD1ACEBEAC00EE96C6 /* UIColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FBC1ACEBEAC00EE96C6 /* UIColorAdditions.m */; };
 		A3D91FC21ACEE9D500EE96C6 /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FC01ACEE9D500EE96C6 /* StatusViewController.m */; };
 		A3D91FC31ACEE9D500EE96C6 /* StatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D91FC11ACEE9D500EE96C6 /* StatusViewController.xib */; };
+		A3D91FC91AD01E5E00EE96C6 /* UIButton+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FC81AD01E5E00EE96C6 /* UIButton+Additions.m */; };
+		A3D91FCF1AD01F3700EE96C6 /* GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FCC1AD01F3700EE96C6 /* GameOverViewController.m */; };
+		A3D91FD01AD01F3700EE96C6 /* GameOverViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D91FCD1AD01F3700EE96C6 /* GameOverViewController~iPad.xib */; };
+		A3D91FD11AD01F3700EE96C6 /* GameOverViewController~iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D91FCE1AD01F3700EE96C6 /* GameOverViewController~iPhone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -261,7 +262,6 @@
 		A330AC871AC3C2FB007C2EE7 /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
 		A330AC881AC3C2FB007C2EE7 /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
 		A33649941AC99AE0005A498A /* libFlurry_6.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_6.2.0.a; sourceTree = "<group>"; };
-		A3410EB31AC3D2E3001A15C2 /* GameOverViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GameOverViewController~iPad.xib"; sourceTree = "<group>"; };
 		A364EF7719F01D75005EF1D6 /* GameStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStateManager.h; sourceTree = "<group>"; };
 		A364EF7819F01D75005EF1D6 /* GameStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStateManager.m; sourceTree = "<group>"; };
 		A36934091A2CB52B001C9BB1 /* WUNObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUNObstacle.h; sourceTree = "<group>"; };
@@ -397,9 +397,6 @@
 		A3D163E71ACACC040012EA0B /* Tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tile.png; sourceTree = "<group>"; };
 		A3D163E81ACACC040012EA0B /* Tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile@2x.png"; sourceTree = "<group>"; };
 		A3D163E91ACACC040012EA0B /* Tile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile@3x.png"; sourceTree = "<group>"; };
-		A3D55A7C1ABB0BB700F2D987 /* GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewController.h; sourceTree = "<group>"; };
-		A3D55A7D1ABB0BB700F2D987 /* GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverViewController.m; sourceTree = "<group>"; };
-		A3D55A7E1ABB0BB700F2D987 /* GameOverViewController~iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GameOverViewController~iPhone.xib"; sourceTree = "<group>"; };
 		A3D628A71AC97E6000A78C01 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
 		A3D628A81AC97E6000A78C01 /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
 		A3D628AB1AC97E6700A78C01 /* hole.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hole.wav; sourceTree = "<group>"; };
@@ -415,6 +412,12 @@
 		A3D91FBF1ACEE9D500EE96C6 /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
 		A3D91FC01ACEE9D500EE96C6 /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusViewController.m; sourceTree = "<group>"; };
 		A3D91FC11ACEE9D500EE96C6 /* StatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusViewController.xib; sourceTree = "<group>"; };
+		A3D91FC71AD01E5E00EE96C6 /* UIButton+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Additions.h"; sourceTree = "<group>"; };
+		A3D91FC81AD01E5E00EE96C6 /* UIButton+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Additions.m"; sourceTree = "<group>"; };
+		A3D91FCB1AD01F3700EE96C6 /* GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewController.h; sourceTree = "<group>"; };
+		A3D91FCC1AD01F3700EE96C6 /* GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverViewController.m; sourceTree = "<group>"; };
+		A3D91FCD1AD01F3700EE96C6 /* GameOverViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GameOverViewController~iPad.xib"; sourceTree = "<group>"; };
+		A3D91FCE1AD01F3700EE96C6 /* GameOverViewController~iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GameOverViewController~iPhone.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -711,6 +714,7 @@
 		A3CC20E419D6E0FB0067A847 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A3D91FCA1AD01F3700EE96C6 /* GameOver */,
 				A3D91FBE1ACEE9B400EE96C6 /* Status */,
 				A330AC861AC3C2FB007C2EE7 /* Game center */,
 				A330AC7C1AC3B1F4007C2EE7 /* Activity */,
@@ -725,10 +729,6 @@
 				A3C891AC19E42A5D00A12D36 /* LevelSelectionViewController.m */,
 				A3C891AE19E42DD200A12D36 /* CustomCollectionViewCell.h */,
 				A3C891AF19E42DD200A12D36 /* CustomCollectionViewCell.m */,
-				A3D55A7C1ABB0BB700F2D987 /* GameOverViewController.h */,
-				A3D55A7D1ABB0BB700F2D987 /* GameOverViewController.m */,
-				A3D55A7E1ABB0BB700F2D987 /* GameOverViewController~iPhone.xib */,
-				A3410EB31AC3D2E3001A15C2 /* GameOverViewController~iPad.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -757,6 +757,8 @@
 				A3C891B219E42F1800A12D36 /* Utility.m */,
 				A3C891B819E5932400A12D36 /* MailComposerManager.h */,
 				A3C891B919E5932400A12D36 /* MailComposerManager.m */,
+				A3D91FC71AD01E5E00EE96C6 /* UIButton+Additions.h */,
+				A3D91FC81AD01E5E00EE96C6 /* UIButton+Additions.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -883,6 +885,17 @@
 			path = wakemeup/classes/Status;
 			sourceTree = SOURCE_ROOT;
 		};
+		A3D91FCA1AD01F3700EE96C6 /* GameOver */ = {
+			isa = PBXGroup;
+			children = (
+				A3D91FCB1AD01F3700EE96C6 /* GameOverViewController.h */,
+				A3D91FCC1AD01F3700EE96C6 /* GameOverViewController.m */,
+				A3D91FCD1AD01F3700EE96C6 /* GameOverViewController~iPad.xib */,
+				A3D91FCE1AD01F3700EE96C6 /* GameOverViewController~iPhone.xib */,
+			);
+			path = GameOver;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -978,7 +991,6 @@
 				A33074F41AA368C8006054E3 /* Level_27_1.json in Resources */,
 				A3D628B61AC97E6700A78C01 /* wrong.wav in Resources */,
 				A3D163F51ACACC040012EA0B /* circle_fill@3x.png in Resources */,
-				A3410EB41AC3D2E3001A15C2 /* GameOverViewController~iPad.xib in Resources */,
 				A3D164141ACACC040012EA0B /* round_bg@2x.png in Resources */,
 				A3D163FB1ACACC040012EA0B /* game_center.png in Resources */,
 				A3D163EA1ACACC040012EA0B /* back_to_home.png in Resources */,
@@ -1031,12 +1043,14 @@
 				A330750E1AA368C8006054E3 /* Level_50_1.json in Resources */,
 				A3D1641E1ACACC040012EA0B /* tell_a_friend.png in Resources */,
 				A3D628B51AC97E6700A78C01 /* wall.wav in Resources */,
+				A3D91FD11AD01F3700EE96C6 /* GameOverViewController~iPhone.xib in Resources */,
 				A33074ED1AA368C8006054E3 /* Level_20_1.json in Resources */,
 				A33075051AA368C8006054E3 /* Level_42_1.json in Resources */,
 				A33074F91AA368C8006054E3 /* Level_31_1.json in Resources */,
 				A33075041AA368C8006054E3 /* Level_41_1.json in Resources */,
 				A3D1640C1ACACC040012EA0B /* overlap@3x.png in Resources */,
 				A33074F71AA368C8006054E3 /* Level_2_1.json in Resources */,
+				A3D91FD01AD01F3700EE96C6 /* GameOverViewController~iPad.xib in Resources */,
 				A33074E81AA368C8006054E3 /* Level_16_1.json in Resources */,
 				A3D164071ACACC040012EA0B /* obstacle.png in Resources */,
 				A3D164221ACACC040012EA0B /* Tile@2x.png in Resources */,
@@ -1048,7 +1062,6 @@
 				A3D164031ACACC040012EA0B /* music_off@3x.png in Resources */,
 				A3D164111ACACC040012EA0B /* refresh@2x.png in Resources */,
 				A33074EA1AA368C8006054E3 /* Level_18_1.json in Resources */,
-				A3D55A801ABB0BB700F2D987 /* GameOverViewController~iPhone.xib in Resources */,
 				A3D163FE1ACACC040012EA0B /* how_to_play.png in Resources */,
 				A3D1640F1ACACC040012EA0B /* rate_us@3x.png in Resources */,
 				A33075091AA368C8006054E3 /* Level_46_1.json in Resources */,
@@ -1119,12 +1132,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D91FCF1AD01F3700EE96C6 /* GameOverViewController.m in Sources */,
 				A330AC891AC3C2FB007C2EE7 /* GameCenterManager.m in Sources */,
 				A3CC20C219D6C9520067A847 /* GameViewController.m in Sources */,
 				A3CC20F919DAF3B20067A847 /* WUNLevel.m in Sources */,
 				A3C891BA19E5932400A12D36 /* MailComposerManager.m in Sources */,
 				A3CC20F819DAF3B20067A847 /* WUNObject.m in Sources */,
-				A3D55A7F1ABB0BB700F2D987 /* GameOverViewController.m in Sources */,
 				A3CC20BA19D6C9520067A847 /* AppDelegate.m in Sources */,
 				A36F9A3E19DD9E5800419500 /* WUNWall.m in Sources */,
 				A364EF7919F01D75005EF1D6 /* GameStateManager.m in Sources */,
@@ -1150,6 +1163,7 @@
 				A3CC20EE19D6E0FB0067A847 /* GameConfigManager.m in Sources */,
 				A3C891AA19E4298B00A12D36 /* WUNStageModel.m in Sources */,
 				A3CC20B719D6C9520067A847 /* main.m in Sources */,
+				A3D91FC91AD01E5E00EE96C6 /* UIButton+Additions.m in Sources */,
 				A369340E1A2CB6DD001C9BB1 /* WUNBase.m in Sources */,
 				A3CC20FA19DAF3B20067A847 /* WUNTile.m in Sources */,
 				A3CC20FD19DAF5B90067A847 /* WUNSwap.m in Sources */,

@@ -48,7 +48,7 @@
     [self.playAgainBtn setBackgroundImage:[image resizableImageWithCapInsets:edgeInset] forState:UIControlStateNormal];
     self.playAgainBtn.tintColor = BLUE_COLOR;
 
-    [self.allLevelsBtn setTitle:NSLocalizedString(@"Back", "Back") forState:UIControlStateNormal];
+    [self.allLevelsBtn setTitle:NSLocalizedString(@"LevelsKey", "Levels") forState:UIControlStateNormal];
     [self.allLevelsBtn setBackgroundImage:[image resizableImageWithCapInsets:edgeInset] forState:UIControlStateNormal];
     self.allLevelsBtn.tintColor = BLUE_COLOR;
 

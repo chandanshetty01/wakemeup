@@ -19,6 +19,7 @@
 #import "MKStoreManager.h"
 #import "SoundManager.h"
 #import "StatusViewController.h"
+#import "UIButton+Additions.h"
 
 @interface GameViewController() <iAdViewControllerDelegates>
 
@@ -102,9 +103,13 @@
     // Present the scene.
     [skView presentScene:self.scene];
     
-    [self.backButton setTitle:NSLocalizedString(@"Back", "Back") forState:UIControlStateNormal];
+    [self.backButton setTitle:NSLocalizedString(@"LevelsKey", "Levels") forState:UIControlStateNormal];
     [self.noAdsButton setTitle:NSLocalizedString(@"NoAds", "No Ads") forState:UIControlStateNormal];
     [self.restartButton setTitle:NSLocalizedString(@"Restart", "Restart") forState:UIControlStateNormal];
+    if(IS_IPAD){
+        [self.backButton bottomAlignText];
+        [self.restartButton bottomAlignText];
+    }
 
     [self loadLevel];
     

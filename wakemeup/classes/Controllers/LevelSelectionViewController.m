@@ -16,6 +16,7 @@
 #import "GameCenterManager.h"
 #import "SoundManager.h"
 #import "MailComposerManager.h"
+#import "UIButton+Additions.h"
 
 @interface LevelSelectionViewController ()
 
@@ -42,8 +43,22 @@
     isOn = [Utility isMusicEnabled];
     self.musicOnOff.selected = isOn;
     
+    [self.tellAFriendBtn setTitle:NSLocalizedString(@"TellAFriend", "Tell A Friend") forState:UIControlStateNormal];
+    [self.soundOnOf setTitle:NSLocalizedString(@"Sound", "Sound") forState:UIControlStateNormal];
+    [self.musicOnOff setTitle:NSLocalizedString(@"Music", "Music") forState:UIControlStateNormal];
+    [self.rateUsBtn setTitle:NSLocalizedString(@"RateApp", "Rate Me") forState:UIControlStateNormal];
+    [self.gameCenterBtn setTitle:NSLocalizedString(@"GameCenter", "Game Center") forState:UIControlStateNormal];
+    
+    [self.tellAFriendBtn bottomAlignText];
+    [self.soundOnOf bottomAlignText];
+    [self.musicOnOff bottomAlignText];
+    [self.rateUsBtn bottomAlignText];
+    [self.gameCenterBtn bottomAlignText];
+
+#ifndef DEBUG
     // Do any additional setup after loading the view.
     [[GameCenterManager sharedManager] authenticateLocalPlayer:self];
+#endif
     
 }
 
