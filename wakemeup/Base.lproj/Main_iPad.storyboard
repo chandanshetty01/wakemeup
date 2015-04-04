@@ -144,6 +144,7 @@
                     <connections>
                         <outlet property="backButton" destination="nxI-10-e0i" id="nQR-dq-xDj"/>
                         <outlet property="levelNumberLabel" destination="Jka-4t-qm9" id="64D-26-GvF"/>
+                        <outlet property="noAdsButton" destination="9hJ-Hm-KL4" id="TDG-oF-gmj"/>
                         <outlet property="restartButton" destination="Xzi-R5-CMS" id="SFB-Qq-GG5"/>
                         <outlet property="scoreLabel" destination="eF8-i0-P76" id="Ck4-GF-gxa"/>
                         <outlet property="testHoleBtn" destination="lb4-qo-hcX" id="lTA-Rj-fy2"/>
