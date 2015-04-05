@@ -134,8 +134,8 @@ static const uint32_t obstacleCategory         =  0x1 << 3;
         if(spriteName.length != 0){
             sprite = [SKSpriteNode spriteNodeWithImageNamed:spriteName];
             if(object.ObjectType == eObjectWall){
-                sprite.color = THEME_RED_COLOR;
-                sprite.colorBlendFactor = 1;
+//                sprite.color = THEME_RED_COLOR;
+//                sprite.colorBlendFactor = 1;
             }
             else if(object.ObjectType == eObjectHole){
                 sprite.color = THEME_GREEN_COLOR;
