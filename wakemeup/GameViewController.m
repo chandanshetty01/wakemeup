@@ -414,7 +414,7 @@
 {
     if(status == eGameWon){
         StatusViewController *controller = [[StatusViewController alloc] initWithNibName:nil bundle:nil];
-        NSInteger leveNo = self.currentLevel;
+        NSInteger leveNo = self.currentLevel-1;
         if(leveNo == 0){
             leveNo = 1;
         }
@@ -435,14 +435,13 @@
         [self saveOldLevel:status];
         if(status == eGameWon){
             [[SoundManager sharedManager] playSound:@"success" looping:NO];
-            [self showStatus:status];
-            
             self.currentLevel = self.levelModel.levelID+1;
             NSInteger totalLevels = [[GameStateManager sharedManager] getAllLevelsInStage].count;
             if(self.currentLevel > totalLevels){
                 [self performSelector:@selector(showGameOverScreen) withObject:nil afterDelay:0.1f];
             }
             else{
+                [self showStatus:status];
                 self.levelModel.noOfTries = 1;
                 [self loadLevel:self.currentLevel];
             }
