@@ -415,7 +415,7 @@
     if(status == eGameWon){
         StatusViewController *controller = [[StatusViewController alloc] initWithNibName:nil bundle:nil];
         NSInteger leveNo = self.currentLevel-1;
-        if(leveNo == 0){
+        if(leveNo <= 0){
             leveNo = 1;
         }
         NSString *text = [NSString stringWithFormat:NSLocalizedString(@"LevelSuccessSatus", "Congrats! Level %d Completed"),leveNo];

@@ -70,6 +70,11 @@
 		A305C2641AD2D0B10080062D /* Tile.png in Resources */ = {isa = PBXBuildFile; fileRef = A305C2271AD2D0B10080062D /* Tile.png */; };
 		A305C2651AD2D0B10080062D /* Tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A305C2281AD2D0B10080062D /* Tile@2x.png */; };
 		A305C2661AD2D0B10080062D /* Tile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A305C2291AD2D0B10080062D /* Tile@3x.png */; };
+		A31EFDAC1AD2D66100A1C10F /* MoreGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A31EFDAA1AD2D66100A1C10F /* MoreGamesViewController.m */; };
+		A31EFDB01AD2D70200A1C10F /* KachiKachi.png in Resources */ = {isa = PBXBuildFile; fileRef = A31EFDAE1AD2D70200A1C10F /* KachiKachi.png */; };
+		A31EFDB11AD2D70200A1C10F /* KachiKachi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A31EFDAF1AD2D70200A1C10F /* KachiKachi@2x.png */; };
+		A31EFDB41AD2E90000A1C10F /* MoreGamesViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A31EFDB21AD2E90000A1C10F /* MoreGamesViewController_iPad.xib */; };
+		A31EFDB51AD2E90000A1C10F /* MoreGamesViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A31EFDB31AD2E90000A1C10F /* MoreGamesViewController_iPhone.xib */; };
 		A33074E21AA368C7006054E3 /* Level_10_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A33074AB1AA368C7006054E3 /* Level_10_1.json */; };
 		A33074E31AA368C8006054E3 /* Level_11_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A33074AC1AA368C7006054E3 /* Level_11_1.json */; };
 		A33074E41AA368C8006054E3 /* Level_12_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A33074AD1AA368C7006054E3 /* Level_12_1.json */; };
@@ -259,6 +264,12 @@
 		A305C2271AD2D0B10080062D /* Tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tile.png; sourceTree = "<group>"; };
 		A305C2281AD2D0B10080062D /* Tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile@2x.png"; sourceTree = "<group>"; };
 		A305C2291AD2D0B10080062D /* Tile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tile@3x.png"; sourceTree = "<group>"; };
+		A31EFDA91AD2D66100A1C10F /* MoreGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreGamesViewController.h; sourceTree = "<group>"; };
+		A31EFDAA1AD2D66100A1C10F /* MoreGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreGamesViewController.m; sourceTree = "<group>"; };
+		A31EFDAE1AD2D70200A1C10F /* KachiKachi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KachiKachi.png; sourceTree = "<group>"; };
+		A31EFDAF1AD2D70200A1C10F /* KachiKachi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KachiKachi@2x.png"; sourceTree = "<group>"; };
+		A31EFDB21AD2E90000A1C10F /* MoreGamesViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreGamesViewController_iPad.xib; sourceTree = "<group>"; };
+		A31EFDB31AD2E90000A1C10F /* MoreGamesViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreGamesViewController_iPhone.xib; sourceTree = "<group>"; };
 		A33074AB1AA368C7006054E3 /* Level_10_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_10_1.json; sourceTree = "<group>"; };
 		A33074AC1AA368C7006054E3 /* Level_11_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_11_1.json; sourceTree = "<group>"; };
 		A33074AD1AA368C7006054E3 /* Level_12_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_12_1.json; sourceTree = "<group>"; };
@@ -448,6 +459,8 @@
 		A305C1EC1AD2D0B10080062D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A31EFDAE1AD2D70200A1C10F /* KachiKachi.png */,
+				A31EFDAF1AD2D70200A1C10F /* KachiKachi@2x.png */,
 				A305C1ED1AD2D0B10080062D /* back_to_home.png */,
 				A305C1EE1AD2D0B10080062D /* back_to_home@2x.png */,
 				A305C1EF1AD2D0B10080062D /* back_to_home@3x.png */,
@@ -511,6 +524,17 @@
 				A305C2291AD2D0B10080062D /* Tile@3x.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		A31EFDA81AD2D64E00A1C10F /* MoreGames */ = {
+			isa = PBXGroup;
+			children = (
+				A31EFDA91AD2D66100A1C10F /* MoreGamesViewController.h */,
+				A31EFDAA1AD2D66100A1C10F /* MoreGamesViewController.m */,
+				A31EFDB21AD2E90000A1C10F /* MoreGamesViewController_iPad.xib */,
+				A31EFDB31AD2E90000A1C10F /* MoreGamesViewController_iPhone.xib */,
+			);
+			path = MoreGames;
 			sourceTree = "<group>";
 		};
 		A33074AA1AA368C7006054E3 /* Levels */ = {
@@ -788,6 +812,7 @@
 		A3CC20E419D6E0FB0067A847 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A31EFDA81AD2D64E00A1C10F /* MoreGames */,
 				A3D91FCA1AD01F3700EE96C6 /* GameOver */,
 				A3D91FBE1ACEE9B400EE96C6 /* Status */,
 				A330AC861AC3C2FB007C2EE7 /* Game center */,
@@ -1022,6 +1047,7 @@
 				A3CC20C719D6C9520067A847 /* Images.xcassets in Resources */,
 				A305C2601AD2D0B10080062D /* speaker_off@3x.png in Resources */,
 				A33075171AA368C8006054E3 /* Level_8_1.json in Resources */,
+				A31EFDB41AD2E90000A1C10F /* MoreGamesViewController_iPad.xib in Resources */,
 				A305C2371AD2D0B10080062D /* crown@2x.png in Resources */,
 				A3CC20BF19D6C9520067A847 /* GameScene.sks in Resources */,
 				A33075221AA36923006054E3 /* Level_58_1.json in Resources */,
@@ -1063,6 +1089,7 @@
 				A33075041AA368C8006054E3 /* Level_41_1.json in Resources */,
 				A33074F71AA368C8006054E3 /* Level_2_1.json in Resources */,
 				A3D91FD01AD01F3700EE96C6 /* GameOverViewController~iPad.xib in Resources */,
+				A31EFDB51AD2E90000A1C10F /* MoreGamesViewController_iPhone.xib in Resources */,
 				A33074E81AA368C8006054E3 /* Level_16_1.json in Resources */,
 				A305C25D1AD2D0B10080062D /* speakar_on@3x.png in Resources */,
 				A330750D1AA368C8006054E3 /* Level_4_1.json in Resources */,
@@ -1087,6 +1114,7 @@
 				A330750C1AA368C8006054E3 /* Level_49_1.json in Resources */,
 				A305C2451AD2D0B10080062D /* music_off@2x.png in Resources */,
 				A33074F21AA368C8006054E3 /* Level_25_1.json in Resources */,
+				A31EFDB01AD2D70200A1C10F /* KachiKachi.png in Resources */,
 				A3D628B41AC97E6700A78C01 /* tap.wav in Resources */,
 				A33074E41AA368C8006054E3 /* Level_12_1.json in Resources */,
 				A3CDD34F1AB9ABFC00AB75B4 /* Localizable.strings in Resources */,
@@ -1110,6 +1138,7 @@
 				A33074FE1AA368C8006054E3 /* Level_36_1.json in Resources */,
 				A305C25C1AD2D0B10080062D /* speakar_on@2x.png in Resources */,
 				A305C23F1AD2D0B10080062D /* how_to_play@2x.png in Resources */,
+				A31EFDB11AD2D70200A1C10F /* KachiKachi@2x.png in Resources */,
 				A33075181AA368C8006054E3 /* Level_9_1.json in Resources */,
 				A33074F51AA368C8006054E3 /* Level_28_1.json in Resources */,
 				A33074FC1AA368C8006054E3 /* Level_34_1.json in Resources */,
@@ -1177,6 +1206,7 @@
 				A3CC20B719D6C9520067A847 /* main.m in Sources */,
 				A3D91FC91AD01E5E00EE96C6 /* UIButton+Additions.m in Sources */,
 				A369340E1A2CB6DD001C9BB1 /* WUNBase.m in Sources */,
+				A31EFDAC1AD2D66100A1C10F /* MoreGamesViewController.m in Sources */,
 				A3CC20FA19DAF3B20067A847 /* WUNTile.m in Sources */,
 				A3CC20FD19DAF5B90067A847 /* WUNSwap.m in Sources */,
 				A3D91FC21ACEE9D500EE96C6 /* StatusViewController.m in Sources */,

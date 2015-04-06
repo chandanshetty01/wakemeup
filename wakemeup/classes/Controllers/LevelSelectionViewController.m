@@ -17,6 +17,7 @@
 #import "SoundManager.h"
 #import "MailComposerManager.h"
 #import "UIButton+Additions.h"
+#import "MoreGamesViewController.h"
 
 @interface LevelSelectionViewController ()
 
@@ -29,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *levelsLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIButton *moreGamesBtn;
+@property (nonatomic,strong)MoreGamesViewController *moreGamesViewController;
 
 @end
 
@@ -134,9 +136,29 @@
     return cell;
 }
 
+-(void)createMoreGamesController
+{
+    NSString *name = @"MoreGamesViewController_iPhone";
+    if(IS_IPAD){
+        name = @"MoreGamesViewController_iPad";
+    }
+    self.moreGamesViewController = [[MoreGamesViewController alloc] initWithNibName:name bundle:nil];
+    self.moreGamesViewController.view.frame = self.view.frame;
+    [self addChildViewController:self.moreGamesViewController];
+    [self.view addSubview:self.moreGamesViewController.view];
+    
+    self.moreGamesViewController.view.alpha = 0;
+    [UIView animateWithDuration:0.5f
+                     animations:^{
+                         self.moreGamesViewController.view.alpha = 1;
+                     } completion:^(BOOL finished) {
+
+                     }];
+}
+
 - (IBAction)handleMoreButtonAction:(id)sender
 {
-    
+    [self createMoreGamesController];
 }
 
 - (IBAction)handleTellAFriendAction:(id)sender
