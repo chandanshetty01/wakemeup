@@ -266,7 +266,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d4X-u9-7ZO">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="25"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -288,10 +288,22 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Levels" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4v0-1i-lY8">
                                 <rect key="frame" x="10" y="74" width="542" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="21b-ED-adg">
+                                <rect key="frame" x="235" y="10" width="65" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" image="more.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleMoreButtonAction:" destination="yjo-Yu-rtL" eventType="touchUpInside" id="axd-N1-lmb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176470588237" green="0.39215686274509803" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -302,6 +314,7 @@
                         <outlet property="collectionView" destination="yRL-Lf-IB8" id="YPv-BD-Ogu"/>
                         <outlet property="gameCenterBtn" destination="NgB-Wi-Z9q" id="gA0-i4-LvB"/>
                         <outlet property="levelsLabel" destination="4v0-1i-lY8" id="fJQ-fn-bVh"/>
+                        <outlet property="moreGamesBtn" destination="21b-ED-adg" id="nbK-IU-l3U"/>
                         <outlet property="musicOnOff" destination="96n-aU-LCo" id="iVv-h7-mUm"/>
                         <outlet property="rateUsBtn" destination="Hw0-wq-lNy" id="sRO-6m-0i3"/>
                         <outlet property="soundOnOf" destination="RYE-3N-XhP" id="fJ0-yZ-LNX"/>
@@ -310,12 +323,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOG-2p-P9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1112" y="-716"/>
+            <point key="canvasLocation" x="-1174" y="-638"/>
         </scene>
     </scenes>
     <resources>
         <image name="back_to_home.png" width="40" height="40"/>
         <image name="game_center.png" width="40" height="40"/>
+        <image name="more.png" width="40" height="40"/>
         <image name="music_off.png" width="40" height="40"/>
         <image name="music_on.png" width="40" height="40"/>
         <image name="rate_us.png" width="40" height="40"/>

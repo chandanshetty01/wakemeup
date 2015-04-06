@@ -285,6 +285,18 @@
                                     <action selector="handleSoundChangeAction:" destination="9ET-Cc-G4L" eventType="touchUpInside" id="NDv-pu-OW9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jkM-uC-FpE">
+                                <rect key="frame" x="350" y="20" width="100" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" image="more.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleMoreButtonAction:" destination="9ET-Cc-G4L" eventType="touchUpInside" id="Fn9-3p-K4z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176470588237" green="0.39215686274509803" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -293,6 +305,7 @@
                         <outlet property="collectionView" destination="ZsI-Mz-Xuj" id="e1c-PR-0ZK"/>
                         <outlet property="gameCenterBtn" destination="FfT-rN-vLE" id="wZQ-gS-JIq"/>
                         <outlet property="levelsLabel" destination="7wT-4I-lNC" id="3h2-F6-Q3R"/>
+                        <outlet property="moreGamesBtn" destination="jkM-uC-FpE" id="W7x-yy-h2z"/>
                         <outlet property="musicOnOff" destination="sCW-Ql-LiK" id="WBX-52-wFZ"/>
                         <outlet property="rateUsBtn" destination="4UJ-AW-2Sp" id="Zs1-GO-fZh"/>
                         <outlet property="soundOnOf" destination="qcM-sR-8sE" id="vjY-yZ-GQ7"/>
@@ -308,6 +321,7 @@
     <resources>
         <image name="back_to_home.png" width="40" height="40"/>
         <image name="game_center.png" width="40" height="40"/>
+        <image name="more.png" width="40" height="40"/>
         <image name="music_off.png" width="40" height="40"/>
         <image name="music_on.png" width="40" height="40"/>
         <image name="rate_us.png" width="40" height="40"/>

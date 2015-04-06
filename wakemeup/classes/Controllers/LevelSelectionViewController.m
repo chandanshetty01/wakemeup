@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *musicOnOff;
 @property (weak, nonatomic) IBOutlet UILabel *levelsLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UIButton *moreGamesBtn;
 
 @end
 
@@ -48,12 +49,14 @@
     [self.musicOnOff setTitle:NSLocalizedString(@"Music", "Music") forState:UIControlStateNormal];
     [self.rateUsBtn setTitle:NSLocalizedString(@"RateApp", "Rate Me") forState:UIControlStateNormal];
     [self.gameCenterBtn setTitle:NSLocalizedString(@"GameCenter", "Game Center") forState:UIControlStateNormal];
-    
+    [self.moreGamesBtn setTitle:NSLocalizedString(@"MoreGames", "More Games") forState:UIControlStateNormal];
+
     [self.tellAFriendBtn bottomAlignText];
     [self.soundOnOf bottomAlignText];
     [self.musicOnOff bottomAlignText];
     [self.rateUsBtn bottomAlignText];
     [self.gameCenterBtn bottomAlignText];
+    [self.moreGamesBtn bottomAlignText];
 
 #ifndef DEBUG
     // Do any additional setup after loading the view.
@@ -129,6 +132,11 @@
     }
     
     return cell;
+}
+
+- (IBAction)handleMoreButtonAction:(id)sender
+{
+    
 }
 
 - (IBAction)handleTellAFriendAction:(id)sender
