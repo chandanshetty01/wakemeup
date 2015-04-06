@@ -203,7 +203,7 @@
 {
     [SoundManager sharedManager].allowsBackgroundMusic = YES;
     [[SoundManager sharedManager] prepareToPlay];
-    [[SoundManager sharedManager] playMusic:@"1_whistle_music"];
+    [[SoundManager sharedManager] playMusic:@"levelScreenSound"];
 }
 
 -(void)stopMusic

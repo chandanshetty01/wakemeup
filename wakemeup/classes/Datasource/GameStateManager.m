@@ -128,7 +128,8 @@
     NSArray *levels = [self getAllLevelsInStage];
     [levels enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
         NSInteger count = [[obj objectForKey:@"bestNoOfMoves"] integerValue];
-        totalMoves += count;
+        NSInteger tries = [[obj objectForKey:@"noOfTries"] integerValue];
+        totalMoves += count*tries;
     }];
     return totalMoves;
 }

@@ -9,7 +9,8 @@
 "Levels" = "LEVELS";
 "LevelsKey" = "Levels";
 "NoAds" = "Remove Ads";
-"Score" = "Moves: %d";
+"Score" = "Moves: %d×%d= %d";
+"BestMoves" = "Best Moves: %@";
 
 "TellAFriend" = "Tell A Friend";
 "Sound" = "Sound";

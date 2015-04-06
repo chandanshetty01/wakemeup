@@ -19,6 +19,10 @@
         self.levelID = [[data objectForKey:@"ID"] integerValue];
         self.noOfMoves = [[data objectForKey:@"noOfMoves"] integerValue];
         self.bestNoOfMoves = [[data objectForKey:@"bestNoOfMoves"] integerValue];
+        self.noOfTries = [[data objectForKey:@"noOfTries"] integerValue];
+        if(!self.noOfTries){
+            self.noOfTries = 1;
+        }
     }
     return self;
 }
@@ -31,6 +35,11 @@
     [dictionary setObject:[NSNumber numberWithInt:(int)self.levelID] forKey:@"ID"];
     [dictionary setObject:[NSNumber numberWithInt:(int)self.noOfMoves] forKey:@"noOfMoves"];
     [dictionary setObject:[NSNumber numberWithInt:(int)self.bestNoOfMoves] forKey:@"bestNoOfMoves"];
+    if(self.noOfTries == 0){
+        self.noOfTries = 1;
+    }
+    [dictionary setObject:[NSNumber numberWithInt:(int)self.noOfTries] forKey:@"noOfTries"];
+    
     return dictionary;
 }
 

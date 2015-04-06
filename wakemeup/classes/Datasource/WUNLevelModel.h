@@ -20,6 +20,7 @@
 @property(nonatomic,assign) BOOL isCompleted;
 @property(nonatomic,assign) BOOL isUnlocked;
 @property(nonatomic,assign) NSInteger noOfMoves;
+@property(nonatomic,assign) NSInteger noOfTries;
 @property(nonatomic,assign) NSInteger bestNoOfMoves;
 @property(nonatomic,strong) NSMutableArray *tiles;
 

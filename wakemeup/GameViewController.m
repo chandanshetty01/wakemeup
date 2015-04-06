@@ -40,6 +40,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *noAdsButton;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tutorialLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bestScoreLabel;
 
 @property(nonatomic,strong)GameOverViewController *gameOverController;
 @property(nonatomic,strong)iAdViewController *adViewController;
@@ -342,7 +343,16 @@
 
 -(void)updateScore
 {
-    self.scoreLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Score", "Total Moves: %d"),self.scene.level.levelModel.noOfMoves];
+    NSInteger score = self.scene.level.levelModel.noOfMoves * self.scene.level.levelModel.noOfTries;
+    NSInteger bestScore = self.scene.level.levelModel.bestNoOfMoves;
+    
+    self.scoreLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Score", "Moves: %d×%d=%d"),self.scene.level.levelModel.noOfMoves,self.scene.level.levelModel.noOfTries,score];
+    if(bestScore > 1){
+        self.bestScoreLabel.text = [NSString stringWithFormat:NSLocalizedString(@"BestMoves", "BestMoves: %d"),@(bestScore)];
+    }
+    else{
+        self.bestScoreLabel.text = [NSString stringWithFormat:NSLocalizedString(@"BestMoves", "BestMoves: %d"),@"-"];
+    }
 }
 
 -(void)updateUIBlock
@@ -364,9 +374,17 @@
     }
     
     if(status == eGameWon || status == eGameOver){
-        if(self.levelModel.noOfMoves < self.levelModel.bestNoOfMoves || self.levelModel.bestNoOfMoves == 0){
-            self.levelModel.bestNoOfMoves = self.levelModel.noOfMoves;
+        if(status == eGameWon){
+            if(!self.levelModel.noOfTries){
+                self.levelModel.noOfTries = 1;
+            }
+            NSInteger score = self.levelModel.noOfMoves*self.levelModel.noOfTries;
+            if(score < self.levelModel.bestNoOfMoves*self.levelModel.noOfTries || self.levelModel.bestNoOfMoves == 0){
+                self.levelModel.bestNoOfMoves = self.levelModel.noOfMoves*self.levelModel.noOfTries ;
+            }
+            self.levelModel.noOfTries = 1;
         }
+
         [self resetLevelData];
     }
     
@@ -425,10 +443,13 @@
                 [self performSelector:@selector(showGameOverScreen) withObject:nil afterDelay:0.1f];
             }
             else{
+                self.levelModel.noOfTries = 1;
                 [self loadLevel:self.currentLevel];
             }
         }
         else if(status == eGameOver){
+            self.levelModel.noOfTries += 1;
+
             [self showStatus:status];
             [[SoundManager sharedManager] playSound:@"wrong" looping:NO];
 
@@ -483,6 +504,7 @@
     [self resetLevelData];
     self.levelModel.noOfMoves = 0;
     self.levelModel.isUnlocked = YES;
+    self.levelModel.noOfTries += 1;
     [self performSelector:@selector(loadLevel) withObject:nil afterDelay:0.2];
 }
 

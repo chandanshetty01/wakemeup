@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		48D5B43B1AC05F11008D370E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D5B4391AC05F11008D370E /* Main_iPad.storyboard */; };
+		A305C1EB1AD2C5170080062D /* levelScreenSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = A305C1EA1AD2C5170080062D /* levelScreenSound.wav */; };
 		A33074E21AA368C7006054E3 /* Level_10_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A33074AB1AA368C7006054E3 /* Level_10_1.json */; };
 		A33074E31AA368C8006054E3 /* Level_11_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A33074AC1AA368C7006054E3 /* Level_11_1.json */; };
 		A33074E41AA368C8006054E3 /* Level_12_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A33074AD1AA368C7006054E3 /* Level_12_1.json */; };
@@ -182,7 +183,6 @@
 		A3D628B51AC97E6700A78C01 /* wall.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628AF1AC97E6700A78C01 /* wall.wav */; };
 		A3D628B61AC97E6700A78C01 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628B01AC97E6700A78C01 /* wrong.wav */; };
 		A3D628B91AC9816A00A78C01 /* 1_music.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628B71AC9816A00A78C01 /* 1_music.wav */; };
-		A3D628BA1AC9816A00A78C01 /* 1_whistle_music.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3D628B81AC9816A00A78C01 /* 1_whistle_music.wav */; };
 		A3D91FBD1ACEBEAC00EE96C6 /* UIColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FBC1ACEBEAC00EE96C6 /* UIColorAdditions.m */; };
 		A3D91FC21ACEE9D500EE96C6 /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D91FC01ACEE9D500EE96C6 /* StatusViewController.m */; };
 		A3D91FC31ACEE9D500EE96C6 /* StatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D91FC11ACEE9D500EE96C6 /* StatusViewController.xib */; };
@@ -194,6 +194,7 @@
 
 /* Begin PBXFileReference section */
 		48D5B43A1AC05F11008D370E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		A305C1EA1AD2C5170080062D /* levelScreenSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = levelScreenSound.wav; sourceTree = "<group>"; };
 		A33074AB1AA368C7006054E3 /* Level_10_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_10_1.json; sourceTree = "<group>"; };
 		A33074AC1AA368C7006054E3 /* Level_11_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_11_1.json; sourceTree = "<group>"; };
 		A33074AD1AA368C7006054E3 /* Level_12_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_12_1.json; sourceTree = "<group>"; };
@@ -406,7 +407,6 @@
 		A3D628AF1AC97E6700A78C01 /* wall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wall.wav; sourceTree = "<group>"; };
 		A3D628B01AC97E6700A78C01 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
 		A3D628B71AC9816A00A78C01 /* 1_music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1_music.wav; sourceTree = "<group>"; };
-		A3D628B81AC9816A00A78C01 /* 1_whistle_music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1_whistle_music.wav; sourceTree = "<group>"; };
 		A3D91FBB1ACEBEAC00EE96C6 /* UIColorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColorAdditions.h; sourceTree = "<group>"; };
 		A3D91FBC1ACEBEAC00EE96C6 /* UIColorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColorAdditions.m; sourceTree = "<group>"; };
 		A3D91FBF1ACEE9D500EE96C6 /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
@@ -863,7 +863,7 @@
 			isa = PBXGroup;
 			children = (
 				A3D628B71AC9816A00A78C01 /* 1_music.wav */,
-				A3D628B81AC9816A00A78C01 /* 1_whistle_music.wav */,
+				A305C1EA1AD2C5170080062D /* levelScreenSound.wav */,
 				A3D628AB1AC97E6700A78C01 /* hole.wav */,
 				A3D628AC1AC97E6700A78C01 /* success.mp3 */,
 				A3D628AD1AC97E6700A78C01 /* swipe.wav */,
@@ -1067,6 +1067,7 @@
 				A33075091AA368C8006054E3 /* Level_46_1.json in Resources */,
 				A3D163EF1ACACC040012EA0B /* btn_bg@3x.png in Resources */,
 				A3D164191ACACC040012EA0B /* speakar_on@2x.png in Resources */,
+				A305C1EB1AD2C5170080062D /* levelScreenSound.wav in Resources */,
 				A3D1640E1ACACC040012EA0B /* rate_us@2x.png in Resources */,
 				A3D164201ACACC040012EA0B /* tell_a_friend@3x.png in Resources */,
 				A330750C1AA368C8006054E3 /* Level_49_1.json in Resources */,
@@ -1104,7 +1105,6 @@
 				A3D163F01ACACC040012EA0B /* circle.png in Resources */,
 				A33075011AA368C8006054E3 /* Level_39_1.json in Resources */,
 				A33075081AA368C8006054E3 /* Level_45_1.json in Resources */,
-				A3D628BA1AC9816A00A78C01 /* 1_whistle_music.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
