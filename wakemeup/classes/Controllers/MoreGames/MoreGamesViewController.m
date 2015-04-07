@@ -37,7 +37,7 @@
         self.contentTextView.font = [UIFont systemFontOfSize:18];
     }
     else{
-        self.contentTextView.font = [UIFont systemFontOfSize:10];
+        self.contentTextView.font = [UIFont systemFontOfSize:14];
     }
 }
 
