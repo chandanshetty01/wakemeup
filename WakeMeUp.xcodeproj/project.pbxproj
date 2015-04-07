@@ -1353,7 +1353,7 @@
 					"$(PROJECT_DIR)/wakemeup/3rdParty/Flurry",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "aed93cdc-a4b6-4df1-bae6-ebfa8c1321c2";
+				PROVISIONING_PROFILE = "01e2f8f2-dc73-449e-b48d-4698e277531f";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1382,7 +1382,7 @@
 					"$(PROJECT_DIR)/wakemeup/3rdParty/Flurry",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "835ffb4e-78ce-44e9-bbcd-29033e91c7a1";
+				PROVISIONING_PROFILE = "dfe3c9d0-6336-4fe1-9d90-790dd3a9d460";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
