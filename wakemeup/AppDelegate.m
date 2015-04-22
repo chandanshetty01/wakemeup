@@ -98,8 +98,8 @@
     // track launch - It's VERY important that this code will be located in the applicationDidBecomeActive of your app delegate!
     [[AppsFlyerTracker sharedTracker] trackAppLaunch]; //***** THIS LINE IS MANDATORY *****
     
-//   [FBSettings setDefaultAppID:FACEBOOK_ID];
-//   [FBAppEvents activateApp];
+   [FBSettings setDefaultAppID:FACEBOOK_ID];
+   [FBAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
