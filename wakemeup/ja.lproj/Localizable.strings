@@ -1,0 +1,61 @@
+/* 
+  Localizable.strings
+  WakeMeUp
+
+  Created by Chandan Shetty SP on 18/3/15.
+  Copyright (c) 2015 Chandan. All rights reserved.
+*/
+
+"Levels" = "レベル";
+"LevelsKey" = "レベル";
+
+"NoAds" = "広告を削除する";
+"Score" = "動き: %d×%d= %d";
+"BestMoves" = "最高の動き: %@";
+
+"TellAFriend" = "友達に教える";
+"Sound" = "サウンド";
+"Music" = "音楽";
+"RateApp" = "評価してください";
+
+"LevelNO" = "レベル: %d";
+"Restart" = "再開";
+"GlobalScores" = "グローバルスコア";
+
+"GameCenter" = "ゲームセンター";
+"BestScore" = "動きの合計";
+"PlayAgain" = "もう一度プレイする";
+"Share" = "シェア";
+"CongratsMsg" = "素晴らしい!全てのレベルが達成されました。";
+
+"MailSentMsg" = "メールの送信に成功しました。";
+"postSentMsg" = "正常に投稿されました。";
+
+"TwitterMsg" = "全レベル達成しました、私のスコアを超えてみてください。 %d #swipeItBaby";
+"FacebookMsg" = "全レベル達成しました、私のスコアを超えてみてください。  %d #swipeItBaby";
+"MailMsg" = "全レベル達成しました、私のスコアを超えてみてください。 %d #swipeItBaby";
+
+"RemoveAds" = "広告を削除する";
+"RemoveAdsDesc" = "%@ で広告を削除して、広告なしのプレイをお楽しみください。";
+
+"LevelRestartStatus" = "ゲームオーバー! \n リトライしてください";
+"LevelSuccessSatus" = "おめでとうございます! \n %d レベルが達成されました。";
+
+"Tutorial_1" = "円の上でスワイプして開始してください。";
+"Tutorial_2" = "穴に向かって円の上でスワイプしてください。";
+"Tutorial_3" = "円の上で左にスワイプして穴を埋めてください。";
+"Tutorial_4" = "おめでとうございます! スワイプをしている間、穴を埋める順番に気をつけてください";
+"Tutorial_5" = "穴埋めのサポートとしてホワイトボックスを使用してください。";
+"Tutorial_6" = "素晴らしい! スワイプを続けましょう! 全ての穴を埋めて次のレベルをプレイしましょう。";
+
+"TELL_A_FRIEND_MSG" = "私たちの新しいゲームをチェックしてください 'Swipe It Baby' (%@)!";
+"TELL_A_FRIEND_TITLE" = " ‘Swipe It Baby’ をお試しください。とても中毒性がありますよ!";
+
+"ERROR" = "不明のエラー";
+"OK" = "OK";
+"CANCEL" = "キャンセル";
+"BUY" = "購入";
+"RESTORE" = "元に戻す";
+
+"MoreGames" = "さらに多くのゲーム";
+"FreeDownload" = "無料でプレイ";

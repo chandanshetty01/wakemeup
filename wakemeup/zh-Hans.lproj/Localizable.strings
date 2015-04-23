@@ -1,0 +1,61 @@
+/* 
+  Localizable.strings
+  WakeMeUp
+
+  Created by Chandan Shetty SP on 18/3/15.
+  Copyright (c) 2015 Chandan. All rights reserved.
+*/
+
+"Levels" = "关卡";
+"LevelsKey" = "关卡";
+
+"NoAds" = "移除广告";
+"Score" = "移动数： %d×%d= %d";
+"BestMoves" = "最佳移动数： %@";
+
+"TellAFriend" = "告诉一个朋友";
+"Sound" = "声音";
+"Music" = "音乐";
+"RateApp" = "评级我";
+
+"LevelNO" = "关卡： %d";
+"Restart" = "重新开始";
+"GlobalScores" = "全球分数";
+
+"GameCenter" = "游戏中心";
+"BestScore" = "总移动数";
+"PlayAgain" = "再玩一次";
+"Share" = "分享";
+"CongratsMsg" = "太棒了！已完成了所有关卡";
+
+"MailSentMsg" = "邮件已成功发送";
+"postSentMsg" = "已成功发帖";
+
+"TwitterMsg" = "已经完成了全部关卡，有胆量就来打败我的分数吧 %d #swipeItBaby";
+"FacebookMsg" = "已经完成了全部关卡，有胆量就来打败我的分数吧 %d #swipeItBaby";
+"MailMsg" = "已经完成了全部关卡，有胆量就来打败我的分数吧 %d #swipeItBaby";
+
+"RemoveAds" = "移除广告";
+"RemoveAdsDesc" = "通过移除 %@ 的‘广告’，享受无干扰的体验";
+
+"LevelRestartStatus" = "游戏结束！\n 再试一次";
+"LevelSuccessSatus" = "恭喜！\n 关卡%d 已完成";
+
+"Tutorial_1" = "滑动圆形来开始";
+"Tutorial_2" = "滑动圆形到孔洞";
+"Tutorial_3" = "向左滑动圆形并填入洞中";
+"Tutorial_4" = "恭喜！在滑动时，注意填洞的顺序";
+"Tutorial_5" = "使用白色的箱子作为帮助来填入洞中";
+"Tutorial_6" = "太棒了！继续滑动！填入所有的洞来玩下一关";
+
+"TELL_A_FRIEND_MSG" = "来看看我们的新游戏 'Swipe It Baby' (%@)!";
+"TELL_A_FRIEND_TITLE" = "试试 ‘Swipe It Baby’ 它非常耐玩!";
+
+"ERROR" = "未知错误";
+"OK" = "好的";
+"CANCEL" = "取消";
+"BUY" = "购买";
+"RESTORE" = "还原";
+
+"MoreGames" = "更多游戏";
+"FreeDownload" = "免费进行游戏";

@@ -1,0 +1,61 @@
+/* 
+  Localizable.strings
+  WakeMeUp
+
+  Created by Chandan Shetty SP on 18/3/15.
+  Copyright (c) 2015 Chandan. All rights reserved.
+*/
+
+"Levels" = "LIVELLI";
+"LevelsKey" = "LIVELLI";
+
+"NoAds" = "Rimuovi pubblicità";
+"Score" = "Mosse: %d×%d= %d";
+"BestMoves" = "Migliori mosse: %@";
+
+"TellAFriend" = "Dillo a un amico";
+"Sound" = "Suono";
+"Music" = "Musica";
+"RateApp" = "Valutami";
+
+"LevelNO" = "Livello: %d";
+"Restart" = "Riavvia";
+"GlobalScores" = "Punteggi globali";
+
+"GameCenter" = "Game Center";
+"BestScore" = "Mosse totali";
+"PlayAgain" = "Gioca di nuovo";
+"Share" = "Condividi";
+"CongratsMsg" = "Fantastico! Tutti i livelli completati!";
+
+"MailSentMsg" = "Mail inviata con successo";
+"postSentMsg" = "Pubblicato con successo";
+
+"TwitterMsg" = "Tutti i livelli completati, vi sfido a battere il mio punteggio %d #swipeItBaby";
+"FacebookMsg" = "Tutti i livelli completati, vi sfido a battere il mio punteggio %d #swipeItBaby";
+"MailMsg" = "Tutti i livelli completati, vi sfido a battere il mio punteggio %d #swipeItBaby";
+
+"RemoveAds" = "Rimuovi pubblicità";
+"RemoveAdsDesc" = "Goditi un’esperienza senza distrazione rimuovendo le pubblicità per %@";
+
+"LevelRestartStatus" = "Game Over! \n Prova di nuovo";
+"LevelSuccessSatus" = "Complimenti! \n Livello %d completato";
+
+"Tutorial_1" = "Scorri sul cerchio per iniziare";
+"Tutorial_2" = "Scorri sul cerchio verso la buca";
+"Tutorial_3" = "Scorri a sinistra sul cerchio e riempi le buche";
+"Tutorial_4" = "Complimenti! fai attenzione all’ordine di riempimento delle buche mentre scorri";
+"Tutorial_5" = "Usa la scatola bianca come supporto per riempire la buca";
+"Tutorial_6" = "Fantastico! Continua a scorrere! Riempi tutte le buche per passare al livello successivo";
+
+"TELL_A_FRIEND_MSG" = "Dai un’occhiata al nostro nuovo gioco 'Swipe It Baby' (%@)!";
+"TELL_A_FRIEND_TITLE" = "Prova ‘Swipe It Baby’, dà dipendenza!";
+
+"ERROR" = "Errore sconosciuto";
+"OK" = "Ok";
+"CANCEL" = "Annulla";
+"BUY" = "Acquista";
+"RESTORE" = "Ripristina";
+
+"MoreGames" = "Altri giochi";
+"FreeDownload" = "Gioca gratis";

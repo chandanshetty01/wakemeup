@@ -5,4 +5,58 @@
   Created by Chandan Shetty SP on 18/3/15.
   Copyright (c) 2015 Chandan. All rights reserved.
 */
-"Levels" = "Select a level to play";
+
+"Levels" = "LEVELS";
+"LevelsKey" = "Levels";
+"NoAds" = "Remove Ads";
+"Score" = "Moves: %d×%d= %d";
+"BestMoves" = "Best Moves: %@";
+
+"TellAFriend" = "Tell A Friend";
+"Sound" = "Sound";
+"Music" = "Music";
+"RateApp" = "Rate Me";
+"GameCenter" = "Game Center";
+
+"LevelNO" = "Level: %d";
+"Restart" = "Restart";
+"GlobalScores" = "Global Scores";
+
+"GameCenter" = "Game Center";
+"BestScore" = "Total Moves";
+"PlayAgain" = "Play Again";
+"Share" = "Share";
+"CongratsMsg" = "Great! All levels Completed";
+
+"MailSentMsg" = "Mail sent successfully";
+"postSentMsg" = "Successfully posted";
+
+"TwitterMsg" = "Completed all levels, dare to beat my score %d #swipeItBaby";
+"FacebookMsg" = "Completed all levels, dare to beat my score %d #swipeItBaby";
+"MailMsg" = "Completed all levels, dare to beat my score %d #swipeItBaby";
+
+"RemoveAds" = "Remove Ads";
+"RemoveAdsDesc" = "Enjoy the distraction free experience by removing 'Ads' for %@";
+
+"LevelRestartStatus" = "Game Over! \nTry Again";
+"LevelSuccessSatus" = "Congrats! \nLevel %d Completed";
+
+"Tutorial_1" = "Swipe on the circle to start";
+"Tutorial_2" = "Swipe on the circle towards hole";
+"Tutorial_3" = "Swipe left on the circle and fill the holes";
+"Tutorial_4" = "Congrats! watch out the order of filling holes while swipe";
+"Tutorial_5" = "Use white box as a support to fill the hole";
+"Tutorial_6" = "Great! Keep on Swipe! Fill all the holes to play next level";
+
+"TELL_A_FRIEND_MSG" = "Check out our new game 'Swipe It Baby' (%@)!";
+"TELL_A_FRIEND_TITLE" = "Try 'Swipe It Baby' its very addictive!";
+
+"ERROR" = "Unknown Error";
+"OK" = "Ok";
+"CANCEL" = "Cancel";
+"BUY" = "Buy";
+"RESTORE" = "Restore";
+
+"MoreGames" = "More Games";
+"FreeDownload" = "Free to Play";
+"MoreGameDesc" = "Welcome to the world of Kachi Kachi.\nKachi Kachi is a classic puzzle game will take you on the waves of your nostalgia memories. \n\nOne Golden Rule to Play: Tap on the top object to remove  \n\nKey Features: \n-60+ different levels \n-Simple and Elegance one touch saga with challenging game play that will keep you entertain for hours \n-3 different modes of gameplay \n-Easy to play challenging to masters \n-Cool graphics";

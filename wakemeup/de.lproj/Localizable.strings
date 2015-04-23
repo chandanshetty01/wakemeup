@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  WakeMeUp
+
+  Created by Chandan Shetty SP on 18/3/15.
+  Copyright (c) 2015 Chandan. All rights reserved.
+*/
+
+"Levels" = "LEVEL";
+"LevelsKey" = "LEVEL";
+"NoAds" = "Werbung entfernen";
+"Score" = "Aktionen: %d×%d= %d";
+"BestMoves" = "Beste Aktionen: %@";
+
+"TellAFriend" = "Einem Freund davon erzählen";
+"Sound" = "Sound";
+"Music" = "Musik";
+"RateApp" = "Bewertung abgeben";
+
+"LevelNO" = "Level: %d";
+"Restart" = "Neustart";
+"GlobalScores" = "Weltweite Spielergebnisse";
+
+"GameCenter" = "Game Center";
+"BestScore" = "Gesamtaktionen";
+"PlayAgain" = "Noch einmal spielen";
+"Share" = "Teilen";
+"CongratsMsg" = "Großartig! Alle Level abgeschlossen";
+
+"MailSentMsg" = "Mail erfolgreich gesendet";
+"postSentMsg" = "Erfolgreich gepostet";
+
+"TwitterMsg" = "Alle Level abgeschlossen. Versuch, meine Punktzahl zu brechen. %d #swipeItBaby";
+"FacebookMsg" = "Alle Level abgeschlossen. Versuch, meine Punktzahl zu brechen. %d #swipeItBaby";
+"MailMsg" = "Alle Level abgeschlossen. Versuch, meine Punktzahl zu brechen. %d #swipeItBaby";
+
+"RemoveAds" = "Werbung entfernen";
+"RemoveAdsDesc" = "Genieße das Spielerlebnis ohne Ablenkung, indem Du die Werbung für %@ entfernst";
+
+"LevelRestartStatus" = "Game Over! \n Versuch es noch einmal";
+"LevelSuccessSatus" = "Glückwunsch! \n Level %d abgeschlossen";
+
+"Tutorial_1" = "Streiche über den Kreis, um zu beginnen";
+"Tutorial_2" = "Streiche über den Kreis in Richtung des Lochs";
+"Tutorial_3" = "Streiche nach links über den Kreis und fülle die Löcher";
+"Tutorial_4" = "Glückwunsch! Achte auf die Reihenfolge, in der Du die Löcher füllen müsst, während Du streichst";
+"Tutorial_5" = "Benutze die weiße Box als Hilfe, um das Loch zu füllen";
+"Tutorial_6" = "Großartig! Streiche weiter! Fülle alle Löcher, um das nächste Level zu spielen";
+
+"TELL_A_FRIEND_MSG" = "Teste unser neues Spiel 'Swipe It Baby' (%@)!";
+"TELL_A_FRIEND_TITLE" = "Teste ‘Swipe It Baby’ Es macht sehr süchtig!";
+
+"ERROR" = "Unbekannter Fehler";
+"OK" = "OK";
+"CANCEL" = "Abbrechen";
+"BUY" = "Kaufen";
+"RESTORE" = "Zurücksetzen";
+
+"MoreGames" = "Mehr Spiele";
+"FreeDownload" = "Kostenlos spielbar";
