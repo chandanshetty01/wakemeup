@@ -443,8 +443,6 @@
 		A3F1806E1AE932BB00BDA344 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A3F1806F1AE932C200BDA344 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A3F180701AE932C200BDA344 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A3F180711AE932CE00BDA344 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
-		A3F180721AE932CE00BDA344 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPad.strings; sourceTree = "<group>"; };
 		A3F180731AE932CE00BDA344 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A3F180741AE932CE00BDA344 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1237,7 +1235,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				48D5B43A1AC05F11008D370E /* Base */,
-				A3F180721AE932CE00BDA344 /* ja */,
 			);
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
@@ -1246,7 +1243,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				A3CC20C419D6C9520067A847 /* Base */,
-				A3F180711AE932CE00BDA344 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
