@@ -434,6 +434,7 @@
 		A3D91FCC1AD01F3700EE96C6 /* GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverViewController.m; sourceTree = "<group>"; };
 		A3D91FCD1AD01F3700EE96C6 /* GameOverViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GameOverViewController~iPad.xib"; sourceTree = "<group>"; };
 		A3D91FCE1AD01F3700EE96C6 /* GameOverViewController~iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GameOverViewController~iPhone.xib"; sourceTree = "<group>"; };
+		A3EF3C101AEA86CA00200BBC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A3F180681AE9318600BDA344 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A3F180691AE932A700BDA344 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A3F1806A1AE932A700BDA344 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1256,6 +1257,7 @@
 				A3F1806D1AE932BB00BDA344 /* zh-Hans */,
 				A3F1806F1AE932C200BDA344 /* it */,
 				A3F180731AE932CE00BDA344 /* ja */,
+				A3EF3C101AEA86CA00200BBC /* en */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
